@@ -132,6 +132,7 @@
             this.textBox_stt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
+            this.down_btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -254,6 +255,7 @@
             this.tabPage3.Controls.Add(this.view_btn);
             this.tabPage3.Controls.Add(this.edit_btn);
             this.tabPage3.Controls.Add(this.Create_btn);
+            this.tabPage3.Controls.Add(this.down_btn);
             this.tabPage3.Controls.Add(this.Logout_btn);
             this.tabPage3.Controls.Add(this.login_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -1266,6 +1268,17 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
+            // down_btn
+            // 
+            this.down_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.down_btn.Location = new System.Drawing.Point(271, 249);
+            this.down_btn.Name = "down_btn";
+            this.down_btn.Size = new System.Drawing.Size(135, 47);
+            this.down_btn.TabIndex = 0;
+            this.down_btn.Text = "DOWNLOAD";
+            this.down_btn.UseVisualStyleBackColor = true;
+            this.down_btn.Click += new System.EventHandler(this.Logout_btn_Click);
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1437,6 +1450,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button down_btn;
     }
 }
 

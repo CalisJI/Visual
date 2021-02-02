@@ -1716,7 +1716,6 @@ namespace Camera_Check_Component
             }
             else allow_check = false;
         }
-
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Do you want to reset Program to default setting", "RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -2052,7 +2051,6 @@ namespace Camera_Check_Component
                     }
                 };
                 loginfrm.Show();
-
             }
         }
     }
