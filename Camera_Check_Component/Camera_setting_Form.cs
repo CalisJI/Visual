@@ -435,7 +435,6 @@ namespace Camera_Check_Component
                         foreach (VideoCapabilities videoCapabilities in videoCaptureDevice3.VideoCapabilities)
                         {
                             comboBox3.Items.Add(videoCapabilities.FrameSize.Width.ToString() + "x" + videoCapabilities.FrameSize.Height.ToString());
-
                         }
                     }
                     Program_Configuration.UpdateSystem_Config("pixel_cam3", comboBox3.SelectedIndex.ToString());                   

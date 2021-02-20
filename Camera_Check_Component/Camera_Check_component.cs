@@ -95,7 +95,7 @@ namespace Camera_Check_Component
             unable();
             listviewInit();
 
-
+            
             system_config = Program_Configuration.GetSystem_Config();
 
             if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder)
@@ -195,7 +195,14 @@ namespace Camera_Check_Component
             Parameter_app.OK_TEMP(system_config.Location_cam1_folder.ToString());
             Parameter_app.ERROR_TEMP(system_config.Location_cam1_folder.ToString());
             //label_time.Text = DateTime.Now.ToString();
-
+            if(system_config.inf_process == null) 
+            {
+                TB_LTdate.Text = "";
+            }
+            else 
+            {
+                TB_LTdate.Text = system_config.inf_process.ToString();
+            }
             //set_up();
             progressBar1.Minimum = 0;
             progressBar1.Maximum = 100;
@@ -792,14 +799,14 @@ namespace Camera_Check_Component
                 PB_active1.Show();
                
             }
-            if (Cam2VIDEO_Device == null || !Cam2VIDEO_Device.IsRunning)
-            {
-                Cam2VIDEO_Device = new VideoCaptureDevice(Cam2_Device.MonikerString);
-                Cam2VIDEO_Device.VideoResolution = Cam2VIDEO_Device.VideoCapabilities[system_config.pixel_cam2];
-                Cam2VIDEO_Device.NewFrame += Cam2VIDEO_Device_NewFrame;              
-                Cam2VIDEO_Device.Start();
-                PB_active2.Show();
-            }
+            //if (Cam2VIDEO_Device == null || !Cam2VIDEO_Device.IsRunning)
+            //{
+            //    Cam2VIDEO_Device = new VideoCaptureDevice(Cam2_Device.MonikerString);
+            //    Cam2VIDEO_Device.VideoResolution = Cam2VIDEO_Device.VideoCapabilities[system_config.pixel_cam2];
+            //    Cam2VIDEO_Device.NewFrame += Cam2VIDEO_Device_NewFrame;              
+            //    Cam2VIDEO_Device.Start();
+            //    PB_active2.Show();
+            //}
             //if (Cam3VIDEO_Device == null || !Cam3VIDEO_Device.IsRunning)
             //{
             //    Cam3VIDEO_Device = new VideoCaptureDevice(Cam3_Device.MonikerString);
@@ -1145,7 +1152,7 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate 
             {
-                TB_LTdate.Text = system_config.inf_process.ToString();
+                TB_LTdate.Text =  system_config.inf_process.ToString();
                 if(system_config.Folder_index_tranfer < system_config.Folder_load_check) 
                 {
                     TB_testpart.Text = system_config.Folder_load_check.ToString();
@@ -1342,17 +1349,15 @@ namespace Camera_Check_Component
             // Hname5.Text = getpath[4];
             //pictureBox6.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
             // Hname6.Text = getpath[5];
-            folderIndex++;
-
-
+            //folderIndex++;
         }
 
         private void update_image2()
         {
-
             Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
             DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
             Program_Configuration.UpdateSystem_Config("same_folder_2", folderIndex.ToString());
+            system_config = Program_Configuration.GetSystem_Config();
             system_config.same_folder_1 = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("same_folder_2"));
             if (!d.Exists)
             {
@@ -1364,6 +1369,7 @@ namespace Camera_Check_Component
             int i = 0;
             for (int j = 1; j < 8; j++)
             {
+                
                 fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
                 foreach (FileInfo file in fileInfor)
                 {
@@ -1384,10 +1390,7 @@ namespace Camera_Check_Component
             // hname15.Text = getpath[4];
             //pictureBox12.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
             // hname16.Text = getpath[5];
-
-            folderIndex++;
-
-
+            //folderIndex++;
         }
         private void Tranfer(string OPTION)
         {
@@ -1401,12 +1404,12 @@ namespace Camera_Check_Component
                 //pictureBox6.Image.Dispose();
 
                 DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
-                string[] insert = new string[] { };
-                string[] insert1 = new string[] { };
+                
 
-                FileInfo[] fileInfor = new FileInfo[7];
+               
                 string[] getpath = new string[7];
                 int i = 0;
+                FileInfo[] fileInfor = new FileInfo[7];
                 for (int j = 1; j < 8; j++)
                 {
                     fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_index_tranfer.ToString() + "-" + j.ToString() + ".jpeg");
@@ -1434,7 +1437,8 @@ namespace Camera_Check_Component
                     {
                         File.Move(system_config.Map_Path_File + @"/" + getpath[6], Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + getpath[6]);
                     }
-
+                    string[] insert = new string[] { };
+                    string[] insert1 = new string[] { };
                     insert = getpath[0].Split('-');
                     insert1 = insert[1].Split('.');
                     Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status) VALUES (N'" + tb_PN.Text + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','OK')");
@@ -1459,11 +1463,6 @@ namespace Camera_Check_Component
                 //pictureBox6.Image.Dispose();
 
                 DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
-
-
-
-                string[] insert = new string[] { };
-                string[] insert1 = new string[] { };
 
                 FileInfo[] fileInfor = new FileInfo[7];
                 string[] getpath = new string[7];
@@ -1497,7 +1496,8 @@ namespace Camera_Check_Component
                     {
                         File.Move(system_config.Map_Path_File + @"/" + getpath[6], Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + "-" + TB_idworker.Text + getpath[6]);
                     }
-
+                    string[] insert = new string[] { };
+                    string[] insert1 = new string[] { };
                     insert = getpath[0].Split('-');
                     insert1 = insert[1].Split('.');
                     Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status,ErrorType) VALUES (N'" + tb_PN.Text + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','ERROR','" + error_Type(loi_tam1) + "')");
@@ -1511,6 +1511,7 @@ namespace Camera_Check_Component
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
 
             }
+            folderIndex++;
         }
         private string error_Type(string get_error)
         {
@@ -1663,6 +1664,7 @@ namespace Camera_Check_Component
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_load_check.ToString() + "]");
 
             }
+            folderIndex++;
         }
        
         private void OK1_check()
@@ -1670,13 +1672,13 @@ namespace Camera_Check_Component
           
             MethodInvoker inv = delegate
             {
-                DateTime dt = DateTime.Now;
+                
                 Tranfer("OK");
                 Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
-                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
             };
             this.Invoke(inv);
@@ -1691,7 +1693,7 @@ namespace Camera_Check_Component
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
-                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
             };
             this.Invoke(inv);
@@ -1729,16 +1731,22 @@ namespace Camera_Check_Component
         }
         private void General_tab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (General_tab.SelectedIndex == 1 && start_check)
+            if (General_tab.SelectedIndex == 1 && start_check && system_config.Location_cam1_folder != 0)
             {
                 stt++;
                 allow_check = true;
-                if (stt == 1)
+                if (stt == 1 )
                 {
-                    folderIndex = system_config.Folder_index_tranfer;
-                    Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                    DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
+                   
+                    //folderIndex = system_config.Folder_index_tranfer;
+                    //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
                     Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam1_folder.ToString());
                     upload_image();
+                    if (folderIndex == 0) 
+                    {
+                        folderIndex++;
+                    }
                     update_image2();
                 }
             }

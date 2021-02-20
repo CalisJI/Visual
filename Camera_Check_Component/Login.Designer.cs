@@ -45,7 +45,7 @@ namespace Camera_Check_Component
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(82, 85);
+            this.button1.Location = new System.Drawing.Point(68, 74);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(66, 21);
@@ -76,7 +76,7 @@ namespace Camera_Check_Component
             // 
             // exit_btn
             // 
-            this.exit_btn.Location = new System.Drawing.Point(157, 85);
+            this.exit_btn.Location = new System.Drawing.Point(173, 74);
             this.exit_btn.Margin = new System.Windows.Forms.Padding(2);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(66, 21);
@@ -120,7 +120,7 @@ namespace Camera_Check_Component
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(358, 85);
+            this.button2.Location = new System.Drawing.Point(359, 74);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 21);
@@ -151,7 +151,7 @@ namespace Camera_Check_Component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 127);
+            this.ClientSize = new System.Drawing.Size(478, 121);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);

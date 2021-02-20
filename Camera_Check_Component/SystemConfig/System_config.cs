@@ -56,6 +56,6 @@ namespace Camera_Check_Component
         public int pixel_cam7 { get; set; }
         public string SQL_server { get; set; }
         public string Database { get; set; }
-        public DateTime inf_process { get; set; }
+        public string inf_process { get; set; }
     }
 }
