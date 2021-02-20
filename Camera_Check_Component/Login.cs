@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Camera_Check_Component
 {
@@ -35,7 +36,6 @@ namespace Camera_Check_Component
                 comboBox1.Text = System_Config.SQL_server;
                 comboBox2.Text = System_Config.Database;
             }
-
             DataTable dt = SQL_action.GetSQL_SeverList();
             comboBox1.Items.Clear();
             foreach (DataRow r in dt.Rows)
@@ -72,7 +72,15 @@ namespace Camera_Check_Component
             //        this.Hide();
             //        mainform.Show();
             //    }
-            ID_user = sQL_Action.getID_user(TB_user.Text, TB_pass.Text);
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(TB_pass.Text);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            ID_user = sQL_Action.getID_user(TB_user.Text, hasPass);
             try
             {
                 if (ID_user != "")
