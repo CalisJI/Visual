@@ -33,3 +33,4 @@ F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Camera
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Camera_Check_Component.application
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.exe.manifest
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.application
+F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.csprojAssemblyReference.cache

@@ -12,17 +12,17 @@
   <Camera6>0</Camera6>
   <Camera7>0</Camera7>
   <add_cam>false</add_cam>
-  <Location_cam1_folder>549</Location_cam1_folder>
-  <Location_cam2_folder>556</Location_cam2_folder>
+  <Location_cam1_folder>0</Location_cam1_folder>
+  <Location_cam2_folder>0</Location_cam2_folder>
   <Location_cam3_folder>0</Location_cam3_folder>
   <Location_cam4_folder>0</Location_cam4_folder>
   <Location_cam5_folder>0</Location_cam5_folder>
   <Location_cam6_folder>0</Location_cam6_folder>
   <Location_cam7_folder>0</Location_cam7_folder>
-  <Folder_load_check>17</Folder_load_check>
-  <Folder_index_tranfer>16</Folder_index_tranfer>
-  <same_folder_1>16</same_folder_1>
-  <same_folder_2>17</same_folder_2>
+  <Folder_load_check>0</Folder_load_check>
+  <Folder_index_tranfer>0</Folder_index_tranfer>
+  <same_folder_1>0</same_folder_1>
+  <same_folder_2>0</same_folder_2>
   <old_Day1>0</old_Day1>
   <old_Month1>0</old_Month1>
   <old_Year1>0</old_Year1>
