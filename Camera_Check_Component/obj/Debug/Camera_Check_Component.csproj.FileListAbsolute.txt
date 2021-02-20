@@ -25,13 +25,7 @@ F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Camera_Check_component.resources
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Cam_Review.resources
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Path_File_Component.resources
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Emgu.CV.UI.xml
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Emgu.CV.UI.GL.xml
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Emgu.CV.World.xml
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Checking_Form_1.resources
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Checking_Form_2.resources
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Com_setting.resources
-F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.csprojAssemblyReference.cache
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.CoreCompileInputs.cache
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.CopyComplete
 F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Login.resources

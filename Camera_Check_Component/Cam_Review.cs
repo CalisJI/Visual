@@ -25,7 +25,7 @@ namespace Camera_Check_Component
         private string Cam_name;
         private int pixel;
       
-        Image<Bgr, Byte> img;
+      
         public Cam_Review(int Cam_Index, string Cam_name, int pixel)
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Camera_Check_Component
             this.Cam_name = Cam_name;
             this.pixel = pixel;
         }
-
         private void Cam_Review_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
@@ -48,15 +47,13 @@ namespace Camera_Check_Component
                 videoCaptureDevice = new VideoCaptureDevice(filterinfocollection[this.Cam_Index].MonikerString);
                 if (pixel < 0) 
                 {
-                    MessageBox.Show("Please select your resolution first");
-                    
+                    MessageBox.Show("Please select your resolution first");                    
                     return;
                 }
                 //this.Close();
                 videoCaptureDevice.VideoResolution = videoCaptureDevice.VideoCapabilities[pixel];
                 videoCaptureDevice.NewFrame += HandleCaptureDeviceStreamNewFrame;
                 videoCaptureDevice.Start();
-
             }
             else
             {
@@ -69,12 +66,11 @@ namespace Camera_Check_Component
            
             video = (Bitmap)eventArgs.Frame.Clone();
             pictureBox1.Image = video;
-            //video.Dispose();
-            //video.Dispose();
-           // pictureBox1.Image.Dispose();
-           
+            if (video != null) 
+            {
+                video.Dispose();
+            }
         }
-
         private void Cam_Review_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (videoCaptureDevice.IsRunning) 
@@ -85,14 +81,8 @@ namespace Camera_Check_Component
         
         private void Take_photo_btn_Click(object sender, EventArgs e)
         {
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;       
             pictureBox2.Image = (Bitmap)pictureBox1.Image.Clone();
-           
-
-        }
-
-       
+        }      
     }
 }

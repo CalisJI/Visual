@@ -127,18 +127,6 @@
     <Compile Include="Cam_Review.Designer.cs">
       <DependentUpon>Cam_Review.cs</DependentUpon>
     </Compile>
-    <Compile Include="Checking_Form_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Checking_Form_1.Designer.cs">
-      <DependentUpon>Checking_Form_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Checking_Form_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Checking_Form_2.Designer.cs">
-      <DependentUpon>Checking_Form_2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Com_setting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cam_Review.resx">
       <DependentUpon>Cam_Review.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Checking_Form_1.resx">
-      <DependentUpon>Checking_Form_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Checking_Form_2.resx">
-      <DependentUpon>Checking_Form_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Com_setting.resx">
       <DependentUpon>Com_setting.cs</DependentUpon>

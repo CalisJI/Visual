@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Path_File_Component));
             this.Open_Dialog_btn = new System.Windows.Forms.Button();
             this.Saving_btn = new System.Windows.Forms.Button();
             this.Cancel_btn = new System.Windows.Forms.Button();
@@ -91,6 +92,7 @@
             this.Controls.Add(this.Cancel_btn);
             this.Controls.Add(this.Saving_btn);
             this.Controls.Add(this.Open_Dialog_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Path_File_Component";
             this.Text = "Path_File_Component";
             this.Load += new System.EventHandler(this.Path_File_Component_Load);

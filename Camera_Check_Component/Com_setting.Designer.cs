@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Com_setting));
             this.Com_setting_box = new System.Windows.Forms.ComboBox();
             this.connect_com_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,9 +62,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "COM Port";
+            this.label2.Text = "COM PORT";
             // 
             // SAVE_btn
             // 
@@ -80,9 +81,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Baudrate";
+            this.label1.Text = "BAUDRATE";
             // 
             // Baudrate_box
             // 
@@ -103,6 +104,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.connect_com_btn);
             this.Controls.Add(this.Com_setting_box);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Com_setting";
             this.Text = "Com_setting";
             this.Load += new System.EventHandler(this.Com_setting_Load);

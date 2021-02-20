@@ -32,13 +32,13 @@
   <new_Day>27</new_Day>
   <new_Month>1</new_Month>
   <new_Year>2021</new_Year>
-  <pixel_cam1>5</pixel_cam1>
+  <pixel_cam1>-1</pixel_cam1>
   <pixel_cam2>-1</pixel_cam2>
   <pixel_cam3>-1</pixel_cam3>
   <pixel_cam4>-1</pixel_cam4>
   <pixel_cam5>-1</pixel_cam5>
   <pixel_cam6>-1</pixel_cam6>
-  <pixel_cam7>0</pixel_cam7>
+  <pixel_cam7>-1</pixel_cam7>
   <SQL_server>CALIS_YII\WINCC</SQL_server>
   <Database>ComponentState</Database>
 </System_config>

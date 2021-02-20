@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Camera_setting_Form));
             this.Camera1 = new System.Windows.Forms.Label();
             this.Cambox1 = new System.Windows.Forms.ComboBox();
             this.Cam1 = new System.Windows.Forms.Button();
@@ -65,29 +66,30 @@
             // 
             this.Camera1.AutoSize = true;
             this.Camera1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera1.Location = new System.Drawing.Point(12, 20);
+            this.Camera1.Location = new System.Drawing.Point(9, 16);
+            this.Camera1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera1.Name = "Camera1";
-            this.Camera1.Size = new System.Drawing.Size(63, 16);
+            this.Camera1.Size = new System.Drawing.Size(49, 13);
             this.Camera1.TabIndex = 0;
             this.Camera1.Text = "Camera1";
             // 
             // Cambox1
             // 
             this.Cambox1.FormattingEnabled = true;
-            this.Cambox1.Location = new System.Drawing.Point(115, 20);
-            this.Cambox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox1.Location = new System.Drawing.Point(86, 16);
+            this.Cambox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox1.Name = "Cambox1";
-            this.Cambox1.Size = new System.Drawing.Size(219, 24);
+            this.Cambox1.Size = new System.Drawing.Size(165, 21);
             this.Cambox1.TabIndex = 1;
             this.Cambox1.SelectedIndexChanged += new System.EventHandler(this.Cambox1_SelectedIndexChanged);
             this.Cambox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox1_MouseDown);
             // 
             // Cam1
             // 
-            this.Cam1.Location = new System.Drawing.Point(361, 20);
-            this.Cam1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam1.Location = new System.Drawing.Point(271, 16);
+            this.Cam1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam1.Name = "Cam1";
-            this.Cam1.Size = new System.Drawing.Size(75, 23);
+            this.Cam1.Size = new System.Drawing.Size(56, 19);
             this.Cam1.TabIndex = 2;
             this.Cam1.Text = "Preview";
             this.Cam1.UseVisualStyleBackColor = true;
@@ -95,10 +97,10 @@
             // 
             // Cam2
             // 
-            this.Cam2.Location = new System.Drawing.Point(361, 68);
-            this.Cam2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam2.Location = new System.Drawing.Point(271, 55);
+            this.Cam2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam2.Name = "Cam2";
-            this.Cam2.Size = new System.Drawing.Size(75, 23);
+            this.Cam2.Size = new System.Drawing.Size(56, 19);
             this.Cam2.TabIndex = 5;
             this.Cam2.Text = "Preview";
             this.Cam2.UseVisualStyleBackColor = true;
@@ -107,10 +109,10 @@
             // Cambox2
             // 
             this.Cambox2.FormattingEnabled = true;
-            this.Cambox2.Location = new System.Drawing.Point(115, 68);
-            this.Cambox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox2.Location = new System.Drawing.Point(86, 55);
+            this.Cambox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox2.Name = "Cambox2";
-            this.Cambox2.Size = new System.Drawing.Size(219, 24);
+            this.Cambox2.Size = new System.Drawing.Size(165, 21);
             this.Cambox2.TabIndex = 4;
             this.Cambox2.SelectedIndexChanged += new System.EventHandler(this.Cambox2_SelectedIndexChanged);
             this.Cambox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox2_MouseDown);
@@ -119,18 +121,19 @@
             // 
             this.Camera2.AutoSize = true;
             this.Camera2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera2.Location = new System.Drawing.Point(12, 68);
+            this.Camera2.Location = new System.Drawing.Point(9, 55);
+            this.Camera2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera2.Name = "Camera2";
-            this.Camera2.Size = new System.Drawing.Size(63, 16);
+            this.Camera2.Size = new System.Drawing.Size(49, 13);
             this.Camera2.TabIndex = 3;
             this.Camera2.Text = "Camera2";
             // 
             // Cam3
             // 
-            this.Cam3.Location = new System.Drawing.Point(361, 116);
-            this.Cam3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam3.Location = new System.Drawing.Point(271, 94);
+            this.Cam3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam3.Name = "Cam3";
-            this.Cam3.Size = new System.Drawing.Size(75, 23);
+            this.Cam3.Size = new System.Drawing.Size(56, 19);
             this.Cam3.TabIndex = 8;
             this.Cam3.Text = "Preview";
             this.Cam3.UseVisualStyleBackColor = true;
@@ -139,10 +142,10 @@
             // Cambox3
             // 
             this.Cambox3.FormattingEnabled = true;
-            this.Cambox3.Location = new System.Drawing.Point(115, 116);
-            this.Cambox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox3.Location = new System.Drawing.Point(86, 94);
+            this.Cambox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox3.Name = "Cambox3";
-            this.Cambox3.Size = new System.Drawing.Size(219, 24);
+            this.Cambox3.Size = new System.Drawing.Size(165, 21);
             this.Cambox3.TabIndex = 7;
             this.Cambox3.SelectedIndexChanged += new System.EventHandler(this.Cambox3_SelectedIndexChanged);
             this.Cambox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox3_MouseDown);
@@ -151,18 +154,19 @@
             // 
             this.Camera3.AutoSize = true;
             this.Camera3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera3.Location = new System.Drawing.Point(12, 116);
+            this.Camera3.Location = new System.Drawing.Point(9, 94);
+            this.Camera3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera3.Name = "Camera3";
-            this.Camera3.Size = new System.Drawing.Size(63, 16);
+            this.Camera3.Size = new System.Drawing.Size(49, 13);
             this.Camera3.TabIndex = 6;
             this.Camera3.Text = "Camera3";
             // 
             // Cam4
             // 
-            this.Cam4.Location = new System.Drawing.Point(361, 164);
-            this.Cam4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam4.Location = new System.Drawing.Point(271, 133);
+            this.Cam4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam4.Name = "Cam4";
-            this.Cam4.Size = new System.Drawing.Size(75, 23);
+            this.Cam4.Size = new System.Drawing.Size(56, 19);
             this.Cam4.TabIndex = 11;
             this.Cam4.Text = "Preview";
             this.Cam4.UseVisualStyleBackColor = true;
@@ -171,10 +175,10 @@
             // Cambox4
             // 
             this.Cambox4.FormattingEnabled = true;
-            this.Cambox4.Location = new System.Drawing.Point(115, 164);
-            this.Cambox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox4.Location = new System.Drawing.Point(86, 133);
+            this.Cambox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox4.Name = "Cambox4";
-            this.Cambox4.Size = new System.Drawing.Size(219, 24);
+            this.Cambox4.Size = new System.Drawing.Size(165, 21);
             this.Cambox4.TabIndex = 10;
             this.Cambox4.SelectedIndexChanged += new System.EventHandler(this.Cambox4_SelectedIndexChanged);
             this.Cambox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox4_MouseDown);
@@ -183,18 +187,19 @@
             // 
             this.Camera4.AutoSize = true;
             this.Camera4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera4.Location = new System.Drawing.Point(12, 164);
+            this.Camera4.Location = new System.Drawing.Point(9, 133);
+            this.Camera4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera4.Name = "Camera4";
-            this.Camera4.Size = new System.Drawing.Size(63, 16);
+            this.Camera4.Size = new System.Drawing.Size(49, 13);
             this.Camera4.TabIndex = 9;
             this.Camera4.Text = "Camera4";
             // 
             // Cam5
             // 
-            this.Cam5.Location = new System.Drawing.Point(361, 212);
-            this.Cam5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam5.Location = new System.Drawing.Point(271, 172);
+            this.Cam5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam5.Name = "Cam5";
-            this.Cam5.Size = new System.Drawing.Size(75, 23);
+            this.Cam5.Size = new System.Drawing.Size(56, 19);
             this.Cam5.TabIndex = 14;
             this.Cam5.Text = "Preview";
             this.Cam5.UseVisualStyleBackColor = true;
@@ -203,10 +208,10 @@
             // Cambox5
             // 
             this.Cambox5.FormattingEnabled = true;
-            this.Cambox5.Location = new System.Drawing.Point(115, 212);
-            this.Cambox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox5.Location = new System.Drawing.Point(86, 172);
+            this.Cambox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox5.Name = "Cambox5";
-            this.Cambox5.Size = new System.Drawing.Size(219, 24);
+            this.Cambox5.Size = new System.Drawing.Size(165, 21);
             this.Cambox5.TabIndex = 13;
             this.Cambox5.SelectedIndexChanged += new System.EventHandler(this.Cambox5_SelectedIndexChanged);
             this.Cambox5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox5_MouseDown);
@@ -215,18 +220,19 @@
             // 
             this.Camera5.AutoSize = true;
             this.Camera5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera5.Location = new System.Drawing.Point(12, 212);
+            this.Camera5.Location = new System.Drawing.Point(9, 172);
+            this.Camera5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera5.Name = "Camera5";
-            this.Camera5.Size = new System.Drawing.Size(63, 16);
+            this.Camera5.Size = new System.Drawing.Size(49, 13);
             this.Camera5.TabIndex = 12;
             this.Camera5.Text = "Camera5";
             // 
             // Cam6
             // 
-            this.Cam6.Location = new System.Drawing.Point(361, 260);
-            this.Cam6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam6.Location = new System.Drawing.Point(271, 211);
+            this.Cam6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam6.Name = "Cam6";
-            this.Cam6.Size = new System.Drawing.Size(75, 23);
+            this.Cam6.Size = new System.Drawing.Size(56, 19);
             this.Cam6.TabIndex = 17;
             this.Cam6.Text = "Preview";
             this.Cam6.UseVisualStyleBackColor = true;
@@ -235,10 +241,10 @@
             // Cambox6
             // 
             this.Cambox6.FormattingEnabled = true;
-            this.Cambox6.Location = new System.Drawing.Point(115, 260);
-            this.Cambox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox6.Location = new System.Drawing.Point(86, 211);
+            this.Cambox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox6.Name = "Cambox6";
-            this.Cambox6.Size = new System.Drawing.Size(219, 24);
+            this.Cambox6.Size = new System.Drawing.Size(165, 21);
             this.Cambox6.TabIndex = 16;
             this.Cambox6.SelectedIndexChanged += new System.EventHandler(this.Cambox6_SelectedIndexChanged);
             this.Cambox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox6_MouseDown);
@@ -247,18 +253,19 @@
             // 
             this.Camera6.AutoSize = true;
             this.Camera6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera6.Location = new System.Drawing.Point(12, 260);
+            this.Camera6.Location = new System.Drawing.Point(9, 211);
+            this.Camera6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera6.Name = "Camera6";
-            this.Camera6.Size = new System.Drawing.Size(63, 16);
+            this.Camera6.Size = new System.Drawing.Size(49, 13);
             this.Camera6.TabIndex = 15;
             this.Camera6.Text = "Camera6";
             // 
             // Saving_btn
             // 
-            this.Saving_btn.Location = new System.Drawing.Point(688, 116);
-            this.Saving_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Saving_btn.Location = new System.Drawing.Point(516, 94);
+            this.Saving_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Saving_btn.Name = "Saving_btn";
-            this.Saving_btn.Size = new System.Drawing.Size(136, 39);
+            this.Saving_btn.Size = new System.Drawing.Size(102, 32);
             this.Saving_btn.TabIndex = 18;
             this.Saving_btn.Text = "SAVE Setting";
             this.Saving_btn.UseVisualStyleBackColor = true;
@@ -267,63 +274,63 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(460, 16);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(345, 13);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 24);
+            this.comboBox1.Size = new System.Drawing.Size(162, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(460, 64);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Location = new System.Drawing.Point(345, 52);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(215, 24);
+            this.comboBox2.Size = new System.Drawing.Size(162, 21);
             this.comboBox2.TabIndex = 4;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(460, 112);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Location = new System.Drawing.Point(345, 91);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(215, 24);
+            this.comboBox3.Size = new System.Drawing.Size(162, 21);
             this.comboBox3.TabIndex = 7;
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(460, 160);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox4.Location = new System.Drawing.Point(345, 130);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(215, 24);
+            this.comboBox4.Size = new System.Drawing.Size(162, 21);
             this.comboBox4.TabIndex = 10;
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(460, 208);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Location = new System.Drawing.Point(345, 169);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(215, 24);
+            this.comboBox5.Size = new System.Drawing.Size(162, 21);
             this.comboBox5.TabIndex = 13;
             // 
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(460, 256);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox6.Location = new System.Drawing.Point(345, 208);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(215, 24);
+            this.comboBox6.Size = new System.Drawing.Size(162, 21);
             this.comboBox6.TabIndex = 16;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(688, 116);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(516, 94);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 39);
+            this.button1.Size = new System.Drawing.Size(102, 32);
             this.button1.TabIndex = 18;
             this.button1.Text = "SAVE Setting";
             this.button1.UseVisualStyleBackColor = true;
@@ -331,10 +338,10 @@
             // 
             // Add_cam
             // 
-            this.Add_cam.Location = new System.Drawing.Point(688, 189);
-            this.Add_cam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Add_cam.Location = new System.Drawing.Point(516, 154);
+            this.Add_cam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Add_cam.Name = "Add_cam";
-            this.Add_cam.Size = new System.Drawing.Size(136, 39);
+            this.Add_cam.Size = new System.Drawing.Size(102, 32);
             this.Add_cam.TabIndex = 19;
             this.Add_cam.Text = "Add Camera";
             this.Add_cam.UseVisualStyleBackColor = true;
@@ -342,10 +349,10 @@
             // 
             // Cam7
             // 
-            this.Cam7.Location = new System.Drawing.Point(361, 308);
-            this.Cam7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cam7.Location = new System.Drawing.Point(271, 250);
+            this.Cam7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cam7.Name = "Cam7";
-            this.Cam7.Size = new System.Drawing.Size(75, 23);
+            this.Cam7.Size = new System.Drawing.Size(56, 19);
             this.Cam7.TabIndex = 23;
             this.Cam7.Text = "Preview";
             this.Cam7.UseVisualStyleBackColor = true;
@@ -354,19 +361,19 @@
             // comboBox7
             // 
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(460, 304);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox7.Location = new System.Drawing.Point(345, 247);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(215, 24);
+            this.comboBox7.Size = new System.Drawing.Size(162, 21);
             this.comboBox7.TabIndex = 21;
             // 
             // Cambox7
             // 
             this.Cambox7.FormattingEnabled = true;
-            this.Cambox7.Location = new System.Drawing.Point(115, 308);
-            this.Cambox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cambox7.Location = new System.Drawing.Point(86, 250);
+            this.Cambox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cambox7.Name = "Cambox7";
-            this.Cambox7.Size = new System.Drawing.Size(219, 24);
+            this.Cambox7.Size = new System.Drawing.Size(165, 21);
             this.Cambox7.TabIndex = 22;
             this.Cambox7.SelectedIndexChanged += new System.EventHandler(this.Cambox7_SelectedIndexChanged);
             this.Cambox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cambox7_MouseDown);
@@ -375,17 +382,18 @@
             // 
             this.Camera7.AutoSize = true;
             this.Camera7.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Camera7.Location = new System.Drawing.Point(12, 308);
+            this.Camera7.Location = new System.Drawing.Point(9, 250);
+            this.Camera7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Camera7.Name = "Camera7";
-            this.Camera7.Size = new System.Drawing.Size(63, 16);
+            this.Camera7.Size = new System.Drawing.Size(49, 13);
             this.Camera7.TabIndex = 20;
             this.Camera7.Text = "Camera7";
             // 
             // Camera_setting_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 343);
+            this.ClientSize = new System.Drawing.Size(629, 279);
             this.Controls.Add(this.Cam7);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.Cambox7);
@@ -417,7 +425,8 @@
             this.Controls.Add(this.Cam1);
             this.Controls.Add(this.Cambox1);
             this.Controls.Add(this.Camera1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Camera_setting_Form";
             this.Text = "Camera Preview";
             this.Load += new System.EventHandler(this.Camera_setting_Form_Load);

@@ -1142,7 +1142,22 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
-
+        private void inf_process() 
+        {
+            MethodInvoker inv = delegate 
+            {
+                TB_LTdate.Text = system_config.inf_process.ToString();
+                if(system_config.Folder_index_tranfer < system_config.Folder_load_check) 
+                {
+                    TB_testpart.Text = system_config.Folder_load_check.ToString();
+                }
+                else 
+                {
+                    TB_testpart.Text = system_config.Folder_index_tranfer.ToString();
+                }
+            };
+            this.Invoke(inv);
+        }
         private void cameraSettingToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (started)
@@ -1650,15 +1665,20 @@ namespace Camera_Check_Component
 
             }
         }
+       
         private void OK1_check()
         {
+          
             MethodInvoker inv = delegate
             {
+                DateTime dt = DateTime.Now;
                 Tranfer("OK");
                 Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
+                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                inf_process();
             };
             this.Invoke(inv);
         }
@@ -1666,11 +1686,14 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                DateTime dt = DateTime.Now;
                 Tranfer("ERROR");
                 Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
+                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                inf_process();
             };
             this.Invoke(inv);
         }
@@ -1678,11 +1701,14 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                DateTime dt = DateTime.Now;
                 Tranfer1("OK");
                 Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
                 update_image2();
+                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                inf_process();
             };
             this.Invoke(inv);
         }
@@ -1690,12 +1716,15 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                DateTime dt = DateTime.Now;
                 Tranfer1("ERROR");
                 Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
                 system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
                 Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Folder_load_check.ToString());
                 update_image2();
+                Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                inf_process();
             };
             this.Invoke(inv);
         }
