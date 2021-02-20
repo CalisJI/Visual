@@ -17,7 +17,7 @@ namespace Camera_Check_Component
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Camera_Check_component());
-            //Application.Run(new Login());
+           
         }
     }
 }

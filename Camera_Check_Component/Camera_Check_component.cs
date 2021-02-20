@@ -790,14 +790,13 @@ namespace Camera_Check_Component
                 Cam1VIDEO_Device.NewFrame += Cam1VIDEO_Device_NewFrame;
                 Cam1VIDEO_Device.Start();
                 PB_active1.Show();
-                //if (!backgroundWorker_1.IsBusy) backgroundWorker_1.RunWorkerAsync();
+               
             }
             if (Cam2VIDEO_Device == null || !Cam2VIDEO_Device.IsRunning)
             {
                 Cam2VIDEO_Device = new VideoCaptureDevice(Cam2_Device.MonikerString);
                 Cam2VIDEO_Device.VideoResolution = Cam2VIDEO_Device.VideoCapabilities[system_config.pixel_cam2];
-                Cam2VIDEO_Device.NewFrame += Cam2VIDEO_Device_NewFrame;
-                //if (!backgroundWorker_2.IsBusy) backgroundWorker_2.RunWorkerAsync();
+                Cam2VIDEO_Device.NewFrame += Cam2VIDEO_Device_NewFrame;              
                 Cam2VIDEO_Device.Start();
                 PB_active2.Show();
             }

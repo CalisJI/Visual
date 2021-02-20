@@ -62,14 +62,21 @@ namespace Camera_Check_Component
         }
         private void HandleCaptureDeviceStreamNewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap video;
-           
-            video = (Bitmap)eventArgs.Frame.Clone();
-            pictureBox1.Image = video;
-            if (video != null) 
+            //Bitmap video;
+            ////video = (Bitmap)eventArgs.Frame.Clone();
+            ////pictureBox1.Image = video;
+            //video = (Bitmap)eventArgs.Frame.Clone();
+            //using (var bmp = (Bitmap)eventArgs.Frame.Clone())
+            //{
+            //    pictureBox1.Image = bmp;
+            //    pictureBox1.Image.Dispose();
+            //}
+            if (pictureBox1.Image != null)
             {
-                video.Dispose();
+                pictureBox1.Image.Dispose();
             }
+            Bitmap bitmap = eventArgs.Frame.Clone() as Bitmap;
+            pictureBox1.Image = bitmap;
         }
         private void Cam_Review_FormClosing(object sender, FormClosingEventArgs e)
         {
