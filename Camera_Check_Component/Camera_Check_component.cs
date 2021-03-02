@@ -89,8 +89,8 @@ namespace Camera_Check_Component
         }
         private void Camera_Check_component_Load(object sender, EventArgs e)
         {
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //this.Location = new System.Drawing.Point(0, 0);
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             unable();
             listviewInit();
@@ -116,8 +116,8 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("Location_cam7_folder", count_7.ToString());
             }
 
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            //this.AutoSize = true;
+            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             Start_btn.Enabled = true;
             Stop_btn.Enabled = false;
             //Manual_btn.Enabled = false;
@@ -2088,6 +2088,11 @@ namespace Camera_Check_Component
                 };
                 loginfrm.Show();
             }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

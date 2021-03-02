@@ -95,6 +95,8 @@
             this.pic_full2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.TB_testpart = new System.Windows.Forms.TextBox();
+            this.TB_LTdate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label12 = new System.Windows.Forms.Label();
@@ -111,14 +113,14 @@
             this.PB_active5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.PB_active4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.PB_active3 = new System.Windows.Forms.PictureBox();
             this.PB_active1 = new System.Windows.Forms.PictureBox();
             this.Pic_Cam4 = new System.Windows.Forms.PictureBox();
             this.Pic_Cam3 = new System.Windows.Forms.PictureBox();
             this.PB_active2 = new System.Windows.Forms.PictureBox();
+            this.PB_active3 = new System.Windows.Forms.PictureBox();
+            this.PB_active4 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -137,8 +139,6 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
-            this.TB_LTdate = new System.Windows.Forms.TextBox();
-            this.TB_testpart = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -168,12 +168,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_active6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -409,7 +409,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Controls.Add(this.Hname6);
             this.groupBox5.Controls.Add(this.capture6);
@@ -629,7 +630,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.capture9);
             this.groupBox4.Controls.Add(this.hname16);
             this.groupBox4.Controls.Add(this.pictureBox7);
@@ -817,6 +819,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(430, 300);
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // hname14
             // 
@@ -883,6 +886,20 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(402, 214);
             this.panel8.TabIndex = 50;
+            // 
+            // TB_testpart
+            // 
+            this.TB_testpart.Location = new System.Drawing.Point(4, 81);
+            this.TB_testpart.Name = "TB_testpart";
+            this.TB_testpart.Size = new System.Drawing.Size(100, 20);
+            this.TB_testpart.TabIndex = 37;
+            // 
+            // TB_LTdate
+            // 
+            this.TB_LTdate.Location = new System.Drawing.Point(4, 34);
+            this.TB_LTdate.Name = "TB_LTdate";
+            this.TB_LTdate.Size = new System.Drawing.Size(177, 20);
+            this.TB_LTdate.TabIndex = 37;
             // 
             // label11
             // 
@@ -1057,16 +1074,6 @@
             this.label7.TabIndex = 42;
             this.label7.Text = "CAM6";
             // 
-            // PB_active4
-            // 
-            this.PB_active4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.PB_active4.Image = ((System.Drawing.Image)(resources.GetObject("PB_active4.Image")));
-            this.PB_active4.Location = new System.Drawing.Point(19, 126);
-            this.PB_active4.Name = "PB_active4";
-            this.PB_active4.Size = new System.Drawing.Size(19, 18);
-            this.PB_active4.TabIndex = 46;
-            this.PB_active4.TabStop = false;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
@@ -1086,16 +1093,6 @@
             this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 38;
             this.label3.Text = "CAM2";
-            // 
-            // PB_active3
-            // 
-            this.PB_active3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.PB_active3.Image = ((System.Drawing.Image)(resources.GetObject("PB_active3.Image")));
-            this.PB_active3.Location = new System.Drawing.Point(181, 34);
-            this.PB_active3.Name = "PB_active3";
-            this.PB_active3.Size = new System.Drawing.Size(19, 18);
-            this.PB_active3.TabIndex = 45;
-            this.PB_active3.TabStop = false;
             // 
             // PB_active1
             // 
@@ -1135,8 +1132,29 @@
             this.PB_active2.TabIndex = 44;
             this.PB_active2.TabStop = false;
             // 
+            // PB_active3
+            // 
+            this.PB_active3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PB_active3.Image = ((System.Drawing.Image)(resources.GetObject("PB_active3.Image")));
+            this.PB_active3.Location = new System.Drawing.Point(181, 34);
+            this.PB_active3.Name = "PB_active3";
+            this.PB_active3.Size = new System.Drawing.Size(19, 18);
+            this.PB_active3.TabIndex = 45;
+            this.PB_active3.TabStop = false;
+            // 
+            // PB_active4
+            // 
+            this.PB_active4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PB_active4.Image = ((System.Drawing.Image)(resources.GetObject("PB_active4.Image")));
+            this.PB_active4.Location = new System.Drawing.Point(19, 126);
+            this.PB_active4.Name = "PB_active4";
+            this.PB_active4.Size = new System.Drawing.Size(19, 18);
+            this.PB_active4.TabIndex = 46;
+            this.PB_active4.TabStop = false;
+            // 
             // panel6
             // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.Black;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Location = new System.Drawing.Point(1663, 494);
@@ -1146,6 +1164,7 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Black;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Location = new System.Drawing.Point(1663, 665);
@@ -1155,6 +1174,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Location = new System.Drawing.Point(1551, 795);
@@ -1164,6 +1184,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Location = new System.Drawing.Point(1374, 795);
@@ -1173,6 +1194,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Location = new System.Drawing.Point(1248, 665);
@@ -1182,6 +1204,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Location = new System.Drawing.Point(1248, 494);
@@ -1191,6 +1214,7 @@
             // 
             // pictureBox14
             // 
+            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.InitialImage")));
@@ -1203,6 +1227,7 @@
             // 
             // pictureBox13
             // 
+            this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.InitialImage")));
@@ -1321,6 +1346,9 @@
             // 
             // General_tab
             // 
+            this.General_tab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.General_tab.Controls.Add(this.tabPage1);
             this.General_tab.Controls.Add(this.tabPage2);
             this.General_tab.Controls.Add(this.tabPage3);
@@ -1333,38 +1361,18 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
-            // TB_LTdate
-            // 
-            this.TB_LTdate.Location = new System.Drawing.Point(4, 34);
-            this.TB_LTdate.Name = "TB_LTdate";
-            this.TB_LTdate.Size = new System.Drawing.Size(177, 20);
-            this.TB_LTdate.TabIndex = 37;
-            // 
-            // TB_testpart
-            // 
-            this.TB_testpart.Location = new System.Drawing.Point(4, 81);
-            this.TB_testpart.Name = "TB_testpart";
-            this.TB_testpart.Size = new System.Drawing.Size(100, 20);
-            this.TB_testpart.TabIndex = 37;
-            // 
             // Camera_Check_component
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.General_tab);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Camera_Check_component";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visual";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Camera_Check_component_FormClosing);
             this.Load += new System.EventHandler(this.Camera_Check_component_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1401,12 +1409,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_active6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.groupBox3.ResumeLayout(false);

@@ -32,14 +32,14 @@
   <new_Day>20</new_Day>
   <new_Month>2</new_Month>
   <new_Year>2021</new_Year>
-  <pixel_cam1>5</pixel_cam1>
+  <pixel_cam1>-1</pixel_cam1>
   <pixel_cam2>-1</pixel_cam2>
   <pixel_cam3>-1</pixel_cam3>
   <pixel_cam4>-1</pixel_cam4>
   <pixel_cam5>-1</pixel_cam5>
   <pixel_cam6>-1</pixel_cam6>
   <pixel_cam7>0</pixel_cam7>
-  <SQL_server>CALIS_YII\WINCC</SQL_server>
+  <SQL_server>DESKTOP-CDO0SQ2\SQLEXPRESS</SQL_server>
   <Database>ComponentState</Database>
   <inf_process>2/20/2021 12:44:02 PM</inf_process>
 </System_config>
