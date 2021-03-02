@@ -22,10 +22,11 @@ namespace Camera_Check_Component
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool suc = false;
             string mesage = "Do you want to sign up this account";
             string cap = "SIGN UP";
             var result = MessageBox.Show(mesage, cap, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.OK&&(textBox2.Text==textBox3.Text)) 
+            if(result == DialogResult.Yes && textBox2.Text==textBox3.Text) 
             {
                 string sql = "INSERT INTO tb_user_ID (user,pass) VALUES (N'" + textBox1.Text + "','" + textBox2.Text + "')";
                 Boolean sign_up = sQL_Action.excute_data(sql);
@@ -41,28 +42,63 @@ namespace Camera_Check_Component
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
                     string sql2 = "INSERT INTO tbl_per_rel (ID_user_rel,ID_per_rel) VALUES (N'" + ID_user + "','2')";
                     Boolean sign_up1 = sQL_Action.excute_data(sql2);
+                    if (sign_up1) 
+                    {
+                        MessageBox.Show("Create account sucessfully");
+                    }
+                    else 
+                    {
+                        suc = true;
+                    }
+                       
                 }
                 if (comboBox1.SelectedIndex == 1)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
                     string sql2 = "INSERT INTO tbl_per_rel (ID_user_rel,ID_per_rel) VALUES (N'" + ID_user + "','4')";
                     Boolean sign_up2 = sQL_Action.excute_data(sql2);
+                    if (sign_up2)
+                    {
+                        MessageBox.Show("Create account sucessfully");
+                    }
+                    else
+                    {
+                        suc = true;
+                    }
                 }
                 if (comboBox1.SelectedIndex == 2)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
-                    string sql2 = "INSERT INTO tbl_per_rel (ID_user_rel,ID_per_rel) VALUES (N'" + ID_user + "','1')";
+                    string sql2 = "INSERT INTO tbl_per_rel (ID_user_rel,ID_per_rel) VALUES (N'" + ID_user + "','3')";
                     Boolean sign_up3 = sQL_Action.excute_data(sql2);
+                    if (sign_up3)
+                    {
+                        MessageBox.Show("Create account sucessfully");
+                    }
+                    else
+                    {
+                        suc = true;
+                    }
                 }
                 if (comboBox1.SelectedIndex == 3)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
                     string sql2 = "INSERT INTO tbl_per_rel (ID_user_rel,ID_per_rel) VALUES (N'" + ID_user + "','1')";
                     Boolean sign_up4 = sQL_Action.excute_data(sql2);
+                    if (sign_up4)
+                    {
+                        MessageBox.Show("Create account sucessfully");
+                    }
+                    else
+                    {
+                        suc = true;
+                    }
                 }
+                
             }
-            else 
+            else if(suc) 
             {
+                suc = false;
                 MessageBox.Show("Password incorrect");               
             }
            
