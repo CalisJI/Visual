@@ -127,6 +127,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -138,7 +139,6 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -174,11 +174,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.General_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -248,7 +248,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1896, 974);
+            this.tabPage4.Size = new System.Drawing.Size(3816, 974);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manual";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -269,7 +269,7 @@
             this.tabPage3.Controls.Add(this.login_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1896, 974);
+            this.tabPage3.Size = new System.Drawing.Size(3816, 974);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Configuration";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -459,7 +459,6 @@
             this.Hname6.Size = new System.Drawing.Size(10, 13);
             this.Hname6.TabIndex = 23;
             this.Hname6.Text = ":";
-            this.Hname6.Click += new System.EventHandler(this.Hname6_Click);
             // 
             // capture6
             // 
@@ -471,7 +470,6 @@
             this.capture6.Size = new System.Drawing.Size(50, 13);
             this.capture6.TabIndex = 23;
             this.capture6.Text = "Capture6";
-            this.capture6.Click += new System.EventHandler(this.capture6_Click);
             // 
             // pictureBox3
             // 
@@ -493,7 +491,6 @@
             this.Hname5.Size = new System.Drawing.Size(10, 13);
             this.Hname5.TabIndex = 22;
             this.Hname5.Text = ":";
-            this.Hname5.Click += new System.EventHandler(this.Hname5_Click);
             // 
             // capture5
             // 
@@ -505,7 +502,6 @@
             this.capture5.Size = new System.Drawing.Size(50, 13);
             this.capture5.TabIndex = 22;
             this.capture5.Text = "Capture5";
-            this.capture5.Click += new System.EventHandler(this.capture5_Click);
             // 
             // pictureBox4
             // 
@@ -516,7 +512,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(550, 450);
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // Hname3
             // 
@@ -545,7 +540,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(550, 450);
             this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -556,7 +550,6 @@
             this.pictureBox6.Size = new System.Drawing.Size(550, 450);
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // Hname1
             // 
@@ -604,7 +597,6 @@
             this.Hname4.Size = new System.Drawing.Size(10, 13);
             this.Hname4.TabIndex = 21;
             this.Hname4.Text = ":";
-            this.Hname4.Click += new System.EventHandler(this.Hname4_Click);
             // 
             // capture4
             // 
@@ -616,7 +608,6 @@
             this.capture4.Size = new System.Drawing.Size(50, 13);
             this.capture4.TabIndex = 21;
             this.capture4.Text = "Capture4";
-            this.capture4.Click += new System.EventHandler(this.capture4_Click);
             // 
             // pictureBox2
             // 
@@ -818,7 +809,6 @@
             this.hname11.Size = new System.Drawing.Size(10, 13);
             this.hname11.TabIndex = 15;
             this.hname11.Text = ":";
-            this.hname11.Click += new System.EventHandler(this.hname11_Click);
             // 
             // pictureBox8
             // 
@@ -829,7 +819,6 @@
             this.pictureBox8.Size = new System.Drawing.Size(550, 450);
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // hname14
             // 
@@ -1222,6 +1211,19 @@
             this.panel1.Size = new System.Drawing.Size(34, 32);
             this.panel1.TabIndex = 37;
             // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.InitialImage")));
+            this.pictureBox14.Location = new System.Drawing.Point(1147, 326);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(600, 600);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 36;
+            this.pictureBox14.TabStop = false;
+            // 
             // pictureBox13
             // 
             this.pictureBox13.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1234,7 +1236,6 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 32;
             this.pictureBox13.TabStop = false;
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // groupBox3
             // 
@@ -1360,19 +1361,6 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.InitialImage")));
-            this.pictureBox14.Location = new System.Drawing.Point(1147, 326);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(600, 600);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 36;
-            this.pictureBox14.TabStop = false;
-            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1428,13 +1416,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.General_tab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

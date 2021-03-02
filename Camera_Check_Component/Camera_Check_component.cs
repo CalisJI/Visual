@@ -2090,64 +2090,6 @@ namespace Camera_Check_Component
             }
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Hname4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void capture5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Hname5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void capture6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Hname6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void capture4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hname11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
