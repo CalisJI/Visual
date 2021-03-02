@@ -139,6 +139,7 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
+            this.sign_up = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -265,6 +266,7 @@
             this.tabPage3.Controls.Add(this.edit_btn);
             this.tabPage3.Controls.Add(this.Create_btn);
             this.tabPage3.Controls.Add(this.down_btn);
+            this.tabPage3.Controls.Add(this.sign_up);
             this.tabPage3.Controls.Add(this.Logout_btn);
             this.tabPage3.Controls.Add(this.login_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -1361,6 +1363,17 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
+            // sign_up
+            // 
+            this.sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sign_up.Location = new System.Drawing.Point(271, 169);
+            this.sign_up.Name = "sign_up";
+            this.sign_up.Size = new System.Drawing.Size(135, 47);
+            this.sign_up.TabIndex = 0;
+            this.sign_up.Text = "SIGN UP";
+            this.sign_up.UseVisualStyleBackColor = true;
+            this.sign_up.Click += new System.EventHandler(this.sign_up_Click);
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1539,6 +1552,7 @@
         private System.Windows.Forms.TextBox TB_testpart;
         private System.Windows.Forms.TextBox TB_LTdate;
         private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Button sign_up;
     }
 }
 

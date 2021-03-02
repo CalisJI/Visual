@@ -742,36 +742,36 @@ namespace Camera_Check_Component
                 status("[START Camera 2 is not availble]");
                 return;
             }
-            //if (Cam3_Device == null) 
-            //{
-            //    MessageBox.Show("Camera 3 is not available, please check connection setting of device and preview");
-            //    status("[START Camera 3 is not availble]");
-            //    return;
-            //}
-            //if (Cam4_Device == null)
-            //{
-            //    MessageBox.Show("Camera 4 is not available, please check connection setting of device and preview");
-            //    status("[START Camera 4 is not availble]");
-            //    return;
-            //}
-            //if (Cam5_Device == null) 
-            //{
-            //    MessageBox.Show("Camera 5 is not available, please check connection setting of device and preview");
-            //    status("[START Camera 5 is not availble]");
-            //    return;
-            //}
-            //if (Cam6_Device == null) 
-            //{
-            //    MessageBox.Show("Camera 6 is not available, please check connection setting of device and preview");
-            //    status("[START Camera 6 is not availble]");
-            //    return;
-            //}
-            //if (Cam7_Device == null && system_config.add_cam == "true")
-            //{
-            //    MessageBox.Show("Camera 7 is not available, please check connection setting of device and preview");
-            //    status("[START Camera 7 is not availble]");
-            //    return;
-            //}
+            if (Cam3_Device == null)
+            {
+                MessageBox.Show("Camera 3 is not available, please check connection setting of device and preview");
+                status("[START Camera 3 is not availble]");
+                return;
+            }
+            if (Cam4_Device == null)
+            {
+                MessageBox.Show("Camera 4 is not available, please check connection setting of device and preview");
+                status("[START Camera 4 is not availble]");
+                return;
+            }
+            if (Cam5_Device == null)
+            {
+                MessageBox.Show("Camera 5 is not available, please check connection setting of device and preview");
+                status("[START Camera 5 is not availble]");
+                return;
+            }
+            if (Cam6_Device == null)
+            {
+                MessageBox.Show("Camera 6 is not available, please check connection setting of device and preview");
+                status("[START Camera 6 is not availble]");
+                return;
+            }
+            if (Cam7_Device == null && system_config.add_cam == "true")
+            {
+                MessageBox.Show("Camera 7 is not available, please check connection setting of device and preview");
+                status("[START Camera 7 is not availble]");
+                return;
+            }
             try
             {
                 if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
@@ -789,7 +789,6 @@ namespace Camera_Check_Component
                 RESET();
                 return;
             }
-
             if (Cam1VIDEO_Device == null || !Cam1VIDEO_Device.IsRunning)
             {
                 Cam1VIDEO_Device = new VideoCaptureDevice(Cam1_Device.MonikerString);
@@ -1303,13 +1302,7 @@ namespace Camera_Check_Component
 
         }
 
-        private void Manual_btn_Click(object sender, EventArgs e)
-        {
-            order_1 = true;
-            //order_2 = true;
-            // allow_load = true;
-
-        }
+       
 
         private void upload_image()
         {
@@ -2088,6 +2081,22 @@ namespace Camera_Check_Component
                 };
                 loginfrm.Show();
             }
-        }   
+        }
+
+        private void sign_up_Click(object sender, EventArgs e)
+        {
+            if (started) 
+            {
+                MessageBox.Show("Please stop the program first");
+                return;
+            }
+            Sign_up sign_form = new Sign_up();
+            sign_form.FormClosed += (object sender2, FormClosedEventArgs e2) =>
+            {
+                this.Show();
+            };
+            this.Hide();
+            sign_form.Show();
+        }
     }
 }

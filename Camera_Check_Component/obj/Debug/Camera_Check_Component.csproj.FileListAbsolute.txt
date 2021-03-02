@@ -62,3 +62,4 @@ D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Che
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.CopyComplete
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.exe
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.pdb
+D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Sign_up.resources

@@ -148,6 +148,12 @@
     <Compile Include="Program\Program.cs" />
     <Compile Include="Program\Program_Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sign_up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign_up.Designer.cs">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemConfig\SQL_action.cs" />
     <Compile Include="SystemConfig\Parameter_app.cs" />
     <Compile Include="SystemConfig\System_config.cs" />
@@ -178,6 +184,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sign_up.resx">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Camera_Check_Component_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
