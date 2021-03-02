@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <System_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Map_Path_File>F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\IMAGE</Map_Path_File>
+  <Map_Path_File>D:\New folder\Camera_Check_Component\Camera_Check_Component\bin\Debug\IMAGE</Map_Path_File>
   <Output_File>F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Output.txt</Output_File>
   <DefaultComport>COM1</DefaultComport>
   <DefaultCOMBaudrate>9600</DefaultCOMBaudrate>
@@ -21,7 +21,7 @@
   <Location_cam7_folder>0</Location_cam7_folder>
   <Folder_load_check>1</Folder_load_check>
   <Folder_index_tranfer>2</Folder_index_tranfer>
-  <same_folder_1>2</same_folder_1>
+  <same_folder_1>0</same_folder_1>
   <same_folder_2>1</same_folder_2>
   <old_Day1>0</old_Day1>
   <old_Month1>0</old_Month1>
@@ -32,7 +32,7 @@
   <new_Day>20</new_Day>
   <new_Month>2</new_Month>
   <new_Year>2021</new_Year>
-  <pixel_cam1>-1</pixel_cam1>
+  <pixel_cam1>9</pixel_cam1>
   <pixel_cam2>-1</pixel_cam2>
   <pixel_cam3>-1</pixel_cam3>
   <pixel_cam4>-1</pixel_cam4>
