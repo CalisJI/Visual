@@ -2088,8 +2088,6 @@ namespace Camera_Check_Component
                 };
                 loginfrm.Show();
             }
-        }
-
-        
+        }   
     }
 }
