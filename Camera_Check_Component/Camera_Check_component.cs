@@ -1370,7 +1370,6 @@ namespace Camera_Check_Component
                     i++;
                 }
             }
-
             pictureBox7.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[0] + "");
             hname11.Text = getpath[0];
             pictureBox8.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[1] + "");
