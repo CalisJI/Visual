@@ -1332,17 +1332,17 @@ namespace Camera_Check_Component
 
             pictureBox1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[0] + "");
             Hname1.Text = getpath[0];
-            //pictureBox2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[1] + "");
-            // Hname2.Text = getpath[1];
-            //pictureBox3.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[2] + "");
-            // Hname3.Text = getpath[2];
-            //pictureBox4.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[3] + "");
-            // Hname4.Text = getpath[3];
-            //pictureBox5.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[4] + "");
-            // Hname5.Text = getpath[4];
-            //pictureBox6.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
-            // Hname6.Text = getpath[5];
-            //folderIndex++;
+            pictureBox2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[1] + "");
+            Hname2.Text = getpath[1];
+            pictureBox3.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[2] + "");
+            Hname3.Text = getpath[2];
+            pictureBox4.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[3] + "");
+            Hname4.Text = getpath[3];
+            pictureBox5.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[4] + "");
+            Hname5.Text = getpath[4];
+            pictureBox6.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
+            Hname6.Text = getpath[5];
+            folderIndex++;
         }
 
         private void update_image2()
@@ -1373,17 +1373,17 @@ namespace Camera_Check_Component
 
             pictureBox7.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[0] + "");
             hname11.Text = getpath[0];
-            //pictureBox8.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[1] + "");
-            // hname12.Text = getpath[1];
-            //pictureBox9.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[2] + "");
-            // hname13.Text = getpath[2];
-            //pictureBox10.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[3] + "");
-            // hname14.Text = getpath[3];
-            //pictureBox11.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[4] + "");
-            // hname15.Text = getpath[4];
-            //pictureBox12.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
-            // hname16.Text = getpath[5];
-            //folderIndex++;
+            pictureBox8.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[1] + "");
+            hname12.Text = getpath[1];
+            pictureBox9.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[2] + "");
+            hname13.Text = getpath[2];
+            pictureBox10.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[3] + "");
+            hname14.Text = getpath[3];
+            pictureBox11.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[4] + "");
+            hname15.Text = getpath[4];
+            pictureBox12.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[5] + "");
+            hname16.Text = getpath[5];
+            folderIndex++;
         }
         private void Tranfer(string OPTION)
         {

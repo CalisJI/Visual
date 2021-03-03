@@ -28,7 +28,7 @@ namespace Camera_Check_Component
             var result = MessageBox.Show(mesage, cap, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes && textBox2.Text==textBox3.Text) 
             {
-                string sql = "INSERT INTO tb_user_ID (user,pass) VALUES (N'" + textBox1.Text + "','" + textBox2.Text + "')";
+                string sql = "INSERT INTO tb_user_ID (user,pass) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "')";
                 Boolean sign_up = sQL_Action.excute_data(sql);
                 byte[] temp = ASCIIEncoding.ASCII.GetBytes(textBox2.Text);
                 byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
