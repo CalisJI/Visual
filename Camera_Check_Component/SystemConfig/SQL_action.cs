@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Data.SqlTypes;
+using System.Configuration;
 
 
 namespace Camera_Check_Component
@@ -48,11 +49,19 @@ namespace Camera_Check_Component
         }
         private void connec_SQL() 
         {
-            conn = new SqlConnection(GetSource());
-            if(conn.State == ConnectionState.Closed) 
+            try
             {
-                conn.Open();
+                conn = new SqlConnection(GetSource());
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
             }
+            catch (Exception)
+            {
+              
+            }
+            
         }
         private void close_SQL() 
         {
@@ -60,6 +69,14 @@ namespace Camera_Check_Component
             {
                 conn.Close();
             }
+        }
+        public void OP() 
+        {
+            connec_SQL();
+        }
+        public void CL()
+        {
+            close_SQL();
         }
         public Boolean excute_data(string cmd)
         {
@@ -71,11 +88,11 @@ namespace Camera_Check_Component
                 cmds.ExecuteNonQuery();
                 check = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 check = false;
+                string i = e.ToString();
             }
-
             close_SQL();
             return check;
         }

@@ -288,7 +288,7 @@ namespace Camera_Check_Component
             {
 
                 DateTime date = DateTime.Now;
-             
+                date.ToString("HH:MM:ss");
                 if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
                 {
                     count_7 = 0;
@@ -302,7 +302,7 @@ namespace Camera_Check_Component
                 set_up();
                 MethodInvoker inv = delegate
                 {
-                    string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam7_folder.ToString() + "-7" + ".jpeg";
+                    string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam7_folder.ToString() + "-7" + ".jpeg";
 
                     //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                     string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -344,6 +344,7 @@ namespace Camera_Check_Component
           
             Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam6_folder.ToString());
             DateTime date = DateTime.Now;
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_6 = 0;
@@ -360,7 +361,7 @@ namespace Camera_Check_Component
             set_up();
             MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam6_folder.ToString() + "-6" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam6_folder.ToString() + "-6" + ".jpeg";
 
                 //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -402,6 +403,7 @@ namespace Camera_Check_Component
           
             Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam5_folder.ToString());
             DateTime date = DateTime.Now;
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_5 = 0;
@@ -418,7 +420,7 @@ namespace Camera_Check_Component
             set_up();
             MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam5_folder.ToString() + "-5" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam5_folder.ToString() + "-5" + ".jpeg";
 
                 //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -460,10 +462,11 @@ namespace Camera_Check_Component
             Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam4_folder.ToString());
             if (tb_PN.Text == "" || TB_idworker.Text == "")
             {
-                MessageBox.Show("DO NOT HAVE ID's Worker or PN-Selector");
+                MessageBox.Show("DO NOT HAVE ID's Operator or PN-Selector");
                 return;
             }
             DateTime date = DateTime.Now;
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_4 = 0;
@@ -479,7 +482,7 @@ namespace Camera_Check_Component
             set_up();
             MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-4" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-4" + ".jpeg";
 
                 //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -523,7 +526,7 @@ namespace Camera_Check_Component
                 return;
             }
             DateTime date = DateTime.Now;
-
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_1 = 0;
@@ -538,7 +541,7 @@ namespace Camera_Check_Component
             set_up();
             MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-3" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-3" + ".jpeg";
 
                 //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -578,6 +581,7 @@ namespace Camera_Check_Component
             }
             panel2.BackColor = Color.GreenYellow;
             DateTime date = DateTime.Now;
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_2 = 0;
@@ -585,7 +589,6 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("new_Month", date.Month.ToString());
                 Program_Configuration.UpdateSystem_Config("new_Year", date.Year.ToString());
                 Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
-
             }
             system_config = Program_Configuration.GetSystem_Config();
             Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
@@ -594,7 +597,7 @@ namespace Camera_Check_Component
             set_up();
             MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-2" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-2" + ".jpeg";
 
                 //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
@@ -611,8 +614,6 @@ namespace Camera_Check_Component
                 }
                 //bmp1.Dispose();
                 Live_Cam_2.Dispose();
-
-
                 count_2++;
                 Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
                 system_config = Program_Configuration.GetSystem_Config();
@@ -621,24 +622,20 @@ namespace Camera_Check_Component
 
             }; this.Invoke(inv);
         }
-
         void backgroundWorker_1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             status(" [SYSTEM]" + " CAM 1 Save image" + " " + system_config.Location_cam1_folder.ToString());
             panel1.BackColor = Color.Black;
-        }
-      
+        }  
         void backgroundWorker_1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (backgroundWorker_1.CancellationPending)
             {
                 e.Cancel = true;
-
-            }
-         
+            }       
             panel1.BackColor = Color.GreenYellow;
             DateTime date = DateTime.Now;
-
+            date.ToString("HH:MM:ss");
             if (system_config.new_Day != date.Day || system_config.new_Month != date.Month || system_config.new_Year != date.Year)
             {
                 count_1 = 0;
@@ -656,7 +653,7 @@ namespace Camera_Check_Component
             set_up();
            MethodInvoker inv = delegate
             {
-                string str = tb_PN.Text + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-1" + ".jpeg";
+                string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + system_config.Location_cam1_folder.ToString() + "-1" + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
                 using (MemoryStream memory = new MemoryStream())
                 {
@@ -701,11 +698,16 @@ namespace Camera_Check_Component
         {
             Star_program();
         }
+        string ID_Operator1 = "";
+        string ID_Operator2 = "";
+        string PN_Selector = "";
         private void Star_program()
         {
-
+            ID_Operator1 = TB_idworker.Text;
+            ID_Operator2 = TB_wker2.Text;
+            PN_Selector = tb_PN.Text;
             system_config = Program_Configuration.GetSystem_Config();
-            if (tb_PN.Text == "" || TB_idworker.Text == "")
+            if (tb_PN.Text == "" || TB_idworker.Text == "" || TB_wker2.Text == "")
             {
                 MessageBox.Show("DO NOT HAVE PN Selector or ID Worker");
                 return;
@@ -795,8 +797,7 @@ namespace Camera_Check_Component
                 Cam1VIDEO_Device.VideoResolution = Cam1VIDEO_Device.VideoCapabilities[system_config.pixel_cam1];
                 Cam1VIDEO_Device.NewFrame += Cam1VIDEO_Device_NewFrame;
                 Cam1VIDEO_Device.Start();
-                PB_active1.Show();
-               
+                PB_active1.Show();              
             }
             //if (Cam2VIDEO_Device == null || !Cam2VIDEO_Device.IsRunning)
             //{
@@ -878,8 +879,39 @@ namespace Camera_Check_Component
 
         private void serialPort_communicate_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            string shot1 = "";
+            string shot2 = "";
+            string shot3 = "";
+            string shot4 = "";
+            string shot5 = "";
+            string shot6 = "";
+            string shot7 = "";
 
             string cap_order = serialPort_communicate.ReadExisting();
+            string[] shot = new string[] { };
+            if (cap_order.Contains(".")) 
+            {
+                shot = cap_order.Split('.');
+                shot1 = shot[0];
+                shot2 = shot[1];
+                shot3 = shot[2];
+                shot4 = shot[3];
+                shot5 = shot[4];
+                shot6 = shot[5];
+                shot7 = shot[6];
+
+                //if (cap_order == "1" || cap_order == "2" || cap_order == "3" || cap_order == "4" || cap_order == "5" || cap_order == "6" || cap_order == "7")
+                //{
+                //    Take_Photo(cap_order);
+                //}
+                if (shot1 == "1") Take_Photo("1");
+                if (shot2 == "1") Take_Photo("2");
+                if (shot3 == "1") Take_Photo("3");
+                if (shot4 == "1") Take_Photo("4");
+                if (shot5 == "1") Take_Photo("5");
+                if (shot6 == "1") Take_Photo("6");
+                if (shot7 == "1") Take_Photo("7");
+            }
             if (cap_order == "Z11" && allow_check)
             {
                 zoom1(0);
@@ -973,10 +1005,7 @@ namespace Camera_Check_Component
             {
                 Take_Photo(cap_order);
             }
-            if (cap_order == "1" || cap_order == "2" || cap_order == "3" || cap_order == "4" || cap_order == "5" || cap_order == "6" || cap_order == "7")
-            {
-                Take_Photo(cap_order);
-            }
+           
             // serialPort_communicate.Dispose();
         }
 
@@ -1042,7 +1071,7 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
-        private void Cam7VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        void Cam7VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Live_Cam_7 = (Bitmap)eventArgs.Frame.Clone();
 
@@ -1235,7 +1264,6 @@ namespace Camera_Check_Component
                 PB_active1.Hide();
                 // PB_active1.Dispose();
             }
-
             if (Cam2VIDEO_Device != null && Cam2VIDEO_Device.IsRunning)
             {
 
@@ -1247,7 +1275,6 @@ namespace Camera_Check_Component
                 Cam3VIDEO_Device.Stop();
                 PB_active3.Hide();
             }
-
             if (Cam4VIDEO_Device != null && Cam4VIDEO_Device.IsRunning)
             {
                 Cam4VIDEO_Device.Stop();
@@ -1267,10 +1294,7 @@ namespace Camera_Check_Component
             {
                 if (Cam7VIDEO_Device != null && Cam7VIDEO_Device.IsRunning) Cam7VIDEO_Device.Stop();
             }
-
-
         }
-
         private void Camera_Check_component_FormClosing(object sender, FormClosingEventArgs e)
         {
             RESET();
@@ -1301,9 +1325,6 @@ namespace Camera_Check_Component
             }
 
         }
-
-       
-
         private void upload_image()
         {
 
@@ -1315,18 +1336,27 @@ namespace Camera_Check_Component
             {
                 MessageBox.Show("Folder do not exists");
                 return;
-
             }
-            FileInfo[] fileInfor = new FileInfo[6];
+            //FileInfo[] fileInfor = new FileInfo[6];
+            FileInfo[] fileInfor = d.GetFiles("*.jpeg");
             string[] getpath = new string[6];
             int i = 0;
-            for (int j = 1; j < 8; j++)
+            //for (int j = 1; j < 8; j++)
+            //{
+            //    fileInfor = d.GetFiles(PN_Selector + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_index_tranfer.ToString() + "-" + j.ToString() + ".jpeg");
+            //    foreach (FileInfo file in fileInfor)
+            //    {
+            //        getpath[i] = file.Name;
+            //        i++;
+            //    }
+            //}
+            foreach(FileInfo file in fileInfor) 
             {
-                fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_index_tranfer.ToString() + "-" + j.ToString() + ".jpeg");
-                foreach (FileInfo file in fileInfor)
+                getpath[i] = file.Name;
+                i++;
+                if (i > 5) 
                 {
-                    getpath[i] = file.Name;
-                    i++;
+                    break;
                 }
             }
 
@@ -1357,17 +1387,27 @@ namespace Camera_Check_Component
                 MessageBox.Show("Folder do not exists ");
                 return;
             }
-            FileInfo[] fileInfor = new FileInfo[6];
+            //FileInfo[] fileInfor = new FileInfo[6];
+            FileInfo[] fileInfor = d.GetFiles("*.jpeg");
             string[] getpath = new string[6];
             int i = 0;
-            for (int j = 1; j < 8; j++)
+            //for (int j = 1; j < 8; j++)
+            //{
+
+            //    fileInfor = d.GetFiles(PN_Selector + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
+            //    foreach (FileInfo file in fileInfor)
+            //    {
+            //        getpath[i] = file.Name;
+            //        i++;
+            //    }
+            //}
+            foreach (FileInfo file in fileInfor)
             {
-                
-                fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
-                foreach (FileInfo file in fileInfor)
+                getpath[i] = file.Name;
+                i++;
+                if (i > 5)
                 {
-                    getpath[i] = file.Name;
-                    i++;
+                    break;
                 }
             }
             pictureBox7.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[0] + "");
@@ -1404,7 +1444,7 @@ namespace Camera_Check_Component
                 FileInfo[] fileInfor = new FileInfo[7];
                 for (int j = 1; j < 8; j++)
                 {
-                    fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_index_tranfer.ToString() + "-" + j.ToString() + ".jpeg");
+                    fileInfor = d.GetFiles(PN_Selector + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_index_tranfer.ToString() + "-" + j.ToString() + ".jpeg");
                     foreach (FileInfo file in fileInfor)
                     {
                         getpath[i] = file.Name;
@@ -1433,7 +1473,7 @@ namespace Camera_Check_Component
                     string[] insert1 = new string[] { };
                     insert = getpath[0].Split('-');
                     insert1 = insert[1].Split('.');
-                    Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status) VALUES (N'" + tb_PN.Text + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','OK')");
+                    Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status) VALUES (N'" + PN_Selector + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','OK')");
                     var item = new ListViewItem(new[] { insert[0] + "-" + insert[2], "OK", "" });
                     listView1.Items.Add(item);
                 }
@@ -1492,7 +1532,7 @@ namespace Camera_Check_Component
                     string[] insert1 = new string[] { };
                     insert = getpath[0].Split('-');
                     insert1 = insert[1].Split('.');
-                    Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status,ErrorType) VALUES (N'" + tb_PN.Text + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','ERROR','" + error_Type(loi_tam1) + "')");
+                    Boolean check = sql_action.excute_data("INSERT INTO component_status (Serial,Name,Date,Status,ErrorType) VALUES (N'" + PN_Selector + "','" + TB_idworker.Text + insert[0] + "-" + insert[2] + "','" + insert1[0] + "-" + insert1[1] + "-" + insert1[2] + "','ERROR','" + error_Type(loi_tam1) + "')");
                     var item = new ListViewItem(new[] { insert[0] + "-" + insert[2], "Error", error_Type(loi_tam1) });
                     listView1.Items.Add(item);
                 }
@@ -1555,7 +1595,7 @@ namespace Camera_Check_Component
                 int i = 0;
                 for (int j = 1; j < 8; j++)
                 {
-                    fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
+                    fileInfor = d.GetFiles(PN_Selector + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
                     foreach (FileInfo file in fileInfor)
                     {
                         getpath[i] = file.Name;
@@ -1616,7 +1656,7 @@ namespace Camera_Check_Component
                 int i = 0;
                 for (int j = 1; j < 8; j++)
                 {
-                    fileInfor = d.GetFiles(tb_PN.Text + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
+                    fileInfor = d.GetFiles(PN_Selector + "-" + system_config.new_Day.ToString() + "." + system_config.new_Month.ToString() + "." + system_config.new_Year.ToString() + "-" + system_config.Folder_load_check.ToString() + "-" + j.ToString() + ".jpeg");
                     foreach (FileInfo file in fileInfor)
                     {
                         getpath[i] = file.Name;

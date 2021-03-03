@@ -47,9 +47,9 @@
             this.tb_PN = new System.Windows.Forms.ComboBox();
             this.delete_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
-            this.edit_btn = new System.Windows.Forms.Button();
             this.Create_btn = new System.Windows.Forms.Button();
             this.down_btn = new System.Windows.Forms.Button();
+            this.sign_up = new System.Windows.Forms.Button();
             this.Logout_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -139,7 +139,8 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
-            this.sign_up = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TB_wker2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -257,13 +258,14 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.TB_wker2);
+            this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.TB_idworker);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.tb_PN);
             this.tabPage3.Controls.Add(this.delete_btn);
             this.tabPage3.Controls.Add(this.view_btn);
-            this.tabPage3.Controls.Add(this.edit_btn);
             this.tabPage3.Controls.Add(this.Create_btn);
             this.tabPage3.Controls.Add(this.down_btn);
             this.tabPage3.Controls.Add(this.sign_up);
@@ -279,14 +281,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(699, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(503, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(826, 805);
+            this.dataGridView1.Size = new System.Drawing.Size(1136, 946);
             this.dataGridView1.TabIndex = 4;
             // 
             // TB_idworker
             // 
-            this.TB_idworker.Location = new System.Drawing.Point(110, 333);
+            this.TB_idworker.Location = new System.Drawing.Point(109, 320);
             this.TB_idworker.Name = "TB_idworker";
             this.TB_idworker.Size = new System.Drawing.Size(135, 20);
             this.TB_idworker.TabIndex = 3;
@@ -298,9 +300,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(106, 301);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 16);
+            this.label8.Size = new System.Drawing.Size(100, 16);
             this.label8.TabIndex = 2;
-            this.label8.Text = "ID Worker";
+            this.label8.Text = "ID Operator 1";
             // 
             // label10
             // 
@@ -325,7 +327,7 @@
             // delete_btn
             // 
             this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.Location = new System.Drawing.Point(110, 495);
+            this.delete_btn.Location = new System.Drawing.Point(109, 494);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(135, 47);
             this.delete_btn.TabIndex = 0;
@@ -335,22 +337,12 @@
             // view_btn
             // 
             this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_btn.Location = new System.Drawing.Point(110, 432);
+            this.view_btn.Location = new System.Drawing.Point(110, 424);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(135, 47);
             this.view_btn.TabIndex = 0;
             this.view_btn.Text = "VIEW";
             this.view_btn.UseVisualStyleBackColor = true;
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(110, 369);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(135, 47);
-            this.edit_btn.TabIndex = 0;
-            this.edit_btn.Text = "EDIT";
-            this.edit_btn.UseVisualStyleBackColor = true;
             // 
             // Create_btn
             // 
@@ -372,6 +364,17 @@
             this.down_btn.Text = "DOWNLOAD";
             this.down_btn.UseVisualStyleBackColor = true;
             this.down_btn.Click += new System.EventHandler(this.Logout_btn_Click);
+            // 
+            // sign_up
+            // 
+            this.sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sign_up.Location = new System.Drawing.Point(271, 169);
+            this.sign_up.Name = "sign_up";
+            this.sign_up.Size = new System.Drawing.Size(135, 47);
+            this.sign_up.TabIndex = 0;
+            this.sign_up.Text = "SIGN UP";
+            this.sign_up.UseVisualStyleBackColor = true;
+            this.sign_up.Click += new System.EventHandler(this.sign_up_Click);
             // 
             // Logout_btn
             // 
@@ -456,7 +459,7 @@
             this.Hname6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname6.AutoSize = true;
-            this.Hname6.Location = new System.Drawing.Point(1289, 490);
+            this.Hname6.Location = new System.Drawing.Point(61, 491);
             this.Hname6.Name = "Hname6";
             this.Hname6.Size = new System.Drawing.Size(10, 13);
             this.Hname6.TabIndex = 23;
@@ -467,7 +470,7 @@
             this.capture6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture6.AutoSize = true;
-            this.capture6.Location = new System.Drawing.Point(1233, 490);
+            this.capture6.Location = new System.Drawing.Point(5, 491);
             this.capture6.Name = "capture6";
             this.capture6.Size = new System.Drawing.Size(50, 13);
             this.capture6.TabIndex = 23;
@@ -488,7 +491,7 @@
             this.Hname5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname5.AutoSize = true;
-            this.Hname5.Location = new System.Drawing.Point(681, 497);
+            this.Hname5.Location = new System.Drawing.Point(681, 491);
             this.Hname5.Name = "Hname5";
             this.Hname5.Size = new System.Drawing.Size(10, 13);
             this.Hname5.TabIndex = 22;
@@ -499,7 +502,7 @@
             this.capture5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture5.AutoSize = true;
-            this.capture5.Location = new System.Drawing.Point(625, 497);
+            this.capture5.Location = new System.Drawing.Point(625, 491);
             this.capture5.Name = "capture5";
             this.capture5.Size = new System.Drawing.Size(50, 13);
             this.capture5.TabIndex = 22;
@@ -508,7 +511,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox4.Location = new System.Drawing.Point(8, 522);
+            this.pictureBox4.Location = new System.Drawing.Point(1236, 513);
             this.pictureBox4.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(550, 450);
@@ -536,7 +539,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox5.Location = new System.Drawing.Point(628, 522);
+            this.pictureBox5.Location = new System.Drawing.Point(628, 513);
             this.pictureBox5.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(550, 450);
@@ -546,7 +549,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox6.Location = new System.Drawing.Point(1236, 522);
+            this.pictureBox6.Location = new System.Drawing.Point(8, 513);
             this.pictureBox6.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(550, 450);
@@ -574,7 +577,7 @@
             // Hname2
             // 
             this.Hname2.AutoSize = true;
-            this.Hname2.Location = new System.Drawing.Point(742, 16);
+            this.Hname2.Location = new System.Drawing.Point(681, 17);
             this.Hname2.Name = "Hname2";
             this.Hname2.Size = new System.Drawing.Size(10, 13);
             this.Hname2.TabIndex = 17;
@@ -583,7 +586,7 @@
             // capture2
             // 
             this.capture2.AutoSize = true;
-            this.capture2.Location = new System.Drawing.Point(686, 15);
+            this.capture2.Location = new System.Drawing.Point(625, 16);
             this.capture2.Name = "capture2";
             this.capture2.Size = new System.Drawing.Size(50, 13);
             this.capture2.TabIndex = 17;
@@ -594,7 +597,7 @@
             this.Hname4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname4.AutoSize = true;
-            this.Hname4.Location = new System.Drawing.Point(61, 497);
+            this.Hname4.Location = new System.Drawing.Point(1289, 491);
             this.Hname4.Name = "Hname4";
             this.Hname4.Size = new System.Drawing.Size(10, 13);
             this.Hname4.TabIndex = 21;
@@ -605,7 +608,7 @@
             this.capture4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture4.AutoSize = true;
-            this.capture4.Location = new System.Drawing.Point(5, 497);
+            this.capture4.Location = new System.Drawing.Point(1233, 491);
             this.capture4.Name = "capture4";
             this.capture4.Size = new System.Drawing.Size(50, 13);
             this.capture4.TabIndex = 21;
@@ -676,7 +679,7 @@
             this.hname16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hname16.AutoSize = true;
-            this.hname16.Location = new System.Drawing.Point(1289, 497);
+            this.hname16.Location = new System.Drawing.Point(59, 491);
             this.hname16.Name = "hname16";
             this.hname16.Size = new System.Drawing.Size(10, 13);
             this.hname16.TabIndex = 23;
@@ -697,7 +700,7 @@
             this.capture12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture12.AutoSize = true;
-            this.capture12.Location = new System.Drawing.Point(1233, 497);
+            this.capture12.Location = new System.Drawing.Point(3, 491);
             this.capture12.Name = "capture12";
             this.capture12.Size = new System.Drawing.Size(50, 13);
             this.capture12.TabIndex = 23;
@@ -718,7 +721,7 @@
             this.hname15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hname15.AutoSize = true;
-            this.hname15.Location = new System.Drawing.Point(681, 497);
+            this.hname15.Location = new System.Drawing.Point(681, 491);
             this.hname15.Name = "hname15";
             this.hname15.Size = new System.Drawing.Size(10, 13);
             this.hname15.TabIndex = 22;
@@ -729,7 +732,7 @@
             this.capture11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture11.AutoSize = true;
-            this.capture11.Location = new System.Drawing.Point(625, 497);
+            this.capture11.Location = new System.Drawing.Point(625, 491);
             this.capture11.Name = "capture11";
             this.capture11.Size = new System.Drawing.Size(50, 13);
             this.capture11.TabIndex = 22;
@@ -738,7 +741,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox10.Location = new System.Drawing.Point(8, 522);
+            this.pictureBox10.Location = new System.Drawing.Point(1236, 513);
             this.pictureBox10.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(550, 450);
@@ -748,7 +751,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox11.Location = new System.Drawing.Point(628, 522);
+            this.pictureBox11.Location = new System.Drawing.Point(628, 513);
             this.pictureBox11.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(550, 450);
@@ -767,7 +770,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox12.Location = new System.Drawing.Point(1236, 522);
+            this.pictureBox12.Location = new System.Drawing.Point(8, 513);
             this.pictureBox12.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(550, 450);
@@ -797,7 +800,7 @@
             this.capture10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture10.AutoSize = true;
-            this.capture10.Location = new System.Drawing.Point(5, 496);
+            this.capture10.Location = new System.Drawing.Point(1233, 491);
             this.capture10.Name = "capture10";
             this.capture10.Size = new System.Drawing.Size(50, 13);
             this.capture10.TabIndex = 21;
@@ -825,7 +828,7 @@
             // hname14
             // 
             this.hname14.AutoSize = true;
-            this.hname14.Location = new System.Drawing.Point(61, 496);
+            this.hname14.Location = new System.Drawing.Point(1289, 491);
             this.hname14.Name = "hname14";
             this.hname14.Size = new System.Drawing.Size(10, 13);
             this.hname14.TabIndex = 17;
@@ -883,9 +886,9 @@
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.LB_oee);
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Location = new System.Drawing.Point(499, 114);
+            this.panel8.Location = new System.Drawing.Point(497, 114);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(402, 214);
+            this.panel8.Size = new System.Drawing.Size(404, 214);
             this.panel8.TabIndex = 50;
             // 
             // TB_testpart
@@ -906,7 +909,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(128, 152);
+            this.label11.Location = new System.Drawing.Point(145, 152);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 15);
             this.label11.TabIndex = 36;
@@ -915,9 +918,9 @@
             // progressBar1
             // 
             this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.progressBar1.Location = new System.Drawing.Point(58, 170);
+            this.progressBar1.Location = new System.Drawing.Point(50, 170);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(177, 23);
+            this.progressBar1.Size = new System.Drawing.Size(224, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 33;
             // 
@@ -925,7 +928,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 14);
+            this.label12.Location = new System.Drawing.Point(2, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(181, 13);
             this.label12.TabIndex = 36;
@@ -948,7 +951,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 65);
+            this.label9.Location = new System.Drawing.Point(8, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 36;
@@ -1363,16 +1366,23 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
-            // sign_up
+            // label13
             // 
-            this.sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign_up.Location = new System.Drawing.Point(271, 169);
-            this.sign_up.Name = "sign_up";
-            this.sign_up.Size = new System.Drawing.Size(135, 47);
-            this.sign_up.TabIndex = 0;
-            this.sign_up.Text = "SIGN UP";
-            this.sign_up.UseVisualStyleBackColor = true;
-            this.sign_up.Click += new System.EventHandler(this.sign_up_Click);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(107, 355);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 16);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "ID Operator 2";
+            // 
+            // TB_wker2
+            // 
+            this.TB_wker2.Location = new System.Drawing.Point(110, 374);
+            this.TB_wker2.Name = "TB_wker2";
+            this.TB_wker2.Size = new System.Drawing.Size(135, 20);
+            this.TB_wker2.TabIndex = 3;
+            this.TB_wker2.Text = "265614";
             // 
             // Camera_Check_component
             // 
@@ -1500,7 +1510,6 @@
         private System.Windows.Forms.ComboBox tb_PN;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button view_btn;
-        private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button Create_btn;
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Button login_btn;
@@ -1553,6 +1562,8 @@
         private System.Windows.Forms.TextBox TB_LTdate;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.Button sign_up;
+        private System.Windows.Forms.TextBox TB_wker2;
+        private System.Windows.Forms.Label label13;
     }
 }
 

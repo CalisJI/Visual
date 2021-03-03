@@ -63,3 +63,32 @@ D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Che
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.exe
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.pdb
 D:\New folder\Camera_Check_Component\Camera_Check_Component\obj\Debug\Camera_Check_Component.Sign_up.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\Camera_Check_Component.exe.config
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\Camera_Check_Component.exe.manifest
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\Camera_Check_Component.application
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\Camera_Check_Component.exe
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\Camera_Check_Component.pdb
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Controls.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Imaging.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Imaging.Formats.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Math.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Video.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\bin\Debug\AForge.Video.Ximea.xml
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.csprojAssemblyReference.cache
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Camera_setting_Form.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Camera_Check_component.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Cam_Review.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Com_setting.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Login.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Path_File_Component.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Properties.Resources.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.Sign_up.resources
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.GenerateResource.cache
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.CoreCompileInputs.cache
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.exe.manifest
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.application
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.csproj.CopyComplete
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.exe
+C:\Users\quyth\Source\Repos\Visual\Camera_Check_Component\obj\Debug\Camera_Check_Component.pdb

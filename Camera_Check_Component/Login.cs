@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Camera_Check_Component
 {
@@ -43,7 +45,6 @@ namespace Camera_Check_Component
                 if (r["InstanceName"].ToString() != "")
                 {
                     comboBox1.Items.Add(r["ServerName"].ToString() + "\\" + r["InstanceName"].ToString());
-
                 }
                 else
                 {
@@ -52,26 +53,10 @@ namespace Camera_Check_Component
             }
         }
         bool data = false;
-  
-        List<String> databases = new List<String>();
-     
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //    if (comboBox1.SelectedIndex > 0 || comboBox2.SelectedIndex > 0 || System_Config.SQL_server != "" || System_Config.Database != "")
-            //    {
-            //        System_Config = Program_Configuration.GetSystem_Config();
-            //        Program_Configuration.UpdateSystem_Config("SQL_server", comboBox1.Text);
-            //        Program_Configuration.UpdateSystem_Config("Database", comboBox2.Text);
-
-            //        Form mainform = new Camera_Check_component();
-            //        mainform.FormClosed += (object sender1, FormClosedEventArgs e1) => 
-            //        {
-            //            this.Close();
-            //        };
-            //        this.Hide();
-            //        mainform.Show();
-            //    }
+       
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(TB_pass.Text);
             byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
             string hasPass = "";
@@ -117,14 +102,6 @@ namespace Camera_Check_Component
                 System_Config = Program_Configuration.GetSystem_Config();
                 Program_Configuration.UpdateSystem_Config("SQL_server", comboBox1.Text);
                 Program_Configuration.UpdateSystem_Config("Database", comboBox2.Text);
-
-                //Form mainform = new Camera_Check_component();
-                //mainform.FormClosed += (object sender1, FormClosedEventArgs e1) =>
-                //{
-                //    this.Close();
-                //};
-                //this.Hide();
-                //mainform.Show();
             }
         }
 
