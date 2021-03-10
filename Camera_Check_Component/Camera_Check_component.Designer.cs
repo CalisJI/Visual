@@ -41,6 +41,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TB_wker2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.TB_idworker = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -139,8 +141,6 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TB_wker2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -191,7 +191,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3824, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -250,7 +250,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage4.Size = new System.Drawing.Size(2556, 974);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manual";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             this.tabPage3.Controls.Add(this.login_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage3.Size = new System.Drawing.Size(2556, 974);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Configuration";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -285,6 +285,24 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1136, 946);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // TB_wker2
+            // 
+            this.TB_wker2.Location = new System.Drawing.Point(110, 374);
+            this.TB_wker2.Name = "TB_wker2";
+            this.TB_wker2.Size = new System.Drawing.Size(135, 20);
+            this.TB_wker2.TabIndex = 3;
+            this.TB_wker2.Text = "265614";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(107, 355);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 16);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "ID Operator 2";
             // 
             // TB_idworker
             // 
@@ -407,7 +425,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage2.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage2.Size = new System.Drawing.Size(2556, 974);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Checking";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -872,7 +890,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage1.Size = new System.Drawing.Size(1362, 682);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1161,7 +1179,7 @@
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel6.BackColor = System.Drawing.Color.Black;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Location = new System.Drawing.Point(1635, 510);
+            this.panel6.Location = new System.Drawing.Point(1635, 364);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(34, 32);
             this.panel6.TabIndex = 37;
@@ -1171,7 +1189,7 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel5.BackColor = System.Drawing.Color.Black;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Location = new System.Drawing.Point(1635, 681);
+            this.panel5.Location = new System.Drawing.Point(1635, 535);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(34, 32);
             this.panel5.TabIndex = 37;
@@ -1181,7 +1199,7 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Location = new System.Drawing.Point(1523, 811);
+            this.panel4.Location = new System.Drawing.Point(1523, 665);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(34, 32);
             this.panel4.TabIndex = 37;
@@ -1191,7 +1209,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(1346, 811);
+            this.panel3.Location = new System.Drawing.Point(1346, 665);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(34, 32);
             this.panel3.TabIndex = 37;
@@ -1201,7 +1219,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(1220, 681);
+            this.panel2.Location = new System.Drawing.Point(1220, 535);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(34, 32);
             this.panel2.TabIndex = 37;
@@ -1211,7 +1229,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(1220, 510);
+            this.panel1.Location = new System.Drawing.Point(1220, 364);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(34, 32);
             this.panel1.TabIndex = 37;
@@ -1222,7 +1240,7 @@
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.InitialImage")));
-            this.pictureBox14.Location = new System.Drawing.Point(1147, 326);
+            this.pictureBox14.Location = new System.Drawing.Point(1147, 180);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(600, 600);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1235,7 +1253,7 @@
             this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.InitialImage")));
-            this.pictureBox13.Location = new System.Drawing.Point(1255, 24);
+            this.pictureBox13.Location = new System.Drawing.Point(1255, -122);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(492, 110);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1248,7 +1266,7 @@
             this.groupBox3.Controls.Add(this.listView1);
             this.groupBox3.Controls.Add(this.textBox_stt);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(201, 357);
+            this.groupBox3.Location = new System.Drawing.Point(201, 211);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(759, 582);
             this.groupBox3.TabIndex = 35;
@@ -1362,39 +1380,21 @@
             this.General_tab.Margin = new System.Windows.Forms.Padding(2);
             this.General_tab.Name = "General_tab";
             this.General_tab.SelectedIndex = 0;
-            this.General_tab.Size = new System.Drawing.Size(3824, 1000);
+            this.General_tab.Size = new System.Drawing.Size(1370, 708);
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(107, 355);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 16);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "ID Operator 2";
-            // 
-            // TB_wker2
-            // 
-            this.TB_wker2.Location = new System.Drawing.Point(110, 374);
-            this.TB_wker2.Name = "TB_wker2";
-            this.TB_wker2.Size = new System.Drawing.Size(135, 20);
-            this.TB_wker2.TabIndex = 3;
-            this.TB_wker2.Text = "265614";
             // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(3824, 1041);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.General_tab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1918, 1038);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "Camera_Check_component";
             this.Text = "Visual";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Camera_Check_component_FormClosing);

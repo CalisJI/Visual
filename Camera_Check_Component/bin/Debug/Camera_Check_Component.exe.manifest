@@ -138,14 +138,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Camera_Check_Component.exe" size="3007936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Camera_Check_Component.exe" size="3007424">
       <assemblyIdentity name="Camera_Check_Component" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vptKzmcHz5TST0W+xtgdB/T43QFKSvgJSEdaHFr+sUQ=</dsig:DigestValue>
+        <dsig:DigestValue>hT7pYztXqmv+vfjV4zeeSuGHH5lFmf6qUZ31155HVDA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
