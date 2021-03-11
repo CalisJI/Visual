@@ -12,7 +12,7 @@
   <Camera6>0</Camera6>
   <Camera7>0</Camera7>
   <add_cam>false</add_cam>
-  <Location_cam1_folder>20</Location_cam1_folder>
+  <Location_cam1_folder>0</Location_cam1_folder>
   <Location_cam2_folder>0</Location_cam2_folder>
   <Location_cam3_folder>0</Location_cam3_folder>
   <Location_cam4_folder>0</Location_cam4_folder>
@@ -29,8 +29,8 @@
   <old_DAY>0</old_DAY>
   <old_MONTH>0</old_MONTH>
   <old_YEAR>0</old_YEAR>
-  <new_Day>20</new_Day>
-  <new_Month>2</new_Month>
+  <new_Day>11</new_Day>
+  <new_Month>3</new_Month>
   <new_Year>2021</new_Year>
   <pixel_cam1>5</pixel_cam1>
   <pixel_cam2>-1</pixel_cam2>
