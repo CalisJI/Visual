@@ -23,6 +23,7 @@ namespace Camera_Check_Component
 {
     public partial class Camera_Check_component : Form
     {
+        
         private FilterInfoCollection filterInfoCollection;
         private VideoCaptureDevice Cam1VIDEO_Device;
         private VideoCaptureDevice Cam2VIDEO_Device;
@@ -101,7 +102,9 @@ namespace Camera_Check_Component
             if (system_config.new_Day != dt.Day || system_config.new_Month != dt.Month)
 
             {
-                count_1 = 0; count_2 = 0; count_3 = 0; count_4 = 0; count_5 = 0; count_6 = 0; count_7 = 0;
+                count_1 = 0; count_2 = 0; count_3 = 0; count_4 = 0; count_5 = 0; count_6 = 0; count_7 = 0; folderIndex = 0;
+                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
                 Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
                 Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
                 Program_Configuration.UpdateSystem_Config("Location_cam3_folder", count_3.ToString());
@@ -114,8 +117,9 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("new_Year", dt.Year.ToString());
 
             }
-            else if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder)
+            else if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder || folderIndex != system_config.Folder_index_tranfer) 
             {
+                folderIndex = system_config.Folder_index_tranfer;
                 count_1 = system_config.Location_cam1_folder;
                 count_2 = system_config.Location_cam2_folder;
                 count_3 = system_config.Location_cam3_folder;
@@ -144,17 +148,17 @@ namespace Camera_Check_Component
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox17.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox18.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox19.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox20.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pic_full1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic_full2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picfull_2.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_full1.Hide();
-            pic_full2.Hide();
+            picfull_2.Hide();
 
             PB_active1.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active1.Hide();
@@ -1267,10 +1271,12 @@ namespace Camera_Check_Component
             {
                 if (Cam7VIDEO_Device != null && Cam7VIDEO_Device.IsRunning) Cam7VIDEO_Device.Stop();
             }
+            update_system();
         }
 
         private void update_system()
         {
+            Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
             Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
             Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
             Program_Configuration.UpdateSystem_Config("Location_cam3_folder", count_3.ToString());
@@ -1331,22 +1337,31 @@ namespace Camera_Check_Component
             string[] getpath = new string[14];
             int i = 0;
             int j = 0;
-
             foreach (FileInfo file in fileInfor)
             {
-
                 into_pic = file.Name.Split('-');
                 if (into_pic[6] == "" + folderIndex.ToString() + ".jpeg")
                 {
-                    getpath[j] = file.Name;
-                    j++;
-                    if (j > 5) break;
+                    getpath[i] = file.Name;
+                    i++;
                 }
-
             }
+            //foreach (FileInfo file in fileInfor)
+            //{
+
+            //    into_pic = file.Name.Split('-');
+            //    if (into_pic[6] == "" + folderIndex.ToString() + ".jpeg")
+            //    {
+            //        getpath[j] = file.Name;
+            //        j++;
+            //       // if (j > 5) break;
+            //    }
+            //    if (into_pic[6] != "" + folderIndex.ToString() + ".jpeg") break;
+            //}
+            bool a1 = false; bool a2 = false; bool a3 = false; bool a4 = false; bool a5 = false; bool a6 = false; bool a7 = false;
             foreach (string file in getpath)
             {
-                int a = 0;
+               
                 if (file == null)
                 {
                     break;
@@ -1355,64 +1370,64 @@ namespace Camera_Check_Component
 
                 if (into_pic[5] == "1")
                 {
-                    a++;
+                    a1 = true;
                     path_1_1 = file;
                 }
-                else if (a == 0 && into_pic[5] != "1")
+                else if (!a1 && into_pic[5] != "1")
                 {
                     path_1_1 = "";
                 }
                 if (into_pic[5] == "2")
                 {
-                    a++;
+                    a2 = true;
                     path_1_2 = file;
                 }
-                else if (a == 1 && into_pic[5] != "2")
+                else if (!a2 && into_pic[5] != "2")
                 {
                     path_1_2 = "";
                 }
                 if (into_pic[5] == "3")
                 {
-                    a++;
+                    a3 = true;
                     path_1_3 = file;
                 }
-                else if (a == 2 && into_pic[5] != "3")
+                else if (!a3 && into_pic[5] != "3")
                 {
                     path_1_3 = "";
                 }
                 if (into_pic[5] == "4")
                 {
-                    a++;
+                    a4 = true;
                     path_1_4 = file;
                 }
-                else if (a == 3 && into_pic[5] != "4")
+                else if (!a4 && into_pic[5] != "4")
                 {
                     path_1_4 = "";
                 }
                 if (into_pic[5] == "5")
                 {
-                    a++;
+                    a5 = true;
                     path_1_5 = file;
                 }
-                else if (a == 4 && into_pic[5] != "5")
+                else if (!a5 && into_pic[5] != "5")
                 {
                     path_1_5 = "";
                 }
                 if (into_pic[5] == "6")
                 {
-                    a++;
+                    a6 = true;
                     path_1_6 = file;
                 }
-                else if (a == 5 && into_pic[5] != "6")
+                else if (!a6 && into_pic[5] != "6")
                 {
                     path_1_6 = "";
                 }
                 if (into_pic[5] == "7")
                 {
-                    a++;
+                    a7 = true;
                     path_1_7 = file;
                 }
-                else if (a == 6 && into_pic[5] != "7")
+                else if (!a7 && into_pic[5] != "7")
                 {
                     path_1_7 = "";
                 }
@@ -1433,7 +1448,7 @@ namespace Camera_Check_Component
                 //    a = 0;
                 //}
             }
-
+            
             if (path_1_1 != "")
             {
                 pictureBox1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_1 + "");
@@ -1547,22 +1562,32 @@ namespace Camera_Check_Component
             string[] getpath = new string[14];
             int i = 0;
             int j = 0;
-            string a1 = ""; string a2 = ""; string a3 = ""; string a4 = ""; string a5 = ""; string a6 = ""; string a7 = "";
-            foreach (FileInfo file in fileInfor)
+            bool a1 = false; bool a2 = false; bool a3 = false; bool a4 = false; bool a5 = false; bool a6 = false; bool a7 = false;
+            foreach(FileInfo file in fileInfor)
             {
-
                 into_pic = file.Name.Split('-');
                 if (into_pic[6] == "" + folderIndex.ToString() + ".jpeg")
                 {
-                    getpath[j] = file.Name;
-                    j++;
+                    getpath[i] = file.Name;
+                    i++;
                 }
-
-                if (j > 5) break;
             }
+            //foreach (FileInfo file in fileInfor)
+            //{
+
+            //    into_pic = file.Name.Split('-');
+            //    if (into_pic[6] == "" + folderIndex.ToString() + ".jpeg")
+            //    {
+            //        getpath[j] = file.Name;
+            //        j++;
+            //    }
+
+            //    if (into_pic[6] != "" + folderIndex.ToString() + ".jpeg") break;
+            //}
+           
             foreach (string file in getpath)
             {
-                int a = 0;
+                
                 if (file == null)
                 {
                     break;
@@ -1571,64 +1596,64 @@ namespace Camera_Check_Component
 
                 if (into_pic[5] == "1")
                 {
-                    a++;
+                    a1 = true;
                     path_2_1 = file;
                 }
-                else if (a == 0 && into_pic[5] != "1")
+                else if (!a1 && into_pic[5] != "1")
                 {
                     path_2_1 = "";
                 }
                 if (into_pic[5] == "2")
                 {
-                    a++;
+                    a2 = true;
                     path_2_2 = file;
                 }
-                else if (a == 1 && into_pic[5] != "2")
+                else if (!a2 && into_pic[5] != "2")
                 {
                     path_2_2 = "";
                 }
                 if (into_pic[5] == "3")
                 {
-                    a++;
+                    a3 = true;
                     path_2_3 = file;
                 }
-                else if (a == 2 && into_pic[5] != "3")
+                else if (!a3 && into_pic[5] != "3")
                 {
                     path_2_3 = "";
                 }
                 if (into_pic[5] == "4")
                 {
-                    a++;
+                    a4 = true;
                     path_2_4 = file;
                 }
-                else if (a == 3 && into_pic[5] != "4")
+                else if (!a4 && into_pic[5] != "4")
                 {
                     path_2_4 = "";
                 }
                 if (into_pic[5] == "5")
                 {
-                    a++;
+                    a5 = true;
                     path_2_5 = file;
                 }
-                else if (a == 4 && into_pic[5] != "5")
+                else if (!a5 && into_pic[5] != "5")
                 {
                     path_2_5 = "";
                 }
                 if (into_pic[5] == "6")
                 {
-                    a++;
+                    a6 = true;
                     path_2_6 = file;
                 }
-                else if (a == 5 && into_pic[5] != "6")
+                else if (!a6 && into_pic[5] != "6")
                 {
                     path_2_6 = "";
                 }
                 if (into_pic[5] == "7")
                 {
-                    a++;
+                    a7 = true;
                     path_2_7 = file;
                 }
-                else if (a == 6 && into_pic[5] != "7")
+                else if (!a7 && into_pic[5] != "7")
                 {
                     path_2_7 = "";
                 }
@@ -1649,72 +1674,72 @@ namespace Camera_Check_Component
                 //    a = 0;
                 //}
             }
-
+           
             if (path_2_1 != "")
             {
-                pictureBox7.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_1 + "");
-                hname11.Text = path_2_1;
+                pictureBox15.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_1 + "");
+                Hname_7.Text = path_2_1;
                 //path_2_1 = getpath[6];
             }
             else
             {
-                pictureBox7.Image = null;
-                hname11.Text = "";
+                pictureBox15.Image = null;
+                Hname_7.Text = "";
             }
             if (path_2_2 != "")
             {
-                pictureBox8.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_2 + "");
-                hname12.Text = path_2_2;
+                pictureBox16.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_2 + "");
+                Hname_8.Text = path_2_2;
                 //path_2_2 = getpath[7];
             }
             else
             {
-                pictureBox8.Image = null;
-                hname12.Text = "";
+                pictureBox16.Image = null;
+                Hname_8.Text = "";
             }
             if (path_2_3 != "")
             {
-                pictureBox9.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_3 + "");
-                hname13.Text = path_2_3;
+                pictureBox17.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_3 + "");
+                Hname_9.Text = path_2_3;
                 //path_2_3 = getpath[8];
             }
             else
             {
-                pictureBox9.Image = null;
-                hname13.Text = "";
+                pictureBox17.Image = null;
+                Hname_9.Text = "";
             }
             if (path_2_4 != "")
             {
-                pictureBox10.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_4 + "");
-                hname14.Text = path_2_4;
+                pictureBox18.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_4 + "");
+                Hname_10.Text = path_2_4;
                 //path_2_4 = getpath[9];
             }
             else
             {
-                pictureBox10.Image = null;
-                hname14.Text = "";
+                pictureBox18.Image = null;
+                Hname_10.Text = "";
             }
             if (path_2_5 != "")
             {
-                pictureBox11.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_5 + "");
-                hname15.Text = path_2_5;
+                pictureBox19.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_5 + "");
+                Hname_11.Text = path_2_5;
                 // path_2_5 = getpath[10];
             }
             else
             {
-                pictureBox11.Image = null;
-                hname15.Text = "";
+                pictureBox19.Image = null;
+                Hname_11.Text = "";
             }
             if (path_2_6 != "")
             {
-                pictureBox12.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_6 + "");
-                hname16.Text = path_2_6;
+                pictureBox20.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_6 + "");
+                Hname_12.Text = path_2_6;
                 //path_2_6 = getpath[11];    
             }
             else
             {
-                pictureBox12.Image = null;
-                hname16.Text = "";
+                pictureBox20.Image = null;
+                Hname_12.Text = "";
             }
             //pictureBox7.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[0] + "");
             //hname11.Text = getpath[0];
@@ -1769,6 +1794,7 @@ namespace Camera_Check_Component
                 pictureBox4.Image.Dispose();
                 pictureBox5.Image.Dispose();
                 pictureBox6.Image.Dispose();
+                if(pic_full1.Image != null) pic_full1.Image.Dispose();
 
                 File.Move(system_config.Map_Path_File + @"/" + path_1_1, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator1 + "-" + path_1_1);
                 File.Move(system_config.Map_Path_File + @"/" + path_1_2, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator1 + "-" + path_1_2);
@@ -1780,7 +1806,9 @@ namespace Camera_Check_Component
                 {
                     File.Move(system_config.Map_Path_File + @"/" + path_1_7, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator1 + "-" + path_1_7);
                 }
-                Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,`1`,`2`,`3`,`4`,`5`,`6`) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + getpath[6] + "','" + ID_Operator1 + "','OK','OK','OK','OK','OK','OK','OK')");
+                string[] tach = new string[2];
+                tach = getpath[6].Split('.');
+                Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','OK','OK','OK','OK','OK','OK','OK')");
 
                 var item = new ListViewItem(new[] { PN_Selector, "OK", "" });
                 listView1.Items.Add(item);
@@ -1810,7 +1838,7 @@ namespace Camera_Check_Component
                 pictureBox4.Image.Dispose();
                 pictureBox5.Image.Dispose();
                 pictureBox6.Image.Dispose();
-
+                if (pic_full1.Image != null) pic_full1.Image.Dispose();
                 File.Move(system_config.Map_Path_File + @"/" + path_1_1, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_1_1);
                 File.Move(system_config.Map_Path_File + @"/" + path_1_2, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_1_2);
                 File.Move(system_config.Map_Path_File + @"/" + path_1_3, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_1_3);
@@ -1821,13 +1849,15 @@ namespace Camera_Check_Component
                 {
                     File.Move(system_config.Map_Path_File + @"/" + path_1_7, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_1_7);
                 }
-                Boolean check = sql_action.excute_data("INSERT INTO component_status ([PN Selector],Date,Time,Trace,ID,Status,1,2,3,4,5,6,ErrorType) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + getpath[6] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam1) + "')");
+                string[] tach = new string[2];
+                tach = getpath[6].Split('.');
+                Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,ErrorType) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam1) + "')");
                 var item = new ListViewItem(new[] { PN_Selector, "NG", error_Type(loi_tam1) });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
             }
-            folderIndex++;
+            //folderIndex++;
         }
 
         string h1 = "OK";
@@ -1923,72 +1953,90 @@ namespace Camera_Check_Component
         {
             if (OPTION == "OK" && allow_check)
             {
+
+                //try
+                //{
+                Parameter_app.OK_TEMP(system_config.Folder_index_tranfer.ToString());
+
                 string[] getpath = new string[7];
                 int i = 0;
                 getpath = path_2_1.Split('-');
-                try
+
+                if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH))
                 {
-                    #region
-                    if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH))
-                    {
-                        Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
-                    }
-
-                    Parameter_app.OK_TEMP(system_config.Folder_index_tranfer.ToString());
-                    pictureBox7.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_1, ImageFormat.Jpeg);
-                    pictureBox8.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_2, ImageFormat.Jpeg);
-                    pictureBox9.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_3, ImageFormat.Jpeg);
-                    pictureBox10.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_4, ImageFormat.Jpeg);
-                    pictureBox11.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_5, ImageFormat.Jpeg);
-                    pictureBox12.Image.Save(Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + TB_idworker.Text + "-" + path_2_6, ImageFormat.Jpeg);
-
-                    #endregion
-                    Boolean check = sql_action.excute_data("INSERT INTO component_status ([PN Selector],Date,Time,Trace,ID,Status,1,2,3,4,5,6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + getpath[6] + "','" + ID_Operator2 + "','OK','OK','OK','OK','OK','OK','OK')");
-                    var item = new ListViewItem(new[] { PN_Selector, "OK", "" });
-                    listView1.Items.Add(item);
+                    Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
                 }
-                catch (Exception e)
+
+
+                pictureBox15.Image.Dispose();
+                pictureBox16.Image.Dispose();
+                pictureBox17.Image.Dispose();
+                pictureBox18.Image.Dispose();
+                pictureBox19.Image.Dispose();
+                pictureBox20.Image.Dispose();
+                if (picfull_2.Image != null) picfull_2.Image.Dispose();
+                File.Move(system_config.Map_Path_File + @"/" + path_2_1, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_1);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_2, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_2);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_3, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_3);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_4, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_4);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_5, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_5);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_6, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_6);
+                if (system_config.add_cam == "true")
                 {
-
+                    File.Move(system_config.Map_Path_File + @"/" + path_2_7, Parameter_app.OK_IMAGE_FOLDER_PATH + @"/" + "OK-" + ID_Operator2 + "-" + path_2_7);
                 }
-                status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" + system_config.Folder_load_check.ToString() + "]");
+                string[] tach = new string[2];
+                tach = getpath[6].Split('.');
+                Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator2 + "','OK','OK','OK','OK','OK','OK','OK')");
 
+                var item = new ListViewItem(new[] { PN_Selector, "OK", "" });
+                listView1.Items.Add(item);
+
+                status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
             }
+
             if (OPTION == "ERROR" && allow_check)
             {
-
-
                 string[] getpath = new string[7];
                 int i = 0;
                 getpath = path_2_1.Split('-');
 
-                try
+
+                //try
+                //{
+
+                Parameter_app.ERROR_TEMP(system_config.Folder_index_tranfer.ToString());
+                if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH))
                 {
-
-                    if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH))
-                    {
-                        Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
-                    }
-                    Parameter_app.ERROR_TEMP(system_config.Folder_index_tranfer.ToString());
-                    pictureBox1.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_1, ImageFormat.Jpeg);
-                    pictureBox2.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_2, ImageFormat.Jpeg);
-                    pictureBox3.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_3, ImageFormat.Jpeg);
-                    pictureBox4.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_4, ImageFormat.Jpeg);
-                    pictureBox5.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_5, ImageFormat.Jpeg);
-                    pictureBox6.Image.Save(Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam1) + ID_Operator1 + "-" + path_2_6, ImageFormat.Jpeg);
-
-                    Boolean check = sql_action.excute_data("INSERT INTO component_status ([PN Selector],Date,Time,Trace,ID,Status,1,2,3,4,5,6,ErrorType) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + getpath[6] + "','" + ID_Operator2 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam1) + "')");
-                    var item = new ListViewItem(new[] { PN_Selector, "NG", error_Type(loi_tam1) });
-                    listView1.Items.Add(item);
+                    Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
                 }
-                catch (Exception e)
+
+                pictureBox15.Image.Dispose();
+                pictureBox16.Image.Dispose();
+                pictureBox17.Image.Dispose();
+                pictureBox18.Image.Dispose();
+                pictureBox19.Image.Dispose();
+                pictureBox20.Image.Dispose();
+                if (picfull_2.Image != null) picfull_2.Image.Dispose();
+                File.Move(system_config.Map_Path_File + @"/" + path_2_1, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_1);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_2, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_2);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_3, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_3);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_4, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_4);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_5, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_5);
+                File.Move(system_config.Map_Path_File + @"/" + path_2_6, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_6);
+                if (system_config.add_cam == "true")
                 {
-
+                    File.Move(system_config.Map_Path_File + @"/" + path_2_7, Parameter_app.ERROR_IMAGE_FOLDER_PATH + @"/" + error_Type(loi_tam2) + ID_Operator2 + "-" + path_2_7);
                 }
-                status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_load_check.ToString() + "]");
+                string[] tach = new string[2];
+                tach = getpath[6].Split('.');
+                Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,ErrorType) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam2) + "')");
+                var item = new ListViewItem(new[] { PN_Selector, "NG", error_Type(loi_tam2) });
+                listView1.Items.Add(item);
 
+                status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
             }
-            folderIndex++;
+            //folderIndex++;
         }
 
         private void OK1_check()
@@ -1996,12 +2044,12 @@ namespace Camera_Check_Component
 
             MethodInvoker inv = delegate
             {
-
                 Tranfer("OK");
-                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
-                system_config = Program_Configuration.GetSystem_Config();
-                system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
+                //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                //system_config = Program_Configuration.GetSystem_Config();
+                //system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
+                //folderIndex++;
                 Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
             };
@@ -2013,10 +2061,11 @@ namespace Camera_Check_Component
             {
                 DateTime dt = DateTime.Now;
                 Tranfer("ERROR");
-                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
-                system_config = Program_Configuration.GetSystem_Config();
-                system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
+                //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                //system_config = Program_Configuration.GetSystem_Config();
+                //system_config.Folder_index_tranfer = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_index_tranfer"));
                 upload_image();
+                //folderIndex++;
                 Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
             };
@@ -2028,10 +2077,11 @@ namespace Camera_Check_Component
             {
                 DateTime dt = DateTime.Now;
                 Tranfer1("OK");
-                Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
-                system_config = Program_Configuration.GetSystem_Config();
-                system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
+                //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                //system_config = Program_Configuration.GetSystem_Config();
+                //system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
                 update_image2();
+                //folderIndex++;
                 Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
                 inf_process();
             };
@@ -2043,11 +2093,12 @@ namespace Camera_Check_Component
             {
                 DateTime dt = DateTime.Now;
                 Tranfer1("ERROR");
-                Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
-                system_config = Program_Configuration.GetSystem_Config();
-                system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
-                Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Folder_load_check.ToString());
+                //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+                //system_config = Program_Configuration.GetSystem_Config();
+                //system_config.Folder_load_check = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Folder_load_check"));
+                //Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Folder_load_check.ToString());
                 update_image2();
+                //folderIndex++;
                 Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
                 inf_process();
             };
@@ -2055,20 +2106,17 @@ namespace Camera_Check_Component
         }
         private void General_tab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (General_tab.SelectedIndex == 1 && start_check && count_6 > 1)
+            if (General_tab.SelectedIndex == 2 && start_check && count_6 > 1)
             //if (General_tab.SelectedIndex == 1 && start_check && system_config.Location_cam6_folder > 1) 
-
             {
                 stt++;
                 allow_check = true;
                 if (stt == 1)
                 {
                     DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
-
                     // Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam1_folder.ToString());
 
                     // Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam1_folder.ToString());
-
                     upload_image();
                     if (folderIndex == 0)
                     {
@@ -2095,8 +2143,8 @@ namespace Camera_Check_Component
 
 
                 Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
-                Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
-                Program_Configuration.UpdateSystem_Config("same_folder_2", folderIndex.ToString());
+                //Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
+                //Program_Configuration.UpdateSystem_Config("same_folder_2", folderIndex.ToString());
                 Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
                 Program_Configuration.UpdateSystem_Config("Location_cam1_folder", "0");
                 Program_Configuration.UpdateSystem_Config("Location_cam2_folder", "0");
@@ -2131,7 +2179,24 @@ namespace Camera_Check_Component
                     //        i++;
                     //    }
                     //}
-
+                    pictureBox1.Hide();
+                    pictureBox2.Hide();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    capture1.Visible = false;
+                    capture2.Visible = false;
+                    capture3.Visible = false;
+                    capture4.Visible = false;
+                    capture5.Visible = false;
+                    capture6.Visible = false;
+                    Hname1.Visible = false;
+                    Hname2.Visible = false;
+                    Hname3.Visible = false;
+                    Hname4.Visible = false;
+                    Hname5.Visible = false;
+                    Hname6.Visible = false;
                     switch (pic)
                     {
                         case 1:
@@ -2162,22 +2227,21 @@ namespace Camera_Check_Component
 
                     }
 
-                    pictureBox1.Hide();
-                    pictureBox2.Hide();
-                    pictureBox3.Hide();
-                    pictureBox4.Hide();
-                    pictureBox5.Hide();
-                    pictureBox6.Hide();
-                    capture1.Visible = false;
-                    capture2.Visible = false;
-                    capture3.Visible = false;
-                    capture4.Visible = false;
-                    capture5.Visible = false;
-                    capture6.Visible = false;
+                   
                     //pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[pic] + "");
                 }
                 if (on1 == 2 && allow_check)
                 {
+
+                    pic_full1.Image.Dispose();
+                    pic_full1.Hide();
+                    pictureBox1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_1);
+                    pictureBox2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_2);
+                    pictureBox3.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_3);
+                    pictureBox4.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_4);
+                    pictureBox5.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_5);
+                    pictureBox6.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_6);
+
                     pictureBox1.Show();
                     pictureBox2.Show();
                     pictureBox3.Show();
@@ -2190,8 +2254,12 @@ namespace Camera_Check_Component
                     capture4.Visible = true;
                     capture5.Visible = true;
                     capture6.Visible = true;
-                    pic_full1.Image.Dispose();
-                    pic_full1.Hide();
+                    Hname1.Visible = true;
+                    Hname2.Visible = true;
+                    Hname3.Visible = true;
+                    Hname4.Visible = true;
+                    Hname5.Visible = true;
+                    Hname6.Visible = true;
                     on1 = 0;
                 }
             };
@@ -2221,47 +2289,53 @@ namespace Camera_Check_Component
                     //        i++;
                     //    }
                     //}
-
+                    pictureBox15.Hide();
+                    pictureBox16.Hide();
+                    pictureBox17.Hide();
+                    pictureBox18.Hide();
+                    pictureBox19.Hide();
+                    pictureBox20.Hide();
+                    capture_7.Visible = false;
+                    capture_8.Visible = false;
+                    capture_9.Visible = false;
+                    capture_10.Visible = false;
+                    capture_11.Visible = false;
+                    capture_12.Visible = false;
+                    Hname_7.Visible = false;
+                    Hname_8.Visible = false;
+                    Hname_9.Visible = false;
+                    Hname_10.Visible = false;
+                    Hname_11.Visible = false;
+                    Hname_12.Visible = false;
                     switch (pic)
                     {
                         case 1:
-                            pic_full2.Image = pictureBox7.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox15.Image;
+                            picfull_2.Show();
                             break;
                         case 2:
-                            pic_full2.Image = pictureBox8.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox16.Image;
+                            picfull_2.Show();
                             break;
                         case 3:
-                            pic_full2.Image = pictureBox9.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox17.Image;
+                            picfull_2.Show();
                             break;
                         case 4:
-                            pic_full2.Image = pictureBox10.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox18.Image;
+                            picfull_2.Show();
                             break;
                         case 5:
-                            pic_full2.Image = pictureBox11.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox19.Image;
+                            picfull_2.Show();
                             break;
                         case 6:
-                            pic_full2.Image = pictureBox12.Image;
-                            pic_full2.Show();
+                            picfull_2.Image = pictureBox20.Image;
+                            picfull_2.Show();
                             break;
 
                     }
-                    pictureBox7.Hide();
-                    pictureBox8.Hide();
-                    pictureBox9.Hide();
-                    pictureBox10.Hide();
-                    pictureBox11.Hide();
-                    pictureBox12.Hide();
-                    capture7.Visible = false;
-                    capture8.Visible = false;
-                    capture9.Visible = false;
-                    capture10.Visible = false;
-                    capture11.Visible = false;
-                    capture12.Visible = false;
+                   
                     //pic_full2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + getpath[pic] + "");
                     //pic_full2.Show();
 
@@ -2269,20 +2343,34 @@ namespace Camera_Check_Component
                 }
                 if (on2 == 2 && allow_check)
                 {
-                    pictureBox7.Show();
-                    pictureBox8.Show();
-                    pictureBox9.Show();
-                    pictureBox10.Show();
-                    pictureBox11.Show();
-                    pictureBox12.Show();
-                    capture7.Visible = true;
-                    capture8.Visible = true;
-                    capture9.Visible = true;
-                    capture10.Visible = true;
-                    capture11.Visible = true;
-                    capture12.Visible = true;
-                    pic_full2.Image.Dispose();
-                    pic_full2.Hide();
+                    picfull_2.Image.Dispose();
+                    picfull_2.Hide();
+                    pictureBox15.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_1);
+                    pictureBox16.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_2);
+                    pictureBox17.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_3);
+                    pictureBox18.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_4);
+                    pictureBox19.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_5);
+                    pictureBox20.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_6);
+
+                    pictureBox15.Show();
+                    pictureBox16.Show();
+                    pictureBox17.Show();
+                    pictureBox18.Show();
+                    pictureBox19.Show();
+                    pictureBox20.Show();
+                    capture_7.Visible = true;
+                    capture_8.Visible = true;
+                    capture_9.Visible = true;
+                    capture_10.Visible = true;
+                    capture_11.Visible = true;
+                    capture_12.Visible = true;
+                    Hname_7.Visible = true;
+                    Hname_8.Visible = true;
+                    Hname_9.Visible = true;
+                    Hname_10.Visible = true;
+                    Hname_11.Visible = true;
+                    Hname_12.Visible = true;
+                    
                     on2 = 0;
                 }
             };
@@ -2496,6 +2584,11 @@ namespace Camera_Check_Component
             order_4 = true;
             order_5 = true;
             order_6 = true;
+            if (order_6)
+            {
+                Cam6VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(5);
+            }
             if (order_1)
             {
                 Cam1VIDEO_Device.Start();
@@ -2521,17 +2614,27 @@ namespace Camera_Check_Component
                 Cam5VIDEO_Device.Start();
                 System.Threading.Thread.Sleep(5);
             }
-            if (order_6)
-            {
-                Cam6VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(5);
-            }
+            
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OK1_check();
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            int hinh = int.Parse(textBox1.Text);
+            if (hinh < 10) 
+            {
+                zoom1(hinh);
+            }
+            if (hinh > 10) 
+            {
+                hinh = hinh % 10;
+                zoom2(hinh);
+            }
         }
     }
 }

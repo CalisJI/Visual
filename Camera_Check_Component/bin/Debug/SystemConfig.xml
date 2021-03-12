@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <System_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Map_Path_File>F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\IMAGE</Map_Path_File>
+  <Map_Path_File>C:\Users\Admin\source\repos\Visual\Camera_Check_Component\bin\Debug\IMAGE</Map_Path_File>
   <Output_File>F:\VISUAL PROJECT\Camera_Check_Component\Camera_Check_Component\bin\Debug\Output.txt</Output_File>
   <DefaultComport>COM1</DefaultComport>
   <DefaultCOMBaudrate>9600</DefaultCOMBaudrate>
   <Camera1>0</Camera1>
-  <Camera2>0</Camera2>
-  <Camera3>0</Camera3>
-  <Camera4>0</Camera4>
-  <Camera5>0</Camera5>
-  <Camera6>0</Camera6>
+  <Camera2>1</Camera2>
+  <Camera3>2</Camera3>
+  <Camera4>3</Camera4>
+  <Camera5>4</Camera5>
+  <Camera6>5</Camera6>
   <Camera7>0</Camera7>
   <add_cam>false</add_cam>
-  <Location_cam1_folder>0</Location_cam1_folder>
-  <Location_cam2_folder>0</Location_cam2_folder>
-  <Location_cam3_folder>0</Location_cam3_folder>
-  <Location_cam4_folder>0</Location_cam4_folder>
-  <Location_cam5_folder>0</Location_cam5_folder>
-  <Location_cam6_folder>0</Location_cam6_folder>
+  <Location_cam1_folder>10</Location_cam1_folder>
+  <Location_cam2_folder>10</Location_cam2_folder>
+  <Location_cam3_folder>10</Location_cam3_folder>
+  <Location_cam4_folder>10</Location_cam4_folder>
+  <Location_cam5_folder>10</Location_cam5_folder>
+  <Location_cam6_folder>7</Location_cam6_folder>
   <Location_cam7_folder>0</Location_cam7_folder>
-  <Folder_load_check>1</Folder_load_check>
-  <Folder_index_tranfer>2</Folder_index_tranfer>
+  <Folder_load_check>0</Folder_load_check>
+  <Folder_index_tranfer>6</Folder_index_tranfer>
   <same_folder_1>0</same_folder_1>
   <same_folder_2>1</same_folder_2>
   <old_Day1>0</old_Day1>
@@ -29,17 +29,17 @@
   <old_DAY>0</old_DAY>
   <old_MONTH>0</old_MONTH>
   <old_YEAR>0</old_YEAR>
-  <new_Day>11</new_Day>
+  <new_Day>12</new_Day>
   <new_Month>3</new_Month>
   <new_Year>2021</new_Year>
-  <pixel_cam1>5</pixel_cam1>
-  <pixel_cam2>-1</pixel_cam2>
-  <pixel_cam3>-1</pixel_cam3>
-  <pixel_cam4>-1</pixel_cam4>
-  <pixel_cam5>-1</pixel_cam5>
-  <pixel_cam6>-1</pixel_cam6>
+  <pixel_cam1>0</pixel_cam1>
+  <pixel_cam2>0</pixel_cam2>
+  <pixel_cam3>0</pixel_cam3>
+  <pixel_cam4>0</pixel_cam4>
+  <pixel_cam5>9</pixel_cam5>
+  <pixel_cam6>0</pixel_cam6>
   <pixel_cam7>0</pixel_cam7>
-  <SQL_server>CALIS_YII\WINCC</SQL_server>
+  <SQL_server>DESKTOP-CDO0SQ2\SQLEXPRESS</SQL_server>
   <Database>ComponentState</Database>
-  <inf_process>2/20/2021 12:44:02 PM</inf_process>
+  <inf_process>12/3/2021 5:31:32 PM</inf_process>
 </System_config>
