@@ -40,6 +40,26 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort_communicate = new System.IO.Ports.SerialPort(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.Hname_12 = new System.Windows.Forms.Label();
+            this.capture_12 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.Hname_11 = new System.Windows.Forms.Label();
+            this.capture_11 = new System.Windows.Forms.Label();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.Hname_9 = new System.Windows.Forms.Label();
+            this.capture_9 = new System.Windows.Forms.Label();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.Hname_7 = new System.Windows.Forms.Label();
+            this.capture_7 = new System.Windows.Forms.Label();
+            this.Hname_8 = new System.Windows.Forms.Label();
+            this.capture_8 = new System.Windows.Forms.Label();
+            this.Hname_10 = new System.Windows.Forms.Label();
+            this.capture_10 = new System.Windows.Forms.Label();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.picfull_2 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Hname6 = new System.Windows.Forms.Label();
@@ -142,31 +162,20 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.Hname_12 = new System.Windows.Forms.Label();
-            this.capture_12 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.Hname_11 = new System.Windows.Forms.Label();
-            this.capture_11 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.Hname_9 = new System.Windows.Forms.Label();
-            this.capture_9 = new System.Windows.Forms.Label();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.Hname_7 = new System.Windows.Forms.Label();
-            this.capture_7 = new System.Windows.Forms.Label();
-            this.Hname_8 = new System.Windows.Forms.Label();
-            this.capture_8 = new System.Windows.Forms.Label();
-            this.Hname_10 = new System.Windows.Forms.Label();
-            this.capture_10 = new System.Windows.Forms.Label();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.picfull_2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -205,14 +214,6 @@
             this.groupBox3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.General_tab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -292,6 +293,227 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Checking";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.pictureBox15);
+            this.groupBox1.Controls.Add(this.Hname_12);
+            this.groupBox1.Controls.Add(this.capture_12);
+            this.groupBox1.Controls.Add(this.pictureBox16);
+            this.groupBox1.Controls.Add(this.Hname_11);
+            this.groupBox1.Controls.Add(this.capture_11);
+            this.groupBox1.Controls.Add(this.pictureBox17);
+            this.groupBox1.Controls.Add(this.Hname_9);
+            this.groupBox1.Controls.Add(this.capture_9);
+            this.groupBox1.Controls.Add(this.pictureBox18);
+            this.groupBox1.Controls.Add(this.pictureBox19);
+            this.groupBox1.Controls.Add(this.Hname_7);
+            this.groupBox1.Controls.Add(this.capture_7);
+            this.groupBox1.Controls.Add(this.Hname_8);
+            this.groupBox1.Controls.Add(this.capture_8);
+            this.groupBox1.Controls.Add(this.Hname_10);
+            this.groupBox1.Controls.Add(this.capture_10);
+            this.groupBox1.Controls.Add(this.pictureBox20);
+            this.groupBox1.Controls.Add(this.picfull_2);
+            this.groupBox1.Location = new System.Drawing.Point(1988, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox1.Size = new System.Drawing.Size(1800, 1272);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox15.Location = new System.Drawing.Point(8, 31);
+            this.pictureBox15.MinimumSize = new System.Drawing.Size(140, 140);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox15.TabIndex = 12;
+            this.pictureBox15.TabStop = false;
+            // 
+            // Hname_12
+            // 
+            this.Hname_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hname_12.AutoSize = true;
+            this.Hname_12.Location = new System.Drawing.Point(61, 491);
+            this.Hname_12.Name = "Hname_12";
+            this.Hname_12.Size = new System.Drawing.Size(10, 13);
+            this.Hname_12.TabIndex = 23;
+            this.Hname_12.Text = ":";
+            // 
+            // capture_12
+            // 
+            this.capture_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.capture_12.AutoSize = true;
+            this.capture_12.Location = new System.Drawing.Point(5, 491);
+            this.capture_12.Name = "capture_12";
+            this.capture_12.Size = new System.Drawing.Size(50, 13);
+            this.capture_12.TabIndex = 23;
+            this.capture_12.Text = "Capture6";
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox16.Location = new System.Drawing.Point(628, 31);
+            this.pictureBox16.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox16.TabIndex = 14;
+            this.pictureBox16.TabStop = false;
+            // 
+            // Hname_11
+            // 
+            this.Hname_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hname_11.AutoSize = true;
+            this.Hname_11.Location = new System.Drawing.Point(681, 491);
+            this.Hname_11.Name = "Hname_11";
+            this.Hname_11.Size = new System.Drawing.Size(10, 13);
+            this.Hname_11.TabIndex = 22;
+            this.Hname_11.Text = ":";
+            // 
+            // capture_11
+            // 
+            this.capture_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.capture_11.AutoSize = true;
+            this.capture_11.Location = new System.Drawing.Point(625, 491);
+            this.capture_11.Name = "capture_11";
+            this.capture_11.Size = new System.Drawing.Size(50, 13);
+            this.capture_11.TabIndex = 22;
+            this.capture_11.Text = "Capture5";
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox17.Location = new System.Drawing.Point(1236, 31);
+            this.pictureBox17.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox17.TabIndex = 16;
+            this.pictureBox17.TabStop = false;
+            // 
+            // Hname_9
+            // 
+            this.Hname_9.AutoSize = true;
+            this.Hname_9.Location = new System.Drawing.Point(1289, 16);
+            this.Hname_9.Name = "Hname_9";
+            this.Hname_9.Size = new System.Drawing.Size(10, 13);
+            this.Hname_9.TabIndex = 19;
+            this.Hname_9.Text = ":";
+            // 
+            // capture_9
+            // 
+            this.capture_9.AutoSize = true;
+            this.capture_9.Location = new System.Drawing.Point(1233, 16);
+            this.capture_9.Name = "capture_9";
+            this.capture_9.Size = new System.Drawing.Size(50, 13);
+            this.capture_9.TabIndex = 19;
+            this.capture_9.Text = "Capture3";
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox18.Location = new System.Drawing.Point(1236, 519);
+            this.pictureBox18.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox18.TabIndex = 18;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox19.Location = new System.Drawing.Point(628, 519);
+            this.pictureBox19.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox19.TabIndex = 20;
+            this.pictureBox19.TabStop = false;
+            // 
+            // Hname_7
+            // 
+            this.Hname_7.AutoSize = true;
+            this.Hname_7.Location = new System.Drawing.Point(61, 15);
+            this.Hname_7.Name = "Hname_7";
+            this.Hname_7.Size = new System.Drawing.Size(10, 13);
+            this.Hname_7.TabIndex = 15;
+            this.Hname_7.Text = ":";
+            // 
+            // capture_7
+            // 
+            this.capture_7.AutoSize = true;
+            this.capture_7.Location = new System.Drawing.Point(5, 15);
+            this.capture_7.Name = "capture_7";
+            this.capture_7.Size = new System.Drawing.Size(50, 13);
+            this.capture_7.TabIndex = 15;
+            this.capture_7.Text = "Capture1";
+            // 
+            // Hname_8
+            // 
+            this.Hname_8.AutoSize = true;
+            this.Hname_8.Location = new System.Drawing.Point(681, 17);
+            this.Hname_8.Name = "Hname_8";
+            this.Hname_8.Size = new System.Drawing.Size(10, 13);
+            this.Hname_8.TabIndex = 17;
+            this.Hname_8.Text = ":";
+            // 
+            // capture_8
+            // 
+            this.capture_8.AutoSize = true;
+            this.capture_8.Location = new System.Drawing.Point(625, 16);
+            this.capture_8.Name = "capture_8";
+            this.capture_8.Size = new System.Drawing.Size(50, 13);
+            this.capture_8.TabIndex = 17;
+            this.capture_8.Text = "Capture2";
+            // 
+            // Hname_10
+            // 
+            this.Hname_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hname_10.AutoSize = true;
+            this.Hname_10.Location = new System.Drawing.Point(1289, 491);
+            this.Hname_10.Name = "Hname_10";
+            this.Hname_10.Size = new System.Drawing.Size(10, 13);
+            this.Hname_10.TabIndex = 21;
+            this.Hname_10.Text = ":";
+            // 
+            // capture_10
+            // 
+            this.capture_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.capture_10.AutoSize = true;
+            this.capture_10.Location = new System.Drawing.Point(1233, 491);
+            this.capture_10.Name = "capture_10";
+            this.capture_10.Size = new System.Drawing.Size(50, 13);
+            this.capture_10.TabIndex = 21;
+            this.capture_10.Text = "Capture4";
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox20.Location = new System.Drawing.Point(8, 519);
+            this.pictureBox20.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox20.TabIndex = 13;
+            this.pictureBox20.TabStop = false;
+            // 
+            // picfull_2
+            // 
+            this.picfull_2.Location = new System.Drawing.Point(6, 38);
+            this.picfull_2.Margin = new System.Windows.Forms.Padding(2);
+            this.picfull_2.Name = "picfull_2";
+            this.picfull_2.Size = new System.Drawing.Size(1780, 900);
+            this.picfull_2.TabIndex = 24;
+            this.picfull_2.TabStop = false;
             // 
             // groupBox5
             // 
@@ -759,9 +981,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(669, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(471, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1136, 946);
+            this.dataGridView1.Size = new System.Drawing.Size(1334, 888);
             this.dataGridView1.TabIndex = 4;
             // 
             // TB_wker2
@@ -770,7 +992,7 @@
             this.TB_wker2.Name = "TB_wker2";
             this.TB_wker2.Size = new System.Drawing.Size(135, 20);
             this.TB_wker2.TabIndex = 3;
-            this.TB_wker2.Text = "265614";
+            this.TB_wker2.Text = "345200";
             // 
             // TB_idworker
             // 
@@ -839,6 +1061,7 @@
             this.view_btn.TabIndex = 0;
             this.view_btn.Text = "VIEW";
             this.view_btn.UseVisualStyleBackColor = true;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_Click);
             // 
             // Create_btn
             // 
@@ -1415,227 +1638,6 @@
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.pictureBox15);
-            this.groupBox1.Controls.Add(this.Hname_12);
-            this.groupBox1.Controls.Add(this.capture_12);
-            this.groupBox1.Controls.Add(this.pictureBox16);
-            this.groupBox1.Controls.Add(this.Hname_11);
-            this.groupBox1.Controls.Add(this.capture_11);
-            this.groupBox1.Controls.Add(this.pictureBox17);
-            this.groupBox1.Controls.Add(this.Hname_9);
-            this.groupBox1.Controls.Add(this.capture_9);
-            this.groupBox1.Controls.Add(this.pictureBox18);
-            this.groupBox1.Controls.Add(this.pictureBox19);
-            this.groupBox1.Controls.Add(this.Hname_7);
-            this.groupBox1.Controls.Add(this.capture_7);
-            this.groupBox1.Controls.Add(this.Hname_8);
-            this.groupBox1.Controls.Add(this.capture_8);
-            this.groupBox1.Controls.Add(this.Hname_10);
-            this.groupBox1.Controls.Add(this.capture_10);
-            this.groupBox1.Controls.Add(this.pictureBox20);
-            this.groupBox1.Controls.Add(this.picfull_2);
-            this.groupBox1.Location = new System.Drawing.Point(1924, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(1800, 1272);
-            this.groupBox1.TabIndex = 43;
-            this.groupBox1.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox15.Location = new System.Drawing.Point(8, 31);
-            this.pictureBox15.MinimumSize = new System.Drawing.Size(140, 140);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox15.TabIndex = 12;
-            this.pictureBox15.TabStop = false;
-            // 
-            // Hname_12
-            // 
-            this.Hname_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hname_12.AutoSize = true;
-            this.Hname_12.Location = new System.Drawing.Point(61, 491);
-            this.Hname_12.Name = "Hname_12";
-            this.Hname_12.Size = new System.Drawing.Size(10, 13);
-            this.Hname_12.TabIndex = 23;
-            this.Hname_12.Text = ":";
-            // 
-            // capture_12
-            // 
-            this.capture_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.capture_12.AutoSize = true;
-            this.capture_12.Location = new System.Drawing.Point(5, 491);
-            this.capture_12.Name = "capture_12";
-            this.capture_12.Size = new System.Drawing.Size(50, 13);
-            this.capture_12.TabIndex = 23;
-            this.capture_12.Text = "Capture6";
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox16.Location = new System.Drawing.Point(628, 31);
-            this.pictureBox16.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox16.TabIndex = 14;
-            this.pictureBox16.TabStop = false;
-            // 
-            // Hname_11
-            // 
-            this.Hname_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hname_11.AutoSize = true;
-            this.Hname_11.Location = new System.Drawing.Point(681, 491);
-            this.Hname_11.Name = "Hname_11";
-            this.Hname_11.Size = new System.Drawing.Size(10, 13);
-            this.Hname_11.TabIndex = 22;
-            this.Hname_11.Text = ":";
-            // 
-            // capture_11
-            // 
-            this.capture_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.capture_11.AutoSize = true;
-            this.capture_11.Location = new System.Drawing.Point(625, 491);
-            this.capture_11.Name = "capture_11";
-            this.capture_11.Size = new System.Drawing.Size(50, 13);
-            this.capture_11.TabIndex = 22;
-            this.capture_11.Text = "Capture5";
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox17.Location = new System.Drawing.Point(1236, 31);
-            this.pictureBox17.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox17.TabIndex = 16;
-            this.pictureBox17.TabStop = false;
-            // 
-            // Hname_9
-            // 
-            this.Hname_9.AutoSize = true;
-            this.Hname_9.Location = new System.Drawing.Point(1289, 16);
-            this.Hname_9.Name = "Hname_9";
-            this.Hname_9.Size = new System.Drawing.Size(10, 13);
-            this.Hname_9.TabIndex = 19;
-            this.Hname_9.Text = ":";
-            // 
-            // capture_9
-            // 
-            this.capture_9.AutoSize = true;
-            this.capture_9.Location = new System.Drawing.Point(1233, 16);
-            this.capture_9.Name = "capture_9";
-            this.capture_9.Size = new System.Drawing.Size(50, 13);
-            this.capture_9.TabIndex = 19;
-            this.capture_9.Text = "Capture3";
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox18.Location = new System.Drawing.Point(1236, 519);
-            this.pictureBox18.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox18.TabIndex = 18;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox19.Location = new System.Drawing.Point(628, 519);
-            this.pictureBox19.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox19.TabIndex = 20;
-            this.pictureBox19.TabStop = false;
-            // 
-            // Hname_7
-            // 
-            this.Hname_7.AutoSize = true;
-            this.Hname_7.Location = new System.Drawing.Point(61, 15);
-            this.Hname_7.Name = "Hname_7";
-            this.Hname_7.Size = new System.Drawing.Size(10, 13);
-            this.Hname_7.TabIndex = 15;
-            this.Hname_7.Text = ":";
-            // 
-            // capture_7
-            // 
-            this.capture_7.AutoSize = true;
-            this.capture_7.Location = new System.Drawing.Point(5, 15);
-            this.capture_7.Name = "capture_7";
-            this.capture_7.Size = new System.Drawing.Size(50, 13);
-            this.capture_7.TabIndex = 15;
-            this.capture_7.Text = "Capture1";
-            // 
-            // Hname_8
-            // 
-            this.Hname_8.AutoSize = true;
-            this.Hname_8.Location = new System.Drawing.Point(681, 17);
-            this.Hname_8.Name = "Hname_8";
-            this.Hname_8.Size = new System.Drawing.Size(10, 13);
-            this.Hname_8.TabIndex = 17;
-            this.Hname_8.Text = ":";
-            // 
-            // capture_8
-            // 
-            this.capture_8.AutoSize = true;
-            this.capture_8.Location = new System.Drawing.Point(625, 16);
-            this.capture_8.Name = "capture_8";
-            this.capture_8.Size = new System.Drawing.Size(50, 13);
-            this.capture_8.TabIndex = 17;
-            this.capture_8.Text = "Capture2";
-            // 
-            // Hname_10
-            // 
-            this.Hname_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hname_10.AutoSize = true;
-            this.Hname_10.Location = new System.Drawing.Point(1289, 491);
-            this.Hname_10.Name = "Hname_10";
-            this.Hname_10.Size = new System.Drawing.Size(10, 13);
-            this.Hname_10.TabIndex = 21;
-            this.Hname_10.Text = ":";
-            // 
-            // capture_10
-            // 
-            this.capture_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.capture_10.AutoSize = true;
-            this.capture_10.Location = new System.Drawing.Point(1233, 491);
-            this.capture_10.Name = "capture_10";
-            this.capture_10.Size = new System.Drawing.Size(50, 13);
-            this.capture_10.TabIndex = 21;
-            this.capture_10.Text = "Capture4";
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox20.Location = new System.Drawing.Point(8, 519);
-            this.pictureBox20.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox20.TabIndex = 13;
-            this.pictureBox20.TabStop = false;
-            // 
-            // picfull_2
-            // 
-            this.picfull_2.Location = new System.Drawing.Point(6, 38);
-            this.picfull_2.Margin = new System.Windows.Forms.Padding(2);
-            this.picfull_2.Name = "picfull_2";
-            this.picfull_2.Size = new System.Drawing.Size(1780, 900);
-            this.picfull_2.TabIndex = 24;
-            this.picfull_2.TabStop = false;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(551, 12);
@@ -1663,12 +1665,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(446, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(3824, 1041);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -1684,6 +1697,15 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1728,15 +1750,6 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.General_tab.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1878,6 +1891,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

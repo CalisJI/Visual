@@ -96,6 +96,24 @@ namespace Camera_Check_Component
             close_SQL();
             return check;
         }
+        public  DataTable result_tbl()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                connec_SQL();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Component_status", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                close_SQL();
+                
+            }
+            catch (Exception)
+            {
+             
+            }
+            return dt;
+        }
         public  string getID_user(string userid,string pass)   
         {
             string ID = "";
