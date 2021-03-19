@@ -827,15 +827,10 @@ namespace Camera_Check_Component
 
         }
 
-        string tam1 = "";
-        string tam2 = "";
-        bool cho1 = false;
-        bool cho2 = false;
+       
         string loi_tam1 = "";
         string loi_tam2 = "";
-        bool save_allow1 = false;
-        bool save_allow2 = false;
-
+ 
         private void serialPort_communicate_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string shot1 = "";
@@ -848,7 +843,6 @@ namespace Camera_Check_Component
             string[] shot = new string[7];
             string[] NG_code = new string[3];
             string cap_order = serialPort_communicate.ReadExisting();
-
 
             if (cap_order.Contains("."))
             {
@@ -897,7 +891,8 @@ namespace Camera_Check_Component
                 {
                     if (on1 != 1) 
                     {
-                        error_Type(NG_code[1]);
+                        //error_Type(NG_code[1]);
+                        loi_tam1 = NG_code[1];
                         vitri_Erpic(NG_code[2]);
                         NG1_check();
                     }
@@ -910,7 +905,8 @@ namespace Camera_Check_Component
                 {
                     if (on2!=1) 
                     {
-                        error_Type(NG_code[1]);
+                        //error_Type(NG_code[1]);
+                        loi_tam2 = NG_code[1];
                         vitri_Erpic(NG_code[2]);
                         NG2_check();
                     }
