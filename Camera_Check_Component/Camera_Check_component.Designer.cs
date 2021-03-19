@@ -110,8 +110,6 @@
             this.tb_PN = new System.Windows.Forms.ComboBox();
             this.delete_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
-            this.Create_btn = new System.Windows.Forms.Button();
-            this.down_btn = new System.Windows.Forms.Button();
             this.sign_up = new System.Windows.Forms.Button();
             this.Logout_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
@@ -166,6 +164,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -224,7 +224,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3824, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(2564, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -957,6 +957,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.TB_wker2);
             this.tabPage3.Controls.Add(this.TB_idworker);
@@ -966,8 +967,6 @@
             this.tabPage3.Controls.Add(this.tb_PN);
             this.tabPage3.Controls.Add(this.delete_btn);
             this.tabPage3.Controls.Add(this.view_btn);
-            this.tabPage3.Controls.Add(this.Create_btn);
-            this.tabPage3.Controls.Add(this.down_btn);
             this.tabPage3.Controls.Add(this.sign_up);
             this.tabPage3.Controls.Add(this.Logout_btn);
             this.tabPage3.Controls.Add(this.login_btn);
@@ -988,7 +987,7 @@
             // 
             // TB_wker2
             // 
-            this.TB_wker2.Location = new System.Drawing.Point(110, 374);
+            this.TB_wker2.Location = new System.Drawing.Point(83, 369);
             this.TB_wker2.Name = "TB_wker2";
             this.TB_wker2.Size = new System.Drawing.Size(135, 20);
             this.TB_wker2.TabIndex = 3;
@@ -996,7 +995,7 @@
             // 
             // TB_idworker
             // 
-            this.TB_idworker.Location = new System.Drawing.Point(109, 320);
+            this.TB_idworker.Location = new System.Drawing.Point(82, 315);
             this.TB_idworker.Name = "TB_idworker";
             this.TB_idworker.Size = new System.Drawing.Size(135, 20);
             this.TB_idworker.TabIndex = 3;
@@ -1006,7 +1005,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(107, 355);
+            this.label13.Location = new System.Drawing.Point(80, 350);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 16);
             this.label13.TabIndex = 2;
@@ -1016,7 +1015,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(106, 301);
+            this.label8.Location = new System.Drawing.Point(79, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 16);
             this.label8.TabIndex = 2;
@@ -1026,7 +1025,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(106, 232);
+            this.label10.Location = new System.Drawing.Point(79, 227);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 16);
             this.label10.TabIndex = 2;
@@ -1037,7 +1036,7 @@
             this.tb_PN.FormattingEnabled = true;
             this.tb_PN.Items.AddRange(new object[] {
             "x26653"});
-            this.tb_PN.Location = new System.Drawing.Point(110, 264);
+            this.tb_PN.Location = new System.Drawing.Point(83, 259);
             this.tb_PN.Name = "tb_PN";
             this.tb_PN.Size = new System.Drawing.Size(135, 21);
             this.tb_PN.TabIndex = 1;
@@ -1045,7 +1044,7 @@
             // delete_btn
             // 
             this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.Location = new System.Drawing.Point(109, 494);
+            this.delete_btn.Location = new System.Drawing.Point(83, 490);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(135, 47);
             this.delete_btn.TabIndex = 0;
@@ -1055,7 +1054,7 @@
             // view_btn
             // 
             this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_btn.Location = new System.Drawing.Point(110, 424);
+            this.view_btn.Location = new System.Drawing.Point(83, 419);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(135, 47);
             this.view_btn.TabIndex = 0;
@@ -1063,31 +1062,10 @@
             this.view_btn.UseVisualStyleBackColor = true;
             this.view_btn.Click += new System.EventHandler(this.view_btn_Click);
             // 
-            // Create_btn
-            // 
-            this.Create_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_btn.Location = new System.Drawing.Point(110, 169);
-            this.Create_btn.Name = "Create_btn";
-            this.Create_btn.Size = new System.Drawing.Size(135, 47);
-            this.Create_btn.TabIndex = 0;
-            this.Create_btn.Text = "CREATE";
-            this.Create_btn.UseVisualStyleBackColor = true;
-            // 
-            // down_btn
-            // 
-            this.down_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.down_btn.Location = new System.Drawing.Point(271, 249);
-            this.down_btn.Name = "down_btn";
-            this.down_btn.Size = new System.Drawing.Size(135, 47);
-            this.down_btn.TabIndex = 0;
-            this.down_btn.Text = "DOWNLOAD";
-            this.down_btn.UseVisualStyleBackColor = true;
-            this.down_btn.Click += new System.EventHandler(this.Logout_btn_Click);
-            // 
             // sign_up
             // 
             this.sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign_up.Location = new System.Drawing.Point(271, 169);
+            this.sign_up.Location = new System.Drawing.Point(244, 101);
             this.sign_up.Name = "sign_up";
             this.sign_up.Size = new System.Drawing.Size(135, 47);
             this.sign_up.TabIndex = 0;
@@ -1098,7 +1076,7 @@
             // Logout_btn
             // 
             this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_btn.Location = new System.Drawing.Point(271, 106);
+            this.Logout_btn.Location = new System.Drawing.Point(83, 164);
             this.Logout_btn.Name = "Logout_btn";
             this.Logout_btn.Size = new System.Drawing.Size(135, 47);
             this.Logout_btn.TabIndex = 0;
@@ -1109,7 +1087,7 @@
             // login_btn
             // 
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_btn.Location = new System.Drawing.Point(110, 106);
+            this.login_btn.Location = new System.Drawing.Point(83, 101);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(135, 47);
             this.login_btn.TabIndex = 0;
@@ -1630,6 +1608,7 @@
             this.General_tab.Controls.Add(this.tabPage1);
             this.General_tab.Controls.Add(this.tabPage3);
             this.General_tab.Controls.Add(this.tabPage2);
+            this.General_tab.Controls.Add(this.tabPage4);
             this.General_tab.Location = new System.Drawing.Point(0, 30);
             this.General_tab.Margin = new System.Windows.Forms.Padding(2);
             this.General_tab.Name = "General_tab";
@@ -1675,12 +1654,33 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Manual";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "PN Selector Status",
+            "NG Detail"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 434);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(3824, 1041);
+            this.ClientSize = new System.Drawing.Size(2564, 971);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -1816,8 +1816,6 @@
         private System.Windows.Forms.ComboBox tb_PN;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button view_btn;
-        private System.Windows.Forms.Button Create_btn;
-        private System.Windows.Forms.Button down_btn;
         private System.Windows.Forms.Button sign_up;
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Button login_btn;
@@ -1892,6 +1890,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 

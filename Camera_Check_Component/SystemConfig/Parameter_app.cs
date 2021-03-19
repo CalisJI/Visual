@@ -25,19 +25,19 @@ namespace Camera_Check_Component
              TEMP_IMAGE_FOLDER_NAME = "TEMP_IMG-"+day.ToString()+"-"+month.ToString()+"-"+year.ToString()+"-"+increase+"";
              TEMP_IMAGE_FOLDER_PATH = App_Folder + "/" + IMAGE_FOLDER_NAME + "/" + TEMP_IMAGE_FOLDER_NAME;
         }
-        public static void OK_TEMP(string increase) 
+        public static void OK_TEMP(string date, string increase) 
         {
-            OK_IMAGE_TEMP_NAME = "OK_IMG_" + increase + "";
+            OK_IMAGE_TEMP_NAME = "OK_IMG_" + date + "_" + increase + "";
             OK_IMAGE_FOLDER_PATH = App_Folder + "/" + OK_IMAGE_FOLDER_NAME + "/" + OK_IMAGE_TEMP_NAME;
         }
-        public static void ERROR_TEMP(string increase)
+        public static void ERROR_TEMP(string date ,string increase)
         {
-            ERROR_IMAGE_TEMP_NAME = "ERROR_IMG_" + increase + "";
+            ERROR_IMAGE_TEMP_NAME = "NG_IMG_" + date + "_" + increase + "";
             ERROR_IMAGE_FOLDER_PATH = App_Folder + "/" + ERROR_IMAGE_FOLDER_NAME + "/" + ERROR_IMAGE_TEMP_NAME;
         }
        
-        public static string OK_IMAGE_FOLDER_NAME = "OK_CHECK_IMG";
-        public static string ERROR_IMAGE_FOLDER_NAME = "ERRO_CHECK_IMG";
+        public static string OK_IMAGE_FOLDER_NAME = "OK_IMAGE";
+        public static string ERROR_IMAGE_FOLDER_NAME = "NG_IMAGE";
 
         public static string System_Config_File_Path = App_Folder + "/" + System_Config_File_Name;
         public static string IMAGE_FOLDER_PATH = App_Folder + "/" + IMAGE_FOLDER_NAME;

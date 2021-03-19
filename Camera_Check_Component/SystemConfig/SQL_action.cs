@@ -96,13 +96,13 @@ namespace Camera_Check_Component
             close_SQL();
             return check;
         }
-        public  DataTable result_tbl()
+        public  DataTable result_tbl(string tbl)
         {
             DataTable dt = new DataTable();
             try
             {
                 connec_SQL();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Component_status", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM " + tbl + "", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 close_SQL();
