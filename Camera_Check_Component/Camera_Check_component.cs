@@ -169,6 +169,38 @@ namespace Camera_Check_Component
             pic_full1.Hide();
             picfull_2.Hide();
 
+            c1h1_1.Visible = false; c1h2_1.Visible = false;
+            c2h1_1.Visible = false; c2h2_1.Visible = false;
+            c3h1_1.Visible = false; c1h3_1.Visible = false;
+            c4h1_1.Visible = false; c2h3_1.Visible = false;
+            c1h6_1.Visible = false; c1h4_1.Visible = false;
+            c2h6_1.Visible = false; c2h4_1.Visible = false;
+            c3h6_1.Visible = false; c1h5_1.Visible = false;
+            c4h6_1.Visible = false; c2h5_1.Visible = false;
+
+            c1h1_2.Visible = false; c1h2_2.Visible = false;
+            c2h1_2.Visible = false; c2h2_2.Visible = false;
+            c3h1_2.Visible = false; c1h3_2.Visible = false;
+            c4h1_2.Visible = false; c2h3_2.Visible = false;
+            c1h6_2.Visible = false; c1h4_2.Visible = false;
+            c2h6_2.Visible = false; c2h4_2.Visible = false;
+            c3h6_2.Visible = false; c1h5_2.Visible = false;
+            c4h6_2.Visible = false; c2h5_2.Visible = false;
+
+            pinf411.Visible = false;
+            pinf421.Visible = false;
+            pinf431.Visible = false;
+            pinf441.Visible = false;
+            pinf211.Visible = false;
+            pinf221.Visible = false;
+
+            pinf412.Visible = false;
+            pinf422.Visible = false;
+            pinf432.Visible = false;
+            pinf442.Visible = false;
+            pinf212.Visible = false;
+            pinf222.Visible = false;
+
             PB_active1.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active1.Hide();
             PB_active2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1420,64 +1452,90 @@ namespace Camera_Check_Component
             {
                 pictureBox1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_1 + "");
                 Hname1.Text = path_1_1;
+                c1h1_1.Visible = true; 
+                c2h1_1.Visible = true; 
+                c3h1_1.Visible = true;
+                c4h1_1.Visible = true; 
             }
             else
             {
                 pictureBox1.Image = null;
                 Hname1.Text = "";
+                c1h1_1.Visible = false;
+                c2h1_1.Visible = false;
+                c3h1_1.Visible = false;
+                c4h1_1.Visible = false;
             }
             if (path_1_2 != "")
             {
                 pictureBox2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_2 + "");
                 Hname2.Text = path_1_2;
+
+                c1h2_1.Visible = true; c2h2_1.Visible = true;
             }
             else
             {
                 pictureBox2.Image = null;
-                Hname2.Text = "";
+                Hname2.Text = ""; 
+                c1h2_1.Visible = false; c2h2_1.Visible = false;
             }
             if (path_1_3 != "")
             {
                 pictureBox3.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_3 + "");
                 Hname3.Text = path_1_3;
-           }
+                c1h3_1.Visible = true; c2h3_1.Visible = true;
+            }
             else
             {
                 pictureBox3.Image = null;
                 Hname3.Text = "";
+                c1h3_1.Visible = false; c2h3_1.Visible = false;
             }
             if (path_1_4 != "")
             {
                 pictureBox4.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_4 + "");
                 Hname4.Text = path_1_4;
+                c1h4_1.Visible = true; c2h4_1.Visible = true;
             }
             else
             {
                 pictureBox4.Image = null;
                 Hname4.Text = "";
+                c1h4_1.Visible = false; c2h4_1.Visible = false;
             }
             if (path_1_5 != "")
             {
                 pictureBox5.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_5 + "");
                 Hname5.Text = path_1_5;
+                c1h5_1.Visible = true; c2h5_1.Visible = true;
             }
             else
             {
                 pictureBox5.Image = null;
                 Hname5.Text = "";
+                c1h5_1.Visible = false; c2h5_1.Visible = false;
             }
             if (path_1_6 != "")
             {
                 pictureBox6.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_6 + "");
                 Hname6.Text = path_1_6;
+                c1h6_1.Visible = true; 
+                c2h6_1.Visible = true; 
+                c3h6_1.Visible = true; 
+                c4h6_1.Visible = true;
             }
             else
             {
                 pictureBox6.Image = null;
                 Hname6.Text = "";
+                c1h6_1.Visible = false;
+                c2h6_1.Visible = false;
+                c3h6_1.Visible = false;
+                c4h6_1.Visible = false;
             }
 
         }
+
         string path_1_1 = "";
         string path_1_2 = "";
         string path_1_3 = "";
@@ -1621,65 +1679,93 @@ namespace Camera_Check_Component
             {
                 pictureBox15.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_1 + "");
                 Hname_7.Text = path_2_1;
-             
+                c1h1_2.Visible = true; 
+                c2h1_2.Visible = true; 
+                c3h1_2.Visible = true; 
+                c4h1_2.Visible = true;
             }
             else
             {
                 pictureBox15.Image = null;
                 Hname_7.Text = "";
+                c1h1_2.Visible = false;
+                c2h1_2.Visible = false;
+                c3h1_2.Visible = false;
+                c4h1_2.Visible = false;
             }
             if (path_2_2 != "")
             {
                 pictureBox16.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_2 + "");
                 Hname_8.Text = path_2_2;
+
+                c1h2_2.Visible = true; c2h2_2.Visible = true;
             }
             else
             {
                 pictureBox16.Image = null;
                 Hname_8.Text = "";
+                c1h2_2.Visible = false; c2h2_2.Visible = false;
             }
             if (path_2_3 != "")
             {
                 pictureBox17.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_3 + "");
                 Hname_9.Text = path_2_3;
+                c1h3_2.Visible = true; c2h3_2.Visible = true;
             }
             else
             {
                 pictureBox17.Image = null;
                 Hname_9.Text = "";
+                c1h3_2.Visible = false; c2h3_2.Visible = false;
             }
             if (path_2_4 != "")
             {
                 pictureBox18.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_4 + "");
                 Hname_10.Text = path_2_4;
-           }
+                c1h4_2.Visible = true; c2h4_2.Visible = true;
+            }
             else
             {
                 pictureBox18.Image = null;
                 Hname_10.Text = "";
+                c1h4_2.Visible = false; c2h4_2.Visible = false;
             }
             if (path_2_5 != "")
             {
                 pictureBox19.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_5 + "");
                 Hname_11.Text = path_2_5;
+                c1h5_2.Visible = true; c2h5_2.Visible = true;
             }
             else
             {
                 pictureBox19.Image = null;
                 Hname_11.Text = "";
+                c1h5_2.Visible = false; c2h5_2.Visible = false;
             }
             if (path_2_6 != "")
             {
                 pictureBox20.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_6 + "");
                 Hname_12.Text = path_2_6;
+                c1h6_2.Visible = true; 
+                c2h6_2.Visible = true; 
+                c3h6_2.Visible = true; 
+                c4h6_2.Visible = true;
             }
             else
             {
                 pictureBox20.Image = null;
                 Hname_12.Text = "";
+                c1h6_2.Visible = false;
+                c2h6_2.Visible = false;
+                c3h6_2.Visible = false;
+                c4h6_2.Visible = false;
             }
             
         }
+
+         
+
+
         string path_2_1 = "";
         string path_2_2 = "";
         string path_2_3 = "";
@@ -2115,32 +2201,96 @@ namespace Camera_Check_Component
                     Hname4.Visible = false;
                     Hname5.Visible = false;
                     Hname6.Visible = false;
+
+                    c1h1_1.Visible = false; c1h2_1.Visible = false;
+                    c2h1_1.Visible = false; c2h2_1.Visible = false;
+                    c3h1_1.Visible = false; c1h3_1.Visible = false;
+                    c4h1_1.Visible = false; c2h3_1.Visible = false;
+                    c1h6_1.Visible = false; c1h4_1.Visible = false;
+                    c2h6_1.Visible = false; c2h4_1.Visible = false;
+                    c3h6_1.Visible = false; c1h5_1.Visible = false;
+                    c4h6_1.Visible = false; c2h5_1.Visible = false;
                     switch (pic)
                     {
                         case 1:
-
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_1);
                             pic_full1.Show();
+                            pinf411.Text = c1h1_1.Text;
+                            pinf421.Text = c2h1_1.Text;
+                            pinf431.Text = c3h1_1.Text;
+                            pinf441.Text = c4h1_1.Text;
+                            pinf211.Visible = false;
+                            pinf221.Visible = false;
+                            pinf411.Visible = true;
+                            pinf421.Visible = true;
+                            pinf431.Visible = true;
+                            pinf441.Visible = true;
                             break;
                         case 2:
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_2);
                             pic_full1.Show();
+                            pinf211.Text = c1h2_1.Text;
+                            pinf221.Text = c2h2_1.Text;
+                          
+                            pinf211.Visible = true;
+                            pinf221.Visible = true;
+                            pinf411.Visible = false;
+                            pinf421.Visible = false;
+                            pinf431.Visible = false;
+                            pinf441.Visible = false;
                             break;
                         case 3:
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_3);
                             pic_full1.Show();
+                            pinf211.Text = c1h3_1.Text;
+                            pinf221.Text = c2h3_1.Text;
+
+                            pinf211.Visible = true;
+                            pinf221.Visible = true;
+                            pinf411.Visible = false;
+                            pinf421.Visible = false;
+                            pinf431.Visible = false;
+                            pinf441.Visible = false;
                             break;
                         case 4:
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_4);
                             pic_full1.Show();
+                            pinf211.Text = c1h4_1.Text;
+                            pinf221.Text = c2h4_1.Text;
+
+                            pinf211.Visible = true;
+                            pinf221.Visible = true;
+                            pinf411.Visible = false;
+                            pinf421.Visible = false;
+                            pinf431.Visible = false;
+                            pinf441.Visible = false;
                             break;
                         case 5:
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_5);
                             pic_full1.Show();
+                            pinf211.Text = c1h5_1.Text;
+                            pinf221.Text = c2h5_1.Text;
+
+                            pinf211.Visible = true;
+                            pinf221.Visible = true;
+                            pinf411.Visible = false;
+                            pinf421.Visible = false;
+                            pinf431.Visible = false;
+                            pinf441.Visible = false;
                             break;
                         case 6:
                             pic_full1.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_1_6);
                             pic_full1.Show();
+                            pinf411.Text = c1h6_1.Text;
+                            pinf421.Text = c2h6_1.Text;
+                            pinf431.Text = c3h6_1.Text;
+                            pinf441.Text = c4h6_1.Text;
+                            pinf211.Visible = false;
+                            pinf221.Visible = false;
+                            pinf411.Visible = true;
+                            pinf421.Visible = true;
+                            pinf431.Visible = true;
+                            pinf441.Visible = true;
                             break;
 
                     }
@@ -2168,6 +2318,21 @@ namespace Camera_Check_Component
                     Hname4.Visible = true;
                     Hname5.Visible = true;
                     Hname6.Visible = true;
+                    pinf411.Visible = false;
+                    pinf421.Visible = false;
+                    pinf431.Visible = false;
+                    pinf441.Visible = false;
+                    pinf211.Visible = false;
+                    pinf221.Visible = false;
+
+                    c1h1_1.Visible = true; c1h2_1.Visible = true;
+                    c2h1_1.Visible = true; c2h2_1.Visible = true;
+                    c3h1_1.Visible = true; c1h3_1.Visible = true;
+                    c4h1_1.Visible = true; c2h3_1.Visible = true;
+                    c1h6_1.Visible = true; c1h4_1.Visible = true;
+                    c2h6_2.Visible = true; c2h4_1.Visible = true;
+                    c3h6_1.Visible = true; c1h5_1.Visible = true;
+                    c4h6_1.Visible = true; c2h5_1.Visible = true;
                     on1 = 0;
                 }
             };
@@ -2200,31 +2365,96 @@ namespace Camera_Check_Component
                     Hname_10.Visible = false;
                     Hname_11.Visible = false;
                     Hname_12.Visible = false;
+
+                    c1h1_2.Visible = false; c1h2_2.Visible = false;
+                    c2h1_2.Visible = false; c2h2_2.Visible = false;
+                    c3h1_2.Visible = false; c1h3_2.Visible = false;
+                    c4h1_2.Visible = false; c2h3_2.Visible = false;
+                    c1h6_2.Visible = false; c1h4_2.Visible = false;
+                    c2h6_2.Visible = false; c2h4_2.Visible = false;
+                    c3h6_2.Visible = false; c1h5_2.Visible = false;
+                    c4h6_2.Visible = false; c2h5_2.Visible = false;
                     switch (pic)
                     {
                         case 1:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_1);
                             picfull_2.Show();
+                            pinf412.Text = c1h1_2.Text;
+                            pinf422.Text = c2h1_2.Text;
+                            pinf432.Text = c3h1_2.Text;
+                            pinf442.Text = c4h1_2.Text;
+                            pinf212.Visible = false;
+                            pinf222.Visible = false;
+                            pinf412.Visible = true;
+                            pinf422.Visible = true;
+                            pinf432.Visible = true;
+                            pinf442.Visible = true;
                             break;
                         case 2:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_2);
                             picfull_2.Show();
+                            pinf212.Text = c1h2_2.Text;
+                            pinf222.Text = c2h2_2.Text;
+
+                            pinf212.Visible = true;
+                            pinf222.Visible = true;
+                            pinf412.Visible = false;
+                            pinf422.Visible = false;
+                            pinf432.Visible = false;
+                            pinf442.Visible = false;
                             break;
                         case 3:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_3);
                             picfull_2.Show();
+                            pinf212.Text = c1h3_2.Text;
+                            pinf222.Text = c2h3_2.Text;
+
+                            pinf212.Visible = true;
+                            pinf222.Visible = true;
+                            pinf412.Visible = false;
+                            pinf422.Visible = false;
+                            pinf432.Visible = false;
+                            pinf442.Visible = false;
                             break;
                         case 4:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_4);
                             picfull_2.Show();
+                            pinf212.Text = c1h4_2.Text;
+                            pinf222.Text = c2h4_2.Text;
+
+                            pinf212.Visible = true;
+                            pinf222.Visible = true;
+                            pinf412.Visible = false;
+                            pinf422.Visible = false;
+                            pinf432.Visible = false;
+                            pinf442.Visible = false;
                             break;
                         case 5:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_5);
                             picfull_2.Show();
+                            pinf212.Text = c1h5_2.Text;
+                            pinf222.Text = c2h5_2.Text;
+
+                            pinf212.Visible = true;
+                            pinf222.Visible = true;
+                            pinf412.Visible = false;
+                            pinf422.Visible = false;
+                            pinf432.Visible = false;
+                            pinf442.Visible = false;
                             break;
                         case 6:
                             picfull_2.Image = Image.FromFile(system_config.Map_Path_File + @"\" + path_2_6);
                             picfull_2.Show();
+                            pinf412.Text = c1h6_2.Text;
+                            pinf422.Text = c2h6_2.Text;
+                            pinf432.Text = c3h6_2.Text;
+                            pinf442.Text = c4h6_2.Text;
+                            pinf212.Visible = false;
+                            pinf222.Visible = false;
+                            pinf412.Visible = true;
+                            pinf422.Visible = true;
+                            pinf432.Visible = true;
+                            pinf442.Visible = true;
                             break;
 
                     }
@@ -2251,7 +2481,22 @@ namespace Camera_Check_Component
                     Hname_10.Visible = true;
                     Hname_11.Visible = true;
                     Hname_12.Visible = true;
-                    
+
+                    pinf412.Visible = false;
+                    pinf422.Visible = false;
+                    pinf432.Visible = false;
+                    pinf442.Visible = false;
+                    pinf212.Visible = false;
+                    pinf222.Visible = false;
+
+                    c1h1_2.Visible = true; c1h2_2.Visible = true;
+                    c2h1_2.Visible = true; c2h2_2.Visible = true;
+                    c3h1_2.Visible = true; c1h3_2.Visible = true;
+                    c4h1_2.Visible = true; c2h3_2.Visible = true;
+                    c1h6_2.Visible = true; c1h4_2.Visible = true;
+                    c2h6_2.Visible = true; c2h4_2.Visible = true;
+                    c3h6_2.Visible = true; c1h5_2.Visible = true;
+                    c4h6_2.Visible = true; c2h5_2.Visible = true;
                     on2 = 0;
                 }
             };

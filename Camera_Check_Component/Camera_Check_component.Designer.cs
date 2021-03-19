@@ -41,26 +41,70 @@
             this.serialPort_communicate = new System.IO.Ports.SerialPort(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pinf432 = new System.Windows.Forms.Label();
+            this.pinf222 = new System.Windows.Forms.Label();
+            this.c3h6_2 = new System.Windows.Forms.Label();
+            this.pinf422 = new System.Windows.Forms.Label();
+            this.c3h1_2 = new System.Windows.Forms.Label();
+            this.pinf442 = new System.Windows.Forms.Label();
             this.Hname_12 = new System.Windows.Forms.Label();
+            this.pinf212 = new System.Windows.Forms.Label();
+            this.c4h6_2 = new System.Windows.Forms.Label();
+            this.pinf412 = new System.Windows.Forms.Label();
             this.capture_12 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.c4h1_2 = new System.Windows.Forms.Label();
+            this.c2h3_2 = new System.Windows.Forms.Label();
             this.Hname_11 = new System.Windows.Forms.Label();
+            this.c1h3_2 = new System.Windows.Forms.Label();
             this.capture_11 = new System.Windows.Forms.Label();
+            this.c2h4_2 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.c1h4_2 = new System.Windows.Forms.Label();
             this.Hname_9 = new System.Windows.Forms.Label();
+            this.c2h5_2 = new System.Windows.Forms.Label();
             this.capture_9 = new System.Windows.Forms.Label();
+            this.c1h5_2 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.c2h2_2 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.c1h2_2 = new System.Windows.Forms.Label();
             this.Hname_7 = new System.Windows.Forms.Label();
+            this.c2h6_2 = new System.Windows.Forms.Label();
             this.capture_7 = new System.Windows.Forms.Label();
+            this.c2h1_2 = new System.Windows.Forms.Label();
             this.Hname_8 = new System.Windows.Forms.Label();
+            this.c1h6_2 = new System.Windows.Forms.Label();
             this.capture_8 = new System.Windows.Forms.Label();
+            this.c1h1_2 = new System.Windows.Forms.Label();
             this.Hname_10 = new System.Windows.Forms.Label();
             this.capture_10 = new System.Windows.Forms.Label();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.picfull_2 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pinf431 = new System.Windows.Forms.Label();
+            this.pinf221 = new System.Windows.Forms.Label();
+            this.pinf421 = new System.Windows.Forms.Label();
+            this.pinf441 = new System.Windows.Forms.Label();
+            this.pinf211 = new System.Windows.Forms.Label();
+            this.pinf411 = new System.Windows.Forms.Label();
+            this.c3h6_1 = new System.Windows.Forms.Label();
+            this.c3h1_1 = new System.Windows.Forms.Label();
+            this.c4h6_1 = new System.Windows.Forms.Label();
+            this.c4h1_1 = new System.Windows.Forms.Label();
+            this.c2h3_1 = new System.Windows.Forms.Label();
+            this.c1h3_1 = new System.Windows.Forms.Label();
+            this.c2h4_1 = new System.Windows.Forms.Label();
+            this.c1h4_1 = new System.Windows.Forms.Label();
+            this.c2h5_1 = new System.Windows.Forms.Label();
+            this.c1h5_1 = new System.Windows.Forms.Label();
+            this.c2h2_1 = new System.Windows.Forms.Label();
+            this.c1h2_1 = new System.Windows.Forms.Label();
+            this.c2h6_1 = new System.Windows.Forms.Label();
+            this.c2h1_1 = new System.Windows.Forms.Label();
+            this.c1h6_1 = new System.Windows.Forms.Label();
+            this.c1h1_1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Hname6 = new System.Windows.Forms.Label();
             this.capture6 = new System.Windows.Forms.Label();
@@ -101,6 +145,7 @@
             this.hname12 = new System.Windows.Forms.Label();
             this.pic_full2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TB_wker2 = new System.Windows.Forms.TextBox();
             this.TB_idworker = new System.Windows.Forms.TextBox();
@@ -160,21 +205,20 @@
             this.LB_TIMER = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -224,7 +268,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(2564, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(3824, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -298,24 +342,46 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.pictureBox15);
+            this.groupBox1.Controls.Add(this.pinf432);
+            this.groupBox1.Controls.Add(this.pinf222);
+            this.groupBox1.Controls.Add(this.c3h6_2);
+            this.groupBox1.Controls.Add(this.pinf422);
+            this.groupBox1.Controls.Add(this.c3h1_2);
+            this.groupBox1.Controls.Add(this.pinf442);
             this.groupBox1.Controls.Add(this.Hname_12);
+            this.groupBox1.Controls.Add(this.pinf212);
+            this.groupBox1.Controls.Add(this.c4h6_2);
+            this.groupBox1.Controls.Add(this.pinf412);
             this.groupBox1.Controls.Add(this.capture_12);
-            this.groupBox1.Controls.Add(this.pictureBox16);
+            this.groupBox1.Controls.Add(this.c4h1_2);
+            this.groupBox1.Controls.Add(this.c2h3_2);
             this.groupBox1.Controls.Add(this.Hname_11);
+            this.groupBox1.Controls.Add(this.c1h3_2);
             this.groupBox1.Controls.Add(this.capture_11);
+            this.groupBox1.Controls.Add(this.c2h4_2);
             this.groupBox1.Controls.Add(this.pictureBox17);
+            this.groupBox1.Controls.Add(this.c1h4_2);
             this.groupBox1.Controls.Add(this.Hname_9);
+            this.groupBox1.Controls.Add(this.c2h5_2);
             this.groupBox1.Controls.Add(this.capture_9);
+            this.groupBox1.Controls.Add(this.c1h5_2);
             this.groupBox1.Controls.Add(this.pictureBox18);
+            this.groupBox1.Controls.Add(this.c2h2_2);
             this.groupBox1.Controls.Add(this.pictureBox19);
+            this.groupBox1.Controls.Add(this.c1h2_2);
             this.groupBox1.Controls.Add(this.Hname_7);
+            this.groupBox1.Controls.Add(this.c2h6_2);
             this.groupBox1.Controls.Add(this.capture_7);
+            this.groupBox1.Controls.Add(this.c2h1_2);
             this.groupBox1.Controls.Add(this.Hname_8);
+            this.groupBox1.Controls.Add(this.c1h6_2);
             this.groupBox1.Controls.Add(this.capture_8);
+            this.groupBox1.Controls.Add(this.c1h1_2);
             this.groupBox1.Controls.Add(this.Hname_10);
             this.groupBox1.Controls.Add(this.capture_10);
             this.groupBox1.Controls.Add(this.pictureBox20);
+            this.groupBox1.Controls.Add(this.pictureBox15);
+            this.groupBox1.Controls.Add(this.pictureBox16);
             this.groupBox1.Controls.Add(this.picfull_2);
             this.groupBox1.Location = new System.Drawing.Point(1988, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -326,160 +392,384 @@
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             // 
-            // pictureBox15
+            // pinf432
             // 
-            this.pictureBox15.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox15.Location = new System.Drawing.Point(8, 31);
-            this.pictureBox15.MinimumSize = new System.Drawing.Size(140, 140);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox15.TabIndex = 12;
-            this.pictureBox15.TabStop = false;
+            this.pinf432.AutoSize = true;
+            this.pinf432.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf432.ForeColor = System.Drawing.Color.Red;
+            this.pinf432.Location = new System.Drawing.Point(1452, 851);
+            this.pinf432.Name = "pinf432";
+            this.pinf432.Size = new System.Drawing.Size(59, 16);
+            this.pinf432.TabIndex = 26;
+            this.pinf432.Text = "label14";
+            // 
+            // pinf222
+            // 
+            this.pinf222.AutoSize = true;
+            this.pinf222.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf222.ForeColor = System.Drawing.Color.Red;
+            this.pinf222.Location = new System.Drawing.Point(1452, 483);
+            this.pinf222.Name = "pinf222";
+            this.pinf222.Size = new System.Drawing.Size(59, 16);
+            this.pinf222.TabIndex = 26;
+            this.pinf222.Text = "label14";
+            // 
+            // c3h6_2
+            // 
+            this.c3h6_2.AutoSize = true;
+            this.c3h6_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c3h6_2.ForeColor = System.Drawing.Color.Red;
+            this.c3h6_2.Location = new System.Drawing.Point(506, 884);
+            this.c3h6_2.Name = "c3h6_2";
+            this.c3h6_2.Size = new System.Drawing.Size(16, 16);
+            this.c3h6_2.TabIndex = 25;
+            this.c3h6_2.Text = "3";
+            // 
+            // pinf422
+            // 
+            this.pinf422.AutoSize = true;
+            this.pinf422.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf422.ForeColor = System.Drawing.Color.Red;
+            this.pinf422.Location = new System.Drawing.Point(1452, 125);
+            this.pinf422.Name = "pinf422";
+            this.pinf422.Size = new System.Drawing.Size(59, 16);
+            this.pinf422.TabIndex = 26;
+            this.pinf422.Text = "label14";
+            // 
+            // c3h1_2
+            // 
+            this.c3h1_2.AutoSize = true;
+            this.c3h1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c3h1_2.ForeColor = System.Drawing.Color.Red;
+            this.c3h1_2.Location = new System.Drawing.Point(506, 390);
+            this.c3h1_2.Name = "c3h1_2";
+            this.c3h1_2.Size = new System.Drawing.Size(16, 16);
+            this.c3h1_2.TabIndex = 25;
+            this.c3h1_2.Text = "3";
+            // 
+            // pinf442
+            // 
+            this.pinf442.AutoSize = true;
+            this.pinf442.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf442.ForeColor = System.Drawing.Color.Red;
+            this.pinf442.Location = new System.Drawing.Point(306, 851);
+            this.pinf442.Name = "pinf442";
+            this.pinf442.Size = new System.Drawing.Size(59, 16);
+            this.pinf442.TabIndex = 26;
+            this.pinf442.Text = "label14";
             // 
             // Hname_12
             // 
             this.Hname_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname_12.AutoSize = true;
-            this.Hname_12.Location = new System.Drawing.Point(61, 491);
+            this.Hname_12.Location = new System.Drawing.Point(61, 476);
             this.Hname_12.Name = "Hname_12";
             this.Hname_12.Size = new System.Drawing.Size(10, 13);
             this.Hname_12.TabIndex = 23;
             this.Hname_12.Text = ":";
+            // 
+            // pinf212
+            // 
+            this.pinf212.AutoSize = true;
+            this.pinf212.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf212.ForeColor = System.Drawing.Color.Red;
+            this.pinf212.Location = new System.Drawing.Point(306, 483);
+            this.pinf212.Name = "pinf212";
+            this.pinf212.Size = new System.Drawing.Size(59, 16);
+            this.pinf212.TabIndex = 26;
+            this.pinf212.Text = "label14";
+            // 
+            // c4h6_2
+            // 
+            this.c4h6_2.AutoSize = true;
+            this.c4h6_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c4h6_2.ForeColor = System.Drawing.Color.Red;
+            this.c4h6_2.Location = new System.Drawing.Point(39, 884);
+            this.c4h6_2.Name = "c4h6_2";
+            this.c4h6_2.Size = new System.Drawing.Size(16, 16);
+            this.c4h6_2.TabIndex = 25;
+            this.c4h6_2.Text = "4";
+            // 
+            // pinf412
+            // 
+            this.pinf412.AutoSize = true;
+            this.pinf412.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf412.ForeColor = System.Drawing.Color.Red;
+            this.pinf412.Location = new System.Drawing.Point(306, 125);
+            this.pinf412.Name = "pinf412";
+            this.pinf412.Size = new System.Drawing.Size(59, 16);
+            this.pinf412.TabIndex = 26;
+            this.pinf412.Text = "label14";
             // 
             // capture_12
             // 
             this.capture_12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture_12.AutoSize = true;
-            this.capture_12.Location = new System.Drawing.Point(5, 491);
+            this.capture_12.Location = new System.Drawing.Point(5, 476);
             this.capture_12.Name = "capture_12";
             this.capture_12.Size = new System.Drawing.Size(50, 13);
             this.capture_12.TabIndex = 23;
             this.capture_12.Text = "Capture6";
             // 
-            // pictureBox16
+            // c4h1_2
             // 
-            this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox16.Location = new System.Drawing.Point(628, 31);
-            this.pictureBox16.MinimumSize = new System.Drawing.Size(160, 148);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(550, 450);
-            this.pictureBox16.TabIndex = 14;
-            this.pictureBox16.TabStop = false;
+            this.c4h1_2.AutoSize = true;
+            this.c4h1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c4h1_2.ForeColor = System.Drawing.Color.Red;
+            this.c4h1_2.Location = new System.Drawing.Point(39, 398);
+            this.c4h1_2.Name = "c4h1_2";
+            this.c4h1_2.Size = new System.Drawing.Size(16, 16);
+            this.c4h1_2.TabIndex = 25;
+            this.c4h1_2.Text = "4";
+            // 
+            // c2h3_2
+            // 
+            this.c2h3_2.AutoSize = true;
+            this.c2h3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h3_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h3_2.Location = new System.Drawing.Point(1738, 238);
+            this.c2h3_2.Name = "c2h3_2";
+            this.c2h3_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h3_2.TabIndex = 25;
+            this.c2h3_2.Text = "3";
             // 
             // Hname_11
             // 
             this.Hname_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname_11.AutoSize = true;
-            this.Hname_11.Location = new System.Drawing.Point(681, 491);
+            this.Hname_11.Location = new System.Drawing.Point(681, 476);
             this.Hname_11.Name = "Hname_11";
             this.Hname_11.Size = new System.Drawing.Size(10, 13);
             this.Hname_11.TabIndex = 22;
             this.Hname_11.Text = ":";
+            // 
+            // c1h3_2
+            // 
+            this.c1h3_2.AutoSize = true;
+            this.c1h3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h3_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h3_2.Location = new System.Drawing.Point(1261, 238);
+            this.c1h3_2.Name = "c1h3_2";
+            this.c1h3_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h3_2.TabIndex = 25;
+            this.c1h3_2.Text = "2";
             // 
             // capture_11
             // 
             this.capture_11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture_11.AutoSize = true;
-            this.capture_11.Location = new System.Drawing.Point(625, 491);
+            this.capture_11.Location = new System.Drawing.Point(625, 476);
             this.capture_11.Name = "capture_11";
             this.capture_11.Size = new System.Drawing.Size(50, 13);
             this.capture_11.TabIndex = 22;
             this.capture_11.Text = "Capture5";
             // 
+            // c2h4_2
+            // 
+            this.c2h4_2.AutoSize = true;
+            this.c2h4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h4_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h4_2.Location = new System.Drawing.Point(1738, 745);
+            this.c2h4_2.Name = "c2h4_2";
+            this.c2h4_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h4_2.TabIndex = 25;
+            this.c2h4_2.Text = "4";
+            // 
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox17.Location = new System.Drawing.Point(1236, 31);
+            this.pictureBox17.Location = new System.Drawing.Point(1236, 23);
             this.pictureBox17.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox17.Size = new System.Drawing.Size(550, 440);
             this.pictureBox17.TabIndex = 16;
             this.pictureBox17.TabStop = false;
+            // 
+            // c1h4_2
+            // 
+            this.c1h4_2.AutoSize = true;
+            this.c1h4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h4_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h4_2.Location = new System.Drawing.Point(1261, 745);
+            this.c1h4_2.Name = "c1h4_2";
+            this.c1h4_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h4_2.TabIndex = 25;
+            this.c1h4_2.Text = "3";
             // 
             // Hname_9
             // 
             this.Hname_9.AutoSize = true;
-            this.Hname_9.Location = new System.Drawing.Point(1289, 16);
+            this.Hname_9.Location = new System.Drawing.Point(1289, 7);
             this.Hname_9.Name = "Hname_9";
             this.Hname_9.Size = new System.Drawing.Size(10, 13);
             this.Hname_9.TabIndex = 19;
             this.Hname_9.Text = ":";
             // 
+            // c2h5_2
+            // 
+            this.c2h5_2.AutoSize = true;
+            this.c2h5_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h5_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h5_2.Location = new System.Drawing.Point(1128, 745);
+            this.c2h5_2.Name = "c2h5_2";
+            this.c2h5_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h5_2.TabIndex = 25;
+            this.c2h5_2.Text = "1";
+            // 
             // capture_9
             // 
             this.capture_9.AutoSize = true;
-            this.capture_9.Location = new System.Drawing.Point(1233, 16);
+            this.capture_9.Location = new System.Drawing.Point(1233, 7);
             this.capture_9.Name = "capture_9";
             this.capture_9.Size = new System.Drawing.Size(50, 13);
             this.capture_9.TabIndex = 19;
             this.capture_9.Text = "Capture3";
             // 
+            // c1h5_2
+            // 
+            this.c1h5_2.AutoSize = true;
+            this.c1h5_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h5_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h5_2.Location = new System.Drawing.Point(651, 745);
+            this.c1h5_2.Name = "c1h5_2";
+            this.c1h5_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h5_2.TabIndex = 25;
+            this.c1h5_2.Text = "4";
+            // 
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox18.Location = new System.Drawing.Point(1236, 519);
+            this.pictureBox18.Location = new System.Drawing.Point(1236, 492);
             this.pictureBox18.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox18.Size = new System.Drawing.Size(550, 440);
             this.pictureBox18.TabIndex = 18;
             this.pictureBox18.TabStop = false;
+            // 
+            // c2h2_2
+            // 
+            this.c2h2_2.AutoSize = true;
+            this.c2h2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h2_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h2_2.Location = new System.Drawing.Point(1128, 238);
+            this.c2h2_2.Name = "c2h2_2";
+            this.c2h2_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h2_2.TabIndex = 25;
+            this.c2h2_2.Text = "2";
             // 
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox19.Location = new System.Drawing.Point(628, 519);
+            this.pictureBox19.Location = new System.Drawing.Point(628, 492);
             this.pictureBox19.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox19.Size = new System.Drawing.Size(550, 440);
             this.pictureBox19.TabIndex = 20;
             this.pictureBox19.TabStop = false;
+            // 
+            // c1h2_2
+            // 
+            this.c1h2_2.AutoSize = true;
+            this.c1h2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h2_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h2_2.Location = new System.Drawing.Point(651, 238);
+            this.c1h2_2.Name = "c1h2_2";
+            this.c1h2_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h2_2.TabIndex = 25;
+            this.c1h2_2.Text = "1";
             // 
             // Hname_7
             // 
             this.Hname_7.AutoSize = true;
-            this.Hname_7.Location = new System.Drawing.Point(61, 15);
+            this.Hname_7.Location = new System.Drawing.Point(61, 6);
             this.Hname_7.Name = "Hname_7";
             this.Hname_7.Size = new System.Drawing.Size(10, 13);
             this.Hname_7.TabIndex = 15;
             this.Hname_7.Text = ":";
             // 
+            // c2h6_2
+            // 
+            this.c2h6_2.AutoSize = true;
+            this.c2h6_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h6_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h6_2.Location = new System.Drawing.Point(506, 536);
+            this.c2h6_2.Name = "c2h6_2";
+            this.c2h6_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h6_2.TabIndex = 25;
+            this.c2h6_2.Text = "2";
+            // 
             // capture_7
             // 
             this.capture_7.AutoSize = true;
-            this.capture_7.Location = new System.Drawing.Point(5, 15);
+            this.capture_7.Location = new System.Drawing.Point(5, 6);
             this.capture_7.Name = "capture_7";
             this.capture_7.Size = new System.Drawing.Size(50, 13);
             this.capture_7.TabIndex = 15;
             this.capture_7.Text = "Capture1";
             // 
+            // c2h1_2
+            // 
+            this.c2h1_2.AutoSize = true;
+            this.c2h1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h1_2.ForeColor = System.Drawing.Color.Red;
+            this.c2h1_2.Location = new System.Drawing.Point(506, 58);
+            this.c2h1_2.Name = "c2h1_2";
+            this.c2h1_2.Size = new System.Drawing.Size(16, 16);
+            this.c2h1_2.TabIndex = 25;
+            this.c2h1_2.Text = "2";
+            // 
             // Hname_8
             // 
             this.Hname_8.AutoSize = true;
-            this.Hname_8.Location = new System.Drawing.Point(681, 17);
+            this.Hname_8.Location = new System.Drawing.Point(681, 8);
             this.Hname_8.Name = "Hname_8";
             this.Hname_8.Size = new System.Drawing.Size(10, 13);
             this.Hname_8.TabIndex = 17;
             this.Hname_8.Text = ":";
             // 
+            // c1h6_2
+            // 
+            this.c1h6_2.AutoSize = true;
+            this.c1h6_2.BackColor = System.Drawing.Color.Transparent;
+            this.c1h6_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h6_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h6_2.Location = new System.Drawing.Point(39, 536);
+            this.c1h6_2.Name = "c1h6_2";
+            this.c1h6_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h6_2.TabIndex = 25;
+            this.c1h6_2.Text = "1";
+            // 
             // capture_8
             // 
             this.capture_8.AutoSize = true;
-            this.capture_8.Location = new System.Drawing.Point(625, 16);
+            this.capture_8.Location = new System.Drawing.Point(625, 7);
             this.capture_8.Name = "capture_8";
             this.capture_8.Size = new System.Drawing.Size(50, 13);
             this.capture_8.TabIndex = 17;
             this.capture_8.Text = "Capture2";
+            // 
+            // c1h1_2
+            // 
+            this.c1h1_2.AutoSize = true;
+            this.c1h1_2.BackColor = System.Drawing.Color.Transparent;
+            this.c1h1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h1_2.ForeColor = System.Drawing.Color.Red;
+            this.c1h1_2.Location = new System.Drawing.Point(39, 58);
+            this.c1h1_2.Name = "c1h1_2";
+            this.c1h1_2.Size = new System.Drawing.Size(16, 16);
+            this.c1h1_2.TabIndex = 25;
+            this.c1h1_2.Text = "1";
             // 
             // Hname_10
             // 
             this.Hname_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname_10.AutoSize = true;
-            this.Hname_10.Location = new System.Drawing.Point(1289, 491);
+            this.Hname_10.Location = new System.Drawing.Point(1289, 476);
             this.Hname_10.Name = "Hname_10";
             this.Hname_10.Size = new System.Drawing.Size(10, 13);
             this.Hname_10.TabIndex = 21;
@@ -490,7 +780,7 @@
             this.capture_10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture_10.AutoSize = true;
-            this.capture_10.Location = new System.Drawing.Point(1233, 491);
+            this.capture_10.Location = new System.Drawing.Point(1233, 476);
             this.capture_10.Name = "capture_10";
             this.capture_10.Size = new System.Drawing.Size(50, 13);
             this.capture_10.TabIndex = 21;
@@ -499,19 +789,39 @@
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox20.Location = new System.Drawing.Point(8, 519);
+            this.pictureBox20.Location = new System.Drawing.Point(8, 492);
             this.pictureBox20.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox20.Size = new System.Drawing.Size(550, 440);
             this.pictureBox20.TabIndex = 13;
             this.pictureBox20.TabStop = false;
             // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox15.Location = new System.Drawing.Point(8, 23);
+            this.pictureBox15.MinimumSize = new System.Drawing.Size(140, 140);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(550, 440);
+            this.pictureBox15.TabIndex = 12;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox16.Location = new System.Drawing.Point(628, 23);
+            this.pictureBox16.MinimumSize = new System.Drawing.Size(160, 148);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(550, 440);
+            this.pictureBox16.TabIndex = 14;
+            this.pictureBox16.TabStop = false;
+            // 
             // picfull_2
             // 
-            this.picfull_2.Location = new System.Drawing.Point(6, 38);
+            this.picfull_2.Location = new System.Drawing.Point(228, 6);
             this.picfull_2.Margin = new System.Windows.Forms.Padding(2);
             this.picfull_2.Name = "picfull_2";
-            this.picfull_2.Size = new System.Drawing.Size(1780, 900);
+            this.picfull_2.Size = new System.Drawing.Size(1350, 950);
             this.picfull_2.TabIndex = 24;
             this.picfull_2.TabStop = false;
             // 
@@ -519,6 +829,28 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox5.Controls.Add(this.pinf431);
+            this.groupBox5.Controls.Add(this.pinf221);
+            this.groupBox5.Controls.Add(this.pinf421);
+            this.groupBox5.Controls.Add(this.pinf441);
+            this.groupBox5.Controls.Add(this.pinf211);
+            this.groupBox5.Controls.Add(this.pinf411);
+            this.groupBox5.Controls.Add(this.c3h6_1);
+            this.groupBox5.Controls.Add(this.c3h1_1);
+            this.groupBox5.Controls.Add(this.c4h6_1);
+            this.groupBox5.Controls.Add(this.c4h1_1);
+            this.groupBox5.Controls.Add(this.c2h3_1);
+            this.groupBox5.Controls.Add(this.c1h3_1);
+            this.groupBox5.Controls.Add(this.c2h4_1);
+            this.groupBox5.Controls.Add(this.c1h4_1);
+            this.groupBox5.Controls.Add(this.c2h5_1);
+            this.groupBox5.Controls.Add(this.c1h5_1);
+            this.groupBox5.Controls.Add(this.c2h2_1);
+            this.groupBox5.Controls.Add(this.c1h2_1);
+            this.groupBox5.Controls.Add(this.c2h6_1);
+            this.groupBox5.Controls.Add(this.c2h1_1);
+            this.groupBox5.Controls.Add(this.c1h6_1);
+            this.groupBox5.Controls.Add(this.c1h1_1);
             this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Controls.Add(this.Hname6);
             this.groupBox5.Controls.Add(this.capture6);
@@ -538,7 +870,7 @@
             this.groupBox5.Controls.Add(this.capture4);
             this.groupBox5.Controls.Add(this.pictureBox2);
             this.groupBox5.Controls.Add(this.pic_full1);
-            this.groupBox5.Location = new System.Drawing.Point(7, 2);
+            this.groupBox5.Location = new System.Drawing.Point(19, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
@@ -547,13 +879,259 @@
             this.groupBox5.TabIndex = 43;
             this.groupBox5.TabStop = false;
             // 
+            // pinf431
+            // 
+            this.pinf431.AutoSize = true;
+            this.pinf431.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf431.ForeColor = System.Drawing.Color.Red;
+            this.pinf431.Location = new System.Drawing.Point(1450, 851);
+            this.pinf431.Name = "pinf431";
+            this.pinf431.Size = new System.Drawing.Size(59, 16);
+            this.pinf431.TabIndex = 26;
+            this.pinf431.Text = "label14";
+            // 
+            // pinf221
+            // 
+            this.pinf221.AutoSize = true;
+            this.pinf221.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf221.ForeColor = System.Drawing.Color.Red;
+            this.pinf221.Location = new System.Drawing.Point(1450, 483);
+            this.pinf221.Name = "pinf221";
+            this.pinf221.Size = new System.Drawing.Size(59, 16);
+            this.pinf221.TabIndex = 26;
+            this.pinf221.Text = "label14";
+            // 
+            // pinf421
+            // 
+            this.pinf421.AutoSize = true;
+            this.pinf421.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf421.ForeColor = System.Drawing.Color.Red;
+            this.pinf421.Location = new System.Drawing.Point(1450, 125);
+            this.pinf421.Name = "pinf421";
+            this.pinf421.Size = new System.Drawing.Size(59, 16);
+            this.pinf421.TabIndex = 26;
+            this.pinf421.Text = "label14";
+            // 
+            // pinf441
+            // 
+            this.pinf441.AutoSize = true;
+            this.pinf441.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf441.ForeColor = System.Drawing.Color.Red;
+            this.pinf441.Location = new System.Drawing.Point(304, 851);
+            this.pinf441.Name = "pinf441";
+            this.pinf441.Size = new System.Drawing.Size(59, 16);
+            this.pinf441.TabIndex = 26;
+            this.pinf441.Text = "label14";
+            // 
+            // pinf211
+            // 
+            this.pinf211.AutoSize = true;
+            this.pinf211.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf211.ForeColor = System.Drawing.Color.Red;
+            this.pinf211.Location = new System.Drawing.Point(304, 483);
+            this.pinf211.Name = "pinf211";
+            this.pinf211.Size = new System.Drawing.Size(59, 16);
+            this.pinf211.TabIndex = 26;
+            this.pinf211.Text = "label14";
+            // 
+            // pinf411
+            // 
+            this.pinf411.AutoSize = true;
+            this.pinf411.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinf411.ForeColor = System.Drawing.Color.Red;
+            this.pinf411.Location = new System.Drawing.Point(304, 125);
+            this.pinf411.Name = "pinf411";
+            this.pinf411.Size = new System.Drawing.Size(59, 16);
+            this.pinf411.TabIndex = 26;
+            this.pinf411.Text = "label14";
+            // 
+            // c3h6_1
+            // 
+            this.c3h6_1.AutoSize = true;
+            this.c3h6_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c3h6_1.ForeColor = System.Drawing.Color.Red;
+            this.c3h6_1.Location = new System.Drawing.Point(507, 884);
+            this.c3h6_1.Name = "c3h6_1";
+            this.c3h6_1.Size = new System.Drawing.Size(16, 16);
+            this.c3h6_1.TabIndex = 25;
+            this.c3h6_1.Text = "3";
+            // 
+            // c3h1_1
+            // 
+            this.c3h1_1.AutoSize = true;
+            this.c3h1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c3h1_1.ForeColor = System.Drawing.Color.Red;
+            this.c3h1_1.Location = new System.Drawing.Point(507, 390);
+            this.c3h1_1.Name = "c3h1_1";
+            this.c3h1_1.Size = new System.Drawing.Size(16, 16);
+            this.c3h1_1.TabIndex = 25;
+            this.c3h1_1.Text = "3";
+            // 
+            // c4h6_1
+            // 
+            this.c4h6_1.AutoSize = true;
+            this.c4h6_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c4h6_1.ForeColor = System.Drawing.Color.Red;
+            this.c4h6_1.Location = new System.Drawing.Point(40, 884);
+            this.c4h6_1.Name = "c4h6_1";
+            this.c4h6_1.Size = new System.Drawing.Size(16, 16);
+            this.c4h6_1.TabIndex = 25;
+            this.c4h6_1.Text = "4";
+            // 
+            // c4h1_1
+            // 
+            this.c4h1_1.AutoSize = true;
+            this.c4h1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c4h1_1.ForeColor = System.Drawing.Color.Red;
+            this.c4h1_1.Location = new System.Drawing.Point(40, 398);
+            this.c4h1_1.Name = "c4h1_1";
+            this.c4h1_1.Size = new System.Drawing.Size(16, 16);
+            this.c4h1_1.TabIndex = 25;
+            this.c4h1_1.Text = "4";
+            // 
+            // c2h3_1
+            // 
+            this.c2h3_1.AutoSize = true;
+            this.c2h3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h3_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h3_1.Location = new System.Drawing.Point(1739, 238);
+            this.c2h3_1.Name = "c2h3_1";
+            this.c2h3_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h3_1.TabIndex = 25;
+            this.c2h3_1.Text = "3";
+            // 
+            // c1h3_1
+            // 
+            this.c1h3_1.AutoSize = true;
+            this.c1h3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h3_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h3_1.Location = new System.Drawing.Point(1262, 238);
+            this.c1h3_1.Name = "c1h3_1";
+            this.c1h3_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h3_1.TabIndex = 25;
+            this.c1h3_1.Text = "2";
+            // 
+            // c2h4_1
+            // 
+            this.c2h4_1.AutoSize = true;
+            this.c2h4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h4_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h4_1.Location = new System.Drawing.Point(1739, 745);
+            this.c2h4_1.Name = "c2h4_1";
+            this.c2h4_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h4_1.TabIndex = 25;
+            this.c2h4_1.Text = "4";
+            // 
+            // c1h4_1
+            // 
+            this.c1h4_1.AutoSize = true;
+            this.c1h4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h4_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h4_1.Location = new System.Drawing.Point(1262, 745);
+            this.c1h4_1.Name = "c1h4_1";
+            this.c1h4_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h4_1.TabIndex = 25;
+            this.c1h4_1.Text = "3";
+            // 
+            // c2h5_1
+            // 
+            this.c2h5_1.AutoSize = true;
+            this.c2h5_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h5_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h5_1.Location = new System.Drawing.Point(1129, 745);
+            this.c2h5_1.Name = "c2h5_1";
+            this.c2h5_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h5_1.TabIndex = 25;
+            this.c2h5_1.Text = "1";
+            // 
+            // c1h5_1
+            // 
+            this.c1h5_1.AutoSize = true;
+            this.c1h5_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h5_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h5_1.Location = new System.Drawing.Point(652, 745);
+            this.c1h5_1.Name = "c1h5_1";
+            this.c1h5_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h5_1.TabIndex = 25;
+            this.c1h5_1.Text = "4";
+            // 
+            // c2h2_1
+            // 
+            this.c2h2_1.AutoSize = true;
+            this.c2h2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h2_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h2_1.Location = new System.Drawing.Point(1129, 238);
+            this.c2h2_1.Name = "c2h2_1";
+            this.c2h2_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h2_1.TabIndex = 25;
+            this.c2h2_1.Text = "2";
+            // 
+            // c1h2_1
+            // 
+            this.c1h2_1.AutoSize = true;
+            this.c1h2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h2_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h2_1.Location = new System.Drawing.Point(652, 238);
+            this.c1h2_1.Name = "c1h2_1";
+            this.c1h2_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h2_1.TabIndex = 25;
+            this.c1h2_1.Text = "1";
+            // 
+            // c2h6_1
+            // 
+            this.c2h6_1.AutoSize = true;
+            this.c2h6_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h6_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h6_1.Location = new System.Drawing.Point(507, 536);
+            this.c2h6_1.Name = "c2h6_1";
+            this.c2h6_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h6_1.TabIndex = 25;
+            this.c2h6_1.Text = "2";
+            // 
+            // c2h1_1
+            // 
+            this.c2h1_1.AutoSize = true;
+            this.c2h1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2h1_1.ForeColor = System.Drawing.Color.Red;
+            this.c2h1_1.Location = new System.Drawing.Point(507, 58);
+            this.c2h1_1.Name = "c2h1_1";
+            this.c2h1_1.Size = new System.Drawing.Size(16, 16);
+            this.c2h1_1.TabIndex = 25;
+            this.c2h1_1.Text = "2";
+            // 
+            // c1h6_1
+            // 
+            this.c1h6_1.AutoSize = true;
+            this.c1h6_1.BackColor = System.Drawing.Color.Transparent;
+            this.c1h6_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h6_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h6_1.Location = new System.Drawing.Point(40, 536);
+            this.c1h6_1.Name = "c1h6_1";
+            this.c1h6_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h6_1.TabIndex = 25;
+            this.c1h6_1.Text = "1";
+            // 
+            // c1h1_1
+            // 
+            this.c1h1_1.AutoSize = true;
+            this.c1h1_1.BackColor = System.Drawing.Color.Transparent;
+            this.c1h1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1h1_1.ForeColor = System.Drawing.Color.Red;
+            this.c1h1_1.Location = new System.Drawing.Point(40, 58);
+            this.c1h1_1.Name = "c1h1_1";
+            this.c1h1_1.Size = new System.Drawing.Size(16, 16);
+            this.c1h1_1.TabIndex = 25;
+            this.c1h1_1.Text = "1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 31);
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 23);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(140, 140);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(550, 440);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -562,7 +1140,7 @@
             this.Hname6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname6.AutoSize = true;
-            this.Hname6.Location = new System.Drawing.Point(61, 491);
+            this.Hname6.Location = new System.Drawing.Point(61, 476);
             this.Hname6.Name = "Hname6";
             this.Hname6.Size = new System.Drawing.Size(10, 13);
             this.Hname6.TabIndex = 23;
@@ -573,7 +1151,7 @@
             this.capture6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture6.AutoSize = true;
-            this.capture6.Location = new System.Drawing.Point(5, 491);
+            this.capture6.Location = new System.Drawing.Point(5, 476);
             this.capture6.Name = "capture6";
             this.capture6.Size = new System.Drawing.Size(50, 13);
             this.capture6.TabIndex = 23;
@@ -582,10 +1160,10 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(1236, 31);
+            this.pictureBox3.Location = new System.Drawing.Point(1236, 23);
             this.pictureBox3.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox3.Size = new System.Drawing.Size(550, 440);
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
@@ -594,7 +1172,7 @@
             this.Hname5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname5.AutoSize = true;
-            this.Hname5.Location = new System.Drawing.Point(681, 491);
+            this.Hname5.Location = new System.Drawing.Point(681, 476);
             this.Hname5.Name = "Hname5";
             this.Hname5.Size = new System.Drawing.Size(10, 13);
             this.Hname5.TabIndex = 22;
@@ -605,7 +1183,7 @@
             this.capture5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture5.AutoSize = true;
-            this.capture5.Location = new System.Drawing.Point(625, 491);
+            this.capture5.Location = new System.Drawing.Point(625, 476);
             this.capture5.Name = "capture5";
             this.capture5.Size = new System.Drawing.Size(50, 13);
             this.capture5.TabIndex = 22;
@@ -614,17 +1192,17 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox4.Location = new System.Drawing.Point(1236, 513);
+            this.pictureBox4.Location = new System.Drawing.Point(1236, 492);
             this.pictureBox4.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox4.Size = new System.Drawing.Size(550, 440);
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
             // Hname3
             // 
             this.Hname3.AutoSize = true;
-            this.Hname3.Location = new System.Drawing.Point(1289, 16);
+            this.Hname3.Location = new System.Drawing.Point(1289, 7);
             this.Hname3.Name = "Hname3";
             this.Hname3.Size = new System.Drawing.Size(10, 13);
             this.Hname3.TabIndex = 19;
@@ -633,7 +1211,7 @@
             // capture3
             // 
             this.capture3.AutoSize = true;
-            this.capture3.Location = new System.Drawing.Point(1233, 16);
+            this.capture3.Location = new System.Drawing.Point(1233, 7);
             this.capture3.Name = "capture3";
             this.capture3.Size = new System.Drawing.Size(50, 13);
             this.capture3.TabIndex = 19;
@@ -642,27 +1220,27 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox5.Location = new System.Drawing.Point(628, 513);
+            this.pictureBox5.Location = new System.Drawing.Point(628, 492);
             this.pictureBox5.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox5.Size = new System.Drawing.Size(550, 440);
             this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox6.Location = new System.Drawing.Point(8, 513);
+            this.pictureBox6.Location = new System.Drawing.Point(8, 492);
             this.pictureBox6.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox6.Size = new System.Drawing.Size(550, 440);
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
             // 
             // Hname1
             // 
             this.Hname1.AutoSize = true;
-            this.Hname1.Location = new System.Drawing.Point(61, 15);
+            this.Hname1.Location = new System.Drawing.Point(61, 6);
             this.Hname1.Name = "Hname1";
             this.Hname1.Size = new System.Drawing.Size(10, 13);
             this.Hname1.TabIndex = 15;
@@ -671,7 +1249,7 @@
             // capture1
             // 
             this.capture1.AutoSize = true;
-            this.capture1.Location = new System.Drawing.Point(5, 15);
+            this.capture1.Location = new System.Drawing.Point(5, 6);
             this.capture1.Name = "capture1";
             this.capture1.Size = new System.Drawing.Size(50, 13);
             this.capture1.TabIndex = 15;
@@ -680,7 +1258,7 @@
             // Hname2
             // 
             this.Hname2.AutoSize = true;
-            this.Hname2.Location = new System.Drawing.Point(681, 17);
+            this.Hname2.Location = new System.Drawing.Point(681, 8);
             this.Hname2.Name = "Hname2";
             this.Hname2.Size = new System.Drawing.Size(10, 13);
             this.Hname2.TabIndex = 17;
@@ -689,7 +1267,7 @@
             // capture2
             // 
             this.capture2.AutoSize = true;
-            this.capture2.Location = new System.Drawing.Point(625, 16);
+            this.capture2.Location = new System.Drawing.Point(625, 7);
             this.capture2.Name = "capture2";
             this.capture2.Size = new System.Drawing.Size(50, 13);
             this.capture2.TabIndex = 17;
@@ -700,7 +1278,7 @@
             this.Hname4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hname4.AutoSize = true;
-            this.Hname4.Location = new System.Drawing.Point(1289, 491);
+            this.Hname4.Location = new System.Drawing.Point(1289, 476);
             this.Hname4.Name = "Hname4";
             this.Hname4.Size = new System.Drawing.Size(10, 13);
             this.Hname4.TabIndex = 21;
@@ -711,7 +1289,7 @@
             this.capture4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.capture4.AutoSize = true;
-            this.capture4.Location = new System.Drawing.Point(1233, 491);
+            this.capture4.Location = new System.Drawing.Point(1233, 476);
             this.capture4.Name = "capture4";
             this.capture4.Size = new System.Drawing.Size(50, 13);
             this.capture4.TabIndex = 21;
@@ -720,19 +1298,21 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.Location = new System.Drawing.Point(628, 31);
+            this.pictureBox2.Location = new System.Drawing.Point(628, 23);
             this.pictureBox2.MinimumSize = new System.Drawing.Size(160, 148);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(550, 450);
+            this.pictureBox2.Size = new System.Drawing.Size(550, 440);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
             // pic_full1
             // 
-            this.pic_full1.Location = new System.Drawing.Point(6, 38);
+            this.pic_full1.Location = new System.Drawing.Point(228, 2);
             this.pic_full1.Margin = new System.Windows.Forms.Padding(2);
             this.pic_full1.Name = "pic_full1";
-            this.pic_full1.Size = new System.Drawing.Size(1780, 900);
+            this.pic_full1.Size = new System.Drawing.Size(1350, 950);
+            this.pic_full1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_full1.TabIndex = 24;
             this.pic_full1.TabStop = false;
             // 
@@ -976,6 +1556,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Configuration";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "PN Selector Status",
+            "NG Detail"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 434);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -1609,13 +2200,23 @@
             this.General_tab.Controls.Add(this.tabPage3);
             this.General_tab.Controls.Add(this.tabPage2);
             this.General_tab.Controls.Add(this.tabPage4);
-            this.General_tab.Location = new System.Drawing.Point(0, 30);
+            this.General_tab.Location = new System.Drawing.Point(0, 22);
             this.General_tab.Margin = new System.Windows.Forms.Padding(2);
             this.General_tab.Name = "General_tab";
             this.General_tab.SelectedIndex = 0;
             this.General_tab.Size = new System.Drawing.Size(3824, 1000);
             this.General_tab.TabIndex = 27;
             this.General_tab.SelectedIndexChanged += new System.EventHandler(this.General_tab_SelectedIndexChanged);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(3816, 974);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Manual";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -1654,33 +2255,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(3816, 974);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Manual";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PN Selector Status",
-            "NG Detail"});
-            this.comboBox1.Location = new System.Drawing.Point(244, 434);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(2564, 971);
+            this.ClientSize = new System.Drawing.Size(3824, 971);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -1699,12 +2279,12 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfull_2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1892,6 +2472,50 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label c3h1_1;
+        private System.Windows.Forms.Label c4h1_1;
+        private System.Windows.Forms.Label c2h1_1;
+        private System.Windows.Forms.Label c1h1_1;
+        private System.Windows.Forms.Label c3h6_1;
+        private System.Windows.Forms.Label c4h6_1;
+        private System.Windows.Forms.Label c2h2_1;
+        private System.Windows.Forms.Label c1h2_1;
+        private System.Windows.Forms.Label c2h6_1;
+        private System.Windows.Forms.Label c1h6_1;
+        private System.Windows.Forms.Label c3h6_2;
+        private System.Windows.Forms.Label c3h1_2;
+        private System.Windows.Forms.Label c4h6_2;
+        private System.Windows.Forms.Label c4h1_2;
+        private System.Windows.Forms.Label c2h3_2;
+        private System.Windows.Forms.Label c1h3_2;
+        private System.Windows.Forms.Label c2h4_2;
+        private System.Windows.Forms.Label c1h4_2;
+        private System.Windows.Forms.Label c2h5_2;
+        private System.Windows.Forms.Label c1h5_2;
+        private System.Windows.Forms.Label c2h2_2;
+        private System.Windows.Forms.Label c1h2_2;
+        private System.Windows.Forms.Label c2h6_2;
+        private System.Windows.Forms.Label c2h1_2;
+        private System.Windows.Forms.Label c1h6_2;
+        private System.Windows.Forms.Label c1h1_2;
+        private System.Windows.Forms.Label c2h3_1;
+        private System.Windows.Forms.Label c1h3_1;
+        private System.Windows.Forms.Label c2h4_1;
+        private System.Windows.Forms.Label c1h4_1;
+        private System.Windows.Forms.Label c2h5_1;
+        private System.Windows.Forms.Label c1h5_1;
+        private System.Windows.Forms.Label pinf431;
+        private System.Windows.Forms.Label pinf421;
+        private System.Windows.Forms.Label pinf441;
+        private System.Windows.Forms.Label pinf211;
+        private System.Windows.Forms.Label pinf411;
+        private System.Windows.Forms.Label pinf221;
+        private System.Windows.Forms.Label pinf432;
+        private System.Windows.Forms.Label pinf222;
+        private System.Windows.Forms.Label pinf422;
+        private System.Windows.Forms.Label pinf442;
+        private System.Windows.Forms.Label pinf212;
+        private System.Windows.Forms.Label pinf412;
     }
 }
 
