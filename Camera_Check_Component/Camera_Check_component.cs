@@ -967,9 +967,7 @@ namespace Camera_Check_Component
             if (cap_order == "Z26" && allow_check)
             {
                 zoom2(5);
-            }
-
-          
+            }        
         }
 
         private void Take_Photo(string order)
@@ -983,54 +981,42 @@ namespace Camera_Check_Component
                 if (order == "5") order_5 = true;
                 if (order == "6") order_6 = true;
                 if (order == "7") order_7 = true;
-                if (order == "OK1")
-                {
-                    if (on1 != 1)
-                    {
-                        OK1_check();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The Zoom processing is running, please turn off first");
-                    }
-                }
 
-                if (order == "OK2")
+                if (order_1)
                 {
-                    if (on2 != 1)
-                    {
-                        OK2_check();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The Zoom processing is running, please turn off first");
-                    }
-                }
-                if (order == "NG1")
+                    Cam1VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
+                }              
+                if (order_2)
                 {
-                    if (on1 != 1)
-                    {
-
-                        NG1_check();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The Zoom processing is running, please turn off first");
-                    }
+                    Cam2VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
                 }
-
-                if (order == "NG2")
+                if (order_3)
                 {
-                    if (on2 != 1)
-                    {
-                        NG2_check();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The Zoom processing is running, please turn off first");
-                    }
+                    Cam3VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
                 }
-
+                if (order_4)
+                {
+                    Cam4VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
+                }
+                if (order_5)
+                {
+                    Cam5VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
+                }
+                if (order_6)
+                {
+                    Cam6VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
+                }
+                if(order_7 && system_config.add_cam == "true")
+                {
+                    Cam7VIDEO_Device.Start();
+                    System.Threading.Thread.Sleep(10);
+                }
             };
             this.Invoke(inv);
         }
@@ -1762,9 +1748,6 @@ namespace Camera_Check_Component
             }
             
         }
-
-         
-
 
         string path_2_1 = "";
         string path_2_2 = "";
@@ -2656,18 +2639,17 @@ namespace Camera_Check_Component
                 return;
             }
             else 
-            {
-                unable();
+            {               
                 var result = MessageBox.Show("Do you want to Log out?", "Confirm", MessageBoxButtons.OKCancel);
                 if (timer.Enabled && result == DialogResult.OK)
                 {
+                    unable();
                     UserID = "";
                     // if (timer.Enabled) timer.Stop();
                     LB_TIMER.Text = "00:00:00";
                     start_check = false;
                     started = false;
                     RESET();
-
                     Start_btn.Enabled = true;
                     Stop_btn.Enabled = false;                 
                     Pic_Cam1.Image = null;
@@ -2691,7 +2673,6 @@ namespace Camera_Check_Component
                 }
             }
         }
-
         private void sign_up_Click(object sender, EventArgs e)
         {
             if (started)
