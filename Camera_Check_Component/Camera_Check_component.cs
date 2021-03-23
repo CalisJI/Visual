@@ -395,6 +395,8 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
             panel6.BackColor = Color.Black;
             count_6++;
+            string Addr = "DB5.DBX26.5";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
         }
         void backgroundWorker_6_DoWork(object sender, DoWorkEventArgs e)
@@ -439,7 +441,10 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
             panel5.BackColor = Color.Black;
             count_5++;
+            string Addr = "DB5.DBX26.4";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
+
         }
 
         void backgroundWorker_5_DoWork(object sender, DoWorkEventArgs e)
@@ -483,6 +488,8 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
             panel4.BackColor = Color.Black;
             count_4++;
+            string Addr = "DB5.DBX26.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
         }
 
@@ -527,6 +534,8 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
             panel3.BackColor = Color.Black;
             count_3++;
+            string Addr = "DB5.DBX26.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
         }
         void backgroundWorker_3_DoWork(object sender, DoWorkEventArgs e)
@@ -565,6 +574,8 @@ namespace Camera_Check_Component
             panel2.BackColor = Color.Black;
             count_2++;
             //serialPort_communicate.Write("something");
+            string Addr = "DB5.DBX26.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
         }
         void backgroundWorker_2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -602,6 +613,8 @@ namespace Camera_Check_Component
             count_1++;
             panel1.BackColor = Color.Black;
             //serialPort_communicate.Write("something");
+            string Addr = "DB5.DBX26.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
         }
         void backgroundWorker_1_DoWork(object sender, DoWorkEventArgs e)
         {
