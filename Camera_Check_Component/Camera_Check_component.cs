@@ -20,8 +20,8 @@ using S7.Net;
 namespace Camera_Check_Component
 {
     public partial class Camera_Check_component : Form
-    {
-        
+    { 
+        #region/////////////////////////////////////////////////////// DECLARE
         private FilterInfoCollection filterInfoCollection;
         private VideoCaptureDevice Cam1VIDEO_Device;
         private VideoCaptureDevice Cam2VIDEO_Device;
@@ -82,10 +82,12 @@ namespace Camera_Check_Component
         double ratio;
         int stt = 0;
         string DMY = "";
+        #endregion
         public Camera_Check_component()
         {
             InitializeComponent();
         }
+        #region////////////////////////////////////////////////////////////////////////////////////////////////SET UP
         private void Camera_Check_component_Load(object sender, EventArgs e)
         {
             this.Location = new System.Drawing.Point(0, 0);
@@ -135,13 +137,10 @@ namespace Camera_Check_Component
                 count_5 = system_config.Location_cam5_folder;
                 count_6 = system_config.Location_cam6_folder;
                 count_7 = system_config.Location_cam7_folder;
-            }
-
-            //this.AutoSize = true;
-            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            }      
             Start_btn.Enabled = true;
             Stop_btn.Enabled = false;
-            //Manual_btn.Enabled = false;
+          
             Pic_Cam1.SizeMode = PictureBoxSizeMode.StretchImage;
             Pic_Cam2.SizeMode = PictureBoxSizeMode.StretchImage;
             Pic_Cam3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -213,7 +212,7 @@ namespace Camera_Check_Component
             PB_active6.Hide();
 
             picload_in.Visible = false;
-            #region // khai báo background worker
+            #region ///////////////////////////////////////////////////////////// khai báo background worker
             backgroundWorker_1.DoWork += backgroundWorker_1_DoWork;
             backgroundWorker_1.RunWorkerCompleted += backgroundWorker_1_RunWorkerCompleted;
             backgroundWorker_1.WorkerSupportsCancellation = true;
@@ -324,7 +323,25 @@ namespace Camera_Check_Component
             listView1.Columns[0].Width = 140;
             listView1.Columns[2].Width = 140;
         }
-        bool mem7 = false;
+        private void set_up()
+        {
+
+            if (!Directory.Exists(Parameter_app.IMAGE_FOLDER_PATH))
+            {
+                Directory.CreateDirectory(Parameter_app.IMAGE_FOLDER_PATH);
+            }
+            if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH) && allow_check)
+            {
+                Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
+            }
+            if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH) && allow_check)
+            {
+                Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
+            }
+        }
+        #endregion
+
+        #region ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CHỤP ẢNH
         private void BackgroundWorker_7_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (!backgroundWorker_7.IsBusy && system_config.add_cam == "true")
@@ -333,7 +350,7 @@ namespace Camera_Check_Component
             }
             status(" [SYSTEM]" + " CAM 7 Save image" + " " + count_7.ToString());
             count_7++;
-
+            //serialPort_communicate.Write("something");
         }
         private void BackgroundWorker_7_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -342,7 +359,7 @@ namespace Camera_Check_Component
                 e.Cancel = true;
             }
 
-            if (mem7 && system_config.add_cam == "true")
+            if (system_config.add_cam == "true")
             {
 
                 DateTime date = DateTime.Now;
@@ -376,10 +393,9 @@ namespace Camera_Check_Component
                 set_up();
             }
             status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
-
             panel6.BackColor = Color.Black;
-
             count_6++;
+            //serialPort_communicate.Write("something");
         }
         void backgroundWorker_6_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -421,10 +437,9 @@ namespace Camera_Check_Component
                 set_up();
             }
             status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
-
             panel5.BackColor = Color.Black;
-
             count_5++;
+            //serialPort_communicate.Write("something");
         }
 
         void backgroundWorker_5_DoWork(object sender, DoWorkEventArgs e)
@@ -466,10 +481,9 @@ namespace Camera_Check_Component
                 set_up();
             }
             status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
-
             panel4.BackColor = Color.Black;
-
             count_4++;
+            //serialPort_communicate.Write("something");
         }
 
         void backgroundWorker_4_DoWork(object sender, DoWorkEventArgs e)
@@ -511,10 +525,9 @@ namespace Camera_Check_Component
                 set_up();
             }
             status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
-
             panel3.BackColor = Color.Black;
-
             count_3++;
+            //serialPort_communicate.Write("something");
         }
         void backgroundWorker_3_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -551,6 +564,7 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 2 Save image" + " " + count_2.ToString());
             panel2.BackColor = Color.Black;
             count_2++;
+            //serialPort_communicate.Write("something");
         }
         void backgroundWorker_2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -587,7 +601,7 @@ namespace Camera_Check_Component
             status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
             count_1++;
             panel1.BackColor = Color.Black;
-
+            //serialPort_communicate.Write("something");
         }
         void backgroundWorker_1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -623,22 +637,119 @@ namespace Camera_Check_Component
             }; this.Invoke(inv);
 
         }
-        private void set_up()
+        void Cam7VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            if (order_7 && system_config.add_cam == "true")
+            {
+                Live_Cam_7 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_7.IsBusy) backgroundWorker_7.RunWorkerAsync();
+
+            }
+            else if (Live_Cam_7 != null)
+            {
+                Live_Cam_7.Dispose();
+            }
+            Cam7VIDEO_Device.SignalToStop();
+        }
+        void Cam6VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            if (order_6)
+            {
+                Live_Cam_6 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_6.IsBusy) backgroundWorker_6.RunWorkerAsync();
+
+            }
+            else if (Live_Cam_6 != null)
+            {
+                Live_Cam_6.Dispose();
+            }
+            Cam6VIDEO_Device.SignalToStop();
+        }
+
+        void Cam5VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
 
-            if (!Directory.Exists(Parameter_app.IMAGE_FOLDER_PATH))
+            if (order_5)
             {
-                Directory.CreateDirectory(Parameter_app.IMAGE_FOLDER_PATH);
+                Live_Cam_5 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_5.IsBusy) backgroundWorker_5.RunWorkerAsync();
+
             }
-            if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH) && allow_check)
+            else if (Live_Cam_5 != null)
             {
-                Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
+                Live_Cam_5.Dispose();
             }
-            if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH) && allow_check)
-            {
-                Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
-            }
+            Cam5VIDEO_Device.SignalToStop();
         }
+
+        void Cam4VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            if (order_4)
+            {
+                Live_Cam_4 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_4.IsBusy) backgroundWorker_4.RunWorkerAsync();
+
+            }
+            else if (Live_Cam_4 != null)
+            {
+                Live_Cam_4.Dispose();
+            }
+            Cam4VIDEO_Device.SignalToStop();
+        }
+
+        void Cam3VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+
+            if (order_3)
+            {
+                Live_Cam_3 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_3.IsBusy) backgroundWorker_3.RunWorkerAsync();
+
+            }
+            else if (Live_Cam_3 != null)
+            {
+                Live_Cam_3.Dispose();
+            }
+            Cam3VIDEO_Device.SignalToStop();
+        }
+
+        void Cam2VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+
+            if (order_2)
+            {
+                Live_Cam_2 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_2.CancellationPending)
+                {
+                    if (!backgroundWorker_2.IsBusy) backgroundWorker_2.RunWorkerAsync();
+                }
+            }
+            else if (Live_Cam_2 != null)
+            {
+                Live_Cam_2.Dispose();
+            }
+            Cam2VIDEO_Device.SignalToStop();
+        }
+        void Cam1VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+
+            if (order_1)
+            {
+                Live_Cam_1 = (Bitmap)eventArgs.Frame.Clone();
+                if (!backgroundWorker_1.CancellationPending)
+                {
+                    if (!backgroundWorker_1.IsBusy) backgroundWorker_1.RunWorkerAsync();
+                }
+            }
+            else if (Live_Cam_1 != null)
+            {
+                Live_Cam_1.Dispose();
+            }
+            Cam1VIDEO_Device.SignalToStop();
+
+        }
+        #endregion
+       
 
         private void Start_btn_Click(object sender, EventArgs e)
         {
@@ -1013,117 +1124,7 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
-        void Cam7VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            if (order_7 && system_config.add_cam == "true")
-            {
-                Live_Cam_7 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_7.IsBusy) backgroundWorker_7.RunWorkerAsync();
-
-            }
-            else if (Live_Cam_7 != null)
-            {
-                Live_Cam_7.Dispose();
-            }
-            Cam7VIDEO_Device.SignalToStop();
-        }
-        void Cam6VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            if (order_6)
-            {
-                Live_Cam_6 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_6.IsBusy) backgroundWorker_6.RunWorkerAsync();
-
-            }
-            else if (Live_Cam_6 != null)
-            {
-                Live_Cam_6.Dispose();
-            }
-            Cam6VIDEO_Device.SignalToStop();
-        }
-
-        void Cam5VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-
-            if (order_5)
-            {
-                Live_Cam_5 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_5.IsBusy) backgroundWorker_5.RunWorkerAsync();
-
-            }
-            else if (Live_Cam_5 != null)
-            {
-                Live_Cam_5.Dispose();
-            }
-            Cam5VIDEO_Device.SignalToStop();
-        }
-
-        void Cam4VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            if (order_4)
-            {
-                Live_Cam_4 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_4.IsBusy) backgroundWorker_4.RunWorkerAsync();
-
-            }
-            else if (Live_Cam_4 != null)
-            {
-                Live_Cam_4.Dispose();
-            }
-            Cam4VIDEO_Device.SignalToStop();
-        }
-
-        void Cam3VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-
-            if (order_3)
-            {
-                Live_Cam_3 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_3.IsBusy) backgroundWorker_3.RunWorkerAsync();
-
-            }
-            else if (Live_Cam_3 != null)
-            {
-                Live_Cam_3.Dispose();
-            }
-            Cam3VIDEO_Device.SignalToStop();
-        }
-
-        void Cam2VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-
-            if (order_2)
-            {
-                Live_Cam_2 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_2.CancellationPending)
-                {
-                    if (!backgroundWorker_2.IsBusy) backgroundWorker_2.RunWorkerAsync();
-                }
-            }
-            else if (Live_Cam_2 != null)
-            {
-                Live_Cam_2.Dispose();
-            }
-            Cam2VIDEO_Device.SignalToStop();
-        }
-        void Cam1VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-
-            if (order_1)
-            {
-                Live_Cam_1 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_1.CancellationPending)
-                {
-                    if (!backgroundWorker_1.IsBusy) backgroundWorker_1.RunWorkerAsync();
-                }
-            }
-            else if (Live_Cam_1 != null)
-            {
-                Live_Cam_1.Dispose();
-            }
-            Cam1VIDEO_Device.SignalToStop();
-
-        }
+      
         private void status(string text)
         {
             MethodInvoker inv = delegate
@@ -1141,6 +1142,7 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
+        #region SETTING
         private void cameraSettingToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (started)
@@ -1295,6 +1297,8 @@ namespace Camera_Check_Component
             }
 
         }
+        #endregion
+        #region///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// XỬ LÝ ẢNH
         bool run_out1 = false;
         bool run_out2 = false;
         private void upload_image()
@@ -2086,89 +2090,6 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
-        private void General_tab_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (General_tab.SelectedIndex == 2 && start_check && count_6 > 1)
-            {
-                stt++;
-                allow_check = true;
-                if (stt == 1)
-                {
-                    DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
-                    upload_image();
-                    if (folderIndex == 0)
-                    {
-                        folderIndex++;
-                        load2 = folderIndex;
-                    }
-                    update_image2();
-                   
-                }
-
-                if(stt > 1) 
-                {
-                    if (run_out1 && folderIndex < count_6)
-                    {
-                        upload_image();
-                        run_out1 = false;
-                    }
-                    if (run_out2 && folderIndex < count_6)
-                    {
-                        update_image2();
-                        run_out2 = true;
-                    }
-                }
-            }
-            else allow_check = false;
-            string per = sql_action.getID_per_group(UserID);
-            if (General_tab.SelectedIndex == 3 && (per == "3" || per == "1")) 
-            {
-                if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
-                groupBox13.Enabled = false;
-                groupBox12.Enabled = false;
-                groupBox15.Enabled = false;
-                groupBox14.Enabled = false;
-                groupBox2.Enabled = false;
-                groupBox6.Enabled = false;
-                groupBox7.Enabled = false;
-                groupBox8.Enabled = false;
-                groupBox9.Enabled = false;
-                groupBox10.Enabled = false;
-                groupBox11.Enabled = false;
-                txtIPAddress.Enabled = false;
-                btnAutoHome.Enabled = false;
-            }
-        }
-        
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Do you want to reset Program to default setting", "RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                count_1 = 0;
-                count_2 = 0;
-                count_3 = 0;
-                count_4 = 0;
-                count_5 = 0;
-                count_6 = 0;
-                count_7 = 0;
-                folderIndex = 0;
-                load1 = 0;
-                load2 = 1;
-
-                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", load1.ToString());
-                Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
-                Program_Configuration.UpdateSystem_Config("Folder_load_check", load2.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam1_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam2_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam3_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam4_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam5_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam6_folder", "0");
-                Program_Configuration.UpdateSystem_Config("Location_cam7_folder", "0");
-
-            }
-        }
         private int on1 = 0;
 
         private void zoom1(int pic)
@@ -2226,7 +2147,7 @@ namespace Camera_Check_Component
                             pic_full1.Show();
                             pinf211.Text = c1h2_1.Text;
                             pinf221.Text = c2h2_1.Text;
-                          
+
                             pinf211.Visible = true;
                             pinf221.Visible = true;
                             pinf411.Visible = false;
@@ -2497,8 +2418,96 @@ namespace Camera_Check_Component
             };
             this.Invoke(inv);
         }
+        #endregion
+        private void General_tab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (General_tab.SelectedIndex == 2 && start_check && count_6 > 1)
+            {
+                stt++;
+                allow_check = true;
+                if (stt == 1)
+                {
+                    DirectoryInfo d = new DirectoryInfo(system_config.Map_Path_File);
+                    upload_image();
+                    if (folderIndex == 0)
+                    {
+                        folderIndex++;
+                        load2 = folderIndex;
+                    }
+                    update_image2();
+                   
+                }
+
+                if(stt > 1) 
+                {
+                    if (run_out1 && folderIndex < count_6)
+                    {
+                        upload_image();
+                        run_out1 = false;
+                    }
+                    if (run_out2 && folderIndex < count_6)
+                    {
+                        update_image2();
+                        run_out2 = true;
+                    }
+                }
+            }
+            else allow_check = false;
+            string per = sql_action.getID_per_group(UserID);
+            if (General_tab.SelectedIndex == 3 && (per == "3" || per == "1")) 
+            {
+                if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
+                groupBox13.Enabled = false;
+                groupBox12.Enabled = false;
+                groupBox15.Enabled = false;
+                groupBox14.Enabled = false;
+                groupBox2.Enabled = false;
+                groupBox6.Enabled = false;
+                groupBox7.Enabled = false;
+                groupBox8.Enabled = false;
+                groupBox9.Enabled = false;
+                groupBox10.Enabled = false;
+                groupBox11.Enabled = false;
+                txtIPAddress.Enabled = false;
+                btnAutoHome.Enabled = false;
+            }
+        }
+        
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Do you want to reset Program to default setting", "RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                count_1 = 0;
+                count_2 = 0;
+                count_3 = 0;
+                count_4 = 0;
+                count_5 = 0;
+                count_6 = 0;
+                count_7 = 0;
+                folderIndex = 0;
+                load1 = 0;
+                load2 = 1;
+
+                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", load1.ToString());
+                Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
+                Program_Configuration.UpdateSystem_Config("Folder_load_check", load2.ToString());
+                Program_Configuration.UpdateSystem_Config("Location_cam1_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam2_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam3_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam4_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam5_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam6_folder", "0");
+                Program_Configuration.UpdateSystem_Config("Location_cam7_folder", "0");
+
+            }
+        }
+       
+
+        #region /////////////////////////////////////////////////////////////////////////////////////////////////////////////LOGIN____LOGOUT
         private string UserID = "";
         bool load = false;
+
         private void login_btn_Click(object sender, EventArgs e)
         {
             if (load) return;
@@ -2619,10 +2628,7 @@ namespace Camera_Check_Component
                         }
                     }
                 }
-                //if (ctrl.Name == "tabPage4")
-                //{
-                //    ctrl.Enabled = false;
-                //}
+     
                 else
                 {
                     ctrl.Enabled = true;
@@ -2720,8 +2726,6 @@ namespace Camera_Check_Component
                     Pic_Cam6.Image = null;
                     status("[SYSTEM] Program STOPPED");
                     startPR_Count = 0;
-
-                    
                    
                         Login loginfrm = new Login();
                         loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
@@ -2734,17 +2738,6 @@ namespace Camera_Check_Component
                             load = false;
                         };
                         loginfrm.Show();
-                    
-                   // Login loginfrm = new Login();
-                    //loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
-                    //{
-                    //    UserID = loginfrm.ID_user;
-                    //    if (UserID != "")
-                    //    {
-                    //        login(UserID);
-                    //    }
-                    //};
-                    //loginfrm.Show();
                 }
             }
         }
@@ -2764,81 +2757,7 @@ namespace Camera_Check_Component
             sign_form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            order_1 = true;
-            order_2 = true;
-            order_3 = true;
-            order_4 = true;
-            order_5 = true;
-            order_6 = true;
-            if (order_6)
-            {
-                Cam6VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }
-            if (order_1)
-            {
-                Cam1VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }
-            if (order_2)
-            {
-                Cam2VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }
-            if (order_3)
-            {
-                Cam3VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }
-            if (order_4)
-            {
-                Cam4VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }
-            if (order_5)
-            {
-                Cam5VIDEO_Device.Start();
-                System.Threading.Thread.Sleep(10);
-            }           
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "1") 
-            {
-                OK1_check();
-            }
-            if (textBox1.Text == "2")
-            {
-                OK2_check();
-            }
-        }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            int hinh = int.Parse(textBox1.Text);
-            if (hinh < 10) 
-            {
-                zoom1(hinh);
-            }
-            if (hinh > 10) 
-            {
-                hinh = hinh % 10;
-                zoom2(hinh);
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MethodInvoker inv = delegate
-            {
-                vitri_Erpic("5");
-                loi_tam1 = textBox1.Text;
-                NG1_check();
-            };this.Invoke(inv);           
-        }
+        #endregion
         private void view_btn_Click(object sender, EventArgs e)
         {
             dataGridView1.DataBindings.Clear();
@@ -2858,7 +2777,7 @@ namespace Camera_Check_Component
             }
            
         }
-        #region manual s7net PLC
+        #region ////////////////////////////////////////////////////////////////////////////////////////////////////////////manual s7net PLC
 
         Plc PLCS7_1200 = null;
         ReadPLC ReadData = new ReadPLC();
@@ -3543,6 +3462,7 @@ namespace Camera_Check_Component
 
 
         #endregion
-    
+
+      
     }
 }

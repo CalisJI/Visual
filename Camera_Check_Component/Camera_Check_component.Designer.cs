@@ -145,6 +145,8 @@
             this.hname12 = new System.Windows.Forms.Label();
             this.pic_full2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tb_PN = new System.Windows.Forms.TextBox();
+            this.picload_in = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TB_wker2 = new System.Windows.Forms.TextBox();
@@ -153,13 +155,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.delete_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
             this.sign_up = new System.Windows.Forms.Button();
             this.Logout_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.TB_testpart = new System.Windows.Forms.TextBox();
             this.TB_LTdate = new System.Windows.Forms.TextBox();
@@ -320,13 +320,7 @@
             this.txtPosStart = new System.Windows.Forms.TextBox();
             this.btnPositionOK = new System.Windows.Forms.Button();
             this.txtPosInput = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.picload_in = new System.Windows.Forms.PictureBox();
-            this.tb_PN = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -354,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_full2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -421,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).BeginInit();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1711,7 +1705,6 @@
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.delete_btn);
             this.tabPage3.Controls.Add(this.view_btn);
             this.tabPage3.Controls.Add(this.sign_up);
             this.tabPage3.Controls.Add(this.Logout_btn);
@@ -1722,6 +1715,23 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Configuration";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tb_PN
+            // 
+            this.tb_PN.Location = new System.Drawing.Point(82, 259);
+            this.tb_PN.Name = "tb_PN";
+            this.tb_PN.Size = new System.Drawing.Size(135, 20);
+            this.tb_PN.TabIndex = 7;
+            // 
+            // picload_in
+            // 
+            this.picload_in.Image = global::Camera_Check_Component.Properties.Resources.avatar_red;
+            this.picload_in.Location = new System.Drawing.Point(278, 43);
+            this.picload_in.Name = "picload_in";
+            this.picload_in.Size = new System.Drawing.Size(120, 120);
+            this.picload_in.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picload_in.TabIndex = 6;
+            this.picload_in.TabStop = false;
             // 
             // comboBox1
             // 
@@ -1798,16 +1808,6 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "PN Selector";
             // 
-            // delete_btn
-            // 
-            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.Location = new System.Drawing.Point(83, 490);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(135, 47);
-            this.delete_btn.TabIndex = 0;
-            this.delete_btn.Text = "DELETE";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            // 
             // view_btn
             // 
             this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1855,7 +1855,6 @@
             // tabPage1
             // 
             this.tabPage1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.panel7);
             this.tabPage1.Controls.Add(this.panel6);
@@ -1877,16 +1876,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(379, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel8
             // 
@@ -3785,70 +3774,12 @@
             this.txtPosInput.Text = "0";
             this.txtPosInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(551, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(676, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 29;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(782, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "button2";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(446, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // picload_in
-            // 
-            this.picload_in.Image = global::Camera_Check_Component.Properties.Resources.avatar_red;
-            this.picload_in.Location = new System.Drawing.Point(278, 43);
-            this.picload_in.Name = "picload_in";
-            this.picload_in.Size = new System.Drawing.Size(120, 120);
-            this.picload_in.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picload_in.TabIndex = 6;
-            this.picload_in.TabStop = false;
-            // 
-            // tb_PN
-            // 
-            this.tb_PN.Location = new System.Drawing.Point(82, 259);
-            this.tb_PN.Name = "tb_PN";
-            this.tb_PN.Size = new System.Drawing.Size(135, 20);
-            this.tb_PN.TabIndex = 7;
-            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(3824, 971);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.General_tab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3890,6 +3821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_full2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -3964,7 +3896,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4028,13 +3959,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.Button sign_up;
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox TB_testpart;
         private System.Windows.Forms.TextBox TB_LTdate;
@@ -4100,10 +4029,6 @@
         private System.Windows.Forms.Label capture_10;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox picfull_2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label c3h1_1;
