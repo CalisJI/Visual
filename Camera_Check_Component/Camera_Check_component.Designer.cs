@@ -151,8 +151,8 @@
             this.TB_idworker = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_PN = new System.Windows.Forms.ComboBox();
             this.delete_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
             this.sign_up = new System.Windows.Forms.Button();
@@ -206,10 +206,127 @@
             this.label20 = new System.Windows.Forms.Label();
             this.General_tab = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblDownPUC = new System.Windows.Forms.Label();
+            this.lblUpPUC = new System.Windows.Forms.Label();
+            this.pic9 = new System.Windows.Forms.PictureBox();
+            this.pic10 = new System.Windows.Forms.PictureBox();
+            this.picDownPUC = new System.Windows.Forms.PictureBox();
+            this.picUpPUC = new System.Windows.Forms.PictureBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblDownXL4 = new System.Windows.Forms.Label();
+            this.lblUpXL4 = new System.Windows.Forms.Label();
+            this.pic7 = new System.Windows.Forms.PictureBox();
+            this.pic8 = new System.Windows.Forms.PictureBox();
+            this.picDownXL4 = new System.Windows.Forms.PictureBox();
+            this.picUpXL4 = new System.Windows.Forms.PictureBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblDownXL3 = new System.Windows.Forms.Label();
+            this.lblUpXL3 = new System.Windows.Forms.Label();
+            this.pic5 = new System.Windows.Forms.PictureBox();
+            this.pic6 = new System.Windows.Forms.PictureBox();
+            this.picDownXL3 = new System.Windows.Forms.PictureBox();
+            this.picUpXL3 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDownPUI = new System.Windows.Forms.Label();
+            this.lblUpPUI = new System.Windows.Forms.Label();
+            this.pic3 = new System.Windows.Forms.PictureBox();
+            this.pic4 = new System.Windows.Forms.PictureBox();
+            this.picDownPUI = new System.Windows.Forms.PictureBox();
+            this.picUpPUI = new System.Windows.Forms.PictureBox();
+            this.gb = new System.Windows.Forms.GroupBox();
+            this.txtIPAddress = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblDownOut = new System.Windows.Forms.Label();
+            this.lblUpOut = new System.Windows.Forms.Label();
+            this.pic15 = new System.Windows.Forms.PictureBox();
+            this.pic16 = new System.Windows.Forms.PictureBox();
+            this.picDownOut = new System.Windows.Forms.PictureBox();
+            this.picUpOut = new System.Windows.Forms.PictureBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblLeftMC = new System.Windows.Forms.Label();
+            this.lblRightMC = new System.Windows.Forms.Label();
+            this.pic11 = new System.Windows.Forms.PictureBox();
+            this.pic12 = new System.Windows.Forms.PictureBox();
+            this.picLeftMC = new System.Windows.Forms.PictureBox();
+            this.picRightMC = new System.Windows.Forms.PictureBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lblDownPP = new System.Windows.Forms.Label();
+            this.lblUpPP = new System.Windows.Forms.Label();
+            this.pic13 = new System.Windows.Forms.PictureBox();
+            this.pic14 = new System.Windows.Forms.PictureBox();
+            this.PicDownPP = new System.Windows.Forms.PictureBox();
+            this.picUpPP = new System.Windows.Forms.PictureBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.txtSpeedPG = new System.Windows.Forms.TextBox();
+            this.txtSpeedJogSV2 = new System.Windows.Forms.TextBox();
+            this.btnSetHomePG = new System.Windows.Forms.Button();
+            this.txtPositionPG = new System.Windows.Forms.TextBox();
+            this.btnJogForPG = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblSetSpeedJogSV2 = new System.Windows.Forms.Label();
+            this.btnReadPositionPG = new System.Windows.Forms.Button();
+            this.btnMovePositionPG = new System.Windows.Forms.Button();
+            this.lblReadPositionPG = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnJogBackPG = new System.Windows.Forms.Button();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.txtSpeedInput = new System.Windows.Forms.TextBox();
+            this.txtSpeedJogSV1 = new System.Windows.Forms.TextBox();
+            this.txtPositionInput = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblReadPositionInput = new System.Windows.Forms.Label();
+            this.lblSetSpeedJogSV1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnJogBackInput = new System.Windows.Forms.Button();
+            this.btnSetHomeInput = new System.Windows.Forms.Button();
+            this.btnReadPositionIP = new System.Windows.Forms.Button();
+            this.btnMovePositionInput = new System.Windows.Forms.Button();
+            this.btnJogForInput = new System.Windows.Forms.Button();
+            this.AUTO = new System.Windows.Forms.GroupBox();
+            this.btnAutoHome = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.lblLeftC = new System.Windows.Forms.Label();
+            this.lblRightC = new System.Windows.Forms.Label();
+            this.pic1 = new System.Windows.Forms.PictureBox();
+            this.pic2 = new System.Windows.Forms.PictureBox();
+            this.picCentLeft = new System.Windows.Forms.PictureBox();
+            this.picCentRight = new System.Windows.Forms.PictureBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.btnReadAll = new System.Windows.Forms.Button();
+            this.btnWriteAll = new System.Windows.Forms.Button();
+            this.btnPositionInput = new System.Windows.Forms.Button();
+            this.txtPosOK = new System.Windows.Forms.TextBox();
+            this.btnPositionMove = new System.Windows.Forms.Button();
+            this.txtPosNG6 = new System.Windows.Forms.TextBox();
+            this.btnPositionNG1 = new System.Windows.Forms.Button();
+            this.txtPosNG5 = new System.Windows.Forms.TextBox();
+            this.btnPositionStart = new System.Windows.Forms.Button();
+            this.txtPosNG4 = new System.Windows.Forms.TextBox();
+            this.btnPositionNG4 = new System.Windows.Forms.Button();
+            this.txtPosNG3 = new System.Windows.Forms.TextBox();
+            this.btnPositionOutPut = new System.Windows.Forms.Button();
+            this.txtPosNG2 = new System.Windows.Forms.TextBox();
+            this.btnPositionNG3 = new System.Windows.Forms.Button();
+            this.txtPosNG1 = new System.Windows.Forms.TextBox();
+            this.btnPositionNG2 = new System.Windows.Forms.Button();
+            this.txtPosOutput = new System.Windows.Forms.TextBox();
+            this.btnPositionNG5 = new System.Windows.Forms.Button();
+            this.txtPosMove = new System.Windows.Forms.TextBox();
+            this.btnPositionNG6 = new System.Windows.Forms.Button();
+            this.txtPosStart = new System.Windows.Forms.TextBox();
+            this.btnPositionOK = new System.Windows.Forms.Button();
+            this.txtPosInput = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.picload_in = new System.Windows.Forms.PictureBox();
+            this.tb_PN = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -258,6 +375,53 @@
             this.groupBox3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.General_tab.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownPUC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPUC)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownXL4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpXL4)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownXL3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpXL3)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownPUI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPUI)).BeginInit();
+            this.gb.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpOut)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftMC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRightMC)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicDownPP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPP)).BeginInit();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.AUTO.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).BeginInit();
+            this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1537,14 +1701,16 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tb_PN);
+            this.tabPage3.Controls.Add(this.picload_in);
             this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.TB_wker2);
             this.tabPage3.Controls.Add(this.TB_idworker);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.tb_PN);
             this.tabPage3.Controls.Add(this.delete_btn);
             this.tabPage3.Controls.Add(this.view_btn);
             this.tabPage3.Controls.Add(this.sign_up);
@@ -1563,7 +1729,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "PN Selector Status",
             "NG Detail"});
-            this.comboBox1.Location = new System.Drawing.Point(244, 434);
+            this.comboBox1.Location = new System.Drawing.Point(300, 434);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 5;
@@ -1612,6 +1778,16 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "ID Operator 1";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(241, 435);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 16);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Table:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -1621,16 +1797,6 @@
             this.label10.Size = new System.Drawing.Size(91, 16);
             this.label10.TabIndex = 2;
             this.label10.Text = "PN Selector";
-            // 
-            // tb_PN
-            // 
-            this.tb_PN.FormattingEnabled = true;
-            this.tb_PN.Items.AddRange(new object[] {
-            "x26653"});
-            this.tb_PN.Location = new System.Drawing.Point(83, 259);
-            this.tb_PN.Name = "tb_PN";
-            this.tb_PN.Size = new System.Drawing.Size(135, 21);
-            this.tb_PN.TabIndex = 1;
             // 
             // delete_btn
             // 
@@ -1656,7 +1822,7 @@
             // sign_up
             // 
             this.sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign_up.Location = new System.Drawing.Point(244, 101);
+            this.sign_up.Location = new System.Drawing.Point(83, 149);
             this.sign_up.Name = "sign_up";
             this.sign_up.Size = new System.Drawing.Size(135, 47);
             this.sign_up.TabIndex = 0;
@@ -1667,7 +1833,7 @@
             // Logout_btn
             // 
             this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_btn.Location = new System.Drawing.Point(83, 164);
+            this.Logout_btn.Location = new System.Drawing.Point(83, 96);
             this.Logout_btn.Name = "Logout_btn";
             this.Logout_btn.Size = new System.Drawing.Size(135, 47);
             this.Logout_btn.TabIndex = 0;
@@ -1678,7 +1844,7 @@
             // login_btn
             // 
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_btn.Location = new System.Drawing.Point(83, 101);
+            this.login_btn.Location = new System.Drawing.Point(83, 43);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(135, 47);
             this.login_btn.TabIndex = 0;
@@ -2210,6 +2376,19 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox8);
+            this.tabPage4.Controls.Add(this.groupBox7);
+            this.tabPage4.Controls.Add(this.groupBox6);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.gb);
+            this.tabPage4.Controls.Add(this.groupBox11);
+            this.tabPage4.Controls.Add(this.groupBox10);
+            this.tabPage4.Controls.Add(this.groupBox9);
+            this.tabPage4.Controls.Add(this.groupBox12);
+            this.tabPage4.Controls.Add(this.groupBox13);
+            this.tabPage4.Controls.Add(this.AUTO);
+            this.tabPage4.Controls.Add(this.groupBox14);
+            this.tabPage4.Controls.Add(this.groupBox15);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -2217,6 +2396,1394 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manual";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox8.Controls.Add(this.lblDownPUC);
+            this.groupBox8.Controls.Add(this.lblUpPUC);
+            this.groupBox8.Controls.Add(this.pic9);
+            this.groupBox8.Controls.Add(this.pic10);
+            this.groupBox8.Controls.Add(this.picDownPUC);
+            this.groupBox8.Controls.Add(this.picUpPUC);
+            this.groupBox8.Location = new System.Drawing.Point(47, 615);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(234, 126);
+            this.groupBox8.TabIndex = 24;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "PICK UP CHECK";
+            // 
+            // lblDownPUC
+            // 
+            this.lblDownPUC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownPUC.Location = new System.Drawing.Point(162, 96);
+            this.lblDownPUC.Name = "lblDownPUC";
+            this.lblDownPUC.Size = new System.Drawing.Size(51, 21);
+            this.lblDownPUC.TabIndex = 2;
+            this.lblDownPUC.Text = "0";
+            this.lblDownPUC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpPUC
+            // 
+            this.lblUpPUC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpPUC.Location = new System.Drawing.Point(19, 96);
+            this.lblUpPUC.Name = "lblUpPUC";
+            this.lblUpPUC.Size = new System.Drawing.Size(51, 21);
+            this.lblUpPUC.TabIndex = 2;
+            this.lblUpPUC.Text = "0";
+            this.lblUpPUC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic9
+            // 
+            this.pic9.Image = ((System.Drawing.Image)(resources.GetObject("pic9.Image")));
+            this.pic9.Location = new System.Drawing.Point(24, 49);
+            this.pic9.Name = "pic9";
+            this.pic9.Size = new System.Drawing.Size(40, 40);
+            this.pic9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic9.TabIndex = 1;
+            this.pic9.TabStop = false;
+            this.pic9.Visible = false;
+            // 
+            // pic10
+            // 
+            this.pic10.Image = ((System.Drawing.Image)(resources.GetObject("pic10.Image")));
+            this.pic10.Location = new System.Drawing.Point(167, 49);
+            this.pic10.Name = "pic10";
+            this.pic10.Size = new System.Drawing.Size(40, 40);
+            this.pic10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic10.TabIndex = 1;
+            this.pic10.TabStop = false;
+            this.pic10.Visible = false;
+            // 
+            // picDownPUC
+            // 
+            this.picDownPUC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picDownPUC.Image = ((System.Drawing.Image)(resources.GetObject("picDownPUC.Image")));
+            this.picDownPUC.Location = new System.Drawing.Point(91, 74);
+            this.picDownPUC.Name = "picDownPUC";
+            this.picDownPUC.Size = new System.Drawing.Size(51, 43);
+            this.picDownPUC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDownPUC.TabIndex = 0;
+            this.picDownPUC.TabStop = false;
+            this.picDownPUC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDownPUC_MouseDown);
+            this.picDownPUC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDownPUC_MouseUp);
+            // 
+            // picUpPUC
+            // 
+            this.picUpPUC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpPUC.Image = ((System.Drawing.Image)(resources.GetObject("picUpPUC.Image")));
+            this.picUpPUC.Location = new System.Drawing.Point(91, 21);
+            this.picUpPUC.Name = "picUpPUC";
+            this.picUpPUC.Size = new System.Drawing.Size(51, 43);
+            this.picUpPUC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpPUC.TabIndex = 0;
+            this.picUpPUC.TabStop = false;
+            this.picUpPUC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpPUC_MouseDown);
+            this.picUpPUC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpPUC_MouseUp);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox7.Controls.Add(this.lblDownXL4);
+            this.groupBox7.Controls.Add(this.lblUpXL4);
+            this.groupBox7.Controls.Add(this.pic7);
+            this.groupBox7.Controls.Add(this.pic8);
+            this.groupBox7.Controls.Add(this.picDownXL4);
+            this.groupBox7.Controls.Add(this.picUpXL4);
+            this.groupBox7.Location = new System.Drawing.Point(909, 463);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(233, 126);
+            this.groupBox7.TabIndex = 25;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "XILANH 4";
+            // 
+            // lblDownXL4
+            // 
+            this.lblDownXL4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownXL4.Location = new System.Drawing.Point(162, 96);
+            this.lblDownXL4.Name = "lblDownXL4";
+            this.lblDownXL4.Size = new System.Drawing.Size(51, 21);
+            this.lblDownXL4.TabIndex = 2;
+            this.lblDownXL4.Text = "0";
+            this.lblDownXL4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpXL4
+            // 
+            this.lblUpXL4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpXL4.Location = new System.Drawing.Point(19, 96);
+            this.lblUpXL4.Name = "lblUpXL4";
+            this.lblUpXL4.Size = new System.Drawing.Size(51, 21);
+            this.lblUpXL4.TabIndex = 2;
+            this.lblUpXL4.Text = "0";
+            this.lblUpXL4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic7
+            // 
+            this.pic7.Image = ((System.Drawing.Image)(resources.GetObject("pic7.Image")));
+            this.pic7.Location = new System.Drawing.Point(24, 49);
+            this.pic7.Name = "pic7";
+            this.pic7.Size = new System.Drawing.Size(40, 40);
+            this.pic7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic7.TabIndex = 1;
+            this.pic7.TabStop = false;
+            this.pic7.Visible = false;
+            // 
+            // pic8
+            // 
+            this.pic8.Image = ((System.Drawing.Image)(resources.GetObject("pic8.Image")));
+            this.pic8.Location = new System.Drawing.Point(167, 49);
+            this.pic8.Name = "pic8";
+            this.pic8.Size = new System.Drawing.Size(40, 40);
+            this.pic8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic8.TabIndex = 1;
+            this.pic8.TabStop = false;
+            this.pic8.Visible = false;
+            // 
+            // picDownXL4
+            // 
+            this.picDownXL4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picDownXL4.Image = ((System.Drawing.Image)(resources.GetObject("picDownXL4.Image")));
+            this.picDownXL4.Location = new System.Drawing.Point(91, 74);
+            this.picDownXL4.Name = "picDownXL4";
+            this.picDownXL4.Size = new System.Drawing.Size(51, 43);
+            this.picDownXL4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDownXL4.TabIndex = 0;
+            this.picDownXL4.TabStop = false;
+            this.picDownXL4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDownXL4_MouseDown);
+            this.picDownXL4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDownXL4_MouseUp);
+            // 
+            // picUpXL4
+            // 
+            this.picUpXL4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpXL4.Image = ((System.Drawing.Image)(resources.GetObject("picUpXL4.Image")));
+            this.picUpXL4.Location = new System.Drawing.Point(91, 21);
+            this.picUpXL4.Name = "picUpXL4";
+            this.picUpXL4.Size = new System.Drawing.Size(51, 43);
+            this.picUpXL4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpXL4.TabIndex = 0;
+            this.picUpXL4.TabStop = false;
+            this.picUpXL4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpXL4_MouseDown);
+            this.picUpXL4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpXL4_MouseUp);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox6.Controls.Add(this.lblDownXL3);
+            this.groupBox6.Controls.Add(this.lblUpXL3);
+            this.groupBox6.Controls.Add(this.pic5);
+            this.groupBox6.Controls.Add(this.pic6);
+            this.groupBox6.Controls.Add(this.picDownXL3);
+            this.groupBox6.Controls.Add(this.picUpXL3);
+            this.groupBox6.Location = new System.Drawing.Point(622, 463);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(233, 126);
+            this.groupBox6.TabIndex = 26;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "XILANH 3";
+            // 
+            // lblDownXL3
+            // 
+            this.lblDownXL3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownXL3.Location = new System.Drawing.Point(162, 96);
+            this.lblDownXL3.Name = "lblDownXL3";
+            this.lblDownXL3.Size = new System.Drawing.Size(51, 21);
+            this.lblDownXL3.TabIndex = 2;
+            this.lblDownXL3.Text = "0";
+            this.lblDownXL3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpXL3
+            // 
+            this.lblUpXL3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpXL3.Location = new System.Drawing.Point(19, 96);
+            this.lblUpXL3.Name = "lblUpXL3";
+            this.lblUpXL3.Size = new System.Drawing.Size(51, 21);
+            this.lblUpXL3.TabIndex = 2;
+            this.lblUpXL3.Text = "0";
+            this.lblUpXL3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic5
+            // 
+            this.pic5.Image = ((System.Drawing.Image)(resources.GetObject("pic5.Image")));
+            this.pic5.Location = new System.Drawing.Point(24, 49);
+            this.pic5.Name = "pic5";
+            this.pic5.Size = new System.Drawing.Size(40, 40);
+            this.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic5.TabIndex = 1;
+            this.pic5.TabStop = false;
+            this.pic5.Visible = false;
+            // 
+            // pic6
+            // 
+            this.pic6.Image = ((System.Drawing.Image)(resources.GetObject("pic6.Image")));
+            this.pic6.Location = new System.Drawing.Point(167, 49);
+            this.pic6.Name = "pic6";
+            this.pic6.Size = new System.Drawing.Size(40, 40);
+            this.pic6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic6.TabIndex = 1;
+            this.pic6.TabStop = false;
+            this.pic6.Visible = false;
+            // 
+            // picDownXL3
+            // 
+            this.picDownXL3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picDownXL3.Image = ((System.Drawing.Image)(resources.GetObject("picDownXL3.Image")));
+            this.picDownXL3.Location = new System.Drawing.Point(91, 74);
+            this.picDownXL3.Name = "picDownXL3";
+            this.picDownXL3.Size = new System.Drawing.Size(51, 43);
+            this.picDownXL3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDownXL3.TabIndex = 0;
+            this.picDownXL3.TabStop = false;
+            this.picDownXL3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDownXL3_MouseDown);
+            this.picDownXL3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDownXL3_MouseUp);
+            // 
+            // picUpXL3
+            // 
+            this.picUpXL3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpXL3.Image = ((System.Drawing.Image)(resources.GetObject("picUpXL3.Image")));
+            this.picUpXL3.Location = new System.Drawing.Point(91, 21);
+            this.picUpXL3.Name = "picUpXL3";
+            this.picUpXL3.Size = new System.Drawing.Size(51, 43);
+            this.picUpXL3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpXL3.TabIndex = 0;
+            this.picUpXL3.TabStop = false;
+            this.picUpXL3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpXL3_MouseDown);
+            this.picUpXL3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpXL3_MouseUp);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.lblDownPUI);
+            this.groupBox2.Controls.Add(this.lblUpPUI);
+            this.groupBox2.Controls.Add(this.pic3);
+            this.groupBox2.Controls.Add(this.pic4);
+            this.groupBox2.Controls.Add(this.picDownPUI);
+            this.groupBox2.Controls.Add(this.picUpPUI);
+            this.groupBox2.Location = new System.Drawing.Point(331, 463);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(233, 126);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PICK UP INPUT";
+            // 
+            // lblDownPUI
+            // 
+            this.lblDownPUI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownPUI.Location = new System.Drawing.Point(162, 96);
+            this.lblDownPUI.Name = "lblDownPUI";
+            this.lblDownPUI.Size = new System.Drawing.Size(51, 21);
+            this.lblDownPUI.TabIndex = 2;
+            this.lblDownPUI.Text = "0";
+            this.lblDownPUI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpPUI
+            // 
+            this.lblUpPUI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpPUI.Location = new System.Drawing.Point(19, 96);
+            this.lblUpPUI.Name = "lblUpPUI";
+            this.lblUpPUI.Size = new System.Drawing.Size(51, 21);
+            this.lblUpPUI.TabIndex = 2;
+            this.lblUpPUI.Text = "0";
+            this.lblUpPUI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic3
+            // 
+            this.pic3.Image = ((System.Drawing.Image)(resources.GetObject("pic3.Image")));
+            this.pic3.Location = new System.Drawing.Point(24, 49);
+            this.pic3.Name = "pic3";
+            this.pic3.Size = new System.Drawing.Size(40, 40);
+            this.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic3.TabIndex = 1;
+            this.pic3.TabStop = false;
+            this.pic3.Visible = false;
+            // 
+            // pic4
+            // 
+            this.pic4.Image = ((System.Drawing.Image)(resources.GetObject("pic4.Image")));
+            this.pic4.Location = new System.Drawing.Point(167, 49);
+            this.pic4.Name = "pic4";
+            this.pic4.Size = new System.Drawing.Size(40, 40);
+            this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic4.TabIndex = 1;
+            this.pic4.TabStop = false;
+            this.pic4.Visible = false;
+            // 
+            // picDownPUI
+            // 
+            this.picDownPUI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picDownPUI.Image = ((System.Drawing.Image)(resources.GetObject("picDownPUI.Image")));
+            this.picDownPUI.Location = new System.Drawing.Point(91, 74);
+            this.picDownPUI.Name = "picDownPUI";
+            this.picDownPUI.Size = new System.Drawing.Size(51, 43);
+            this.picDownPUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDownPUI.TabIndex = 0;
+            this.picDownPUI.TabStop = false;
+            this.picDownPUI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDownPUI_MouseDown);
+            this.picDownPUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDownPUI_MouseUp);
+            // 
+            // picUpPUI
+            // 
+            this.picUpPUI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpPUI.Image = ((System.Drawing.Image)(resources.GetObject("picUpPUI.Image")));
+            this.picUpPUI.Location = new System.Drawing.Point(91, 21);
+            this.picUpPUI.Name = "picUpPUI";
+            this.picUpPUI.Size = new System.Drawing.Size(51, 43);
+            this.picUpPUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpPUI.TabIndex = 0;
+            this.picUpPUI.TabStop = false;
+            this.picUpPUI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpPUI_MouseDown);
+            this.picUpPUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpPUI_MouseUp);
+            // 
+            // gb
+            // 
+            this.gb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gb.Controls.Add(this.txtIPAddress);
+            this.gb.Controls.Add(this.button5);
+            this.gb.Controls.Add(this.btnConnect);
+            this.gb.Controls.Add(this.button6);
+            this.gb.Location = new System.Drawing.Point(43, 120);
+            this.gb.Name = "gb";
+            this.gb.Size = new System.Drawing.Size(335, 157);
+            this.gb.TabIndex = 32;
+            this.gb.TabStop = false;
+            this.gb.Text = "MODE";
+            // 
+            // txtIPAddress
+            // 
+            this.txtIPAddress.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIPAddress.Location = new System.Drawing.Point(166, 34);
+            this.txtIPAddress.Name = "txtIPAddress";
+            this.txtIPAddress.Size = new System.Drawing.Size(152, 29);
+            this.txtIPAddress.TabIndex = 1;
+            this.txtIPAddress.Text = "192.168.0.7";
+            this.txtIPAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(171, 93);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(143, 56);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "TRANSFER";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Location = new System.Drawing.Point(5, 21);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(143, 56);
+            this.btnConnect.TabIndex = 0;
+            this.btnConnect.Text = "CONNECT";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(5, 93);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(143, 56);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "MANUAL";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox11.Controls.Add(this.lblDownOut);
+            this.groupBox11.Controls.Add(this.lblUpOut);
+            this.groupBox11.Controls.Add(this.pic15);
+            this.groupBox11.Controls.Add(this.pic16);
+            this.groupBox11.Controls.Add(this.picDownOut);
+            this.groupBox11.Controls.Add(this.picUpOut);
+            this.groupBox11.Location = new System.Drawing.Point(909, 615);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(233, 126);
+            this.groupBox11.TabIndex = 28;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "OUT";
+            // 
+            // lblDownOut
+            // 
+            this.lblDownOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownOut.Location = new System.Drawing.Point(162, 96);
+            this.lblDownOut.Name = "lblDownOut";
+            this.lblDownOut.Size = new System.Drawing.Size(51, 21);
+            this.lblDownOut.TabIndex = 2;
+            this.lblDownOut.Text = "0";
+            this.lblDownOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpOut
+            // 
+            this.lblUpOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpOut.Location = new System.Drawing.Point(19, 96);
+            this.lblUpOut.Name = "lblUpOut";
+            this.lblUpOut.Size = new System.Drawing.Size(51, 21);
+            this.lblUpOut.TabIndex = 2;
+            this.lblUpOut.Text = "0";
+            this.lblUpOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic15
+            // 
+            this.pic15.Image = ((System.Drawing.Image)(resources.GetObject("pic15.Image")));
+            this.pic15.Location = new System.Drawing.Point(24, 49);
+            this.pic15.Name = "pic15";
+            this.pic15.Size = new System.Drawing.Size(40, 40);
+            this.pic15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic15.TabIndex = 1;
+            this.pic15.TabStop = false;
+            this.pic15.Visible = false;
+            // 
+            // pic16
+            // 
+            this.pic16.Image = ((System.Drawing.Image)(resources.GetObject("pic16.Image")));
+            this.pic16.Location = new System.Drawing.Point(167, 49);
+            this.pic16.Name = "pic16";
+            this.pic16.Size = new System.Drawing.Size(40, 40);
+            this.pic16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic16.TabIndex = 1;
+            this.pic16.TabStop = false;
+            this.pic16.Visible = false;
+            // 
+            // picDownOut
+            // 
+            this.picDownOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picDownOut.Image = ((System.Drawing.Image)(resources.GetObject("picDownOut.Image")));
+            this.picDownOut.Location = new System.Drawing.Point(91, 74);
+            this.picDownOut.Name = "picDownOut";
+            this.picDownOut.Size = new System.Drawing.Size(51, 43);
+            this.picDownOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDownOut.TabIndex = 0;
+            this.picDownOut.TabStop = false;
+            this.picDownOut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDownOut_MouseDown);
+            this.picDownOut.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDownOut_MouseUp);
+            // 
+            // picUpOut
+            // 
+            this.picUpOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpOut.Image = ((System.Drawing.Image)(resources.GetObject("picUpOut.Image")));
+            this.picUpOut.Location = new System.Drawing.Point(91, 21);
+            this.picUpOut.Name = "picUpOut";
+            this.picUpOut.Size = new System.Drawing.Size(51, 43);
+            this.picUpOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpOut.TabIndex = 0;
+            this.picUpOut.TabStop = false;
+            this.picUpOut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpOut_MouseDown);
+            this.picUpOut.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpOut_MouseUp);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox10.Controls.Add(this.lblLeftMC);
+            this.groupBox10.Controls.Add(this.lblRightMC);
+            this.groupBox10.Controls.Add(this.pic11);
+            this.groupBox10.Controls.Add(this.pic12);
+            this.groupBox10.Controls.Add(this.picLeftMC);
+            this.groupBox10.Controls.Add(this.picRightMC);
+            this.groupBox10.Location = new System.Drawing.Point(331, 615);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(233, 126);
+            this.groupBox10.TabIndex = 29;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "MOVE CHECK";
+            // 
+            // lblLeftMC
+            // 
+            this.lblLeftMC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLeftMC.Location = new System.Drawing.Point(162, 96);
+            this.lblLeftMC.Name = "lblLeftMC";
+            this.lblLeftMC.Size = new System.Drawing.Size(51, 21);
+            this.lblLeftMC.TabIndex = 2;
+            this.lblLeftMC.Text = "0";
+            this.lblLeftMC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRightMC
+            // 
+            this.lblRightMC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRightMC.Location = new System.Drawing.Point(19, 96);
+            this.lblRightMC.Name = "lblRightMC";
+            this.lblRightMC.Size = new System.Drawing.Size(51, 21);
+            this.lblRightMC.TabIndex = 2;
+            this.lblRightMC.Text = "0";
+            this.lblRightMC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic11
+            // 
+            this.pic11.Image = ((System.Drawing.Image)(resources.GetObject("pic11.Image")));
+            this.pic11.Location = new System.Drawing.Point(24, 49);
+            this.pic11.Name = "pic11";
+            this.pic11.Size = new System.Drawing.Size(40, 40);
+            this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic11.TabIndex = 1;
+            this.pic11.TabStop = false;
+            this.pic11.Visible = false;
+            // 
+            // pic12
+            // 
+            this.pic12.Image = ((System.Drawing.Image)(resources.GetObject("pic12.Image")));
+            this.pic12.Location = new System.Drawing.Point(167, 49);
+            this.pic12.Name = "pic12";
+            this.pic12.Size = new System.Drawing.Size(40, 40);
+            this.pic12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic12.TabIndex = 1;
+            this.pic12.TabStop = false;
+            this.pic12.Visible = false;
+            // 
+            // picLeftMC
+            // 
+            this.picLeftMC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picLeftMC.Image = ((System.Drawing.Image)(resources.GetObject("picLeftMC.Image")));
+            this.picLeftMC.Location = new System.Drawing.Point(91, 74);
+            this.picLeftMC.Name = "picLeftMC";
+            this.picLeftMC.Size = new System.Drawing.Size(51, 43);
+            this.picLeftMC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLeftMC.TabIndex = 0;
+            this.picLeftMC.TabStop = false;
+            this.picLeftMC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picLeftMC_MouseDown);
+            this.picLeftMC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picLeftMC_MouseUp);
+            // 
+            // picRightMC
+            // 
+            this.picRightMC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picRightMC.Image = ((System.Drawing.Image)(resources.GetObject("picRightMC.Image")));
+            this.picRightMC.Location = new System.Drawing.Point(91, 21);
+            this.picRightMC.Name = "picRightMC";
+            this.picRightMC.Size = new System.Drawing.Size(51, 43);
+            this.picRightMC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRightMC.TabIndex = 0;
+            this.picRightMC.TabStop = false;
+            this.picRightMC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picRightMC_MouseDown);
+            this.picRightMC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picRightMC_MouseUp);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox9.Controls.Add(this.lblDownPP);
+            this.groupBox9.Controls.Add(this.lblUpPP);
+            this.groupBox9.Controls.Add(this.pic13);
+            this.groupBox9.Controls.Add(this.pic14);
+            this.groupBox9.Controls.Add(this.PicDownPP);
+            this.groupBox9.Controls.Add(this.picUpPP);
+            this.groupBox9.Location = new System.Drawing.Point(622, 615);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(233, 126);
+            this.groupBox9.TabIndex = 30;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "PICKUP PACKAGING";
+            // 
+            // lblDownPP
+            // 
+            this.lblDownPP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDownPP.Location = new System.Drawing.Point(162, 96);
+            this.lblDownPP.Name = "lblDownPP";
+            this.lblDownPP.Size = new System.Drawing.Size(51, 21);
+            this.lblDownPP.TabIndex = 2;
+            this.lblDownPP.Text = "0";
+            this.lblDownPP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUpPP
+            // 
+            this.lblUpPP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUpPP.Location = new System.Drawing.Point(19, 96);
+            this.lblUpPP.Name = "lblUpPP";
+            this.lblUpPP.Size = new System.Drawing.Size(51, 21);
+            this.lblUpPP.TabIndex = 2;
+            this.lblUpPP.Text = "0";
+            this.lblUpPP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic13
+            // 
+            this.pic13.Image = ((System.Drawing.Image)(resources.GetObject("pic13.Image")));
+            this.pic13.Location = new System.Drawing.Point(24, 49);
+            this.pic13.Name = "pic13";
+            this.pic13.Size = new System.Drawing.Size(40, 40);
+            this.pic13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic13.TabIndex = 1;
+            this.pic13.TabStop = false;
+            this.pic13.Visible = false;
+            // 
+            // pic14
+            // 
+            this.pic14.Image = ((System.Drawing.Image)(resources.GetObject("pic14.Image")));
+            this.pic14.Location = new System.Drawing.Point(167, 49);
+            this.pic14.Name = "pic14";
+            this.pic14.Size = new System.Drawing.Size(40, 40);
+            this.pic14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic14.TabIndex = 1;
+            this.pic14.TabStop = false;
+            this.pic14.Visible = false;
+            // 
+            // PicDownPP
+            // 
+            this.PicDownPP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PicDownPP.Image = ((System.Drawing.Image)(resources.GetObject("PicDownPP.Image")));
+            this.PicDownPP.Location = new System.Drawing.Point(91, 74);
+            this.PicDownPP.Name = "PicDownPP";
+            this.PicDownPP.Size = new System.Drawing.Size(51, 43);
+            this.PicDownPP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicDownPP.TabIndex = 0;
+            this.PicDownPP.TabStop = false;
+            this.PicDownPP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicDownPP_MouseDown);
+            this.PicDownPP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicDownPP_MouseUp);
+            // 
+            // picUpPP
+            // 
+            this.picUpPP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picUpPP.Image = ((System.Drawing.Image)(resources.GetObject("picUpPP.Image")));
+            this.picUpPP.Location = new System.Drawing.Point(91, 21);
+            this.picUpPP.Name = "picUpPP";
+            this.picUpPP.Size = new System.Drawing.Size(51, 43);
+            this.picUpPP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpPP.TabIndex = 0;
+            this.picUpPP.TabStop = false;
+            this.picUpPP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picUpPP_MouseDown);
+            this.picUpPP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picUpPP_MouseUp);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox12.Controls.Add(this.txtSpeedPG);
+            this.groupBox12.Controls.Add(this.txtSpeedJogSV2);
+            this.groupBox12.Controls.Add(this.btnSetHomePG);
+            this.groupBox12.Controls.Add(this.txtPositionPG);
+            this.groupBox12.Controls.Add(this.btnJogForPG);
+            this.groupBox12.Controls.Add(this.label14);
+            this.groupBox12.Controls.Add(this.lblSetSpeedJogSV2);
+            this.groupBox12.Controls.Add(this.btnReadPositionPG);
+            this.groupBox12.Controls.Add(this.btnMovePositionPG);
+            this.groupBox12.Controls.Add(this.lblReadPositionPG);
+            this.groupBox12.Controls.Add(this.label17);
+            this.groupBox12.Controls.Add(this.btnJogBackPG);
+            this.groupBox12.Location = new System.Drawing.Point(808, 15);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(335, 262);
+            this.groupBox12.TabIndex = 21;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "PACKAGING";
+            // 
+            // txtSpeedPG
+            // 
+            this.txtSpeedPG.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpeedPG.Location = new System.Drawing.Point(232, 169);
+            this.txtSpeedPG.Name = "txtSpeedPG";
+            this.txtSpeedPG.Size = new System.Drawing.Size(96, 26);
+            this.txtSpeedPG.TabIndex = 2;
+            this.txtSpeedPG.Text = "0";
+            this.txtSpeedPG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSpeedPG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSpeedPG_KeyPress);
+            // 
+            // txtSpeedJogSV2
+            // 
+            this.txtSpeedJogSV2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpeedJogSV2.Location = new System.Drawing.Point(126, 100);
+            this.txtSpeedJogSV2.Name = "txtSpeedJogSV2";
+            this.txtSpeedJogSV2.Size = new System.Drawing.Size(86, 26);
+            this.txtSpeedJogSV2.TabIndex = 2;
+            this.txtSpeedJogSV2.Text = "0";
+            this.txtSpeedJogSV2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSetHomePG
+            // 
+            this.btnSetHomePG.Location = new System.Drawing.Point(86, 10);
+            this.btnSetHomePG.Name = "btnSetHomePG";
+            this.btnSetHomePG.Size = new System.Drawing.Size(162, 46);
+            this.btnSetHomePG.TabIndex = 0;
+            this.btnSetHomePG.Text = "SET HOME";
+            this.btnSetHomePG.UseVisualStyleBackColor = true;
+            this.btnSetHomePG.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSetHomePG_MouseDown);
+            this.btnSetHomePG.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnSetHomePG_MouseUp);
+            // 
+            // txtPositionPG
+            // 
+            this.txtPositionPG.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPositionPG.Location = new System.Drawing.Point(130, 169);
+            this.txtPositionPG.Name = "txtPositionPG";
+            this.txtPositionPG.Size = new System.Drawing.Size(96, 26);
+            this.txtPositionPG.TabIndex = 2;
+            this.txtPositionPG.Text = "0";
+            this.txtPositionPG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPositionPG.TextChanged += new System.EventHandler(this.txtPositionPG_TextChanged);
+            this.txtPositionPG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPositionPG_KeyPress);
+            // 
+            // btnJogForPG
+            // 
+            this.btnJogForPG.Location = new System.Drawing.Point(7, 82);
+            this.btnJogForPG.Name = "btnJogForPG";
+            this.btnJogForPG.Size = new System.Drawing.Size(115, 46);
+            this.btnJogForPG.TabIndex = 0;
+            this.btnJogForPG.Text = "JOG +";
+            this.btnJogForPG.UseVisualStyleBackColor = true;
+            this.btnJogForPG.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogForPG_MouseDown);
+            this.btnJogForPG.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogForPG_MouseUp);
+            // 
+            // label14
+            // 
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label14.Location = new System.Drawing.Point(232, 136);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 22);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "SPEED";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSetSpeedJogSV2
+            // 
+            this.lblSetSpeedJogSV2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblSetSpeedJogSV2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSetSpeedJogSV2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetSpeedJogSV2.Location = new System.Drawing.Point(128, 59);
+            this.lblSetSpeedJogSV2.Name = "lblSetSpeedJogSV2";
+            this.lblSetSpeedJogSV2.Size = new System.Drawing.Size(81, 38);
+            this.lblSetSpeedJogSV2.TabIndex = 1;
+            this.lblSetSpeedJogSV2.Text = "SET SPEED JOG";
+            this.lblSetSpeedJogSV2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSetSpeedJogSV2.Click += new System.EventHandler(this.lblSetSpeedJogSV2_Click);
+            // 
+            // btnReadPositionPG
+            // 
+            this.btnReadPositionPG.Location = new System.Drawing.Point(7, 206);
+            this.btnReadPositionPG.Name = "btnReadPositionPG";
+            this.btnReadPositionPG.Size = new System.Drawing.Size(114, 46);
+            this.btnReadPositionPG.TabIndex = 0;
+            this.btnReadPositionPG.Text = "READ POSITION";
+            this.btnReadPositionPG.UseVisualStyleBackColor = true;
+            this.btnReadPositionPG.Click += new System.EventHandler(this.btnReadPositionPG_Click);
+            // 
+            // btnMovePositionPG
+            // 
+            this.btnMovePositionPG.Location = new System.Drawing.Point(7, 157);
+            this.btnMovePositionPG.Name = "btnMovePositionPG";
+            this.btnMovePositionPG.Size = new System.Drawing.Size(114, 46);
+            this.btnMovePositionPG.TabIndex = 0;
+            this.btnMovePositionPG.Text = "MOVE POSITION";
+            this.btnMovePositionPG.UseVisualStyleBackColor = true;
+            this.btnMovePositionPG.Click += new System.EventHandler(this.btnMovePositionPG_Click);
+            // 
+            // lblReadPositionPG
+            // 
+            this.lblReadPositionPG.BackColor = System.Drawing.Color.DarkCyan;
+            this.lblReadPositionPG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblReadPositionPG.Location = new System.Drawing.Point(174, 213);
+            this.lblReadPositionPG.Name = "lblReadPositionPG";
+            this.lblReadPositionPG.Size = new System.Drawing.Size(111, 33);
+            this.lblReadPositionPG.TabIndex = 1;
+            this.lblReadPositionPG.Text = "0";
+            this.lblReadPositionPG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label17.Location = new System.Drawing.Point(131, 136);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(96, 22);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "POSITION";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnJogBackPG
+            // 
+            this.btnJogBackPG.Location = new System.Drawing.Point(213, 82);
+            this.btnJogBackPG.Name = "btnJogBackPG";
+            this.btnJogBackPG.Size = new System.Drawing.Size(115, 46);
+            this.btnJogBackPG.TabIndex = 0;
+            this.btnJogBackPG.Text = "JOG -";
+            this.btnJogBackPG.UseVisualStyleBackColor = true;
+            this.btnJogBackPG.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogBackPG_MouseDown);
+            this.btnJogBackPG.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogBackPG_MouseUp);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox13.Controls.Add(this.txtSpeedInput);
+            this.groupBox13.Controls.Add(this.txtSpeedJogSV1);
+            this.groupBox13.Controls.Add(this.txtPositionInput);
+            this.groupBox13.Controls.Add(this.label15);
+            this.groupBox13.Controls.Add(this.lblReadPositionInput);
+            this.groupBox13.Controls.Add(this.lblSetSpeedJogSV1);
+            this.groupBox13.Controls.Add(this.label16);
+            this.groupBox13.Controls.Add(this.btnJogBackInput);
+            this.groupBox13.Controls.Add(this.btnSetHomeInput);
+            this.groupBox13.Controls.Add(this.btnReadPositionIP);
+            this.groupBox13.Controls.Add(this.btnMovePositionInput);
+            this.groupBox13.Controls.Add(this.btnJogForInput);
+            this.groupBox13.Location = new System.Drawing.Point(425, 15);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(335, 262);
+            this.groupBox13.TabIndex = 22;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "INPUT";
+            // 
+            // txtSpeedInput
+            // 
+            this.txtSpeedInput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpeedInput.Location = new System.Drawing.Point(231, 169);
+            this.txtSpeedInput.Name = "txtSpeedInput";
+            this.txtSpeedInput.Size = new System.Drawing.Size(96, 26);
+            this.txtSpeedInput.TabIndex = 2;
+            this.txtSpeedInput.Text = "0";
+            this.txtSpeedInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSpeedInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSpeedInput_KeyPress);
+            // 
+            // txtSpeedJogSV1
+            // 
+            this.txtSpeedJogSV1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpeedJogSV1.Location = new System.Drawing.Point(125, 100);
+            this.txtSpeedJogSV1.Name = "txtSpeedJogSV1";
+            this.txtSpeedJogSV1.Size = new System.Drawing.Size(86, 26);
+            this.txtSpeedJogSV1.TabIndex = 2;
+            this.txtSpeedJogSV1.Text = "0";
+            this.txtSpeedJogSV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPositionInput
+            // 
+            this.txtPositionInput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPositionInput.Location = new System.Drawing.Point(129, 169);
+            this.txtPositionInput.Name = "txtPositionInput";
+            this.txtPositionInput.Size = new System.Drawing.Size(96, 26);
+            this.txtPositionInput.TabIndex = 2;
+            this.txtPositionInput.Text = "0";
+            this.txtPositionInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPositionInput.TextChanged += new System.EventHandler(this.txtPositionInput_TextChanged);
+            this.txtPositionInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPositionInput_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Location = new System.Drawing.Point(231, 136);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 22);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "SPEED";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblReadPositionInput
+            // 
+            this.lblReadPositionInput.BackColor = System.Drawing.Color.DarkCyan;
+            this.lblReadPositionInput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblReadPositionInput.Location = new System.Drawing.Point(173, 213);
+            this.lblReadPositionInput.Name = "lblReadPositionInput";
+            this.lblReadPositionInput.Size = new System.Drawing.Size(111, 33);
+            this.lblReadPositionInput.TabIndex = 1;
+            this.lblReadPositionInput.Text = "0";
+            this.lblReadPositionInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSetSpeedJogSV1
+            // 
+            this.lblSetSpeedJogSV1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblSetSpeedJogSV1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSetSpeedJogSV1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetSpeedJogSV1.Location = new System.Drawing.Point(127, 59);
+            this.lblSetSpeedJogSV1.Name = "lblSetSpeedJogSV1";
+            this.lblSetSpeedJogSV1.Size = new System.Drawing.Size(81, 38);
+            this.lblSetSpeedJogSV1.TabIndex = 1;
+            this.lblSetSpeedJogSV1.Text = "SET SPEED JOG";
+            this.lblSetSpeedJogSV1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSetSpeedJogSV1.Click += new System.EventHandler(this.lblSetSpeedJogSV1_Click);
+            // 
+            // label16
+            // 
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Location = new System.Drawing.Point(130, 136);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(96, 22);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "POSITION";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnJogBackInput
+            // 
+            this.btnJogBackInput.Location = new System.Drawing.Point(214, 82);
+            this.btnJogBackInput.Name = "btnJogBackInput";
+            this.btnJogBackInput.Size = new System.Drawing.Size(115, 46);
+            this.btnJogBackInput.TabIndex = 0;
+            this.btnJogBackInput.Text = "JOG -";
+            this.btnJogBackInput.UseVisualStyleBackColor = true;
+            this.btnJogBackInput.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogBackInput_MouseDown);
+            this.btnJogBackInput.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogBackInput_MouseUp);
+            // 
+            // btnSetHomeInput
+            // 
+            this.btnSetHomeInput.Location = new System.Drawing.Point(88, 10);
+            this.btnSetHomeInput.Name = "btnSetHomeInput";
+            this.btnSetHomeInput.Size = new System.Drawing.Size(162, 46);
+            this.btnSetHomeInput.TabIndex = 0;
+            this.btnSetHomeInput.Text = "SET HOME";
+            this.btnSetHomeInput.UseVisualStyleBackColor = true;
+            this.btnSetHomeInput.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSetHomeInput_MouseDown);
+            this.btnSetHomeInput.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnSetHomeInput_MouseUp);
+            // 
+            // btnReadPositionIP
+            // 
+            this.btnReadPositionIP.Location = new System.Drawing.Point(6, 206);
+            this.btnReadPositionIP.Name = "btnReadPositionIP";
+            this.btnReadPositionIP.Size = new System.Drawing.Size(114, 46);
+            this.btnReadPositionIP.TabIndex = 0;
+            this.btnReadPositionIP.Text = "READ POSITION";
+            this.btnReadPositionIP.UseVisualStyleBackColor = true;
+            this.btnReadPositionIP.Click += new System.EventHandler(this.btnReadPositionIP_Click);
+            // 
+            // btnMovePositionInput
+            // 
+            this.btnMovePositionInput.Location = new System.Drawing.Point(6, 157);
+            this.btnMovePositionInput.Name = "btnMovePositionInput";
+            this.btnMovePositionInput.Size = new System.Drawing.Size(114, 46);
+            this.btnMovePositionInput.TabIndex = 0;
+            this.btnMovePositionInput.Text = "MOVE POSITION";
+            this.btnMovePositionInput.UseVisualStyleBackColor = true;
+            this.btnMovePositionInput.Click += new System.EventHandler(this.btnMovePositionInput_Click);
+            // 
+            // btnJogForInput
+            // 
+            this.btnJogForInput.Location = new System.Drawing.Point(6, 82);
+            this.btnJogForInput.Name = "btnJogForInput";
+            this.btnJogForInput.Size = new System.Drawing.Size(115, 46);
+            this.btnJogForInput.TabIndex = 0;
+            this.btnJogForInput.Text = "JOG +";
+            this.btnJogForInput.UseVisualStyleBackColor = true;
+            this.btnJogForInput.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogForInput_MouseDown);
+            this.btnJogForInput.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogForInput_MouseUp);
+            // 
+            // AUTO
+            // 
+            this.AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AUTO.Controls.Add(this.btnAutoHome);
+            this.AUTO.Location = new System.Drawing.Point(47, 15);
+            this.AUTO.Name = "AUTO";
+            this.AUTO.Size = new System.Drawing.Size(331, 99);
+            this.AUTO.TabIndex = 33;
+            this.AUTO.TabStop = false;
+            this.AUTO.Text = "AUTO";
+            // 
+            // btnAutoHome
+            // 
+            this.btnAutoHome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutoHome.Location = new System.Drawing.Point(36, 22);
+            this.btnAutoHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAutoHome.Name = "btnAutoHome";
+            this.btnAutoHome.Size = new System.Drawing.Size(253, 56);
+            this.btnAutoHome.TabIndex = 0;
+            this.btnAutoHome.Text = "START AUTO HOME";
+            this.btnAutoHome.UseVisualStyleBackColor = true;
+            this.btnAutoHome.Click += new System.EventHandler(this.btnAutoHome_Click);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox14.Controls.Add(this.lblLeftC);
+            this.groupBox14.Controls.Add(this.lblRightC);
+            this.groupBox14.Controls.Add(this.pic1);
+            this.groupBox14.Controls.Add(this.pic2);
+            this.groupBox14.Controls.Add(this.picCentLeft);
+            this.groupBox14.Controls.Add(this.picCentRight);
+            this.groupBox14.Location = new System.Drawing.Point(47, 463);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(233, 126);
+            this.groupBox14.TabIndex = 31;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "CENTERING";
+            // 
+            // lblLeftC
+            // 
+            this.lblLeftC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLeftC.Location = new System.Drawing.Point(162, 96);
+            this.lblLeftC.Name = "lblLeftC";
+            this.lblLeftC.Size = new System.Drawing.Size(51, 21);
+            this.lblLeftC.TabIndex = 2;
+            this.lblLeftC.Text = "0";
+            this.lblLeftC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRightC
+            // 
+            this.lblRightC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRightC.Location = new System.Drawing.Point(19, 96);
+            this.lblRightC.Name = "lblRightC";
+            this.lblRightC.Size = new System.Drawing.Size(51, 21);
+            this.lblRightC.TabIndex = 2;
+            this.lblRightC.Text = "0";
+            this.lblRightC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pic1
+            // 
+            this.pic1.Image = ((System.Drawing.Image)(resources.GetObject("pic1.Image")));
+            this.pic1.Location = new System.Drawing.Point(24, 49);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(40, 40);
+            this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic1.TabIndex = 1;
+            this.pic1.TabStop = false;
+            this.pic1.Visible = false;
+            // 
+            // pic2
+            // 
+            this.pic2.Image = ((System.Drawing.Image)(resources.GetObject("pic2.Image")));
+            this.pic2.Location = new System.Drawing.Point(167, 49);
+            this.pic2.Name = "pic2";
+            this.pic2.Size = new System.Drawing.Size(40, 40);
+            this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic2.TabIndex = 1;
+            this.pic2.TabStop = false;
+            this.pic2.Visible = false;
+            // 
+            // picCentLeft
+            // 
+            this.picCentLeft.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picCentLeft.Image = ((System.Drawing.Image)(resources.GetObject("picCentLeft.Image")));
+            this.picCentLeft.Location = new System.Drawing.Point(91, 74);
+            this.picCentLeft.Name = "picCentLeft";
+            this.picCentLeft.Size = new System.Drawing.Size(51, 43);
+            this.picCentLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCentLeft.TabIndex = 0;
+            this.picCentLeft.TabStop = false;
+            this.picCentLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCentLeft_MouseDown);
+            this.picCentLeft.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCentLeft_MouseUp);
+            // 
+            // picCentRight
+            // 
+            this.picCentRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picCentRight.Image = ((System.Drawing.Image)(resources.GetObject("picCentRight.Image")));
+            this.picCentRight.Location = new System.Drawing.Point(91, 21);
+            this.picCentRight.Name = "picCentRight";
+            this.picCentRight.Size = new System.Drawing.Size(51, 43);
+            this.picCentRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCentRight.TabIndex = 0;
+            this.picCentRight.TabStop = false;
+            this.picCentRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCentRight_MouseDown);
+            this.picCentRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCentRight_MouseUp);
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox15.Controls.Add(this.btnReadAll);
+            this.groupBox15.Controls.Add(this.btnWriteAll);
+            this.groupBox15.Controls.Add(this.btnPositionInput);
+            this.groupBox15.Controls.Add(this.txtPosOK);
+            this.groupBox15.Controls.Add(this.btnPositionMove);
+            this.groupBox15.Controls.Add(this.txtPosNG6);
+            this.groupBox15.Controls.Add(this.btnPositionNG1);
+            this.groupBox15.Controls.Add(this.txtPosNG5);
+            this.groupBox15.Controls.Add(this.btnPositionStart);
+            this.groupBox15.Controls.Add(this.txtPosNG4);
+            this.groupBox15.Controls.Add(this.btnPositionNG4);
+            this.groupBox15.Controls.Add(this.txtPosNG3);
+            this.groupBox15.Controls.Add(this.btnPositionOutPut);
+            this.groupBox15.Controls.Add(this.txtPosNG2);
+            this.groupBox15.Controls.Add(this.btnPositionNG3);
+            this.groupBox15.Controls.Add(this.txtPosNG1);
+            this.groupBox15.Controls.Add(this.btnPositionNG2);
+            this.groupBox15.Controls.Add(this.txtPosOutput);
+            this.groupBox15.Controls.Add(this.btnPositionNG5);
+            this.groupBox15.Controls.Add(this.txtPosMove);
+            this.groupBox15.Controls.Add(this.btnPositionNG6);
+            this.groupBox15.Controls.Add(this.txtPosStart);
+            this.groupBox15.Controls.Add(this.btnPositionOK);
+            this.groupBox15.Controls.Add(this.txtPosInput);
+            this.groupBox15.Location = new System.Drawing.Point(43, 283);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(1099, 174);
+            this.groupBox15.TabIndex = 23;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "AXIS POSITION";
+            // 
+            // btnReadAll
+            // 
+            this.btnReadAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnReadAll.FlatAppearance.BorderSize = 0;
+            this.btnReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadAll.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReadAll.ForeColor = System.Drawing.Color.Teal;
+            this.btnReadAll.Location = new System.Drawing.Point(166, 112);
+            this.btnReadAll.Name = "btnReadAll";
+            this.btnReadAll.Size = new System.Drawing.Size(127, 56);
+            this.btnReadAll.TabIndex = 0;
+            this.btnReadAll.Text = "READ ALL PARAMETER";
+            this.btnReadAll.UseVisualStyleBackColor = false;
+            this.btnReadAll.Click += new System.EventHandler(this.btnReadAll_Click);
+            // 
+            // btnWriteAll
+            // 
+            this.btnWriteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnWriteAll.FlatAppearance.BorderSize = 0;
+            this.btnWriteAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnWriteAll.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWriteAll.ForeColor = System.Drawing.Color.Teal;
+            this.btnWriteAll.Location = new System.Drawing.Point(19, 112);
+            this.btnWriteAll.Name = "btnWriteAll";
+            this.btnWriteAll.Size = new System.Drawing.Size(127, 56);
+            this.btnWriteAll.TabIndex = 0;
+            this.btnWriteAll.Text = "WRITE ALL PARAMETER";
+            this.btnWriteAll.UseVisualStyleBackColor = false;
+            this.btnWriteAll.Click += new System.EventHandler(this.btnWriteAll_Click);
+            // 
+            // btnPositionInput
+            // 
+            this.btnPositionInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionInput.FlatAppearance.BorderSize = 0;
+            this.btnPositionInput.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionInput.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionInput.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionInput.Location = new System.Drawing.Point(19, 21);
+            this.btnPositionInput.Name = "btnPositionInput";
+            this.btnPositionInput.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionInput.TabIndex = 0;
+            this.btnPositionInput.Text = "POSITION INPUT";
+            this.btnPositionInput.UseVisualStyleBackColor = false;
+            this.btnPositionInput.Click += new System.EventHandler(this.btnPositionInput_Click);
+            // 
+            // txtPosOK
+            // 
+            this.txtPosOK.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosOK.Location = new System.Drawing.Point(999, 71);
+            this.txtPosOK.Name = "txtPosOK";
+            this.txtPosOK.Size = new System.Drawing.Size(92, 26);
+            this.txtPosOK.TabIndex = 2;
+            this.txtPosOK.Text = "0";
+            this.txtPosOK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionMove
+            // 
+            this.btnPositionMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionMove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionMove.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionMove.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionMove.Location = new System.Drawing.Point(215, 21);
+            this.btnPositionMove.Name = "btnPositionMove";
+            this.btnPositionMove.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionMove.TabIndex = 0;
+            this.btnPositionMove.Text = "POSITION MOVE";
+            this.btnPositionMove.UseVisualStyleBackColor = false;
+            this.btnPositionMove.Click += new System.EventHandler(this.btnPositionMove_Click);
+            // 
+            // txtPosNG6
+            // 
+            this.txtPosNG6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG6.Location = new System.Drawing.Point(901, 71);
+            this.txtPosNG6.Name = "txtPosNG6";
+            this.txtPosNG6.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG6.TabIndex = 2;
+            this.txtPosNG6.Text = "0";
+            this.txtPosNG6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG1
+            // 
+            this.btnPositionNG1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG1.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG1.Location = new System.Drawing.Point(411, 21);
+            this.btnPositionNG1.Name = "btnPositionNG1";
+            this.btnPositionNG1.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG1.TabIndex = 0;
+            this.btnPositionNG1.Text = "POSITION NG1";
+            this.btnPositionNG1.UseVisualStyleBackColor = false;
+            this.btnPositionNG1.Click += new System.EventHandler(this.btnPositionNG1_Click);
+            // 
+            // txtPosNG5
+            // 
+            this.txtPosNG5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG5.Location = new System.Drawing.Point(803, 71);
+            this.txtPosNG5.Name = "txtPosNG5";
+            this.txtPosNG5.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG5.TabIndex = 2;
+            this.txtPosNG5.Text = "0";
+            this.txtPosNG5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionStart
+            // 
+            this.btnPositionStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionStart.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionStart.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionStart.Location = new System.Drawing.Point(117, 21);
+            this.btnPositionStart.Name = "btnPositionStart";
+            this.btnPositionStart.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionStart.TabIndex = 0;
+            this.btnPositionStart.Text = "POSITION START";
+            this.btnPositionStart.UseVisualStyleBackColor = false;
+            this.btnPositionStart.Click += new System.EventHandler(this.btnPositionStart_Click);
+            // 
+            // txtPosNG4
+            // 
+            this.txtPosNG4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG4.Location = new System.Drawing.Point(705, 71);
+            this.txtPosNG4.Name = "txtPosNG4";
+            this.txtPosNG4.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG4.TabIndex = 2;
+            this.txtPosNG4.Text = "0";
+            this.txtPosNG4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG4
+            // 
+            this.btnPositionNG4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG4.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG4.Location = new System.Drawing.Point(705, 21);
+            this.btnPositionNG4.Name = "btnPositionNG4";
+            this.btnPositionNG4.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG4.TabIndex = 0;
+            this.btnPositionNG4.Text = "POSITION NG4";
+            this.btnPositionNG4.UseVisualStyleBackColor = false;
+            this.btnPositionNG4.Click += new System.EventHandler(this.btnPositionNG4_Click);
+            // 
+            // txtPosNG3
+            // 
+            this.txtPosNG3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG3.Location = new System.Drawing.Point(607, 71);
+            this.txtPosNG3.Name = "txtPosNG3";
+            this.txtPosNG3.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG3.TabIndex = 2;
+            this.txtPosNG3.Text = "0";
+            this.txtPosNG3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionOutPut
+            // 
+            this.btnPositionOutPut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionOutPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionOutPut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionOutPut.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionOutPut.Location = new System.Drawing.Point(313, 21);
+            this.btnPositionOutPut.Name = "btnPositionOutPut";
+            this.btnPositionOutPut.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionOutPut.TabIndex = 0;
+            this.btnPositionOutPut.Text = "POSITION OUTPUT";
+            this.btnPositionOutPut.UseVisualStyleBackColor = false;
+            this.btnPositionOutPut.Click += new System.EventHandler(this.btnPositionOutPut_Click);
+            // 
+            // txtPosNG2
+            // 
+            this.txtPosNG2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG2.Location = new System.Drawing.Point(508, 71);
+            this.txtPosNG2.Name = "txtPosNG2";
+            this.txtPosNG2.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG2.TabIndex = 2;
+            this.txtPosNG2.Text = "0";
+            this.txtPosNG2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG3
+            // 
+            this.btnPositionNG3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG3.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG3.Location = new System.Drawing.Point(607, 21);
+            this.btnPositionNG3.Name = "btnPositionNG3";
+            this.btnPositionNG3.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG3.TabIndex = 0;
+            this.btnPositionNG3.Text = "POSITION NG3";
+            this.btnPositionNG3.UseVisualStyleBackColor = false;
+            this.btnPositionNG3.Click += new System.EventHandler(this.btnPositionNG3_Click);
+            // 
+            // txtPosNG1
+            // 
+            this.txtPosNG1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosNG1.Location = new System.Drawing.Point(411, 71);
+            this.txtPosNG1.Name = "txtPosNG1";
+            this.txtPosNG1.Size = new System.Drawing.Size(92, 26);
+            this.txtPosNG1.TabIndex = 2;
+            this.txtPosNG1.Text = "0";
+            this.txtPosNG1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG2
+            // 
+            this.btnPositionNG2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG2.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG2.Location = new System.Drawing.Point(509, 21);
+            this.btnPositionNG2.Name = "btnPositionNG2";
+            this.btnPositionNG2.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG2.TabIndex = 0;
+            this.btnPositionNG2.Text = "POSITION NG2";
+            this.btnPositionNG2.UseVisualStyleBackColor = false;
+            this.btnPositionNG2.Click += new System.EventHandler(this.btnPositionNG2_Click);
+            // 
+            // txtPosOutput
+            // 
+            this.txtPosOutput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosOutput.Location = new System.Drawing.Point(313, 71);
+            this.txtPosOutput.Name = "txtPosOutput";
+            this.txtPosOutput.Size = new System.Drawing.Size(92, 26);
+            this.txtPosOutput.TabIndex = 2;
+            this.txtPosOutput.Text = "0";
+            this.txtPosOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG5
+            // 
+            this.btnPositionNG5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG5.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG5.Location = new System.Drawing.Point(803, 21);
+            this.btnPositionNG5.Name = "btnPositionNG5";
+            this.btnPositionNG5.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG5.TabIndex = 0;
+            this.btnPositionNG5.Text = "POSITION NG5";
+            this.btnPositionNG5.UseVisualStyleBackColor = false;
+            this.btnPositionNG5.Click += new System.EventHandler(this.btnPositionNG5_Click);
+            // 
+            // txtPosMove
+            // 
+            this.txtPosMove.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosMove.Location = new System.Drawing.Point(215, 71);
+            this.txtPosMove.Name = "txtPosMove";
+            this.txtPosMove.Size = new System.Drawing.Size(92, 26);
+            this.txtPosMove.TabIndex = 2;
+            this.txtPosMove.Text = "0";
+            this.txtPosMove.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionNG6
+            // 
+            this.btnPositionNG6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionNG6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionNG6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionNG6.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionNG6.Location = new System.Drawing.Point(901, 21);
+            this.btnPositionNG6.Name = "btnPositionNG6";
+            this.btnPositionNG6.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionNG6.TabIndex = 0;
+            this.btnPositionNG6.Text = "POSITION NG6";
+            this.btnPositionNG6.UseVisualStyleBackColor = false;
+            this.btnPositionNG6.Click += new System.EventHandler(this.btnPositionNG6_Click);
+            // 
+            // txtPosStart
+            // 
+            this.txtPosStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosStart.Location = new System.Drawing.Point(117, 71);
+            this.txtPosStart.Name = "txtPosStart";
+            this.txtPosStart.Size = new System.Drawing.Size(92, 26);
+            this.txtPosStart.TabIndex = 2;
+            this.txtPosStart.Text = "0";
+            this.txtPosStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPositionOK
+            // 
+            this.btnPositionOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPositionOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPositionOK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositionOK.ForeColor = System.Drawing.Color.Teal;
+            this.btnPositionOK.Location = new System.Drawing.Point(999, 21);
+            this.btnPositionOK.Name = "btnPositionOK";
+            this.btnPositionOK.Size = new System.Drawing.Size(92, 41);
+            this.btnPositionOK.TabIndex = 0;
+            this.btnPositionOK.Text = "POSITION OK";
+            this.btnPositionOK.UseVisualStyleBackColor = false;
+            this.btnPositionOK.Click += new System.EventHandler(this.btnPositionOK_Click);
+            // 
+            // txtPosInput
+            // 
+            this.txtPosInput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosInput.Location = new System.Drawing.Point(19, 71);
+            this.txtPosInput.Name = "txtPosInput";
+            this.txtPosInput.Size = new System.Drawing.Size(92, 26);
+            this.txtPosInput.TabIndex = 2;
+            this.txtPosInput.Text = "0";
+            this.txtPosInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
             // 
@@ -2254,6 +3821,23 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // picload_in
+            // 
+            this.picload_in.Image = global::Camera_Check_Component.Properties.Resources.avatar_red;
+            this.picload_in.Location = new System.Drawing.Point(278, 43);
+            this.picload_in.Name = "picload_in";
+            this.picload_in.Size = new System.Drawing.Size(120, 120);
+            this.picload_in.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picload_in.TabIndex = 6;
+            this.picload_in.TabStop = false;
+            // 
+            // tb_PN
+            // 
+            this.tb_PN.Location = new System.Drawing.Point(82, 259);
+            this.tb_PN.Name = "tb_PN";
+            this.tb_PN.Size = new System.Drawing.Size(135, 20);
+            this.tb_PN.TabIndex = 7;
             // 
             // Camera_Check_component
             // 
@@ -2330,6 +3914,57 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.General_tab.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownPUC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPUC)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownXL4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpXL4)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownXL3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpXL3)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownPUI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPUI)).EndInit();
+            this.gb.ResumeLayout(false);
+            this.gb.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDownOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpOut)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftMC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRightMC)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicDownPP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpPP)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.AUTO.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).EndInit();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picload_in)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2393,7 +4028,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox tb_PN;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.Button sign_up;
@@ -2516,6 +4150,124 @@
         private System.Windows.Forms.Label pinf442;
         private System.Windows.Forms.Label pinf212;
         private System.Windows.Forms.Label pinf412;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label lblDownPUC;
+        private System.Windows.Forms.Label lblUpPUC;
+        private System.Windows.Forms.PictureBox pic9;
+        private System.Windows.Forms.PictureBox pic10;
+        private System.Windows.Forms.PictureBox picDownPUC;
+        private System.Windows.Forms.PictureBox picUpPUC;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lblDownXL4;
+        private System.Windows.Forms.Label lblUpXL4;
+        private System.Windows.Forms.PictureBox pic7;
+        private System.Windows.Forms.PictureBox pic8;
+        private System.Windows.Forms.PictureBox picDownXL4;
+        private System.Windows.Forms.PictureBox picUpXL4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lblDownXL3;
+        private System.Windows.Forms.Label lblUpXL3;
+        private System.Windows.Forms.PictureBox pic5;
+        private System.Windows.Forms.PictureBox pic6;
+        private System.Windows.Forms.PictureBox picDownXL3;
+        private System.Windows.Forms.PictureBox picUpXL3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblDownPUI;
+        private System.Windows.Forms.Label lblUpPUI;
+        private System.Windows.Forms.PictureBox pic3;
+        private System.Windows.Forms.PictureBox pic4;
+        private System.Windows.Forms.PictureBox picDownPUI;
+        private System.Windows.Forms.PictureBox picUpPUI;
+        private System.Windows.Forms.GroupBox gb;
+        private System.Windows.Forms.TextBox txtIPAddress;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label lblDownOut;
+        private System.Windows.Forms.Label lblUpOut;
+        private System.Windows.Forms.PictureBox pic15;
+        private System.Windows.Forms.PictureBox pic16;
+        private System.Windows.Forms.PictureBox picDownOut;
+        private System.Windows.Forms.PictureBox picUpOut;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Label lblLeftMC;
+        private System.Windows.Forms.Label lblRightMC;
+        private System.Windows.Forms.PictureBox pic11;
+        private System.Windows.Forms.PictureBox pic12;
+        private System.Windows.Forms.PictureBox picLeftMC;
+        private System.Windows.Forms.PictureBox picRightMC;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label lblDownPP;
+        private System.Windows.Forms.Label lblUpPP;
+        private System.Windows.Forms.PictureBox pic13;
+        private System.Windows.Forms.PictureBox pic14;
+        private System.Windows.Forms.PictureBox PicDownPP;
+        private System.Windows.Forms.PictureBox picUpPP;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox txtSpeedPG;
+        private System.Windows.Forms.TextBox txtSpeedJogSV2;
+        private System.Windows.Forms.Button btnSetHomePG;
+        private System.Windows.Forms.TextBox txtPositionPG;
+        private System.Windows.Forms.Button btnJogForPG;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblSetSpeedJogSV2;
+        private System.Windows.Forms.Button btnReadPositionPG;
+        private System.Windows.Forms.Button btnMovePositionPG;
+        private System.Windows.Forms.Label lblReadPositionPG;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnJogBackPG;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TextBox txtSpeedInput;
+        private System.Windows.Forms.TextBox txtSpeedJogSV1;
+        private System.Windows.Forms.TextBox txtPositionInput;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblReadPositionInput;
+        private System.Windows.Forms.Label lblSetSpeedJogSV1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnJogBackInput;
+        private System.Windows.Forms.Button btnSetHomeInput;
+        private System.Windows.Forms.Button btnReadPositionIP;
+        private System.Windows.Forms.Button btnMovePositionInput;
+        private System.Windows.Forms.Button btnJogForInput;
+        private System.Windows.Forms.GroupBox AUTO;
+        private System.Windows.Forms.Button btnAutoHome;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Label lblLeftC;
+        private System.Windows.Forms.Label lblRightC;
+        private System.Windows.Forms.PictureBox pic1;
+        private System.Windows.Forms.PictureBox pic2;
+        private System.Windows.Forms.PictureBox picCentLeft;
+        private System.Windows.Forms.PictureBox picCentRight;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Button btnReadAll;
+        private System.Windows.Forms.Button btnWriteAll;
+        private System.Windows.Forms.Button btnPositionInput;
+        private System.Windows.Forms.TextBox txtPosOK;
+        private System.Windows.Forms.Button btnPositionMove;
+        private System.Windows.Forms.TextBox txtPosNG6;
+        private System.Windows.Forms.Button btnPositionNG1;
+        private System.Windows.Forms.TextBox txtPosNG5;
+        private System.Windows.Forms.Button btnPositionStart;
+        private System.Windows.Forms.TextBox txtPosNG4;
+        private System.Windows.Forms.Button btnPositionNG4;
+        private System.Windows.Forms.TextBox txtPosNG3;
+        private System.Windows.Forms.Button btnPositionOutPut;
+        private System.Windows.Forms.TextBox txtPosNG2;
+        private System.Windows.Forms.Button btnPositionNG3;
+        private System.Windows.Forms.TextBox txtPosNG1;
+        private System.Windows.Forms.Button btnPositionNG2;
+        private System.Windows.Forms.TextBox txtPosOutput;
+        private System.Windows.Forms.Button btnPositionNG5;
+        private System.Windows.Forms.TextBox txtPosMove;
+        private System.Windows.Forms.Button btnPositionNG6;
+        private System.Windows.Forms.TextBox txtPosStart;
+        private System.Windows.Forms.Button btnPositionOK;
+        private System.Windows.Forms.TextBox txtPosInput;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox picload_in;
+        private System.Windows.Forms.TextBox tb_PN;
     }
 }
 

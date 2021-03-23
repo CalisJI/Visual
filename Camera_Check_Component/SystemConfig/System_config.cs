@@ -57,5 +57,6 @@ namespace Camera_Check_Component
         public string SQL_server { get; set; }
         public string Database { get; set; }
         public string inf_process { get; set; }
+        public string PN_selector { get; set; }
     }
 }

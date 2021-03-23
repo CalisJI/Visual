@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Camera_Check_Component</RootNamespace>
     <AssemblyName>Camera_Check_Component</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>D:\VS BUILD\</PublishUrl>
@@ -28,6 +28,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -97,6 +98,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Emgu.CV.World.dll</HintPath>
     </Reference>
+    <Reference Include="S7.Net">
+      <HintPath>D:\New folder\PLCS7-1200_WITH_VISUAL\PLCS7-1200_WITH_VISUAL\PLCS7-1200_WITH_VISUAL\bin\Debug\S7.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -154,6 +158,10 @@
     <Compile Include="Sign_up.Designer.cs">
       <DependentUpon>Sign_up.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfig\Class1.cs" />
+    <Compile Include="SystemConfig\Class2.cs" />
+    <Compile Include="SystemConfig\Class3.cs" />
+    <Compile Include="SystemConfig\ReadPLC.cs" />
     <Compile Include="SystemConfig\SQL_action.cs" />
     <Compile Include="SystemConfig\Parameter_app.cs" />
     <Compile Include="SystemConfig\System_config.cs" />
@@ -183,6 +191,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Sign_up.resx">
       <DependentUpon>Sign_up.cs</DependentUpon>
@@ -210,6 +219,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-red.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

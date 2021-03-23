@@ -169,6 +169,31 @@ namespace Camera_Check_Component
             close_SQL();
             return per_group;
         }
+        public string get_exist_account(string userid) 
+        {
+            string user = "";
+            connec_SQL();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_user_ID WHERE [user] = '" + userid + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (da != null) 
+                {
+                    foreach(DataRow dr in dt.Rows) 
+                    {
+                        user = dr["user"].ToString();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            
+            }
+            close_SQL();
+            return user;
+        }
         public List<string> RuleList(string per_group) 
         {
             List<string> ruleList = new List<string>();

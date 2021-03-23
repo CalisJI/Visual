@@ -14,10 +14,8 @@ using AForge.Imaging.Filters;
 using System.IO.Ports;
 using System.IO;
 using AForge;
-using System.Drawing;
 using System.Drawing.Imaging;
-using System.Data;
-using System.Data.SqlClient;
+using S7.Net;
 
 namespace Camera_Check_Component
 {
@@ -93,7 +91,7 @@ namespace Camera_Check_Component
             this.Location = new System.Drawing.Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
-            //unable();
+            unable();
             listviewInit();
 
             DateTime dt = DateTime.Now;
@@ -213,6 +211,8 @@ namespace Camera_Check_Component
             PB_active5.Hide();
             PB_active6.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active6.Hide();
+
+            picload_in.Visible = false;
             #region // khai báo background worker
             backgroundWorker_1.DoWork += backgroundWorker_1_DoWork;
             backgroundWorker_1.RunWorkerCompleted += backgroundWorker_1_RunWorkerCompleted;
@@ -256,17 +256,17 @@ namespace Camera_Check_Component
             {
                 TB_LTdate.Text = system_config.inf_process.ToString();
             }
-            //set_up();
             progressBar1.Minimum = 0;
             progressBar1.Maximum = 100;
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Enabled = true;
             timer.Start();
-            tb_PN.SelectedIndex = 0;
+            tb_PN.Text = system_config.PN_selector;
         }
         private void unable()
         {
+           
             foreach (Control ctl in General_tab.Controls)
             {
                 if (ctl.Name == "tabPage3")
@@ -400,7 +400,6 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //bmp1.Save(memory, ImageFormat.Jpeg);
                         Live_Cam_6.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
@@ -488,13 +487,11 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-4" + "-" + count_4.ToString() + ".jpeg";
 
-                //string outputFileName = Parameter_app.TEMP_IMAGE_FOLDER_PATH + @"\" + str + "";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //bmp1.Save(memory, ImageFormat.Jpeg);
                         Live_Cam_4.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
@@ -574,14 +571,12 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //bmp1.Save(memory, ImageFormat.Jpeg);
                         Live_Cam_2.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //bmp1.Dispose();
                 Live_Cam_2.Dispose();
                 order_2 = false;
 
@@ -604,13 +599,11 @@ namespace Camera_Check_Component
             panel1.BackColor = Color.GreenYellow;
             DateTime date = DateTime.Now;
             date.ToString("HH:MM:ss");
-            // Parameter_app.TEMP(system_config.new_Day, system_config.new_Month, system_config.new_Year, system_config.Location_cam1_folder.ToString());
+          
             set_up();
             MethodInvoker inv = delegate
             {
-
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-1" + "-" + count_1.ToString() + ".jpeg";
-                //string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-1" + "-" + system_config.Location_cam1_folder.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
                 using (MemoryStream memory = new MemoryStream())
                 {
@@ -664,7 +657,7 @@ namespace Camera_Check_Component
             tb_PN.Enabled = false;
             TB_idworker.Enabled = false;
             TB_wker2.Enabled = false;
-            
+            Program_Configuration.UpdateSystem_Config("PN_selector", PN_Selector);
             system_config = Program_Configuration.GetSystem_Config();
             if (tb_PN.Text == "" || TB_idworker.Text == "" || TB_wker2.Text == "")
             {
@@ -843,7 +836,11 @@ namespace Camera_Check_Component
             string[] shot = new string[7];
             string[] NG_code = new string[3];
             string cap_order = serialPort_communicate.ReadExisting();
-
+            x = cap_order;
+            if (x != null)
+            {
+                doAction();
+            }
             if (cap_order.Contains("."))
             {
                 shot = cap_order.Split('.');
@@ -2123,7 +2120,26 @@ namespace Camera_Check_Component
                 }
             }
             else allow_check = false;
+            string per = sql_action.getID_per_group(UserID);
+            if (General_tab.SelectedIndex == 3 && (per == "3" || per == "1")) 
+            {
+                if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
+                groupBox13.Enabled = false;
+                groupBox12.Enabled = false;
+                groupBox15.Enabled = false;
+                groupBox14.Enabled = false;
+                groupBox2.Enabled = false;
+                groupBox6.Enabled = false;
+                groupBox7.Enabled = false;
+                groupBox8.Enabled = false;
+                groupBox9.Enabled = false;
+                groupBox10.Enabled = false;
+                groupBox11.Enabled = false;
+                txtIPAddress.Enabled = false;
+                btnAutoHome.Enabled = false;
+            }
         }
+        
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Do you want to reset Program to default setting", "RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -2482,20 +2498,32 @@ namespace Camera_Check_Component
             this.Invoke(inv);
         }
         private string UserID = "";
+        bool load = false;
         private void login_btn_Click(object sender, EventArgs e)
         {
+            if (load) return;
+            load = true;
+        
+            System.Threading.Thread.Sleep(10);    
+            //picload_in.Visible = true;
             Login loginfrm = new Login();
-            loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
-            {
-                UserID = loginfrm.ID_user;
-                if (UserID != "")
-                {
-                    login(UserID);
-                }
-            };
             loginfrm.Show();
+          
+            loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
+                {
+                    UserID = loginfrm.ID_user;
+                    if (UserID != "")
+                    {
+                        login(UserID);
+                    }
+                    load = false;
+                    picload_in.Visible = false;
+                };             
+              
+           
+           
         }
-        private void permiss_1()
+        private void permiss_1() // admin
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -2516,7 +2544,7 @@ namespace Camera_Check_Component
                 ctrl.Enabled = true;
             }
         }
-        private void permiss_2()
+        private void permiss_2() //operation
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -2526,6 +2554,22 @@ namespace Camera_Check_Component
                     {
 
                         if (ctl.Name == "Logout_btn")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "TB_idworker")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "TB_wker2")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "label8")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "label13")
                         {
                             ctl.Enabled = true;
                         }
@@ -2545,7 +2589,7 @@ namespace Camera_Check_Component
                 }
             }
         }
-        private void permiss_3()
+        private void permiss_3() // modify
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -2561,23 +2605,31 @@ namespace Camera_Check_Component
                         {
                             ctl.Enabled = false;
                         }
+                        else if (ctl.Name == "view_btn")
+                        {
+                            ctl.Enabled = false;
+                        }
+                        else if (ctl.Name == "comboBox1")
+                        {
+                            ctl.Enabled = false;
+                        }
                         else
                         {
                             ctl.Enabled = true;
                         }
                     }
                 }
-                if (ctrl.Name == "tabPage4")
-                {
-                    ctrl.Enabled = false;
-                }
+                //if (ctrl.Name == "tabPage4")
+                //{
+                //    ctrl.Enabled = false;
+                //}
                 else
                 {
                     ctrl.Enabled = true;
                 }
             }
         }
-        private void permiss_4()
+        private void permiss_4() //manager
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -2590,6 +2642,18 @@ namespace Camera_Check_Component
                             ctl.Enabled = false;
                         }
                         if (ctl.Name == "Logout_btn")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "view_btn")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "delete_btn")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        if (ctl.Name == "comboBox1")
                         {
                             ctl.Enabled = true;
                         }
@@ -2656,16 +2720,31 @@ namespace Camera_Check_Component
                     Pic_Cam6.Image = null;
                     status("[SYSTEM] Program STOPPED");
                     startPR_Count = 0;
-                    Login loginfrm = new Login();
-                    loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
-                    {
-                        UserID = loginfrm.ID_user;
-                        if (UserID != "")
+
+                    
+                   
+                        Login loginfrm = new Login();
+                        loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
                         {
-                            login(UserID);
-                        }
-                    };
-                    loginfrm.Show();
+                            UserID = loginfrm.ID_user;
+                            if (UserID != "")
+                            {
+                                login(UserID);
+                            }
+                            load = false;
+                        };
+                        loginfrm.Show();
+                    
+                   // Login loginfrm = new Login();
+                    //loginfrm.FormClosed += (object sender1, FormClosedEventArgs e1) =>
+                    //{
+                    //    UserID = loginfrm.ID_user;
+                    //    if (UserID != "")
+                    //    {
+                    //        login(UserID);
+                    //    }
+                    //};
+                    //loginfrm.Show();
                 }
             }
         }
@@ -2779,5 +2858,691 @@ namespace Camera_Check_Component
             }
            
         }
+        #region manual s7net PLC
+
+        Plc PLCS7_1200 = null;
+        ReadPLC ReadData = new ReadPLC();
+
+        Class1 cl = new Class1();
+        Class2 cl2 = new Class2();
+        Class3 cl3 = new Class3();
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string Addr = "M100.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            groupBox13.Enabled = true;
+            groupBox12.Enabled = true;
+            groupBox15.Enabled = true;
+            groupBox14.Enabled = true;
+            groupBox2.Enabled = true;
+            groupBox6.Enabled = true;
+            groupBox7.Enabled = true;
+            groupBox8.Enabled = true;
+            groupBox9.Enabled = true;
+            groupBox10.Enabled = true;
+            groupBox11.Enabled = true;
+            ShowPosition();
+        }
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200 = new Plc(CpuType.S71200, "" + txtIPAddress + "", 0, 0);
+            if (PLCS7_1200.IsAvailable)
+            {
+                PLCS7_1200.Open();
+                if (PLCS7_1200.IsConnected == true)
+                {
+                    MessageBox.Show("Connect to PLC Successful", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnAutoHome.Enabled = true;
+                }
+                else MessageBox.Show("Error");
+            }
+            else MessageBox.Show("Error");
+        }
+        public void doAction()
+        {
+            if (this.InvokeRequired)
+                this.Invoke(new MethodInvoker(doAction));
+            else
+            {
+                if (x == "11")
+                {
+                    pic1.Visible = true;
+                    pic2.Visible = false;
+                    lblRightC.Text = "1";
+                    lblLeftC.Text = "0";
+                }
+                if (x == "21")
+                {
+                    pic1.Visible = false;
+                    pic2.Visible = true;
+                    lblRightC.Text = "0";
+                    lblLeftC.Text = "1";
+                }
+                if (x == "12")
+                {
+                    pic3.Visible = true;
+                    pic4.Visible = false;
+                    lblUpPUI.Text = "1";
+                    lblDownPUI.Text = "0";
+                }
+                if (x == "22")
+                {
+                    pic3.Visible = false;
+                    pic4.Visible = true;
+                    lblUpPUI.Text = "0";
+                    lblDownPUI.Text = "1";
+                }
+                if (x == "13")
+                {
+                    pic5.Visible = true;
+                    pic6.Visible = false;
+                    lblUpXL3.Text = "1";
+                    lblDownXL3.Text = "0";
+                }
+                if (x == "23")
+                {
+                    pic5.Visible = false;
+                    pic6.Visible = true;
+                    lblUpXL3.Text = "0";
+                    lblDownXL3.Text = "1";
+                }
+                if (x == "14")
+                {
+                    pic7.Visible = true;
+                    pic8.Visible = false;
+                    lblUpXL4.Text = "1";
+                    lblDownXL4.Text = "0";
+                }
+                if (x == "24")
+                {
+                    pic7.Visible = false;
+                    pic8.Visible = true;
+                    lblUpXL4.Text = "0";
+                    lblDownXL4.Text = "1";
+                }
+                if (x == "15")
+                {
+                    pic9.Visible = true;
+                    pic10.Visible = false;
+                    lblUpPUC.Text = "1";
+                    lblDownPUC.Text = "0";
+                }
+                if (x == "25")
+                {
+                    pic9.Visible = false;
+                    pic10.Visible = true;
+                    lblUpPUC.Text = "0";
+                    lblDownPUC.Text = "1";
+                }
+                if (x == "16")
+                {
+                    pic11.Visible = true;
+                    pic12.Visible = false;
+                    lblRightMC.Text = "1";
+                    lblLeftMC.Text = "0";
+                }
+                if (x == "26")
+                {
+                    pic11.Visible = false;
+                    pic12.Visible = true;
+                    lblRightMC.Text = "0";
+                    lblLeftMC.Text = "1";
+                }
+                if (x == "17")
+                {
+                    pic13.Visible = true;
+                    pic14.Visible = false;
+                    lblUpPP.Text = "1";
+                    lblDownPP.Text = "0";
+                }
+                if (x == "27")
+                {
+                    pic13.Visible = false;
+                    pic14.Visible = true;
+                    lblUpPP.Text = "0";
+                    lblDownPP.Text = "1";
+                }
+                if (x == "18")
+                {
+                    pic15.Visible = true;
+                    pic16.Visible = false;
+                    lblUpOut.Text = "1";
+                    lblDownOut.Text = "0";
+                }
+                if (x == "28")
+                {
+                    pic15.Visible = false;
+                    pic16.Visible = true;
+                    lblUpOut.Text = "0";
+                    lblDownOut.Text = "1";
+                }
+            }
+        }
+        string x = "";
+        private void ShowData(object sender, EventArgs e)
+        {
+            string[] arr = x.Split('#');
+            if (arr[0] == "NG1")
+            {
+                string Addr = "DB33.DBX0.0";
+                PLCS7_1200.Write(Addr, int.Parse("1"));
+            }
+            if (arr[0] == "NG2")
+            {
+                string Addr = "DB33.DBX0.1";
+                PLCS7_1200.Write(Addr, int.Parse("1"));
+            }
+        }
+        private void btnJogForInput_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB1.DBX16.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnJogForInput_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB1.DBX16.2";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void btnJogBackInput_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB1.DBX16.3";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void btnJogBackInput_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB1.DBX16.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnMovePositionInput_Click(object sender, EventArgs e)
+        {
+            DataType dt = DataType.DataBlock;
+            int DB1 = 1;
+            int DB5 = 5;
+            int StartByte1 = 28;
+            int StartByte2 = 2;
+            PLCS7_1200.Write(dt, DB1, StartByte1, Convert.ToInt32(txtPositionInput.Text));
+            PLCS7_1200.Write(dt, DB5, StartByte2, Convert.ToInt16(txtSpeedInput.Text));
+            string Addr = "M101.6";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+        private void txtPositionInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        private void txtSpeedInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void ShowDataRead(Label lb, double db)
+        {
+            double c = Math.Round(db);
+            lb.Text = c.ToString();
+        }
+        private void ShowDataReadtxt(TextBox tx, double db)
+        {
+            double c = Math.Round(db);
+            tx.Text = c.ToString();
+        }
+        private void btnJogForPG_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB2.DBX56.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+        private void btnJogForPG_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB2.DBX56.0";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void btnJogBackPG_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB2.DBX56.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+        private void btnJogBackPG_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB2.DBX56.1";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void btnReadPositionIP_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.ReadClass(ReadData, 5, 8);
+            ShowDataRead(lblReadPositionInput, ReadData.current_Position_SV1);
+        }
+        private void btnReadPositionPG_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.ReadClass(cl, 2, 52);
+            ShowDataRead(lblReadPositionPG, cl.Distance_Start);
+        }
+        private void txtPositionPG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSpeedPG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        private void picCentRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+        private void picCentRight_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.3";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void picCentLeft_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.4";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picCentLeft_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.4";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void btnSetHomeInput_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "M500.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnSetHomeInput_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "M500.3";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picUpPUI_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.4";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownPUI_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.5";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picUpPUI_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.4";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picDownPUI_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.5";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picUpXL3_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.5";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picUpXL3_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.5";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picDownXL3_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.6";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownXL3_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.6";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void picUpXL4_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.6";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picUpXL4_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.6";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picDownXL4_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.7";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownXL4_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.7";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void picUpPUC_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.7";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picUpPUC_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX0.7";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picDownPUC_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownPUC_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.0";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picRightMC_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picRightMC_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.0";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+
+        }
+
+        private void picLeftMC_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picLeftMC_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.1";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void picUpPP_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picUpPP_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.1";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void PicDownPP_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void PicDownPP_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.2";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            groupBox13.Enabled = false;
+            groupBox12.Enabled = false;
+            groupBox15.Enabled = false;
+            groupBox14.Enabled = false;
+            groupBox2.Enabled = false;
+            groupBox6.Enabled = false;
+            groupBox7.Enabled = false;
+            groupBox8.Enabled = false;
+            groupBox9.Enabled = false;
+            groupBox10.Enabled = false;
+            groupBox11.Enabled = false;
+        }
+        private void lblSetSpeedJogSV1_Click(object sender, EventArgs e)
+        {
+            DataType dt = DataType.DataBlock;
+            int DB1 = 5;
+            int StartByte = 1570;
+            PLCS7_1200.Write(dt, DB1, StartByte, Convert.ToInt16(txtSpeedJogSV1.Text));
+            MessageBox.Show("Change Speed Success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void picUpOut_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.2";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void picUpOut_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX1.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownOut_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void picDownOut_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "DB33.DBX2.3";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+        private void lblSetSpeedJogSV2_Click(object sender, EventArgs e)
+        {
+            DataType dt = DataType.DataBlock;
+            int DB1 = 2;
+            int StartByte = 60;
+            PLCS7_1200.Write(dt, DB1, StartByte, Convert.ToInt16(txtSpeedJogSV2.Text));
+            MessageBox.Show("Change Speed Success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void btnMovePositionPG_Click(object sender, EventArgs e)
+        {
+            DataType dt = DataType.DataBlock;
+            int DB1 = 2;
+            int StartByte1 = 6;
+            int StartByte2 = 64;
+            PLCS7_1200.Write(dt, DB1, StartByte1, Convert.ToInt32(txtPositionPG.Text));
+            PLCS7_1200.Write(dt, DB1, StartByte2, Convert.ToInt16(txtSpeedPG.Text));
+            string Addr = "M104.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+        private void btnSetHomePG_MouseUp(object sender, MouseEventArgs e)
+        {
+            string Addr = "M104.2";
+            PLCS7_1200.Write(Addr, int.Parse("0"));
+        }
+
+        private void btnSetHomePG_MouseDown(object sender, MouseEventArgs e)
+        {
+            string Addr = "M104.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void txtPositionInput_TextChanged(object sender, EventArgs e)
+        {
+            Int32 t = Int32.Parse(txtPositionInput.Text);
+            if (t > 86000)
+            {
+                MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnMovePositionInput.Enabled = false;
+            }
+            else
+            {
+                btnMovePositionInput.Enabled = true;
+            }
+
+        }
+
+        private void txtPositionPG_TextChanged(object sender, EventArgs e)
+        {
+            Int32 t = Int32.Parse(txtPositionPG.Text);
+            if (t > 86000)
+            {
+                MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnMovePositionPG.Enabled = false;
+            }
+            else
+            {
+                btnMovePositionPG.Enabled = true;
+            }
+        }
+        private void ShowPosition()
+        {
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG1, cl2.Distance1);
+            ShowDataReadtxt(txtPosNG2, cl2.Distance2);
+            ShowDataReadtxt(txtPosNG3, cl2.Distance3);
+            ShowDataReadtxt(txtPosNG4, cl2.Distance4);
+            ShowDataReadtxt(txtPosNG5, cl2.Distance5);
+            ShowDataReadtxt(txtPosNG6, cl2.Distance6);
+            ShowDataReadtxt(txtPosOK, cl2.DistanceOK);
+            PLCS7_1200.ReadClass(cl2, 2, 22);
+            ShowDataReadtxt(txtPosOutput, cl2.Distance_Start);
+            PLCS7_1200.ReadClass(cl3, 1, 18);
+            ShowDataReadtxt(txtPosInput, cl3.Distance1);
+            ShowDataReadtxt(txtPosStart, cl3.Distance2);
+            ShowDataReadtxt(txtPosMove, cl3.Distance3);
+        }
+
+        private void btnPositionNG1_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 18, Convert.ToInt32(txtPosNG1.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG1, cl2.Distance1);
+        }
+
+        private void btnPositionNG2_Click(object sender, EventArgs e)
+        {
+
+            PLCS7_1200.Write(DataType.DataBlock, 2, 22, Convert.ToInt32(txtPosNG2.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG2, cl2.Distance2);
+        }
+
+        private void btnPositionNG3_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 26, Convert.ToInt32(txtPosNG3.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG3, cl2.Distance3);
+        }
+
+        private void btnPositionNG4_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 30, Convert.ToInt32(txtPosNG4.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG4, cl2.Distance4);
+        }
+        private void btnPositionNG5_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 34, Convert.ToInt32(txtPosNG5.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG5, cl2.Distance5);
+        }
+
+        private void btnPositionNG6_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 38, Convert.ToInt32(txtPosNG6.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosNG6, cl2.Distance6);
+        }
+
+        private void btnPositionOK_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 42, Convert.ToInt32(txtPosOK.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtPosOK, cl2.DistanceOK);
+        }
+
+        private void btnPositionOutPut_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 50, Convert.ToInt16(txtPosOutput.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 22);
+            ShowDataReadtxt(txtPosOutput, cl2.Distance_Start);
+        }
+        private void btnPositionInput_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 18, Convert.ToInt16(txtPosInput.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 18);
+            ShowDataReadtxt(txtPosInput, cl3.Distance1);
+        }
+
+        private void btnPositionStart_Click(object sender, EventArgs e)
+        {
+
+            PLCS7_1200.Write(DataType.DataBlock, 1, 20, Convert.ToInt16(txtPosStart.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 18);
+            ShowDataReadtxt(txtPosStart, cl3.Distance2);
+        }
+
+        private void btnPositionMove_Click(object sender, EventArgs e)
+        {
+
+            PLCS7_1200.Write(DataType.DataBlock, 1, 22, Convert.ToInt16(txtPosMove.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 18);
+            ShowDataReadtxt(txtPosMove, cl3.Distance3);
+        }
+
+        private void btnReadAll_Click(object sender, EventArgs e)
+        {
+            ShowPosition();
+            MessageBox.Show("Read Success", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void btnWriteAll_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 18, Convert.ToInt32(txtPosNG1.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 22, Convert.ToInt32(txtPosNG2.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 26, Convert.ToInt32(txtPosNG3.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 30, Convert.ToInt32(txtPosNG4.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 34, Convert.ToInt32(txtPosNG5.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 38, Convert.ToInt32(txtPosNG6.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 42, Convert.ToInt32(txtPosOK.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 50, Convert.ToInt16(txtPosOutput.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 18, Convert.ToInt16(txtPosInput.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 20, Convert.ToInt16(txtPosStart.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 22, Convert.ToInt16(txtPosMove.Text));
+            MessageBox.Show("Write Success", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnAutoHome_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Do you sure want to set home for Auto mode", "Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dialog == DialogResult.OK)
+            {
+                string Addr = "M137.7";
+                PLCS7_1200.Write(Addr, int.Parse("1"));
+            }
+        }
+
+
+        #endregion
+    
     }
 }

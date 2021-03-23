@@ -4,17 +4,17 @@
   <description asmv2:publisher="Camera_Check_Component" asmv2:product="Camera_Check_Component" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Camera_Check_Component.exe.manifest" size="11040">
+    <dependentAssembly dependencyType="install" codebase="Camera_Check_Component.exe.manifest" size="11704">
       <assemblyIdentity name="Camera_Check_Component.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yqth+7DZLv87Lr9L6nzchxSsz9e4F/tLPXjZxnJaL30=</dsig:DigestValue>
+        <dsig:DigestValue>YCR1IAD84asjrafPN+G2+HNSmxDY+Fu+h76S+N6nrdM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

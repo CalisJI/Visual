@@ -26,7 +26,18 @@ namespace Camera_Check_Component
         }
         
         private void button1_Click(object sender, EventArgs e)
-        {            
+        {
+            string chek_acc = sQL_Action.get_exist_account(textBox1.Text);
+            if (chek_acc == textBox1.Text) 
+            {
+                MessageBox.Show("This Account already exists, Please try another one");
+                return;
+            }
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Please choose permissions");
+                return;
+            }
             string mesage = "Do you want to sign up this account";
             string cap = "SIGN UP";
             var result = MessageBox.Show(mesage, cap, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -41,6 +52,7 @@ namespace Camera_Check_Component
                 }
                 string sql = "INSERT INTO tbl_user_ID([user],[pass]) VALUES (N'" + textBox1.Text + "','" + hasPass + "')";
                 Boolean sign_in = sQL_Action.excute_data(sql);
+               
                 if (comboBox1.SelectedIndex == 0)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
@@ -58,7 +70,7 @@ namespace Camera_Check_Component
                 if (comboBox1.SelectedIndex == 1)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
-                    string sql2 = "INSERT INTO tbl_per_rel ([ID_user_rel],[ID_per_rel]) VALUES (N'" + ID_user + "','4')";
+                    string sql2 = "INSERT INTO tbl_per_rel ([ID_user_rel],[ID_per_rel]) VALUES (N'" + ID_user + "','3')";
                     Boolean sign_up2 = sQL_Action.excute_data(sql2);
                     if (sign_up2)
                     {
@@ -72,7 +84,7 @@ namespace Camera_Check_Component
                 if (comboBox1.SelectedIndex == 2)
                 {
                     string ID_user = sQL_Action.getID_user(textBox1.Text, hasPass);
-                    string sql2 = "INSERT INTO tbl_per_rel ([ID_user_rel],[ID_per_rel]) VALUES (N'" + ID_user + "','3')";
+                    string sql2 = "INSERT INTO tbl_per_rel ([ID_user_rel],[ID_per_rel]) VALUES (N'" + ID_user + "','4')";
                     Boolean sign_up3 = sQL_Action.excute_data(sql2);
                     if (sign_up3)
                     {
