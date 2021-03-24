@@ -349,7 +349,9 @@ namespace Camera_Check_Component
                 set_up();
             }
             status(" [SYSTEM]" + " CAM 7 Save image" + " " + count_7.ToString());
+            n7 = count_7 / 6;
             count_7++;
+
             //serialPort_communicate.Write("something");
         }
         private void BackgroundWorker_7_DoWork(object sender, DoWorkEventArgs e)
@@ -369,7 +371,39 @@ namespace Camera_Check_Component
                 {
                     string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-7" + "-" + count_7.ToString() + ".jpeg";                  
                     string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                    vt7 = outputFileName;
+                    if (count_7 / 6 == 0)
+                    {
+                        if (count_7 % 6 == 0) lan1_vt7 = outputFileName;
+                        if (count_7 % 6 == 1) lan2_vt7 = outputFileName;
+                        if (count_7 % 6 == 2) lan3_vt7 = outputFileName;
+                        if (count_7 % 6 == 3) lan4_vt7 = outputFileName;
+                        if (count_7 % 6 == 4) lan5_vt7 = outputFileName;
+                        if (count_7 % 6 == 5) lan6_vt7 = outputFileName;
+                    }
+                    if (count_7 / 6 == 1)
+                    {
+                        if (count_7 % 6 == 0) lan12_vt7 = outputFileName;
+                        if (count_7 % 6 == 1) lan22_vt7 = outputFileName;
+                        if (count_7 % 6 == 2) lan32_vt7 = outputFileName;
+                        if (count_7 % 6 == 3) lan42_vt7 = outputFileName;
+                        if (count_7 % 6 == 4) lan52_vt7 = outputFileName;
+                        if (count_7 % 6 == 5) lan62_vt7 = outputFileName;
+                    }
+                    if (count_7 / 6 > 1 && count_7 / 6 > n7)
+                    {
+                        lan1_vt7 = lan12_vt7;
+                        lan2_vt7 = lan22_vt7;
+                        lan3_vt7 = lan32_vt7;
+                        lan4_vt7 = lan42_vt7;
+                        lan5_vt7 = lan52_vt7;
+                        lan6_vt7 = lan62_vt7;
+                        if (count_7 % 6 == 0) lan12_vt7 = outputFileName;
+                        if (count_7 % 6 == 1) lan22_vt7 = outputFileName;
+                        if (count_7 % 6 == 2) lan32_vt7 = outputFileName;
+                        if (count_7 % 6 == 3) lan42_vt7 = outputFileName;
+                        if (count_7 % 6 == 4) lan52_vt7 = outputFileName;
+                        if (count_7 % 6 == 5) lan62_vt7 = outputFileName;
+                    }
                     using (MemoryStream memory = new MemoryStream())
                     {
                         using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -395,6 +429,7 @@ namespace Camera_Check_Component
             }
             status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
             panel6.BackColor = Color.Black;
+            n6 = count_6 / 6;
             count_6++;
             string Addr = "DB5.DBX26.5";
             PLCS7_1200.Write(Addr, int.Parse("1"));
@@ -415,7 +450,39 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-6" + "-" + count_6.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt6 = outputFileName;
+                if (count_6 / 6 == 0)
+                {
+                    if (count_6 % 6 == 0) lan1_vt6 = outputFileName;
+                    if (count_6 % 6 == 1) lan2_vt6 = outputFileName;
+                    if (count_6 % 6 == 2) lan3_vt6 = outputFileName;
+                    if (count_6 % 6 == 3) lan4_vt6 = outputFileName;
+                    if (count_6 % 6 == 4) lan5_vt6 = outputFileName;
+                    if (count_6 % 6 == 5) lan6_vt6 = outputFileName;
+                }
+                if (count_6 / 6 == 1)
+                {
+                    if (count_6 % 6 == 0) lan12_vt6 = outputFileName;
+                    if (count_6 % 6 == 1) lan22_vt6 = outputFileName;
+                    if (count_6 % 6 == 2) lan32_vt6 = outputFileName;
+                    if (count_6 % 6 == 3) lan42_vt6 = outputFileName;
+                    if (count_6 % 6 == 4) lan52_vt6 = outputFileName;
+                    if (count_6 % 6 == 5) lan62_vt6 = outputFileName;
+                }
+                if (count_6 / 6 > 1 && count_6 / 6 > n6)
+                {
+                    lan1_vt6 = lan12_vt6;
+                    lan2_vt6 = lan22_vt6;
+                    lan3_vt6 = lan32_vt6;
+                    lan4_vt6 = lan42_vt6;
+                    lan5_vt6 = lan52_vt6;
+                    lan6_vt6 = lan62_vt6;
+                    if (count_6 % 6 == 0) lan12_vt6 = outputFileName;
+                    if (count_6 % 6 == 1) lan22_vt6 = outputFileName;
+                    if (count_6 % 6 == 2) lan32_vt6 = outputFileName;
+                    if (count_6 % 6 == 3) lan42_vt6 = outputFileName;
+                    if (count_6 % 6 == 4) lan52_vt6 = outputFileName;
+                    if (count_6 % 6 == 5) lan62_vt6 = outputFileName;
+                }
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -442,6 +509,7 @@ namespace Camera_Check_Component
             }
             status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
             panel5.BackColor = Color.Black;
+            n5 = count_5 / 6;
             count_5++;
             string Addr = "DB5.DBX26.4";
             PLCS7_1200.Write(Addr, int.Parse("1"));
@@ -463,7 +531,39 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-5" + "-" + count_5.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt5 = outputFileName;
+                if (count_5 / 6 == 0)
+                {
+                    if (count_5 % 6 == 0) lan1_vt5 = outputFileName;
+                    if (count_5 % 6 == 1) lan2_vt5 = outputFileName;
+                    if (count_5 % 6 == 2) lan3_vt5 = outputFileName;
+                    if (count_5 % 6 == 3) lan4_vt5 = outputFileName;
+                    if (count_5 % 6 == 4) lan5_vt5 = outputFileName;
+                    if (count_5 % 6 == 5) lan6_vt5 = outputFileName;
+                }
+                if (count_5 / 6 == 1)
+                {
+                    if (count_5 % 6 == 0) lan12_vt5 = outputFileName;
+                    if (count_5 % 6 == 1) lan22_vt5 = outputFileName;
+                    if (count_5 % 6 == 2) lan32_vt5 = outputFileName;
+                    if (count_5 % 6 == 3) lan42_vt5 = outputFileName;
+                    if (count_5 % 6 == 4) lan52_vt5 = outputFileName;
+                    if (count_5 % 6 == 5) lan62_vt5 = outputFileName;
+                }
+                if (count_5 / 6 > 1 && count_5 / 6 > n5)
+                {
+                    lan1_vt5 = lan12_vt5;
+                    lan2_vt5 = lan22_vt5;
+                    lan3_vt5 = lan32_vt5;
+                    lan4_vt5 = lan42_vt5;
+                    lan5_vt5 = lan52_vt5;
+                    lan6_vt5 = lan62_vt5;
+                    if (count_5 % 6 == 0) lan12_vt5 = outputFileName;
+                    if (count_5 % 6 == 1) lan22_vt5 = outputFileName;
+                    if (count_5 % 6 == 2) lan32_vt5 = outputFileName;
+                    if (count_5 % 6 == 3) lan42_vt5 = outputFileName;
+                    if (count_5 % 6 == 4) lan52_vt5 = outputFileName;
+                    if (count_5 % 6 == 5) lan62_vt5 = outputFileName;
+                }
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -488,6 +588,7 @@ namespace Camera_Check_Component
             }
             status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
             panel4.BackColor = Color.Black;
+            n4 = count_4 / 6;
             count_4++;
             string Addr = "DB5.DBX26.3";
             PLCS7_1200.Write(Addr, int.Parse("1"));
@@ -509,7 +610,39 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-4" + "-" + count_4.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt4 = outputFileName;
+                if (count_4 / 6 == 0)
+                {
+                    if (count_4 % 6 == 0) lan1_vt4 = outputFileName;
+                    if (count_4 % 6 == 1) lan2_vt4 = outputFileName;
+                    if (count_4 % 6 == 2) lan3_vt4 = outputFileName;
+                    if (count_4 % 6 == 3) lan4_vt4 = outputFileName;
+                    if (count_4 % 6 == 4) lan5_vt4 = outputFileName;
+                    if (count_4 % 6 == 5) lan6_vt4 = outputFileName;
+                }
+                if (count_4 / 6 == 1)
+                {
+                    if (count_4 % 6 == 0) lan12_vt4 = outputFileName;
+                    if (count_4 % 6 == 1) lan22_vt4 = outputFileName;
+                    if (count_4 % 6 == 2) lan32_vt4 = outputFileName;
+                    if (count_4 % 6 == 3) lan42_vt4 = outputFileName;
+                    if (count_4 % 6 == 4) lan52_vt4 = outputFileName;
+                    if (count_4 % 6 == 5) lan62_vt4 = outputFileName;
+                }
+                if (count_4 / 6 > 1 && count_4 / 6 > n4)
+                {
+                    lan1_vt4 = lan12_vt4;
+                    lan2_vt4 = lan22_vt4;
+                    lan3_vt4 = lan32_vt4;
+                    lan4_vt4 = lan42_vt4;
+                    lan5_vt4 = lan52_vt4;
+                    lan6_vt4 = lan62_vt4;
+                    if (count_4 % 6 == 0) lan12_vt4 = outputFileName;
+                    if (count_4 % 6 == 1) lan22_vt4 = outputFileName;
+                    if (count_4 % 6 == 2) lan32_vt4 = outputFileName;
+                    if (count_4 % 6 == 3) lan42_vt4 = outputFileName;
+                    if (count_4 % 6 == 4) lan52_vt4 = outputFileName;
+                    if (count_4 % 6 == 5) lan62_vt4 = outputFileName;
+                }
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -534,6 +667,7 @@ namespace Camera_Check_Component
             }
             status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
             panel3.BackColor = Color.Black;
+            n3 = count_3 / 6;
             count_3++;
             string Addr = "DB5.DBX26.2";
             PLCS7_1200.Write(Addr, int.Parse("1"));
@@ -553,7 +687,39 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-3" + "-" + count_3.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt3 = outputFileName;
+                if (count_3 / 6 == 0)
+                {
+                    if (count_3 % 6 == 0) lan1_vt3 = outputFileName;
+                    if (count_3 % 6 == 1) lan2_vt3 = outputFileName;
+                    if (count_3 % 6 == 2) lan3_vt3 = outputFileName;
+                    if (count_3 % 6 == 3) lan4_vt3 = outputFileName;
+                    if (count_3 % 6 == 4) lan5_vt3 = outputFileName;
+                    if (count_3 % 6 == 5) lan6_vt3 = outputFileName;
+                }
+                if (count_3 / 6 == 1)
+                {
+                    if (count_3 % 6 == 0) lan12_vt3 = outputFileName;
+                    if (count_3 % 6 == 1) lan22_vt3 = outputFileName;
+                    if (count_3 % 6 == 2) lan32_vt3 = outputFileName;
+                    if (count_3 % 6 == 3) lan42_vt3 = outputFileName;
+                    if (count_3 % 6 == 4) lan52_vt3 = outputFileName;
+                    if (count_3 % 6 == 5) lan62_vt3 = outputFileName;
+                }
+                if (count_3 / 6 > 1 && count_3 / 6 > n3)
+                {
+                    lan1_vt3 = lan12_vt3;
+                    lan2_vt3 = lan22_vt3;
+                    lan3_vt3 = lan32_vt3;
+                    lan4_vt3 = lan42_vt3;
+                    lan5_vt3 = lan52_vt3;
+                    lan6_vt3 = lan62_vt3;
+                    if (count_3 % 6 == 0) lan12_vt3 = outputFileName;
+                    if (count_3 % 6 == 1) lan22_vt3 = outputFileName;
+                    if (count_3 % 6 == 2) lan32_vt3 = outputFileName;
+                    if (count_3 % 6 == 3) lan42_vt3 = outputFileName;
+                    if (count_3 % 6 == 4) lan52_vt3 = outputFileName;
+                    if (count_3 % 6 == 5) lan62_vt3 = outputFileName;
+                }
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -573,6 +739,7 @@ namespace Camera_Check_Component
         {
             status(" [SYSTEM]" + " CAM 2 Save image" + " " + count_2.ToString());
             panel2.BackColor = Color.Black;
+            n2 = count_2 / 6;
             count_2++;
             //serialPort_communicate.Write("something");
             string Addr = "DB5.DBX26.1";
@@ -593,7 +760,39 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-2" + "-" + count_2.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt2 = outputFileName;
+                if (count_2 / 6 == 0)
+                {
+                    if (count_2 % 6 == 0) lan1_vt2 = outputFileName;
+                    if (count_2 % 6 == 1) lan2_vt2 = outputFileName;
+                    if (count_2 % 6 == 2) lan3_vt2 = outputFileName;
+                    if (count_2 % 6 == 3) lan4_vt2 = outputFileName;
+                    if (count_2 % 6 == 4) lan5_vt2 = outputFileName;
+                    if (count_2 % 6 == 5) lan6_vt2 = outputFileName;
+                }
+                if (count_2 / 6 == 1)
+                {
+                    if (count_2 % 6 == 0) lan12_vt2 = outputFileName;
+                    if (count_2 % 6 == 1) lan22_vt2 = outputFileName;
+                    if (count_2 % 6 == 2) lan32_vt2 = outputFileName;
+                    if (count_2 % 6 == 3) lan42_vt2 = outputFileName;
+                    if (count_2 % 6 == 4) lan52_vt2 = outputFileName;
+                    if (count_2 % 6 == 5) lan62_vt2 = outputFileName;
+                }
+                if (count_2 / 6 > 1 && count_2 / 6 > n2)
+                {
+                    lan1_vt2 = lan12_vt2;
+                    lan2_vt2 = lan22_vt2;
+                    lan3_vt2 = lan32_vt2;
+                    lan4_vt2 = lan42_vt2;
+                    lan5_vt2 = lan52_vt2;
+                    lan6_vt2 = lan62_vt2;
+                    if (count_2 % 6 == 0) lan12_vt2 = outputFileName;
+                    if (count_2 % 6 == 1) lan22_vt2 = outputFileName;
+                    if (count_2 % 6 == 2) lan32_vt2 = outputFileName;
+                    if (count_2 % 6 == 3) lan42_vt2 = outputFileName;
+                    if (count_2 % 6 == 4) lan52_vt2 = outputFileName;
+                    if (count_2 % 6 == 5) lan62_vt2 = outputFileName;
+                }
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -612,12 +811,20 @@ namespace Camera_Check_Component
         void backgroundWorker_1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
+            int n = count_1 / 6;
             count_1++;
             panel1.BackColor = Color.Black;
             //serialPort_communicate.Write("something");
             string Addr = "DB5.DBX26.0";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
+        int n1 = 0;
+        int n2 = 0;
+        int n3 = 0;
+        int n4 = 0;
+        int n5 = 0;
+        int n6 = 0;
+        int n7 = 0;
         void backgroundWorker_1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (backgroundWorker_1.CancellationPending)
@@ -634,7 +841,41 @@ namespace Camera_Check_Component
             {
                 string str = PN_Selector + "-" + date.Day.ToString() + "." + date.Month.ToString() + "." + date.Year.ToString() + "-" + date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-1" + "-" + count_1.ToString() + ".jpeg";
                 string outputFileName = system_config.Map_Path_File + @"\" + str + "";
-                vt1 = outputFileName;
+               
+                if(count_1/6 == 0) 
+                {
+                    if (count_1 % 6 == 0) lan1_vt1 = outputFileName;
+                    if (count_1 % 6 == 1) lan2_vt1 = outputFileName;
+                    if (count_1 % 6 == 2) lan3_vt1 = outputFileName;
+                    if (count_1 % 6 == 3) lan4_vt1 = outputFileName;
+                    if (count_1 % 6 == 4) lan5_vt1 = outputFileName;
+                    if (count_1 % 6 == 5) lan6_vt1 = outputFileName;                               
+                }
+                if (count_1 / 6 == 1) 
+                {
+                    if (count_1 % 6 == 0) lan12_vt1 = outputFileName;
+                    if (count_1 % 6 == 1) lan22_vt1 = outputFileName;
+                    if (count_1 % 6 == 2) lan32_vt1 = outputFileName;
+                    if (count_1 % 6 == 3) lan42_vt1 = outputFileName;
+                    if (count_1 % 6 == 4) lan52_vt1 = outputFileName;
+                    if (count_1 % 6 == 5) lan62_vt1 = outputFileName;
+                }
+                if(count_1/6 >1 && count_1 / 6 > n1) 
+                {
+                    lan1_vt1 = lan12_vt1;
+                    lan2_vt1 = lan22_vt1;
+                    lan3_vt1 = lan32_vt1;
+                    lan4_vt1 = lan42_vt1;
+                    lan5_vt1 = lan52_vt1;
+                    lan6_vt1 = lan62_vt1;
+                    if (count_1 % 6 == 0) lan12_vt1 = outputFileName;
+                    if (count_1 % 6 == 1) lan22_vt1 = outputFileName;
+                    if (count_1 % 6 == 2) lan32_vt1 = outputFileName;
+                    if (count_1 % 6 == 3) lan42_vt1 = outputFileName;
+                    if (count_1 % 6 == 4) lan52_vt1 = outputFileName;
+                    if (count_1 % 6 == 5) lan62_vt1 = outputFileName;
+                }
+
                 using (MemoryStream memory = new MemoryStream())
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
@@ -3478,14 +3719,20 @@ namespace Camera_Check_Component
 
 
         #endregion
-        string vt1 = ""; string lan1_vt1 = ""; string lan2_vt1 = ""; string lan3_vt1 = ""; string lan4_vt1 = ""; string lan5_vt1 = ""; string lan6_vt1 = ""; 
+        string vt1 = ""; string lan1_vt1 = ""; string lan2_vt1 = ""; string lan3_vt1 = ""; string lan4_vt1 = ""; string lan5_vt1 = ""; string lan6_vt1 = "";
+                         string lan12_vt1 = ""; string lan22_vt1 = ""; string lan32_vt1 = ""; string lan42_vt1 = ""; string lan52_vt1 = ""; string lan62_vt1 = "";
         string vt2 = ""; string lan1_vt2 = ""; string lan2_vt2 = ""; string lan3_vt2 = ""; string lan4_vt2 = ""; string lan5_vt2 = ""; string lan6_vt2 = "";
+                         string lan12_vt2 = ""; string lan22_vt2 = ""; string lan32_vt2 = ""; string lan42_vt2 = ""; string lan52_vt2 = ""; string lan62_vt2 = "";
         string vt3 = ""; string lan1_vt3 = ""; string lan2_vt3 = ""; string lan3_vt3 = ""; string lan4_vt3 = ""; string lan5_vt3 = ""; string lan6_vt3 = "";
+                         string lan12_vt3 = ""; string lan22_vt3 = ""; string lan32_vt3 = ""; string lan42_vt3 = ""; string lan52_vt3 = ""; string lan62_vt3 = "";
         string vt4 = ""; string lan1_vt4 = ""; string lan2_vt4 = ""; string lan3_vt4 = ""; string lan4_vt4 = ""; string lan5_vt4 = ""; string lan6_vt4 = "";
+                         string lan12_vt4 = ""; string lan22_vt4 = ""; string lan32_vt4 = ""; string lan42_vt4 = ""; string lan52_vt4 = ""; string lan62_vt4 = "";
         string vt5 = ""; string lan1_vt5 = ""; string lan2_vt5 = ""; string lan3_vt5 = ""; string lan4_vt5 = ""; string lan5_vt5 = ""; string lan6_vt5 = "";
+                         string lan12_vt5 = ""; string lan22_vt5 = ""; string lan32_vt5 = ""; string lan42_vt5 = ""; string lan52_vt5 = ""; string lan62_vt5 = "";
         string vt6 = ""; string lan1_vt6 = ""; string lan2_vt6 = ""; string lan3_vt6 = ""; string lan4_vt6 = ""; string lan5_vt6 = ""; string lan6_vt6 = "";
+                         string lan12_vt6 = ""; string lan22_vt6 = ""; string lan32_vt6 = ""; string lan42_vt6 = ""; string lan52_vt6 = ""; string lan62_vt6 = "";
         string vt7 = ""; string lan1_vt7 = ""; string lan2_vt7 = ""; string lan3_vt7 = ""; string lan4_vt7 = ""; string lan5_vt7 = ""; string lan6_vt7 = "";
-
+                         string lan12_vt7 = ""; string lan22_vt7 = ""; string lan32_vt7 = ""; string lan42_vt7 = ""; string lan52_vt7 = ""; string lan62_vt7 = "";
         #region////////////////////////////////////////////////////////////////////////////////////////////// Recover 
         /*
          chu trình 1        1      2    3     4     5     6     7     8     9     10    11
@@ -3499,34 +3746,34 @@ namespace Camera_Check_Component
         no7                x      cp6   Cam2  cp4   Cam3       Cam4         x           x           x           x               cp5     cp3     cp2
         no8                x            Cam2  cp5   Cam3       Cam4         x           x           x           x               cp6     cp4     cp3     
         no9                x            x     cp6   Cam3       Cam4        Cam5         x           x           x                       cp5     cp4     cp1
-        no10               x            x           Cam3       Cam4        Cam5        Cam6         x           x                       cp6     cp5     cp2     cp1      
-        bonus              x            x            x          x           x           x         grip          x                                                       grip(1)                  
+        no10               x            x           Cam3       Cam4        Cam5        Cam6         x           x                       cp6     cp5     cp2     cp1       grip(1)   
+        bonus              x            x            x          x           x           x         grip          x                                                                     
 
         chu trình 2
         no13              Cam1          x           x           x           x           x           x           x       cp11                           
         no14              Cam1  cp11    x           x           x           x           x           x           x       cp21
         no15              Cam1  cp21   Cam2         x           x           x           x           x           x       cp31    cp11
         no16              Cam1  cp31   Cam2  cp11   x           x           x           x           x           x       cp41    cp21        
-        no17              cam1  cp41   Cam2  cp21   Cam3        Cam4        Cam5        Cam6        x           x       cp51    cp31    cp11    cp6     cp3     cp2     
-        no18              Cam1  cp51   Cam2  cp31   Cam3        Cam4        Cam5        Cam6     grip()         x       cp61    cp41    cp21    cp11    cp4     cp3     grip(2)
-        no19               x    cp61   Cam2  cp41   Cam3        Cam4        Cam5        Cam6     grip()         x               cp51    cp31    cp21    cp5     cp4     grip(3)
-        no20               x           Cam2  cp51   Cam3        Cam4        Cam5        Cam6     grip()         x               cp61    cp41    cp31    cp6     cp5     grip(4)
-        no21               x            x    cp61   Cam3        Cam4        Cam5        Cam6     grip()         x                       cp51    cp41    cp11    cp6     grip(5)
-        no22               x            x           Cam3        Cam4        Cam5        Cam6     grip()         x                       cp61    cp51    cp21    cp11    grip(6)
-        bonus              x            x           x           x           x           x        grip()         x                                                       grip(11)                                                                                                                                                                  
+        no17              cam1  cp41   Cam2  cp21   Cam3        Cam4        Cam5        Cam6        x           x       cp51    cp31    cp11    cp6     cp3     cp2     grip(2)
+        no18              Cam1  cp51   Cam2  cp31   Cam3        Cam4        Cam5        Cam6     grip()         x       cp61    cp41    cp21    cp11    cp4     cp3     grip(3)
+        no19               x    cp61   Cam2  cp41   Cam3        Cam4        Cam5        Cam6     grip()         x               cp51    cp31    cp21    cp5     cp4     grip(4)
+        no20               x           Cam2  cp51   Cam3        Cam4        Cam5        Cam6     grip()         x               cp61    cp41    cp31    cp6     cp5     grip(5)
+        no21               x            x    cp61   Cam3        Cam4        Cam5        Cam6     grip()         x                       cp51    cp41    cp11    cp6     grip(6)
+        no22               x            x           Cam3        Cam4        Cam5        Cam6     grip()         x                       cp61    cp51    cp21    cp11    grip(11) 
+        bonus              x            x           x           x           x           x        grip()         x                                                                                                                                                                                                                       
         
         chu trình 3
         no23              Cam1          x           x           x           x           x           x           x       cp12
         no24              Cam1  cp12    x           x           x           x           x           x           x       cp22
         no25              Cam1  cp22    Cam2        x           x           x           x           x           x       cp32    cp12
         no26              Cam1  cp32    Cam2 cp12   x           x           x           x           x           x       cp42    cp22
-        no27              Cam1  cp42    Cam2 cp22   Cam3        Cam4        Cam5        Cam6        grip()      x       cp52    cp32    cp12    cp61    cp31    cp21
-        no28              Cam1  cp52    Cam2 cp31   Cam3        Cam4        Cam5        Cam6        grip()      x       cp62    cp42    cp22    cp12    cp41    cp31    grip(21)
-        no29               x    cp62    Cam2 cp41   Cam3        Cam4        Cam5        Cam6        grip()      x               cp52    cp32    cp22    cp51    cp41    grip(31)
-        no30               x            Cam2 cp51   Cam3        Cam4        Cam5        Cam6        grip()      x               cp62    cp42    cp32    cp61    cp51    grip(41)
-        no31               x            x    cp61   cam3        Cam4        Cam5        Cam6        grip()      x                       cp52    cp42    cp12    cp61    grip(51)
-        no21               x            x           Cam3        Cam4        Cam5        Cam6        grip()      x                       cp62    cp52    cp22    cp12    grip(61)
-         */
+        no27              Cam1  cp42    Cam2 cp22   Cam3        Cam4        Cam5        Cam6        grip()      x       cp52    cp32    cp12    cp61    cp31    cp21    grip(21)
+        no28              Cam1  cp52    Cam2 cp31   Cam3        Cam4        Cam5        Cam6        grip()      x       cp62    cp42    cp22    cp12    cp41    cp31    grip(31)
+        no29               x    cp62    Cam2 cp41   Cam3        Cam4        Cam5        Cam6        grip()      x               cp52    cp32    cp22    cp51    cp41    grip(41)
+        no30               x            Cam2 cp51   Cam3        Cam4        Cam5        Cam6        grip()      x               cp62    cp42    cp32    cp61    cp51    grip(51)
+        no31               x            x    cp61   cam3        Cam4        Cam5        Cam6        grip()      x                       cp52    cp42    cp12    cp61    grip(61)
+        no21               x            x           Cam3        Cam4        Cam5        Cam6        grip()      x                       cp62    cp52    cp22    cp12    grip(12)
+        */
         private void revcover(string vitriloi,string chuTrinh) 
         {
             if (chuTrinh == "1") 
@@ -3713,7 +3960,365 @@ namespace Camera_Check_Component
                 }                     
             }
             if(chuTrinh == "2") 
-            {             
+            {      
+                if(vitriloi == "1") 
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan2_vt1)) { File.Delete(lan2_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan3_vt1)) { File.Delete(lan3_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+                 
+                    if (File.Exists(lan2_vt2)) { File.Delete(lan2_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan3_vt2)) { File.Delete(lan3_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt3)) { File.Delete(lan2_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan3_vt3)) { File.Delete(lan3_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan2_vt4)) { File.Delete(lan2_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan3_vt4)) { File.Delete(lan3_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan2_vt5)) { File.Delete(lan2_vt5); count_5 = count_5 - 1; }
+                }
+                if(vitriloi == "2") 
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan2_vt1)) { File.Delete(lan2_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan3_vt1)) { File.Delete(lan3_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan2_vt2)) { File.Delete(lan2_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan3_vt2)) { File.Delete(lan3_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt3)) { File.Delete(lan2_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan3_vt3)) { File.Delete(lan3_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan2_vt4)) { File.Delete(lan2_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan3_vt4)) { File.Delete(lan3_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan2_vt5)) { File.Delete(lan2_vt5); count_5 = count_5 - 1; }
+                }
+                if(vitriloi == "3") 
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt1)) { File.Delete(lan2_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan3_vt1)) { File.Delete(lan3_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan2_vt2)) { File.Delete(lan2_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan3_vt2)) { File.Delete(lan3_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt3)) { File.Delete(lan2_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan3_vt3)) { File.Delete(lan3_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan2_vt4)) { File.Delete(lan2_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan3_vt4)) { File.Delete(lan3_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan2_vt5)) { File.Delete(lan2_vt5); count_5 = count_5 - 1; }
+                }
+                if(vitriloi == "4")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt1)) { File.Delete(lan2_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan3_vt1)) { File.Delete(lan3_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan2_vt2)) { File.Delete(lan2_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan3_vt2)) { File.Delete(lan3_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan2_vt3)) { File.Delete(lan2_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan3_vt3)) { File.Delete(lan3_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan2_vt4)) { File.Delete(lan2_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan3_vt4)) { File.Delete(lan3_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan2_vt5)) { File.Delete(lan2_vt5); count_5 = count_5 - 1; }
+                }
+                if (vitriloi == "5")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                 
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+
+
+                    if (File.Exists(lan3_vt1)) { File.Delete(lan3_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+
+                    if (File.Exists(lan3_vt2)) { File.Delete(lan3_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan12_vt3)) { File.Delete(lan12_vt3); count_3 = count_3 - 1; }
+                  
+
+                    if (File.Exists(lan3_vt3)) { File.Delete(lan3_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+
+                    if (File.Exists(lan3_vt4)) { File.Delete(lan3_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan6_vt4)) { File.Delete(lan6_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan3_vt5)) { File.Delete(lan3_vt5); count_5 = count_5 - 1; }
+                   
+                }
+                if (vitriloi == "6")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan62_vt1)) { File.Delete(lan62_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan42_vt2)) { File.Delete(lan42_vt2); count_2 = count_2 - 1; }
+
+                   
+                    if (File.Exists(lan4_vt1)) { File.Delete(lan4_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+
+                   
+                    if (File.Exists(lan4_vt2)) { File.Delete(lan4_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan12_vt3)) { File.Delete(lan12_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan22_vt3)) { File.Delete(lan22_vt3); count_3 = count_3 - 1; }
+
+                  
+                    if (File.Exists(lan4_vt3)) { File.Delete(lan4_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan12_vt4)) { File.Delete(lan12_vt4); count_4 = count_4 - 1; }
+                 
+               
+                    if (File.Exists(lan4_vt4)) { File.Delete(lan4_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan6_vt4)) { File.Delete(lan6_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan4_vt5)) { File.Delete(lan4_vt5); count_5 = count_5 - 1; }
+                }
+                if (vitriloi == "7")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan62_vt1)) { File.Delete(lan62_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan42_vt2)) { File.Delete(lan42_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan52_vt2)) { File.Delete(lan52_vt2); count_2 = count_2 - 1; }
+
+                 
+                    if (File.Exists(lan5_vt1)) { File.Delete(lan5_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+
+                   
+                    if (File.Exists(lan5_vt2)) { File.Delete(lan5_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan12_vt3)) { File.Delete(lan12_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan22_vt3)) { File.Delete(lan22_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan32_vt3)) { File.Delete(lan32_vt3); count_3 = count_3 - 1; }
+
+                 
+                    if (File.Exists(lan5_vt3)) { File.Delete(lan5_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan12_vt4)) { File.Delete(lan12_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan22_vt4)) { File.Delete(lan22_vt4); count_4 = count_4 - 1; }
+
+
+                    if (File.Exists(lan5_vt4)) { File.Delete(lan5_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan6_vt4)) { File.Delete(lan6_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan5_vt5)) { File.Delete(lan5_vt5); count_5 = count_5 - 1; }
+                }
+                if (vitriloi == "8")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan62_vt1)) { File.Delete(lan62_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan42_vt2)) { File.Delete(lan42_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan52_vt2)) { File.Delete(lan52_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan62_vt2)) { File.Delete(lan62_vt2); count_2 = count_2 - 1; }
+
+                 
+                    if (File.Exists(lan6_vt1)) { File.Delete(lan6_vt1); count_1 = count_1 - 1; }
+
+                 
+                    if (File.Exists(lan6_vt2)) { File.Delete(lan6_vt2); count_2 = count_2 - 1; }
+
+                    if (File.Exists(lan12_vt3)) { File.Delete(lan12_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan22_vt3)) { File.Delete(lan22_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan32_vt3)) { File.Delete(lan32_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan42_vt3)) { File.Delete(lan42_vt3); count_3 = count_3 - 1; }
+
+
+                    if (File.Exists(lan6_vt3)) { File.Delete(lan6_vt3); count_3 = count_3 - 1; }
+
+                    if (File.Exists(lan12_vt4)) { File.Delete(lan12_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan22_vt4)) { File.Delete(lan22_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan32_vt4)) { File.Delete(lan32_vt4); count_4 = count_4 - 1; }
+
+
+                    if (File.Exists(lan6_vt4)) { File.Delete(lan6_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan6_vt5)) { File.Delete(lan6_vt5); count_5 = count_5 - 1; }
+                }
+                if (vitriloi == "9")
+                {
+                    if (File.Exists(lan12_vt1)) { File.Delete(lan12_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan62_vt1)) { File.Delete(lan62_vt1); count_1 = count_1 - 1; }
+
+                    if (File.Exists(lan12_vt2)) { File.Delete(lan12_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan42_vt2)) { File.Delete(lan42_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan52_vt2)) { File.Delete(lan52_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan62_vt2)) { File.Delete(lan62_vt2); count_2 = count_2 - 1; }
+
+
+
+
+                    if (File.Exists(lan12_vt3)) { File.Delete(lan12_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan22_vt3)) { File.Delete(lan22_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan32_vt3)) { File.Delete(lan32_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan42_vt3)) { File.Delete(lan42_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan52_vt3)) { File.Delete(lan52_vt3); count_3 = count_3 - 1; }
+
+
+                    if (File.Exists(lan12_vt4)) { File.Delete(lan12_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan22_vt4)) { File.Delete(lan22_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan32_vt4)) { File.Delete(lan32_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan42_vt4)) { File.Delete(lan42_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan12_vt5)) { File.Delete(lan12_vt5); count_5 = count_5 - 1; }
+                }
+                if (vitriloi == "10")
+                {
+                    
+                    if (File.Exists(lan22_vt1)) { File.Delete(lan22_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan32_vt1)) { File.Delete(lan32_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan42_vt1)) { File.Delete(lan42_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan52_vt1)) { File.Delete(lan52_vt1); count_1 = count_1 - 1; }
+                    if (File.Exists(lan62_vt1)) { File.Delete(lan62_vt1); count_1 = count_1 - 1; }
+
+                   
+                    if (File.Exists(lan22_vt2)) { File.Delete(lan22_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan32_vt2)) { File.Delete(lan32_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan42_vt2)) { File.Delete(lan42_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan52_vt2)) { File.Delete(lan52_vt2); count_2 = count_2 - 1; }
+                    if (File.Exists(lan62_vt2)) { File.Delete(lan62_vt2); count_2 = count_2 - 1; }
+
+
+
+
+                  
+                    if (File.Exists(lan22_vt3)) { File.Delete(lan22_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan32_vt3)) { File.Delete(lan32_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan42_vt3)) { File.Delete(lan42_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan52_vt3)) { File.Delete(lan52_vt3); count_3 = count_3 - 1; }
+                    if (File.Exists(lan62_vt3)) { File.Delete(lan62_vt3); count_3 = count_3 - 1; }
+
+                   
+                    if (File.Exists(lan22_vt4)) { File.Delete(lan22_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan32_vt4)) { File.Delete(lan32_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan42_vt4)) { File.Delete(lan42_vt4); count_4 = count_4 - 1; }
+                    if (File.Exists(lan52_vt4)) { File.Delete(lan52_vt4); count_4 = count_4 - 1; }
+
+                    if (File.Exists(lan22_vt5)) { File.Delete(lan22_vt5); count_5 = count_5 - 1; }
+                }
             }
         }
         #endregion
