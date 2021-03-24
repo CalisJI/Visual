@@ -3714,19 +3714,19 @@ namespace Camera_Check_Component
         #endregion
 
         #region////////////////////////////////////////////////////////////////////////////////////////////// Recover 
-        string vt1 = ""; string lan1_vt1 = ""; string lan2_vt1 = ""; string lan3_vt1 = ""; string lan4_vt1 = ""; string lan5_vt1 = ""; string lan6_vt1 = "";
+        string lan1_vt1 = ""; string lan2_vt1 = ""; string lan3_vt1 = ""; string lan4_vt1 = ""; string lan5_vt1 = ""; string lan6_vt1 = "";
         string lan12_vt1 = ""; string lan22_vt1 = ""; string lan32_vt1 = ""; string lan42_vt1 = ""; string lan52_vt1 = ""; string lan62_vt1 = "";
-        string vt2 = ""; string lan1_vt2 = ""; string lan2_vt2 = ""; string lan3_vt2 = ""; string lan4_vt2 = ""; string lan5_vt2 = ""; string lan6_vt2 = "";
+        string lan1_vt2 = ""; string lan2_vt2 = ""; string lan3_vt2 = ""; string lan4_vt2 = ""; string lan5_vt2 = ""; string lan6_vt2 = "";
         string lan12_vt2 = ""; string lan22_vt2 = ""; string lan32_vt2 = ""; string lan42_vt2 = ""; string lan52_vt2 = ""; string lan62_vt2 = "";
-        string vt3 = ""; string lan1_vt3 = ""; string lan2_vt3 = ""; string lan3_vt3 = ""; string lan4_vt3 = ""; string lan5_vt3 = ""; string lan6_vt3 = "";
+        string lan1_vt3 = ""; string lan2_vt3 = ""; string lan3_vt3 = ""; string lan4_vt3 = ""; string lan5_vt3 = ""; string lan6_vt3 = "";
         string lan12_vt3 = ""; string lan22_vt3 = ""; string lan32_vt3 = ""; string lan42_vt3 = ""; string lan52_vt3 = ""; string lan62_vt3 = "";
-        string vt4 = ""; string lan1_vt4 = ""; string lan2_vt4 = ""; string lan3_vt4 = ""; string lan4_vt4 = ""; string lan5_vt4 = ""; string lan6_vt4 = "";
+        string lan1_vt4 = ""; string lan2_vt4 = ""; string lan3_vt4 = ""; string lan4_vt4 = ""; string lan5_vt4 = ""; string lan6_vt4 = "";
         string lan12_vt4 = ""; string lan22_vt4 = ""; string lan32_vt4 = ""; string lan42_vt4 = ""; string lan52_vt4 = ""; string lan62_vt4 = "";
-        string vt5 = ""; string lan1_vt5 = ""; string lan2_vt5 = ""; string lan3_vt5 = ""; string lan4_vt5 = ""; string lan5_vt5 = ""; string lan6_vt5 = "";
+        string lan1_vt5 = ""; string lan2_vt5 = ""; string lan3_vt5 = ""; string lan4_vt5 = ""; string lan5_vt5 = ""; string lan6_vt5 = "";
         string lan12_vt5 = ""; string lan22_vt5 = ""; string lan32_vt5 = ""; string lan42_vt5 = ""; string lan52_vt5 = ""; string lan62_vt5 = "";
-        string vt6 = ""; string lan1_vt6 = ""; string lan2_vt6 = ""; string lan3_vt6 = ""; string lan4_vt6 = ""; string lan5_vt6 = ""; string lan6_vt6 = "";
+        string lan1_vt6 = ""; string lan2_vt6 = ""; string lan3_vt6 = ""; string lan4_vt6 = ""; string lan5_vt6 = ""; string lan6_vt6 = "";
         string lan12_vt6 = ""; string lan22_vt6 = ""; string lan32_vt6 = ""; string lan42_vt6 = ""; string lan52_vt6 = ""; string lan62_vt6 = "";
-        string vt7 = ""; string lan1_vt7 = ""; string lan2_vt7 = ""; string lan3_vt7 = ""; string lan4_vt7 = ""; string lan5_vt7 = ""; string lan6_vt7 = "";
+        string lan1_vt7 = ""; string lan2_vt7 = ""; string lan3_vt7 = ""; string lan4_vt7 = ""; string lan5_vt7 = ""; string lan6_vt7 = "";
         string lan12_vt7 = ""; string lan22_vt7 = ""; string lan32_vt7 = ""; string lan42_vt7 = ""; string lan52_vt7 = ""; string lan62_vt7 = "";
         /*
          chu trình 1        1      2    3     4     5     6     7     8     9     10    11
