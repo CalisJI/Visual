@@ -147,13 +147,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tb_PN = new System.Windows.Forms.TextBox();
             this.picload_in = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TB_wker2 = new System.Windows.Forms.TextBox();
             this.TB_idworker = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.view_btn = new System.Windows.Forms.Button();
             this.sign_up = new System.Windows.Forms.Button();
@@ -321,6 +319,7 @@
             this.btnPositionOK = new System.Windows.Forms.Button();
             this.txtPosInput = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -416,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).BeginInit();
             this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1697,13 +1697,12 @@
             // 
             this.tabPage3.Controls.Add(this.tb_PN);
             this.tabPage3.Controls.Add(this.picload_in);
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.TB_wker2);
             this.tabPage3.Controls.Add(this.TB_idworker);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.view_btn);
             this.tabPage3.Controls.Add(this.sign_up);
@@ -1732,17 +1731,6 @@
             this.picload_in.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picload_in.TabIndex = 6;
             this.picload_in.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PN Selector Status",
-            "NG Detail"});
-            this.comboBox1.Location = new System.Drawing.Point(300, 434);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -1787,16 +1775,6 @@
             this.label8.Size = new System.Drawing.Size(100, 16);
             this.label8.TabIndex = 2;
             this.label8.Text = "ID Operator 1";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(241, 435);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 16);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Table:";
             // 
             // label10
             // 
@@ -3774,6 +3752,14 @@
             this.txtPosInput.Text = "0";
             this.txtPosInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(1928, 25);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1334, 888);
+            this.dataGridView2.TabIndex = 4;
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3896,6 +3882,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4029,7 +4016,6 @@
         private System.Windows.Forms.Label capture_10;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox picfull_2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label c3h1_1;
         private System.Windows.Forms.Label c4h1_1;
@@ -4190,9 +4176,9 @@
         private System.Windows.Forms.Button btnPositionOK;
         private System.Windows.Forms.TextBox txtPosInput;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox picload_in;
         private System.Windows.Forms.TextBox tb_PN;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 
