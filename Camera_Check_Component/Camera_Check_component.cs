@@ -91,8 +91,17 @@ namespace Camera_Check_Component
         private void Camera_Check_component_Load(object sender, EventArgs e)
         {
             this.Location = new System.Drawing.Point(0, 0);
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-
+            
+            if (Screen.AllScreens.Length > 1) 
+            {
+                //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                this.Width = 3840;
+                this.Height = 1080;
+            }
+            else 
+            {
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            }
             unable();
             listviewInit();
 
