@@ -417,12 +417,14 @@ namespace Camera_Check_Component
                     {
                         using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                         {
+                            //RotateImage(Live_Cam_7,-90).Save(memory, ImageFormat.Jpeg);
                             Live_Cam_7.Save(memory, ImageFormat.Jpeg);
                             byte[] bytes = memory.ToArray();
                             fs.Write(bytes, 0, bytes.Length);
                             fs.Dispose();
                         }
                     }
+                    //RotateImage(Live_Cam_7, -90).Dispose();
                     Live_Cam_7.Dispose();
                     order_7 = false;
                    
@@ -496,13 +498,15 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
+                        //RotateImage(Live_Cam_6,-90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_6.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                 Live_Cam_6.Dispose();
+                //RotateImage(Live_Cam_6, -90).Dispose();
+                Live_Cam_6.Dispose();
 
                 order_6 = false;
 
@@ -577,14 +581,15 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-
+                        //RotateImage(Live_Cam_5,-90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_5.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-               Live_Cam_5.Dispose();
+                //RotateImage(Live_Cam_5, -90).Dispose();
+                Live_Cam_5.Dispose();
                 order_5 = false;
 
             }; this.Invoke(inv);
@@ -656,12 +661,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
+                        //RotateImage(Live_Cam_4,-90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_4.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
+                //RotateImage(Live_Cam_4, -90).Dispose();
                 Live_Cam_4.Dispose();
                 order_4 = false;
 
@@ -733,12 +740,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
+                        //RotateImage(Live_Cam_3,-90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_3.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
+                //RotateImage(Live_Cam_4, -90).Dispose();
                 Live_Cam_3.Dispose();
                 order_3 = false;
             }; this.Invoke(inv);
@@ -806,12 +815,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
+                        //RotateImage(Live_Cam_2,-90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_2.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
+                //RotateImage(Live_Cam_2, -90).Dispose();
                 Live_Cam_2.Dispose();
                 order_2 = false;
 
@@ -889,6 +900,7 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
+                        //RotateImage(Live_Cam_1,-90).Save(memory, ImageFormat.Jpeg);
                         //bmp1.Save(memory, ImageFormat.Jpeg);
                         Live_Cam_1.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
@@ -896,7 +908,7 @@ namespace Camera_Check_Component
                         fs.Dispose();
                     }
                 }
-
+                //RotateImage(Live_Cam_1, -90).Dispose();
                 Live_Cam_1.Dispose();
                 order_1 = false;
 
@@ -1566,6 +1578,36 @@ namespace Camera_Check_Component
         }
         #endregion
         #region///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// XỬ LÝ ẢNH
+        private static Image RotateImage(Bitmap img, float rotationAngle)
+        {
+            //create an empty Bitmap image
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+
+            //turn the Bitmap into a Graphics object
+            Graphics gfx = Graphics.FromImage(bmp);
+
+            //now we set the rotation point to the center of our image
+            gfx.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
+
+            //now rotate the image
+            gfx.RotateTransform(rotationAngle);
+
+            gfx.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
+
+            //set the InterpolationMode to HighQualityBicubic so to ensure a high
+            //quality image once it is transformed to the specified size
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            //now draw our new image onto the graphics object
+            gfx.DrawImage(img, new Point(0, 0));
+
+            //dispose of our Graphics object
+            gfx.Dispose();
+
+            //return the image
+            return bmp;
+        }
+
         bool run_out1 = false;
         bool run_out2 = false;
         private void upload_image()
