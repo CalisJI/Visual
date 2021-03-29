@@ -56,11 +56,11 @@ namespace Camera_Check_Component
 
                system_Config.DefaultComport = "COM1";
                system_Config.DefaultCOMBaudrate = "9600";
-               system_Config.SQL_server =@"CALIS_YII\WINCC";
-                system_Config.Database = "ComponentState";
+               system_Config.SQL_server = @"DESKTOP-CDO0SQ2\SQLEXPRESS";
+               system_Config.Database = "ComponentState";
                system_Config.Map_Path_File = Default_Code_Path;
                system_Config.Output_File = Output_File_Path;
-
+                system_Config.PN_Selector = "3DC";
                XmlSerializer serializer = new XmlSerializer(typeof(System_config));
                Stream stream = new FileStream(System_File_Config_Path, FileMode.Create);
 

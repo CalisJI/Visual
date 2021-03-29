@@ -16,6 +16,8 @@ using System.IO;
 using AForge;
 using System.Drawing.Imaging;
 using S7.Net;
+using System.Drawing.Drawing2D;
+using System.Threading;
 
 namespace Camera_Check_Component
 {
@@ -53,6 +55,7 @@ namespace Camera_Check_Component
         private BackgroundWorker backgroundWorker_5 = new BackgroundWorker();
         private BackgroundWorker backgroundWorker_6 = new BackgroundWorker();
         private BackgroundWorker backgroundWorker_7 = new BackgroundWorker();
+        private BackgroundWorker ledinf = new BackgroundWorker();
         private SQL_action sql_action = new SQL_action();
         bool order_1 = false;
         bool order_2 = false;
@@ -64,7 +67,7 @@ namespace Camera_Check_Component
 
         bool start_check = false;
         bool allow_check = false;
-        private Timer timer = new Timer();
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private double startPR_Count = 0;
         private double timer_sum = 0;
         private double timer_star = 0;
@@ -87,11 +90,12 @@ namespace Camera_Check_Component
         {
             InitializeComponent();
         }
+        
         #region////////////////////////////////////////////////////////////////////////////////////////////////SET UP
         private void Camera_Check_component_Load(object sender, EventArgs e)
         {
             this.Location = new System.Drawing.Point(0, 0);
-            
+            system_config = Program_Configuration.GetSystem_Config();
             if (Screen.AllScreens.Length > 1) 
             {
                 //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -108,9 +112,17 @@ namespace Camera_Check_Component
             DateTime dt = DateTime.Now;
             string daytime = dt.Day.ToString() + "-" + dt.Month.ToString() + "-" + dt.Year.ToString();
             DMY = daytime;
-            system_config = Program_Configuration.GetSystem_Config();
+           
 
-
+            if(system_config.PN_Selector != ""||system_config.PN_Selector != null) 
+            {
+                tb_PN.Text = system_config.PN_Selector;
+              
+            }
+            else 
+            {
+                Program_Configuration.UpdateSystem_Config("PN_Selector", "xxx");
+            }
 
 
             if (system_config.new_Day != dt.Day || system_config.new_Month != dt.Month)
@@ -249,6 +261,10 @@ namespace Camera_Check_Component
             backgroundWorker_7.DoWork += BackgroundWorker_7_DoWork;
             backgroundWorker_7.RunWorkerCompleted += BackgroundWorker_7_RunWorkerCompleted;
             backgroundWorker_7.WorkerSupportsCancellation = true;
+
+            ledinf.DoWork += Ledinf_DoWork;
+            ledinf.RunWorkerCompleted += Ledinf_RunWorkerCompleted;
+            ledinf.WorkerSupportsCancellation = true;
             #endregion
             Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
             system_config.Location_cam1_folder = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Location_cam1_folder"));
@@ -270,8 +286,28 @@ namespace Camera_Check_Component
             timer.Tick += Timer_Tick;
             timer.Enabled = true;
             timer.Start();
-            tb_PN.Text = system_config.PN_selector;
+           
+           
         }
+
+        private void Ledinf_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //if (!ledinf.IsBusy) ledinf.RunWorkerAsync();
+        }
+
+        private void Ledinf_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            if (started) 
+            {
+                panel11.BackColor = Color.Green;
+            }
+            else 
+            {
+                panel11.BackColor = Color.Red;
+            }
+        }
+
         private void unable()
         {
            
@@ -1043,10 +1079,8 @@ namespace Camera_Check_Component
             ID_Operator1 = TB_idworker.Text;
             ID_Operator2 = TB_wker2.Text;
             PN_Selector = tb_PN.Text;
-            tb_PN.Enabled = false;
-            TB_idworker.Enabled = false;
-            TB_wker2.Enabled = false;
-            Program_Configuration.UpdateSystem_Config("PN_selector", PN_Selector);
+           
+            Program_Configuration.UpdateSystem_Config("PN_Selector", PN_Selector);
             system_config = Program_Configuration.GetSystem_Config();
             if (tb_PN.Text == "" || TB_idworker.Text == "" || TB_wker2.Text == "")
             {
@@ -1061,6 +1095,9 @@ namespace Camera_Check_Component
                 Stop_btn.Enabled = false;
                 return;
             }
+            tb_PN.Enabled = false;
+            TB_idworker.Enabled = false;
+            TB_wker2.Enabled = false;
             system_config = Program_Configuration.GetSystem_Config();
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (system_config.Camera1 < filterInfoCollection.Count) Cam1_Device = filterInfoCollection[system_config.Camera1];
@@ -1197,7 +1234,7 @@ namespace Camera_Check_Component
                     Cam7VIDEO_Device.Start();
                 }
             }
-
+            //ledinf.RunWorkerAsync();
             timer.Start();
             Start_btn.Enabled = false;
             Stop_btn.Enabled = true;
@@ -1367,37 +1404,37 @@ namespace Camera_Check_Component
                 if (order_1)
                 {
                     Cam1VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }              
                 if (order_2)
                 {
                     Cam2VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
                 if (order_3)
                 {
                     Cam3VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
                 if (order_4)
                 {
                     Cam4VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
                 if (order_5)
                 {
                     Cam5VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
                 if (order_6)
                 {
                     Cam6VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
                 if(order_7 && system_config.add_cam == "true")
                 {
                     Cam7VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(15);
                 }
             };
             this.Invoke(inv);
@@ -1543,6 +1580,7 @@ namespace Camera_Check_Component
             update_system();
             RESET();
             timer.Stop();
+            if (ledinf.IsBusy) ledinf.CancelAsync();
 
         }
 
@@ -1564,7 +1602,7 @@ namespace Camera_Check_Component
 
                 Start_btn.Enabled = true;
                 Stop_btn.Enabled = false;
-
+                //ledinf.RunWorkerAsync();
                 Pic_Cam1.Image = null;
                 Pic_Cam2.Image = null;
                 Pic_Cam3.Image = null;
@@ -1599,7 +1637,7 @@ namespace Camera_Check_Component
             gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
             //now draw our new image onto the graphics object
-            gfx.DrawImage(img, new Point(0, 0));
+            gfx.DrawImage(img, new System.Drawing.Point(0, 0));
 
             //dispose of our Graphics object
             gfx.Dispose();
@@ -2103,7 +2141,7 @@ namespace Camera_Check_Component
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','OK','OK','OK','OK','OK','OK','OK')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { PN_Selector, "OK", "" });
+                var item = new ListViewItem(new[] { "3DC "+folderIndex.ToString()+"", "OK", "" });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" +load1.ToString() + "]");
@@ -2146,7 +2184,7 @@ namespace Camera_Check_Component
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,NG_Type) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam1) + "')");
                 Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic + "')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY (Time) DESC");
-                var item = new ListViewItem(new[] { PN_Selector, "NG", error_Type(loi_tam1) });
+                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "NG", error_Type(loi_tam1) });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + load1.ToString() + "]");
@@ -2298,7 +2336,7 @@ namespace Camera_Check_Component
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator2 + "','OK','OK','OK','OK','OK','OK','OK')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { PN_Selector, "OK", "" });
+                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "OK", "" });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" + load2.ToString() + "]");
@@ -2342,7 +2380,7 @@ namespace Camera_Check_Component
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,NG_Type) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam2) + "')");
                 Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic + "')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { PN_Selector, "NG", error_Type(loi_tam2) });
+                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "NG", error_Type(loi_tam2) });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
@@ -3087,26 +3125,9 @@ namespace Camera_Check_Component
         Class2 cl2 = new Class2();
         Class3 cl3 = new Class3();
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string Addr = "M100.2";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
-            groupBox13.Enabled = true;
-            groupBox12.Enabled = true;
-            groupBox15.Enabled = true;
-            groupBox14.Enabled = true;
-            groupBox2.Enabled = true;
-            groupBox6.Enabled = true;
-            groupBox7.Enabled = true;
-            groupBox8.Enabled = true;
-            groupBox9.Enabled = true;
-            groupBox10.Enabled = true;
-            groupBox11.Enabled = true;
-            ShowPosition();
-        }
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            PLCS7_1200 = new Plc(CpuType.S71200, "" + txtIPAddress + "", 0, 0);
+            PLCS7_1200 = new Plc(CpuType.S71200, "192.168.0.7", 0, 0);
             if (PLCS7_1200.IsAvailable)
             {
                 PLCS7_1200.Open();
@@ -3119,12 +3140,25 @@ namespace Camera_Check_Component
             }
             else MessageBox.Show("Error");
         }
+        string t = "";
+        //private void serialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
+        //{
+        //    Thread.Sleep(10);
+        //    x = serialPort1.ReadExisting();
+        //    t = x;
+        //    if (x != null)
+        //    {
+        //        doAction();
+        //    }
+        //}
+
         public void doAction()
         {
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(doAction));
             else
             {
+                label5.Text = x;
                 if (x == "11")
                 {
                     pic1.Visible = true;
@@ -3237,6 +3271,17 @@ namespace Camera_Check_Component
                     lblUpOut.Text = "0";
                     lblDownOut.Text = "1";
                 }
+                string[] arr = t.Split('#');
+                if (arr[0] == "NG1")
+                {
+                    string Addr = "DB33.DBX0.0";
+                    PLCS7_1200.Write(Addr, int.Parse("1"));
+                }
+                if (arr[0] == "NG2")
+                {
+                    string Addr = "DB33.DBX0.1";
+                    PLCS7_1200.Write(Addr, int.Parse("1"));
+                }
             }
         }
         string x = "";
@@ -3254,6 +3299,24 @@ namespace Camera_Check_Component
                 PLCS7_1200.Write(Addr, int.Parse("1"));
             }
         }
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialDataReceivedEventHandler);
+        //    serialPort1.Open();
+        //    //groupBox1.Enabled = false;
+        //    //groupBox2.Enabled = false;
+        //    //groupBox3.Enabled = false;
+        //    //groupBox4.Enabled = false;
+        //    //groupBox5.Enabled = false;
+        //    //groupBox6.Enabled = false;
+        //    //groupBox7.Enabled = false;
+        //    //groupBox8.Enabled = false;
+        //    //groupBox9.Enabled = false;
+        //    //groupBox10.Enabled = false;
+        //    //groupBox11.Enabled = false;
+        //    //txtIPAddress.Enabled = false;
+        //    //btnAutoHome.Enabled = false;
+        //}
         private void btnJogForInput_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB1.DBX16.2";
@@ -3277,30 +3340,45 @@ namespace Camera_Check_Component
             string Addr = "DB1.DBX16.3";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
-
         private void btnMovePositionInput_Click(object sender, EventArgs e)
         {
             DataType dt = DataType.DataBlock;
             int DB1 = 1;
             int DB5 = 5;
-            int StartByte1 = 28;
+            int StartByte1 = 46;
             int StartByte2 = 2;
             PLCS7_1200.Write(dt, DB1, StartByte1, Convert.ToInt32(txtPositionInput.Text));
             PLCS7_1200.Write(dt, DB5, StartByte2, Convert.ToInt16(txtSpeedInput.Text));
             string Addr = "M101.6";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
+        private void btnMovePositionInput_MouseUp(object sender, MouseEventArgs e)
+        {
+            //      string Addr = "M500.4";
+            //    PLCS7_1200.Write(Addr, int.Parse("0"));
+
+        }
+        private void btnMovePositionInput_MouseDown(object sender, MouseEventArgs e)
+        {
+            //string Addr = "M500.4";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            //      string Addr1 = "DB1.DBD32";
+            //     PLCS7_1200.Write(Addr1, short.Parse(txtPositionInput.Text));
+            //  string Addr2 = "DB1.DBW36";
+            //   PLCS7_1200.Write(Addr2, int.Parse(txtSpeedInput.Text));
+        }
+
         private void txtPositionInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
         private void txtSpeedInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-
         private void ShowDataRead(Label lb, double db)
         {
             double c = Math.Round(db);
@@ -3316,11 +3394,13 @@ namespace Camera_Check_Component
             string Addr = "DB2.DBX56.0";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
+
         private void btnJogForPG_MouseUp(object sender, MouseEventArgs e)
         {
             string Addr = "DB2.DBX56.0";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void btnJogBackPG_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB2.DBX56.1";
@@ -3337,11 +3417,13 @@ namespace Camera_Check_Component
             PLCS7_1200.ReadClass(ReadData, 5, 8);
             ShowDataRead(lblReadPositionInput, ReadData.current_Position_SV1);
         }
+
         private void btnReadPositionPG_Click(object sender, EventArgs e)
         {
             PLCS7_1200.ReadClass(cl, 2, 52);
             ShowDataRead(lblReadPositionPG, cl.Distance_Start);
         }
+
         private void txtPositionPG_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -3353,16 +3435,21 @@ namespace Camera_Check_Component
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+
+
         private void picCentRight_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX0.3";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
+
         private void picCentRight_MouseUp(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX0.3";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void picCentLeft_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX1.4";
@@ -3434,6 +3521,7 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX1.6";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void picUpXL4_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX0.6";
@@ -3457,6 +3545,7 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX1.7";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void picUpPUC_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX0.7";
@@ -3505,6 +3594,7 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX2.1";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void picUpPP_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB33.DBX1.1";
@@ -3528,8 +3618,20 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX2.2";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
-        private void button5_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
+            //groupBox1.Enabled = false;
+            //groupBox2.Enabled = false;
+            //groupBox3.Enabled = false;
+            //groupBox4.Enabled = false;
+            //groupBox5.Enabled = false;
+            //groupBox6.Enabled = false;
+            //groupBox7.Enabled = false;
+            //groupBox8.Enabled = false;
+            //groupBox9.Enabled = false;
+            //groupBox10.Enabled = false;
+            //groupBox11.Enabled = false;
             groupBox13.Enabled = false;
             groupBox12.Enabled = false;
             groupBox15.Enabled = false;
@@ -3541,7 +3643,10 @@ namespace Camera_Check_Component
             groupBox9.Enabled = false;
             groupBox10.Enabled = false;
             groupBox11.Enabled = false;
+            //txtIPAddress.Enabled = false;
+            //btnAutoHome.Enabled = false;
         }
+
         private void lblSetSpeedJogSV1_Click(object sender, EventArgs e)
         {
             DataType dt = DataType.DataBlock;
@@ -3574,6 +3679,7 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX2.3";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+
         private void lblSetSpeedJogSV2_Click(object sender, EventArgs e)
         {
             DataType dt = DataType.DataBlock;
@@ -3594,6 +3700,7 @@ namespace Camera_Check_Component
             string Addr = "M104.0";
             PLCS7_1200.Write(Addr, int.Parse("1"));
         }
+
         private void btnSetHomePG_MouseUp(object sender, MouseEventArgs e)
         {
             string Addr = "M104.2";
@@ -3608,30 +3715,36 @@ namespace Camera_Check_Component
 
         private void txtPositionInput_TextChanged(object sender, EventArgs e)
         {
-            Int32 t = Int32.Parse(txtPositionInput.Text);
-            if (t > 86000)
+            if (txtPositionInput.Text != null)
             {
-                MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnMovePositionInput.Enabled = false;
-            }
-            else
-            {
-                btnMovePositionInput.Enabled = true;
+                Int32 t = Int32.Parse(txtPositionInput.Text);
+                if (t > 86000)
+                {
+                    MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnMovePositionInput.Enabled = false;
+                }
+                else
+                {
+                    btnMovePositionInput.Enabled = true;
+                }
             }
 
         }
 
         private void txtPositionPG_TextChanged(object sender, EventArgs e)
         {
-            Int32 t = Int32.Parse(txtPositionPG.Text);
-            if (t > 86000)
+            if (txtPositionPG.Text != "")
             {
-                MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnMovePositionPG.Enabled = false;
-            }
-            else
-            {
-                btnMovePositionPG.Enabled = true;
+                Int32 t = Int32.Parse(txtPositionPG.Text);
+                if (t > 86000)
+                {
+                    MessageBox.Show("journey limit exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnMovePositionPG.Enabled = false;
+                }
+                else
+                {
+                    btnMovePositionPG.Enabled = true;
+                }
             }
         }
         private void ShowPosition()
@@ -3647,9 +3760,26 @@ namespace Camera_Check_Component
             PLCS7_1200.ReadClass(cl2, 2, 22);
             ShowDataReadtxt(txtPosOutput, cl2.Distance_Start);
             PLCS7_1200.ReadClass(cl3, 1, 18);
-            ShowDataReadtxt(txtPosInput, cl3.Distance1);
-            ShowDataReadtxt(txtPosStart, cl3.Distance2);
-            ShowDataReadtxt(txtPosMove, cl3.Distance3);
+            ShowDataReadtxt(txtPosInput, cl3.Distance_Centering);
+            ShowDataReadtxt(txtPosStart, cl3.Distance_Start);
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS1, cl3.Distance1);
+            ShowDataReadtxt(txtPS2, cl3.Distance2);
+            ShowDataReadtxt(txtPS3, cl3.Distance3);
+            ShowDataReadtxt(txtPS4, cl3.Distance4);
+            ShowDataReadtxt(txtPS5, cl3.Distance5);
+            ShowDataReadtxt(txtPS6, cl3.Distance6);
+            ShowDataReadtxt(txtPS7, cl3.Distance7);
+            ShowDataReadtxt(txtPS8, cl3.Distance8);
+            ShowDataReadtxt(txtPS9, cl3.Distance9);
+            PLCS7_1200.ReadClass(cl3, 1, 0);
+            ShowDataReadtxt(txtVP1, cl3.Velocity_Point);
+            PLCS7_1200.ReadClass(cl3, 1, 4);
+            ShowDataReadtxt(txtVB1, cl3.Velocity_Back);
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtVP2, cl2.Velocity_Point);
+            PLCS7_1200.ReadClass(cl2, 2, 14);
+            ShowDataReadtxt(txtVB2, cl2.Velocity_Back);
         }
 
         private void btnPositionNG1_Click(object sender, EventArgs e)
@@ -3680,6 +3810,7 @@ namespace Camera_Check_Component
             PLCS7_1200.ReadClass(cl2, 2, 18);
             ShowDataReadtxt(txtPosNG4, cl2.Distance4);
         }
+
         private void btnPositionNG5_Click(object sender, EventArgs e)
         {
             PLCS7_1200.Write(DataType.DataBlock, 2, 34, Convert.ToInt32(txtPosNG5.Text));
@@ -3701,17 +3832,19 @@ namespace Camera_Check_Component
             ShowDataReadtxt(txtPosOK, cl2.DistanceOK);
         }
 
+
         private void btnPositionOutPut_Click(object sender, EventArgs e)
         {
             PLCS7_1200.Write(DataType.DataBlock, 2, 50, Convert.ToInt16(txtPosOutput.Text));
             PLCS7_1200.ReadClass(cl2, 2, 22);
             ShowDataReadtxt(txtPosOutput, cl2.Distance_Start);
         }
+
         private void btnPositionInput_Click(object sender, EventArgs e)
         {
             PLCS7_1200.Write(DataType.DataBlock, 1, 18, Convert.ToInt16(txtPosInput.Text));
             PLCS7_1200.ReadClass(cl3, 1, 18);
-            ShowDataReadtxt(txtPosInput, cl3.Distance1);
+            ShowDataReadtxt(txtPosInput, cl3.Distance_Centering);
         }
 
         private void btnPositionStart_Click(object sender, EventArgs e)
@@ -3719,15 +3852,7 @@ namespace Camera_Check_Component
 
             PLCS7_1200.Write(DataType.DataBlock, 1, 20, Convert.ToInt16(txtPosStart.Text));
             PLCS7_1200.ReadClass(cl3, 1, 18);
-            ShowDataReadtxt(txtPosStart, cl3.Distance2);
-        }
-
-        private void btnPositionMove_Click(object sender, EventArgs e)
-        {
-
-            PLCS7_1200.Write(DataType.DataBlock, 1, 22, Convert.ToInt16(txtPosMove.Text));
-            PLCS7_1200.ReadClass(cl3, 1, 18);
-            ShowDataReadtxt(txtPosMove, cl3.Distance3);
+            ShowDataReadtxt(txtPosStart, cl3.Distance_Start);
         }
 
         private void btnReadAll_Click(object sender, EventArgs e)
@@ -3735,6 +3860,7 @@ namespace Camera_Check_Component
             ShowPosition();
             MessageBox.Show("Read Success", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private void btnWriteAll_Click(object sender, EventArgs e)
         {
             PLCS7_1200.Write(DataType.DataBlock, 2, 18, Convert.ToInt32(txtPosNG1.Text));
@@ -3747,7 +3873,19 @@ namespace Camera_Check_Component
             PLCS7_1200.Write(DataType.DataBlock, 2, 50, Convert.ToInt16(txtPosOutput.Text));
             PLCS7_1200.Write(DataType.DataBlock, 1, 18, Convert.ToInt16(txtPosInput.Text));
             PLCS7_1200.Write(DataType.DataBlock, 1, 20, Convert.ToInt16(txtPosStart.Text));
-            PLCS7_1200.Write(DataType.DataBlock, 1, 22, Convert.ToInt16(txtPosMove.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 48, Convert.ToInt16(txtVP2.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 2, 46, Convert.ToInt16(txtVB2.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 28, Convert.ToInt16(txtPS1.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 30, Convert.ToInt16(txtPS2.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 32, Convert.ToInt16(txtPS3.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 34, Convert.ToInt16(txtPS4.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 36, Convert.ToInt16(txtPS5.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 38, Convert.ToInt16(txtPS6.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 40, Convert.ToInt16(txtPS7.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 42, Convert.ToInt16(txtPS8.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 44, Convert.ToInt16(txtPS9.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 24, Convert.ToInt16(txtVP1.Text));
+            PLCS7_1200.Write(DataType.DataBlock, 1, 26, Convert.ToInt16(txtVB1.Text));
             MessageBox.Show("Write Success", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -3761,6 +3899,133 @@ namespace Camera_Check_Component
             }
         }
 
+        private void btnSP1_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 28, Convert.ToInt16(txtPS1.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS1, cl3.Distance1);
+        }
+
+        private void btnPS2_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 30, Convert.ToInt16(txtPS2.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS2, cl3.Distance2);
+        }
+
+        private void btnPS3_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 32, Convert.ToInt16(txtPS3.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS3, cl3.Distance3);
+        }
+
+        private void btnPS4_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 34, Convert.ToInt16(txtPS4.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS4, cl3.Distance4);
+        }
+
+        private void btnPS5_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 36, Convert.ToInt16(txtPS5.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS5, cl3.Distance5);
+        }
+
+        private void btnPS6_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 38, Convert.ToInt16(txtPS6.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS6, cl3.Distance6);
+        }
+
+        private void btnPS7_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 40, Convert.ToInt16(txtPS7.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS7, cl3.Distance7);
+        }
+
+        private void btnPS8_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 42, Convert.ToInt16(txtPS8.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS8, cl3.Distance8);
+        }
+
+        private void btnPS9_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 44, Convert.ToInt16(txtPS9.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 24);
+            ShowDataReadtxt(txtPS9, cl3.Distance9);
+        }
+
+        private void btnVP1_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 24, Convert.ToInt16(txtVP1.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 0);
+            ShowDataReadtxt(txtVP1, cl3.Velocity_Point);
+        }
+
+        private void btnVB1_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 1, 26, Convert.ToInt16(txtVB1.Text));
+            PLCS7_1200.ReadClass(cl3, 1, 4);
+            ShowDataReadtxt(txtVB1, cl3.Velocity_Back);
+        }
+
+        private void btnVP2_Click(object sender, EventArgs e)
+        {
+            PLCS7_1200.Write(DataType.DataBlock, 2, 48, Convert.ToInt16(txtVP2.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 18);
+            ShowDataReadtxt(txtVP2, cl2.Velocity_Point);
+        }
+
+        private void btnVB2_Click(object sender, EventArgs e)
+        {
+
+            PLCS7_1200.Write(DataType.DataBlock, 2, 46, Convert.ToInt16(txtVB2.Text));
+            PLCS7_1200.ReadClass(cl2, 2, 14);
+            ShowDataReadtxt(txtVB2, cl2.Velocity_Back);
+        }
+
+        private void btnC1_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnC2_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnC3_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnC4_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnC5_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.4";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
+
+        private void btnC6_Click(object sender, EventArgs e)
+        {
+            string Addr = "DB5.DBX26.5";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+        }
 
         #endregion
 
@@ -4366,6 +4631,8 @@ namespace Camera_Check_Component
                 }
             }
         }
+
         #endregion
     }
+    
 }

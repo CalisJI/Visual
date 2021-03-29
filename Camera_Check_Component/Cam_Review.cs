@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ using AForge.Imaging;
 using Emgu.CV.UI;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using Emgu.Util;    
+using Emgu.Util;
+using System.Drawing.Drawing2D;
 
 namespace Camera_Check_Component
 {
@@ -60,6 +62,35 @@ namespace Camera_Check_Component
                 MessageBox.Show("Camera can not found");
             }
         }
+        private static System.Drawing.Image RotateImage(Bitmap img, float rotationAngle)
+        {
+            //create an empty Bitmap image
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+
+            //turn the Bitmap into a Graphics object
+            Graphics gfx = Graphics.FromImage(bmp);
+
+            //now we set the rotation point to the center of our image
+            gfx.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
+
+            //now rotate the image
+            gfx.RotateTransform(rotationAngle);
+
+            gfx.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
+
+            //set the InterpolationMode to HighQualityBicubic so to ensure a high
+            //quality image once it is transformed to the specified size
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            //now draw our new image onto the graphics object
+            gfx.DrawImage(img, new System.Drawing.Point(0, 0));
+
+            //dispose of our Graphics object
+            gfx.Dispose();
+
+            //return the image
+            return bmp;
+        }
         private void HandleCaptureDeviceStreamNewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             //Bitmap video;
@@ -71,6 +102,7 @@ namespace Camera_Check_Component
             //    pictureBox1.Image = bmp;
             //    pictureBox1.Image.Dispose();
             //}
+           
             if (pictureBox1.Image != null)
             {
                 pictureBox1.Image.Dispose();
@@ -88,8 +120,10 @@ namespace Camera_Check_Component
         
         private void Take_photo_btn_Click(object sender, EventArgs e)
         {
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;       
-            pictureBox2.Image = (Bitmap)pictureBox1.Image.Clone();
+           
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            Bitmap bmp = (Bitmap)RotateImage((Bitmap)pictureBox1.Image.Clone(), 45);
+            pictureBox2.Image = bmp;
         }      
     }
 }

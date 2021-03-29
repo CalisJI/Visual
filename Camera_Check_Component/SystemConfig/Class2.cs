@@ -16,5 +16,7 @@ namespace Camera_Check_Component
         public int Distance6 { get; set; }
         public int DistanceOK { get; set; }
         public short Distance_Start { get; set; }
+        public short Velocity_Point { get; set; }
+        public short Velocity_Back { get; set; }
     }
 }
