@@ -2,26 +2,26 @@
 <System_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Map_Path_File>C:\Users\Admin\source\repos\Visual\Camera_Check_Component\bin\Debug\IMAGE</Map_Path_File>
   <Output_File>C:\Users\Admin\source\repos\Visual\Camera_Check_Component\bin\Debug\Output.txt</Output_File>
-  <DefaultComport>COM1</DefaultComport>
+  <DefaultComport>COM3</DefaultComport>
   <DefaultCOMBaudrate>9600</DefaultCOMBaudrate>
   <Camera1>4</Camera1>
   <Camera2>3</Camera2>
   <Camera3>1</Camera3>
   <Camera4>5</Camera4>
-  <Camera5>1</Camera5>
+  <Camera5>2</Camera5>
   <Camera6>0</Camera6>
   <Camera7>0</Camera7>
   <add_cam>false</add_cam>
-  <Location_cam1_folder>0</Location_cam1_folder>
-  <Location_cam2_folder>0</Location_cam2_folder>
-  <Location_cam3_folder>0</Location_cam3_folder>
-  <Location_cam4_folder>0</Location_cam4_folder>
-  <Location_cam5_folder>0</Location_cam5_folder>
-  <Location_cam6_folder>0</Location_cam6_folder>
+  <Location_cam1_folder>3</Location_cam1_folder>
+  <Location_cam2_folder>3</Location_cam2_folder>
+  <Location_cam3_folder>3</Location_cam3_folder>
+  <Location_cam4_folder>3</Location_cam4_folder>
+  <Location_cam5_folder>2</Location_cam5_folder>
+  <Location_cam6_folder>2</Location_cam6_folder>
   <Location_cam7_folder>0</Location_cam7_folder>
   <Folder_load_check>1</Folder_load_check>
   <Folder_index_tranfer>0</Folder_index_tranfer>
-  <same_folder_1>0</same_folder_1>
+  <same_folder_1>1</same_folder_1>
   <same_folder_2>0</same_folder_2>
   <old_Day1>0</old_Day1>
   <old_Month1>0</old_Month1>

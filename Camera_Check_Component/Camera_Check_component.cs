@@ -67,6 +67,7 @@ namespace Camera_Check_Component
 
         bool start_check = false;
         bool allow_check = false;
+        bool loadform = false;
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private double startPR_Count = 0;
         private double timer_sum = 0;
@@ -94,6 +95,8 @@ namespace Camera_Check_Component
         #region////////////////////////////////////////////////////////////////////////////////////////////////SET UP
         private void Camera_Check_component_Load(object sender, EventArgs e)
         {
+            if (loadform) return;
+            loadform = true;
             this.Location = new System.Drawing.Point(0, 0);
             system_config = Program_Configuration.GetSystem_Config();
             if (Screen.AllScreens.Length > 1) 
@@ -478,8 +481,8 @@ namespace Camera_Check_Component
             panel6.BackColor = Color.Black;
             n6 = count_6 / 6;
             count_6++;
-            string Addr = "DB5.DBX26.5";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.5";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
         }
         void backgroundWorker_6_DoWork(object sender, DoWorkEventArgs e)
@@ -560,8 +563,8 @@ namespace Camera_Check_Component
             panel5.BackColor = Color.Black;
             n5 = count_5 / 6;
             count_5++;
-            string Addr = "DB5.DBX26.4";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.4";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
         }
 
         void backgroundWorker_5_DoWork(object sender, DoWorkEventArgs e)
@@ -640,8 +643,8 @@ namespace Camera_Check_Component
             panel4.BackColor = Color.Black;
             n4 = count_4 / 6;
             count_4++;
-            string Addr = "DB5.DBX26.3";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.3";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
         }
 
@@ -721,8 +724,8 @@ namespace Camera_Check_Component
             panel3.BackColor = Color.Black;
             n3 = count_3 / 6;
             count_3++;
-            string Addr = "DB5.DBX26.2";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.2";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
           }
         void backgroundWorker_3_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -796,8 +799,8 @@ namespace Camera_Check_Component
             n2 = count_2 / 6;
             count_2++;
             //serialPort_communicate.Write("something");
-            string Addr = "DB5.DBX26.1";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.1";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
         }
         void backgroundWorker_2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -871,8 +874,8 @@ namespace Camera_Check_Component
             count_1++;
             panel1.BackColor = Color.Black;
             //serialPort_communicate.Write("something");
-            string Addr = "DB5.DBX26.0";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //string Addr = "DB5.DBX26.0";
+            //PLCS7_1200.Write(Addr, int.Parse("1"));
         }
         int n1 = 0;
         int n2 = 0;
@@ -1261,6 +1264,7 @@ namespace Camera_Check_Component
             string shot7 = "";
             string[] shot = new string[7];
             string[] NG_code = new string[3];
+            Thread.Sleep(10);
             string cap_order = serialPort_communicate.ReadExisting();
             x = cap_order;
             if (x != null)
@@ -1580,6 +1584,7 @@ namespace Camera_Check_Component
             update_system();
             RESET();
             timer.Stop();
+            loadform = false;
             if (ledinf.IsBusy) ledinf.CancelAsync();
 
         }
@@ -3159,7 +3164,7 @@ namespace Camera_Check_Component
                 this.Invoke(new MethodInvoker(doAction));
             else
             {
-                label5.Text = x;
+                label16.Text = x;
                 if (x == "11")
                 {
                     pic1.Visible = true;
