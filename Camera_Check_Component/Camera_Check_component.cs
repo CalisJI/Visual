@@ -109,7 +109,7 @@ namespace Camera_Check_Component
             {
                 this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             }
-            unable();
+            //unable();
             listviewInit();
 
             DateTime dt = DateTime.Now;
@@ -222,6 +222,9 @@ namespace Camera_Check_Component
             pinf212.Visible = false;
             pinf222.Visible = false;
 
+           
+            //serialPort_communicate.ReceivedBytesThreshold = 2;
+            //serialPort_communicate.WriteBufferSize = 4096;
             PB_active1.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active1.Hide();
             PB_active2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -477,12 +480,13 @@ namespace Camera_Check_Component
             {
                 set_up();
             }
-            status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
+         
             panel6.BackColor = Color.Black;
             n6 = count_6 / 6;
             count_6++;
-            //string Addr = "DB5.DBX26.5";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr = "DB5.DBX26.5";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
             //serialPort_communicate.Write("something");
         }
         void backgroundWorker_6_DoWork(object sender, DoWorkEventArgs e)
@@ -559,12 +563,13 @@ namespace Camera_Check_Component
             {
                 set_up();
             }
-            status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
+           
             panel5.BackColor = Color.Black;
             n5 = count_5 / 6;
             count_5++;
-            //string Addr = "DB5.DBX26.4";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr = "DB5.DBX26.4";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
         }
 
         void backgroundWorker_5_DoWork(object sender, DoWorkEventArgs e)
@@ -639,13 +644,14 @@ namespace Camera_Check_Component
             {
                 set_up();
             }
-            status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
+          
             panel4.BackColor = Color.Black;
             n4 = count_4 / 6;
             count_4++;
-            //string Addr = "DB5.DBX26.3";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr = "DB5.DBX26.3";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             //serialPort_communicate.Write("something");
+            status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
         }
 
         void backgroundWorker_4_DoWork(object sender, DoWorkEventArgs e)
@@ -720,13 +726,14 @@ namespace Camera_Check_Component
             {
                 set_up();
             }
-            status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
+           
             panel3.BackColor = Color.Black;
             n3 = count_3 / 6;
             count_3++;
-            //string Addr = "DB5.DBX26.2";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
-          }
+            string Addr = "DB5.DBX26.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
+        }
         void backgroundWorker_3_DoWork(object sender, DoWorkEventArgs e)
         {
             if (backgroundWorker_3.CancellationPending)
@@ -794,13 +801,14 @@ namespace Camera_Check_Component
 
         void backgroundWorker_2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            status(" [SYSTEM]" + " CAM 2 Save image" + " " + count_2.ToString());
+           
             panel2.BackColor = Color.Black;
             n2 = count_2 / 6;
             count_2++;
             //serialPort_communicate.Write("something");
-            //string Addr = "DB5.DBX26.1";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr = "DB5.DBX26.1";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            status(" [SYSTEM]" + " CAM 2 Save image" + " " + count_2.ToString());
         }
         void backgroundWorker_2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -867,15 +875,22 @@ namespace Camera_Check_Component
 
             }; this.Invoke(inv);
         }
+        int cc = 0;
         void backgroundWorker_1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
+            cc++;
             int n = count_1 / 6;
             count_1++;
             panel1.BackColor = Color.Black;
             //serialPort_communicate.Write("something");
-            //string Addr = "DB5.DBX26.0";
-            //PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr = "DB5.DBX26.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
+            MethodInvoker inv = delegate
+            {
+                label22.Text = cc.ToString();
+            }; this.Invoke(inv);
+            
         }
         int n1 = 0;
         int n2 = 0;
@@ -1264,7 +1279,7 @@ namespace Camera_Check_Component
             string shot7 = "";
             string[] shot = new string[7];
             string[] NG_code = new string[3];
-            Thread.Sleep(10);
+            Thread.Sleep(15);
             string cap_order = serialPort_communicate.ReadExisting();
             x = cap_order;
             if (x != null)
@@ -3624,7 +3639,24 @@ namespace Camera_Check_Component
             string Addr = "DB33.DBX2.2";
             PLCS7_1200.Write(Addr, int.Parse("0"));
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string Addr = "M100.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
+            groupBox3.Enabled = true;
+            groupBox4.Enabled = true;
+            groupBox5.Enabled = true;
+            groupBox6.Enabled = true;
+            groupBox7.Enabled = true;
+            groupBox8.Enabled = true;
+            groupBox9.Enabled = true;
+            groupBox10.Enabled = true;
+            groupBox11.Enabled = true;
+            ShowPosition();
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             //groupBox1.Enabled = false;
@@ -4639,6 +4671,8 @@ namespace Camera_Check_Component
         }
 
         #endregion
+
+       
     }
     
 }

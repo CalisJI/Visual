@@ -61,6 +61,7 @@ namespace Camera_Check_Component
                system_Config.Map_Path_File = Default_Code_Path;
                system_Config.Output_File = Output_File_Path;
                 system_Config.PN_Selector = "3DC";
+                system_Config.inf_process = "";
                XmlSerializer serializer = new XmlSerializer(typeof(System_config));
                Stream stream = new FileStream(System_File_Config_Path, FileMode.Create);
 
