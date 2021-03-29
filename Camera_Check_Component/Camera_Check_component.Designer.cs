@@ -168,12 +168,8 @@
             this.LB_oee = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.Pic_Cam5 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Pic_Cam6 = new System.Windows.Forms.PictureBox();
-            this.Pic_Cam1 = new System.Windows.Forms.PictureBox();
             this.PB_active6 = new System.Windows.Forms.PictureBox();
-            this.Pic_Cam2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.PB_active5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -181,11 +177,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PB_active1 = new System.Windows.Forms.PictureBox();
-            this.Pic_Cam4 = new System.Windows.Forms.PictureBox();
-            this.Pic_Cam3 = new System.Windows.Forms.PictureBox();
             this.PB_active2 = new System.Windows.Forms.PictureBox();
             this.PB_active3 = new System.Windows.Forms.PictureBox();
             this.PB_active4 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam1 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam2 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam5 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam6 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam4 = new System.Windows.Forms.PictureBox();
+            this.Pic_Cam3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -357,6 +357,7 @@
             this.txtPosInput = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -390,18 +391,18 @@
             this.tabPage1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -453,6 +454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).BeginInit();
             this.groupBox15.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2008,15 +2010,6 @@
             this.panel7.Size = new System.Drawing.Size(277, 214);
             this.panel7.TabIndex = 49;
             // 
-            // Pic_Cam5
-            // 
-            this.Pic_Cam5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam5.Location = new System.Drawing.Point(100, 126);
-            this.Pic_Cam5.Name = "Pic_Cam5";
-            this.Pic_Cam5.Size = new System.Drawing.Size(75, 70);
-            this.Pic_Cam5.TabIndex = 35;
-            this.Pic_Cam5.TabStop = false;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -2027,24 +2020,6 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "CAM1";
             // 
-            // Pic_Cam6
-            // 
-            this.Pic_Cam6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam6.Location = new System.Drawing.Point(181, 126);
-            this.Pic_Cam6.Name = "Pic_Cam6";
-            this.Pic_Cam6.Size = new System.Drawing.Size(74, 70);
-            this.Pic_Cam6.TabIndex = 37;
-            this.Pic_Cam6.TabStop = false;
-            // 
-            // Pic_Cam1
-            // 
-            this.Pic_Cam1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam1.Location = new System.Drawing.Point(19, 34);
-            this.Pic_Cam1.Name = "Pic_Cam1";
-            this.Pic_Cam1.Size = new System.Drawing.Size(75, 70);
-            this.Pic_Cam1.TabIndex = 32;
-            this.Pic_Cam1.TabStop = false;
-            // 
             // PB_active6
             // 
             this.PB_active6.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -2054,15 +2029,6 @@
             this.PB_active6.Size = new System.Drawing.Size(19, 18);
             this.PB_active6.TabIndex = 48;
             this.PB_active6.TabStop = false;
-            // 
-            // Pic_Cam2
-            // 
-            this.Pic_Cam2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam2.Location = new System.Drawing.Point(100, 34);
-            this.Pic_Cam2.Name = "Pic_Cam2";
-            this.Pic_Cam2.Size = new System.Drawing.Size(75, 70);
-            this.Pic_Cam2.TabIndex = 34;
-            this.Pic_Cam2.TabStop = false;
             // 
             // label6
             // 
@@ -2134,24 +2100,6 @@
             this.PB_active1.TabIndex = 43;
             this.PB_active1.TabStop = false;
             // 
-            // Pic_Cam4
-            // 
-            this.Pic_Cam4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam4.Location = new System.Drawing.Point(19, 126);
-            this.Pic_Cam4.Name = "Pic_Cam4";
-            this.Pic_Cam4.Size = new System.Drawing.Size(75, 70);
-            this.Pic_Cam4.TabIndex = 36;
-            this.Pic_Cam4.TabStop = false;
-            // 
-            // Pic_Cam3
-            // 
-            this.Pic_Cam3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Pic_Cam3.Location = new System.Drawing.Point(181, 34);
-            this.Pic_Cam3.Name = "Pic_Cam3";
-            this.Pic_Cam3.Size = new System.Drawing.Size(74, 70);
-            this.Pic_Cam3.TabIndex = 33;
-            this.Pic_Cam3.TabStop = false;
-            // 
             // PB_active2
             // 
             this.PB_active2.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -2181,6 +2129,60 @@
             this.PB_active4.Size = new System.Drawing.Size(19, 18);
             this.PB_active4.TabIndex = 46;
             this.PB_active4.TabStop = false;
+            // 
+            // Pic_Cam1
+            // 
+            this.Pic_Cam1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam1.Location = new System.Drawing.Point(19, 34);
+            this.Pic_Cam1.Name = "Pic_Cam1";
+            this.Pic_Cam1.Size = new System.Drawing.Size(75, 70);
+            this.Pic_Cam1.TabIndex = 32;
+            this.Pic_Cam1.TabStop = false;
+            // 
+            // Pic_Cam2
+            // 
+            this.Pic_Cam2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam2.Location = new System.Drawing.Point(100, 34);
+            this.Pic_Cam2.Name = "Pic_Cam2";
+            this.Pic_Cam2.Size = new System.Drawing.Size(75, 70);
+            this.Pic_Cam2.TabIndex = 34;
+            this.Pic_Cam2.TabStop = false;
+            // 
+            // Pic_Cam5
+            // 
+            this.Pic_Cam5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam5.Location = new System.Drawing.Point(100, 126);
+            this.Pic_Cam5.Name = "Pic_Cam5";
+            this.Pic_Cam5.Size = new System.Drawing.Size(75, 70);
+            this.Pic_Cam5.TabIndex = 35;
+            this.Pic_Cam5.TabStop = false;
+            // 
+            // Pic_Cam6
+            // 
+            this.Pic_Cam6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam6.Location = new System.Drawing.Point(181, 126);
+            this.Pic_Cam6.Name = "Pic_Cam6";
+            this.Pic_Cam6.Size = new System.Drawing.Size(74, 70);
+            this.Pic_Cam6.TabIndex = 37;
+            this.Pic_Cam6.TabStop = false;
+            // 
+            // Pic_Cam4
+            // 
+            this.Pic_Cam4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam4.Location = new System.Drawing.Point(19, 126);
+            this.Pic_Cam4.Name = "Pic_Cam4";
+            this.Pic_Cam4.Size = new System.Drawing.Size(75, 70);
+            this.Pic_Cam4.TabIndex = 36;
+            this.Pic_Cam4.TabStop = false;
+            // 
+            // Pic_Cam3
+            // 
+            this.Pic_Cam3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Pic_Cam3.Location = new System.Drawing.Point(181, 34);
+            this.Pic_Cam3.Name = "Pic_Cam3";
+            this.Pic_Cam3.Size = new System.Drawing.Size(74, 70);
+            this.Pic_Cam3.TabIndex = 33;
+            this.Pic_Cam3.TabStop = false;
             // 
             // panel6
             // 
@@ -2422,20 +2424,15 @@
             this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.Controls.Add(this.gb);
             this.tabPage4.Controls.Add(this.AUTO);
-            this.tabPage4.Controls.Add(this.btnC5);
-            this.tabPage4.Controls.Add(this.btnC4);
-            this.tabPage4.Controls.Add(this.btnC3);
-            this.tabPage4.Controls.Add(this.btnC2);
-            this.tabPage4.Controls.Add(this.btnC1);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Controls.Add(this.groupBox10);
             this.tabPage4.Controls.Add(this.groupBox2);
             this.tabPage4.Controls.Add(this.groupBox12);
             this.tabPage4.Controls.Add(this.groupBox13);
-            this.tabPage4.Controls.Add(this.btnC6);
             this.tabPage4.Controls.Add(this.groupBox14);
             this.tabPage4.Controls.Add(this.groupBox15);
+            this.tabPage4.Controls.Add(this.groupBox16);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -2864,7 +2861,7 @@
             // 
             // btnC5
             // 
-            this.btnC5.Location = new System.Drawing.Point(495, 209);
+            this.btnC5.Location = new System.Drawing.Point(34, 196);
             this.btnC5.Name = "btnC5";
             this.btnC5.Size = new System.Drawing.Size(75, 39);
             this.btnC5.TabIndex = 37;
@@ -2874,7 +2871,7 @@
             // 
             // btnC4
             // 
-            this.btnC4.Location = new System.Drawing.Point(495, 164);
+            this.btnC4.Location = new System.Drawing.Point(34, 151);
             this.btnC4.Name = "btnC4";
             this.btnC4.Size = new System.Drawing.Size(75, 39);
             this.btnC4.TabIndex = 40;
@@ -2884,7 +2881,7 @@
             // 
             // btnC3
             // 
-            this.btnC3.Location = new System.Drawing.Point(495, 117);
+            this.btnC3.Location = new System.Drawing.Point(34, 104);
             this.btnC3.Name = "btnC3";
             this.btnC3.Size = new System.Drawing.Size(75, 39);
             this.btnC3.TabIndex = 36;
@@ -2894,7 +2891,7 @@
             // 
             // btnC2
             // 
-            this.btnC2.Location = new System.Drawing.Point(495, 72);
+            this.btnC2.Location = new System.Drawing.Point(34, 59);
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(75, 39);
             this.btnC2.TabIndex = 41;
@@ -2904,7 +2901,7 @@
             // 
             // btnC1
             // 
-            this.btnC1.Location = new System.Drawing.Point(495, 27);
+            this.btnC1.Location = new System.Drawing.Point(34, 14);
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(75, 39);
             this.btnC1.TabIndex = 38;
@@ -3479,7 +3476,7 @@
             // 
             // btnC6
             // 
-            this.btnC6.Location = new System.Drawing.Point(495, 254);
+            this.btnC6.Location = new System.Drawing.Point(34, 241);
             this.btnC6.Name = "btnC6";
             this.btnC6.Size = new System.Drawing.Size(75, 39);
             this.btnC6.TabIndex = 39;
@@ -4240,6 +4237,21 @@
             // 
             this.serialPort1.PortName = "COM6";
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.btnC3);
+            this.groupBox16.Controls.Add(this.btnC6);
+            this.groupBox16.Controls.Add(this.btnC1);
+            this.groupBox16.Controls.Add(this.btnC2);
+            this.groupBox16.Controls.Add(this.btnC4);
+            this.groupBox16.Controls.Add(this.btnC5);
+            this.groupBox16.Location = new System.Drawing.Point(455, 6);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(146, 287);
+            this.groupBox16.TabIndex = 43;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "manual";
+            // 
             // Camera_Check_component
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4294,18 +4306,18 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_active4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Cam3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -4364,6 +4376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCentRight)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4697,6 +4710,7 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel starcolo;
+        private System.Windows.Forms.GroupBox groupBox16;
     }
 }
 

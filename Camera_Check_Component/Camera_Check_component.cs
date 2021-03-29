@@ -2805,6 +2805,7 @@ namespace Camera_Check_Component
             {
                 if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
                 groupBox13.Enabled = false;
+                groupBox16.Enabled = false;
                 groupBox12.Enabled = false;
                 groupBox15.Enabled = false;
                 groupBox14.Enabled = false;
@@ -3631,7 +3632,7 @@ namespace Camera_Check_Component
             //groupBox8.Enabled = false;
             //groupBox9.Enabled = false;
             //groupBox10.Enabled = false;
-            //groupBox11.Enabled = false;
+            groupBox16.Enabled = false;
             groupBox13.Enabled = false;
             groupBox12.Enabled = false;
             groupBox15.Enabled = false;
