@@ -886,10 +886,10 @@ namespace Camera_Check_Component
             string Addr = "DB5.DBX26.0";
             PLCS7_1200.Write(Addr, int.Parse("1"));
             status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
-            MethodInvoker inv = delegate
-            {
-                label22.Text = cc.ToString();
-            }; this.Invoke(inv);
+            //MethodInvoker inv = delegate
+            //{
+            //    label22.Text = cc.ToString();
+            //}; this.Invoke(inv);
             
         }
         int n1 = 0;
