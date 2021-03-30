@@ -459,14 +459,14 @@ namespace Camera_Check_Component
                     {
                         using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                         {
-                            //RotateImage(Live_Cam_7,-90).Save(memory, ImageFormat.Jpeg);
+                            //RotateImage(Live_Cam_7, 45).Save(memory, ImageFormat.Jpeg);
                             Live_Cam_7.Save(memory, ImageFormat.Jpeg);
                             byte[] bytes = memory.ToArray();
                             fs.Write(bytes, 0, bytes.Length);
                             fs.Dispose();
                         }
                     }
-                    //RotateImage(Live_Cam_7, -90).Dispose();
+                    //RotateImage(Live_Cam_7, 45).Dispose();
                     Live_Cam_7.Dispose();
                     order_7 = false;
                    
@@ -480,7 +480,7 @@ namespace Camera_Check_Component
             {
                 set_up();
             }
-         
+            update_system();
             panel6.BackColor = Color.Black;
             n6 = count_6 / 6;
             count_6++;
@@ -541,14 +541,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_6,-90).Save(memory, ImageFormat.Jpeg);
+                        //RotateImage(Live_Cam_6, 45).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_6.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_6, -90).Dispose();
+                //RotateImage(Live_Cam_6, 45).Dispose();
                 Live_Cam_6.Dispose();
 
                 order_6 = false;
@@ -625,14 +625,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_5,-90).Save(memory, ImageFormat.Jpeg);
+                        //RotateImage(Live_Cam_5, 90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_5.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_5, -90).Dispose();
+                //RotateImage(Live_Cam_5, 90).Dispose();
                 Live_Cam_5.Dispose();
                 order_5 = false;
 
@@ -706,14 +706,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_4,-90).Save(memory, ImageFormat.Jpeg);
+                        //RotateImage(Live_Cam_4, 90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_4.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_4, -90).Dispose();
+                //RotateImage(Live_Cam_4, 90).Dispose();
                 Live_Cam_4.Dispose();
                 order_4 = false;
 
@@ -786,14 +786,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_3,-90).Save(memory, ImageFormat.Jpeg);
+                        //RotateImage(Live_Cam_3, -90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_3.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_4, -90).Dispose();
+                //RotateImage(Live_Cam_3,-90).Dispose();
                 Live_Cam_3.Dispose();
                 order_3 = false;
             }; this.Invoke(inv);
@@ -862,14 +862,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_2,-90).Save(memory, ImageFormat.Jpeg);
+                        //RotateImage(Live_Cam_2, -90).Save(memory, ImageFormat.Jpeg);
                         Live_Cam_2.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_2, -90).Dispose();
+               //RotateImage(Live_Cam_2, -90).Dispose();
                 Live_Cam_2.Dispose();
                 order_2 = false;
 
@@ -1279,12 +1279,14 @@ namespace Camera_Check_Component
             string shot7 = "";
             string[] shot = new string[7];
             string[] NG_code = new string[3];
-            Thread.Sleep(15);
+            Thread.Sleep(20);
             string cap_order = serialPort_communicate.ReadExisting();
             x = cap_order;
             if (x != null)
             {
+                t = x;
                 doAction();
+                
             }
             if (cap_order.Contains("."))
             {
@@ -1358,54 +1360,58 @@ namespace Camera_Check_Component
                     }
                 }
             }
-            if (cap_order == "Z11" && allow_check)
+            if(cap_order.Length < 4) 
             {
-                zoom1(0);
+                if (cap_order == "Z11" && allow_check)
+                {
+                    zoom1(1);
+                }
+                if (cap_order == "Z12" && allow_check)
+                {
+                    zoom1(2);
+                }
+                if (cap_order == "Z13" && allow_check)
+                {
+                    zoom1(3);
+                }
+                if (cap_order == "Z14" && allow_check)
+                {
+                    zoom1(4);
+                }
+                if (cap_order == "Z15" && allow_check)
+                {
+                    zoom1(5);
+                }
+                if (cap_order == "Z16" && allow_check)
+                {
+                    zoom1(6);
+                }
+                if (cap_order == "Z21" && allow_check)
+                {
+                    zoom2(1);
+                }
+                if (cap_order == "Z22" && allow_check)
+                {
+                    zoom2(2);
+                }
+                if (cap_order == "Z23" && allow_check)
+                {
+                    zoom2(3);
+                }
+                if (cap_order == "Z24" && allow_check)
+                {
+                    zoom2(4);
+                }
+                if (cap_order == "Z25" && allow_check)
+                {
+                    zoom2(5);
+                }
+                if (cap_order == "Z26" && allow_check)
+                {
+                    zoom2(6);
+                }
             }
-            if (cap_order == "Z12" && allow_check)
-            {
-                zoom1(1);
-            }
-            if (cap_order == "Z13" && allow_check)
-            {
-                zoom1(2);
-            }
-            if (cap_order == "Z14" && allow_check)
-            {
-                zoom1(3);
-            }
-            if (cap_order == "Z15" && allow_check)
-            {
-                zoom1(4);
-            }
-            if (cap_order == "Z16" && allow_check)
-            {
-                zoom1(5);
-            }
-            if (cap_order == "Z21" && allow_check)
-            {
-                zoom2(0);
-            }
-            if (cap_order == "Z22" && allow_check)
-            {
-                zoom2(1);
-            }
-            if (cap_order == "Z23" && allow_check)
-            {
-                zoom2(2);
-            }
-            if (cap_order == "Z24" && allow_check)
-            {
-                zoom2(3);
-            }
-            if (cap_order == "Z25" && allow_check)
-            {
-                zoom2(4);
-            }
-            if (cap_order == "Z26" && allow_check)
-            {
-                zoom2(5);
-            }        
+           
         }
 
         private void Take_Photo(string order)
@@ -1423,37 +1429,37 @@ namespace Camera_Check_Component
                 if (order_1)
                 {
                     Cam1VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }              
                 if (order_2)
                 {
                     Cam2VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
                 if (order_3)
                 {
                     Cam3VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
                 if (order_4)
                 {
                     Cam4VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
                 if (order_5)
                 {
                     Cam5VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
                 if (order_6)
                 {
                     Cam6VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
                 if(order_7 && system_config.add_cam == "true")
                 {
                     Cam7VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(15);
+                    System.Threading.Thread.Sleep(20);
                 }
             };
             this.Invoke(inv);
@@ -1543,37 +1549,43 @@ namespace Camera_Check_Component
             if (backgroundWorker_6.IsBusy) backgroundWorker_6.CancelAsync();
             if (backgroundWorker_7.IsBusy) backgroundWorker_7.CancelAsync();
             if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
+            PB_active1.Hide();
             if (Cam1VIDEO_Device != null && Cam1VIDEO_Device.IsRunning)
             {
                 Cam1VIDEO_Device.Stop();
-                PB_active1.Hide();
+               
             }
             if (Cam2VIDEO_Device != null && Cam2VIDEO_Device.IsRunning)
             {
 
                 Cam2VIDEO_Device.Stop();
-                PB_active2.Hide();
+               
             }
+            PB_active2.Hide();
             if (Cam3VIDEO_Device != null && Cam3VIDEO_Device.IsRunning)
             {
                 Cam3VIDEO_Device.Stop();
-                PB_active3.Hide();
+               
             }
             if (Cam4VIDEO_Device != null && Cam4VIDEO_Device.IsRunning)
             {
                 Cam4VIDEO_Device.Stop();
-                PB_active4.Hide();
+               
             }
+            PB_active4.Hide();
+            PB_active3.Hide();
             if (Cam5VIDEO_Device != null && Cam5VIDEO_Device.IsRunning)
             {
                 Cam5VIDEO_Device.Stop();
-                PB_active5.Hide();
+              
             }
+            PB_active5.Hide();
             if (Cam6VIDEO_Device != null && Cam6VIDEO_Device.IsRunning)
             {
                 Cam6VIDEO_Device.Stop();
-                PB_active6.Hide();
+              
             }
+            PB_active6.Hide();
             if (system_config.add_cam == "true")
             {
                 if (Cam7VIDEO_Device != null && Cam7VIDEO_Device.IsRunning) Cam7VIDEO_Device.Stop();
@@ -2221,7 +2233,7 @@ namespace Camera_Check_Component
         string h6 = "OK";
 
         string err_pic = "";
-        private void vitri_Erpic(string so)
+        private string vitri_Erpic(string so)
         {
             if (so == "1")
             {
@@ -2284,6 +2296,7 @@ namespace Camera_Check_Component
                 h6 = "OK";
                 err_pic = "";
             }
+            return err_pic;
         }
         private string error_Type(string get_error)
         {

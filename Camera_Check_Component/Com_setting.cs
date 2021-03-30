@@ -12,6 +12,7 @@ namespace Camera_Check_Component
 {
     public partial class Com_setting : Form
     {
+        private System_config system_config;
         public Com_setting()
         {
             InitializeComponent();
@@ -19,6 +20,8 @@ namespace Camera_Check_Component
 
         private void Com_setting_Load(object sender, EventArgs e)
         {
+            system_config = Program_Configuration.GetSystem_Config();
+            Com_setting_box.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports) 
             {
@@ -31,6 +34,10 @@ namespace Camera_Check_Component
                 Baudrate_box.Items.Add(baud);
             }
             if (Baudrate.Length > 0) Baudrate_box.SelectedIndex = 0;
+            if (system_config.DefaultComport != "")
+            {
+                Com_setting_box.Text = system_config.DefaultComport;
+            }
         }
 
         private void connect_com_btn_Click(object sender, EventArgs e)
@@ -77,6 +84,23 @@ namespace Camera_Check_Component
             }
             if (success) MessageBox.Show("Com Setting is updated Successfully!");
             this.Close();
+        }
+
+        private void Com_setting_box_MouseDown(object sender, MouseEventArgs e)
+        {
+            Com_setting_box.Items.Clear();
+            string[] ports = SerialPort.GetPortNames();
+            foreach (string port in ports)
+            {
+                Com_setting_box.Items.Add(port);
+            }
+            if (ports.Length > 0) Com_setting_box.SelectedIndex = 0;
+            string[] Baudrate = { "9600", "19200", "38400", "57600", "115200" };
+            foreach (string baud in Baudrate)
+            {
+                Baudrate_box.Items.Add(baud);
+            }
+            if (Baudrate.Length > 0) Baudrate_box.SelectedIndex = 0;
         }
     }
 }

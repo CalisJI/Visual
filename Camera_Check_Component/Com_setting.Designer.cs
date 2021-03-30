@@ -46,6 +46,7 @@
             this.Com_setting_box.Name = "Com_setting_box";
             this.Com_setting_box.Size = new System.Drawing.Size(121, 21);
             this.Com_setting_box.TabIndex = 0;
+            this.Com_setting_box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Com_setting_box_MouseDown);
             // 
             // connect_com_btn
             // 
