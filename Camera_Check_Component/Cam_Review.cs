@@ -93,37 +93,40 @@ namespace Camera_Check_Component
         }
         private void HandleCaptureDeviceStreamNewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            //Bitmap video;
-            ////video = (Bitmap)eventArgs.Frame.Clone();
-            ////pictureBox1.Image = video;
-            //video = (Bitmap)eventArgs.Frame.Clone();
-            //using (var bmp = (Bitmap)eventArgs.Frame.Clone())
+
+
+            //using (Bitmap bitmap =(Bitmap) eventArgs.Frame.Clone() ) 
             //{
-            //    pictureBox1.Image = bmp;
-            //    pictureBox1.Image.Dispose();
+            //    if (pictureBox1.Image != null)
+            //    {
+            //        pictureBox1.Image.Dispose();
+            //    }
+            //    pictureBox1.Image = bitmap;              
             //}
-           
+
             if (pictureBox1.Image != null)
             {
                 pictureBox1.Image.Dispose();
             }
             Bitmap bitmap = eventArgs.Frame.Clone() as Bitmap;
             pictureBox1.Image = bitmap;
+
         }
         private void Cam_Review_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (videoCaptureDevice.IsRunning) 
             {
-                videoCaptureDevice.Stop();
+                videoCaptureDevice.SignalToStop(); 
             }
         }
         
         private void Take_photo_btn_Click(object sender, EventArgs e)
         {
-           
+            if (pictureBox2.Image != null) { pictureBox2.Image.Dispose(); }
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             Bitmap bmp = (Bitmap)RotateImage((Bitmap)pictureBox1.Image.Clone(), 45);
             pictureBox2.Image = bmp;
+           // bmp.Dispose();
         }      
     }
 }

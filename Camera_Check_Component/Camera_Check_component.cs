@@ -116,13 +116,13 @@ namespace Camera_Check_Component
             string daytime = dt.Day.ToString() + "-" + dt.Month.ToString() + "-" + dt.Year.ToString();
             DMY = daytime;
            
-
-            if(system_config.PN_Selector != ""||system_config.PN_Selector != null) 
+            
+            if (system_config.PN_Selector != "" || system_config.PN_Selector != null)
             {
                 tb_PN.Text = system_config.PN_Selector;
-              
+
             }
-            else 
+            else
             {
                 Program_Configuration.UpdateSystem_Config("PN_Selector", "xxx");
             }
@@ -148,6 +148,43 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("new_Day", dt.Day.ToString());
                 Program_Configuration.UpdateSystem_Config("new_Month", dt.Month.ToString());
                 Program_Configuration.UpdateSystem_Config("new_Year", dt.Year.ToString());
+                _OKnum = 0;
+                _NGnum = 0;
+                _sum = 0;
+                using (StreamWriter sw =new StreamWriter("Output.txt")) 
+                {
+                    sw.WriteLine("" + _OKnum.ToString() + "");
+                    sw.WriteLine("" + _NGnum.ToString() + "");
+                }
+            }
+             if (File.Exists("Output.txt")) 
+            {
+                using (StreamReader sr = new StreamReader("Output.txt"))
+                {
+                    int a = 0;
+                    string[] read = new string[2];
+                    string line = "";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                      
+                        read[a] = line;
+                        a++;
+
+                    }
+                    if (a > 1) 
+                    {
+                        _OKnum = Convert.ToInt16(read[0]);
+                        _NGnum = Convert.ToInt16(read[1]);
+                        _sum = (short)(_NGnum + _OKnum);
+                    }
+                    else 
+                    {
+                        _OKnum = 0;
+                        _NGnum = 0;
+                        _sum = (short)(_NGnum + _OKnum);
+                    }
+                    
+                }
             }
             else if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder || load1 != system_config.Folder_index_tranfer || load2 != system_config.Folder_load_check || folderIndex != system_config.same_folder_1) 
             {
@@ -275,8 +312,8 @@ namespace Camera_Check_Component
             Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
             system_config.Location_cam1_folder = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Location_cam1_folder"));
 
-            Parameter_app.OK_TEMP(daytime, system_config.Location_cam1_folder.ToString());
-            Parameter_app.ERROR_TEMP(daytime, system_config.Location_cam1_folder.ToString());
+            //Parameter_app.OK_TEMP(daytime, system_config.Location_cam1_folder.ToString());
+            //Parameter_app.ERROR_TEMP(daytime, system_config.Location_cam1_folder.ToString());
             //label_time.Text = DateTime.Now.ToString();
             if (system_config.inf_process == null)
             {
@@ -294,7 +331,12 @@ namespace Camera_Check_Component
             timer.Start();
             TB_idworker.Enabled = false;
             TB_wker2.Enabled = false;
-           
+            textBox_stt.Enabled = false;
+            listView1.Enabled = false;
+            OKnum.Text = _OKnum.ToString();
+            NGnum.Text = _NGnum.ToString();
+            totalPN.Text = _sum.ToString();
+            
         }
 
         private void Ledinf_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -382,14 +424,15 @@ namespace Camera_Check_Component
             {
                 Directory.CreateDirectory(Parameter_app.IMAGE_FOLDER_PATH);
             }
-            if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH) && allow_check)
-            {
-                Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
-            }
-            if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH) && allow_check)
-            {
-                Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
-            }
+            //if (!Directory.Exists(Parameter_app.OK_IMAGE_FOLDER_PATH) && allow_check)
+            //{
+            //    //Parameter_app.OK_TEMP(daytime, system_config.Location_cam1_folder.ToString());
+            //    Directory.CreateDirectory(Parameter_app.OK_IMAGE_FOLDER_PATH);
+            //}
+            //if (!Directory.Exists(Parameter_app.ERROR_IMAGE_FOLDER_PATH) && allow_check)
+            //{
+            //    Directory.CreateDirectory(Parameter_app.ERROR_IMAGE_FOLDER_PATH);
+            //}
         }
         #endregion
 
@@ -1086,19 +1129,21 @@ namespace Camera_Check_Component
         #region ///////////////////////////////////////////////////////////////////////////////////////////////////////////////program process
         private void Start_btn_Click(object sender, EventArgs e)
         {
+           // btnConnect.PerformClick();
             system_config = Program_Configuration.GetSystem_Config();
-            Star_program();
+            Start_program();
+           
         }
 
         string ID_Operator1 = "";
         string ID_Operator2 = "";
         string PN_Selector = "";
-        private void Star_program()
+        private void Start_program()
         {
             ID_Operator1 = TB_idworker.Text;
             ID_Operator2 = TB_wker2.Text;
             PN_Selector = tb_PN.Text;
-           
+            
             Program_Configuration.UpdateSystem_Config("PN_Selector", PN_Selector);
             system_config = Program_Configuration.GetSystem_Config();
             if (tb_PN.Text == "" || TB_idworker.Text == "" || TB_wker2.Text == "")
@@ -1188,6 +1233,28 @@ namespace Camera_Check_Component
                 RESET();
                 return;
             }
+            PLCS7_1200 = new Plc(CpuType.S71200, "192.168.0.7", 0, 0);
+            if (PLCS7_1200.IsAvailable)
+            {
+                PLCS7_1200.Open();
+                if (PLCS7_1200.IsConnected == true)
+                {
+                    MessageBox.Show("Connect to PLC Successful", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnAutoHome.Enabled = true;
+                    PLC_con = true;
+                }
+                else
+                {
+                    MessageBox.Show("Connect to PLC Fail");
+                    PLC_con = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connect to PLC Fail");
+                PLC_con = false;
+            }
+
             if (Cam1VIDEO_Device == null || !Cam1VIDEO_Device.IsRunning)
             {
                 Cam1VIDEO_Device = new VideoCaptureDevice(Cam1_Device.MonikerString);
@@ -1282,6 +1349,7 @@ namespace Camera_Check_Component
             string[] NG_code = new string[3];
             //Thread.Sleep(20);
             string cap_order = serialPort_communicate.ReadExisting();
+            status("[RS232] " + cap_order + "");           
             if(cap_order== "F") 
             {
                 MethodInvoker inv = delegate
@@ -1591,6 +1659,7 @@ namespace Camera_Check_Component
             string cap = "Close the program";
             var result = MessageBox.Show(mesage, cap, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes) Environment.Exit(0);
+            update_system();
             RESET();
         }
         private void RESET()
@@ -1636,8 +1705,7 @@ namespace Camera_Check_Component
             PB_active5.Hide();
             if (Cam6VIDEO_Device != null && Cam6VIDEO_Device.IsRunning)
             {
-                Cam6VIDEO_Device.Stop();
-              
+                Cam6VIDEO_Device.Stop();              
             }
             PB_active6.Hide();
             if (system_config.add_cam == "true")
@@ -1659,6 +1727,13 @@ namespace Camera_Check_Component
             Program_Configuration.UpdateSystem_Config("Location_cam5_folder", count_5.ToString());
             Program_Configuration.UpdateSystem_Config("Location_cam6_folder", count_6.ToString());
             Program_Configuration.UpdateSystem_Config("Location_cam7_folder", count_7.ToString());
+            using (StreamWriter sw = new StreamWriter("Output.txt"))
+            {
+                File.WriteAllText("Output", "");
+                sw.WriteLine("" + _OKnum.ToString() + "");
+                sw.WriteLine("" + _NGnum.ToString() + "");
+                
+            }
         }
         private void Camera_Check_component_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -1668,7 +1743,7 @@ namespace Camera_Check_Component
             string Addr = "M170.0";
             PLCS7_1200.Write(Addr, int.Parse("1"));
             string Addr1 = "M170.2";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            PLCS7_1200.Write(Addr1, int.Parse("1"));
             loadform = false;
             if (ledinf.IsBusy) ledinf.CancelAsync();
            
@@ -2292,6 +2367,9 @@ namespace Camera_Check_Component
         string h6 = "OK";
 
         string err_pic = "";
+        Int16 _OKnum = 0;
+        Int16 _NGnum = 0;
+        Int16 _sum = 0;
         private string vitri_Erpic(string so)
         {
             if (so == "1")
@@ -2490,6 +2568,11 @@ namespace Camera_Check_Component
                 upload_image();
                 Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
+                _OKnum++;
+                _sum = (short)(_NGnum + _OKnum);
+                OKnum.Text = _OKnum.ToString();
+                totalPN.Text = _sum.ToString();
+
             };
             this.Invoke(inv);
         }
@@ -2502,6 +2585,10 @@ namespace Camera_Check_Component
                 upload_image();
                 Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
                 inf_process();
+                _NGnum++;
+                _sum = (short)(_NGnum + _OKnum);
+                NGnum.Text = _NGnum.ToString();
+                totalPN.Text = _sum.ToString();
             };
             this.Invoke(inv);
         }
@@ -2514,6 +2601,10 @@ namespace Camera_Check_Component
                 update_image2();
                 Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
                 inf_process();
+                _OKnum++;
+                _sum = (short)(_NGnum + _OKnum);
+                OKnum.Text = _OKnum.ToString();
+                totalPN.Text = _sum.ToString();
             };
             this.Invoke(inv);
         }
@@ -2526,6 +2617,10 @@ namespace Camera_Check_Component
                 update_image2();
                 Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
                 inf_process();
+                _NGnum++;
+                _sum = (short)(_NGnum + _OKnum);
+                NGnum.Text = _NGnum.ToString();
+                totalPN.Text = _sum.ToString();
             };
             this.Invoke(inv);
         }
@@ -2897,7 +2992,7 @@ namespace Camera_Check_Component
             {
                 if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
                 groupBox13.Enabled = false;
-                groupBox16.Enabled = false;
+                //groupBox16.Enabled = false;
                 groupBox12.Enabled = false;
                 groupBox15.Enabled = false;
                 groupBox14.Enabled = false;
@@ -3051,7 +3146,17 @@ namespace Camera_Check_Component
                 }
                 else if (ctrl.Name == "tabPage4")
                 {
-                    ctrl.Enabled = false;
+                    foreach (Control ctl in tabPage4.Controls)
+                    {
+                        if (ctl.Name == "btnConnect")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        else
+                        {
+                            ctl.Enabled = false;
+                        }
+                    }
                 }
                 else
                 {
@@ -3128,7 +3233,18 @@ namespace Camera_Check_Component
                 }
                 if (ctrl.Name == "tabPage4")
                 {
-                    ctrl.Enabled = false;
+                    foreach(Control ctl in tabPage4.Controls) 
+                    {
+                        if(ctl.Name == "btnConnect") 
+                        {
+                            ctl.Enabled = true;
+                        }
+                        else
+                        {
+                            ctl.Enabled = false;
+                        }
+                    }
+                   
                 }
                 else
                 {
@@ -3238,7 +3354,7 @@ namespace Camera_Check_Component
         Class1 cl = new Class1();
         Class2 cl2 = new Class2();
         Class3 cl3 = new Class3();
-
+        bool PLC_con = false;
         private void btnConnect_Click(object sender, EventArgs e)
         {
             PLCS7_1200 = new Plc(CpuType.S71200, "192.168.0.7", 0, 0);
@@ -3249,10 +3365,20 @@ namespace Camera_Check_Component
                 {
                     MessageBox.Show("Connect to PLC Successful", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAutoHome.Enabled = true;
+                    PLC_con = true;
                 }
-                else MessageBox.Show("Error");
+                else
+                {
+                    MessageBox.Show("Error");
+                    PLC_con = false;
+                }
             }
-            else MessageBox.Show("Error");
+            else 
+            {
+                MessageBox.Show("Error");
+                PLC_con = false;
+            }
+
         }
         string t = "";
         //private void serialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
@@ -3272,7 +3398,7 @@ namespace Camera_Check_Component
                 this.Invoke(new MethodInvoker(doAction));
             else
             {
-                label16.Text = x;
+                //label16.Text = x;
                 if (x == "11")
                 {
                     pic1.Visible = true;
@@ -3762,7 +3888,7 @@ namespace Camera_Check_Component
             //groupBox8.Enabled = false;
             //groupBox9.Enabled = false;
             //groupBox10.Enabled = false;
-            groupBox16.Enabled = false;
+            //groupBox16.Enabled = false;
             groupBox13.Enabled = false;
             groupBox12.Enabled = false;
             groupBox15.Enabled = false;
@@ -4763,9 +4889,9 @@ namespace Camera_Check_Component
             }
         }
 
-        #endregion
 
-       
+        #endregion
+     
     }
     
 }

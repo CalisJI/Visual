@@ -4,11 +4,11 @@
   <Output_File>C:\Users\Admin\source\repos\Visual\Camera_Check_Component\bin\Debug\Output.txt</Output_File>
   <DefaultComport>COM6</DefaultComport>
   <DefaultCOMBaudrate>9600</DefaultCOMBaudrate>
-  <Camera1>4</Camera1>
+  <Camera1>5</Camera1>
   <Camera2>0</Camera2>
   <Camera3>2</Camera3>
   <Camera4>1</Camera4>
-  <Camera5>5</Camera5>
+  <Camera5>4</Camera5>
   <Camera6>3</Camera6>
   <Camera7>0</Camera7>
   <add_cam>false</add_cam>
@@ -19,7 +19,7 @@
   <Location_cam5_folder>0</Location_cam5_folder>
   <Location_cam6_folder>0</Location_cam6_folder>
   <Location_cam7_folder>0</Location_cam7_folder>
-  <Folder_load_check>1</Folder_load_check>
+  <Folder_load_check>0</Folder_load_check>
   <Folder_index_tranfer>0</Folder_index_tranfer>
   <same_folder_1>0</same_folder_1>
   <same_folder_2>0</same_folder_2>
@@ -33,7 +33,7 @@
   <new_Month>3</new_Month>
   <new_Year>2021</new_Year>
   <pixel_cam1>0</pixel_cam1>
-  <pixel_cam2>9</pixel_cam2>
+  <pixel_cam2>0</pixel_cam2>
   <pixel_cam3>0</pixel_cam3>
   <pixel_cam4>0</pixel_cam4>
   <pixel_cam5>0</pixel_cam5>

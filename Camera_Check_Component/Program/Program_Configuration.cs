@@ -21,7 +21,7 @@ namespace Camera_Check_Component
        public static System_config GetSystem_Config() 
        {
            try 
-           {
+           { 
                if (!File.Exists(Default_Code_Path)) 
                {
                    File.WriteAllText(Default_Code_Path, "0");
