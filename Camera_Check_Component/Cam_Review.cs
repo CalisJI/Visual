@@ -95,14 +95,7 @@ namespace Camera_Check_Component
         {
 
 
-            //using (Bitmap bitmap =(Bitmap) eventArgs.Frame.Clone() ) 
-            //{
-            //    if (pictureBox1.Image != null)
-            //    {
-            //        pictureBox1.Image.Dispose();
-            //    }
-            //    pictureBox1.Image = bitmap;              
-            //}
+          
 
             if (pictureBox1.Image != null)
             {
