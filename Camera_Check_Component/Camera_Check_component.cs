@@ -292,7 +292,8 @@ namespace Camera_Check_Component
             timer.Tick += Timer_Tick;
             timer.Enabled = true;
             timer.Start();
-           
+            TB_idworker.Enabled = false;
+            TB_wker2.Enabled = false;
            
         }
 
@@ -1102,7 +1103,7 @@ namespace Camera_Check_Component
             system_config = Program_Configuration.GetSystem_Config();
             if (tb_PN.Text == "" || TB_idworker.Text == "" || TB_wker2.Text == "")
             {
-                MessageBox.Show("DO NOT HAVE PN Selector or ID Worker");
+                MessageBox.Show("DO NOT HAVE PN Selector or ID Operator");
                 return;
             }
             if (!Directory.Exists(system_config.Map_Path_File))
@@ -1267,7 +1268,7 @@ namespace Camera_Check_Component
        
         string loi_tam1 = "";
         string loi_tam2 = "";
- 
+        bool nhapid = false;
         private void serialPort_communicate_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string shot1 = "";
@@ -1279,8 +1280,61 @@ namespace Camera_Check_Component
             string shot7 = "";
             string[] shot = new string[7];
             string[] NG_code = new string[3];
-            Thread.Sleep(20);
+            //Thread.Sleep(20);
             string cap_order = serialPort_communicate.ReadExisting();
+            if(cap_order== "F") 
+            {
+                MethodInvoker inv = delegate
+                {
+                    TB_idworker.Text = "";
+                    TB_wker2.Text = "";
+                };this.Invoke(inv);
+            }
+            if (nhapid) 
+            {
+                if (cap_order.Contains("-"))
+                {
+                    MethodInvoker inv = delegate
+                    {
+                        string[] id = new string[2];
+                        id = cap_order.Split('-');
+                        if (id[0] == "ID1")
+                        {
+                            if (tb_PN.Text != "" && TB_idworker.Text != "" && TB_wker2.Text != "")
+                            {
+                                if (serialPort_communicate.IsOpen)
+                                {
+                                    //serialPort_communicate.PortName = system_config.DefaultComport;
+                                    //serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
+                                    serialPort_communicate.Close();
+                                }
+                                nhapid = false;
+                              
+                            }
+                            TB_idworker.Text = id[1];
+                           
+                        }
+                        if (id[0] == "ID2") 
+                        { 
+                            TB_wker2.Text = id[1];
+                            if (tb_PN.Text != "" && TB_idworker.Text != "" && TB_wker2.Text != "")
+                            {
+                                if (serialPort_communicate.IsOpen)
+                                {
+                                    //serialPort_communicate.PortName = system_config.DefaultComport;
+                                    //serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
+                                    serialPort_communicate.Close();
+                                }
+                                nhapid = false;
+                            }
+                        }
+
+
+                    }; this.Invoke(inv);
+
+                }
+              
+            }
             x = cap_order;
             if (x != null)
             {
@@ -1611,8 +1665,13 @@ namespace Camera_Check_Component
             update_system();
             RESET();
             timer.Stop();
+            string Addr = "M170.0";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
+            string Addr1 = "M170.2";
+            PLCS7_1200.Write(Addr, int.Parse("1"));
             loadform = false;
             if (ledinf.IsBusy) ledinf.CancelAsync();
+           
 
         }
 
@@ -2851,6 +2910,27 @@ namespace Camera_Check_Component
                 groupBox11.Enabled = false;
                 txtIPAddress.Enabled = false;
                 btnAutoHome.Enabled = false;
+            }
+            if(General_tab.SelectedIndex == 1 && !started) 
+            {
+                system_config = Program_Configuration.GetSystem_Config();
+               
+             
+                if (!serialPort_communicate.IsOpen) 
+                {
+                    serialPort_communicate.PortName = system_config.DefaultComport;
+                    serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
+                    serialPort_communicate.Open();
+                    nhapid = true;
+                }
+                if ( TB_idworker.Text != "" && TB_wker2.Text != "") 
+                {
+                    if (serialPort_communicate.IsOpen) { serialPort_communicate.Close(); nhapid = false; }
+                }
+                if ( TB_idworker.Text == "" && TB_wker2.Text == "") 
+                {
+                    nhapid = true;
+                }
             }
         }
         
