@@ -56,6 +56,8 @@ namespace Camera_Check_Component
         private BackgroundWorker backgroundWorker_6 = new BackgroundWorker();
         private BackgroundWorker backgroundWorker_7 = new BackgroundWorker();
         private BackgroundWorker ledinf = new BackgroundWorker();
+        BackgroundWorker shot_pic = new BackgroundWorker();
+        BackgroundWorker wdata = new BackgroundWorker();
         private SQL_action sql_action = new SQL_action();
         bool order_1 = false;
         bool order_2 = false;
@@ -69,19 +71,21 @@ namespace Camera_Check_Component
         bool allow_check = false;
         bool loadform = false;
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        //private System.Windows.Forms.Timer cam_call_back = new System.Windows.Forms.Timer();
+       
         private double startPR_Count = 0;
         private double timer_sum = 0;
         private double timer_star = 0;
-        private int count_1 = 0;
-        private int count_2 = 0;
-        private int count_3 = 0;
-        private int count_4 = 0;
-        private int count_5 = 0;
-        private int count_6 = 0;
-        private int count_7 = 0;
-        private int folderIndex = 0;
-        private int load1 = 0;
-        private int load2 = 0;
+        private Int64 count_1 = 0;
+        private Int64 count_2 = 0;
+        private Int64 count_3 = 0;
+        private Int64 count_4 = 0;
+        private Int64 count_5 = 0;
+        private Int64 count_6 = 0;
+        private Int64 count_7 = 0;
+        private Int64 folderIndex = 0;
+        private Int64 load1 = 0;
+        private Int64 load2 = 0;
         bool started = false;
         double ratio;
         int stt = 0;
@@ -111,7 +115,7 @@ namespace Camera_Check_Component
             }
             //unable();
             listviewInit();
-
+            system_config = Program_Configuration.GetSystem_Config();
             DateTime dt = DateTime.Now;
             string daytime = dt.Day.ToString() + "-" + dt.Month.ToString() + "-" + dt.Year.ToString();
             DMY = daytime;
@@ -127,37 +131,36 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("PN_Selector", "xxx");
             }
 
+            //if (system_config.new_Day != dt.Day || system_config.new_Month != dt.Month)
 
-            if (system_config.new_Day != dt.Day || system_config.new_Month != dt.Month)
+            //{
+            //    count_1 = 0; count_2 = 0; count_3 = 0; count_4 = 0; count_5 = 0; count_6 = 0; count_7 = 0; folderIndex = 0;load1 = 0;load2 = 1;
+            //    Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", load1.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Folder_load_check", load2.ToString());
+            //    Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
 
-            {
-                count_1 = 0; count_2 = 0; count_3 = 0; count_4 = 0; count_5 = 0; count_6 = 0; count_7 = 0; folderIndex = 0;load1 = 0;load2 = 1;
-                Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", load1.ToString());
-                Program_Configuration.UpdateSystem_Config("Folder_load_check", load2.ToString());
-                Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
-
-                //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
-                //Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam3_folder", count_3.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam4_folder", count_4.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam5_folder", count_5.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam6_folder", count_6.ToString());
-                Program_Configuration.UpdateSystem_Config("Location_cam7_folder", count_7.ToString());
-                Program_Configuration.UpdateSystem_Config("new_Day", dt.Day.ToString());
-                Program_Configuration.UpdateSystem_Config("new_Month", dt.Month.ToString());
-                Program_Configuration.UpdateSystem_Config("new_Year", dt.Year.ToString());
-                _OKnum = 0;
-                _NGnum = 0;
-                _sum = 0;
-                using (StreamWriter sw =new StreamWriter("Output.txt")) 
-                {
-                    sw.WriteLine("" + _OKnum.ToString() + "");
-                    sw.WriteLine("" + _NGnum.ToString() + "");
-                }
-            }
-             if (File.Exists("Output.txt")) 
+            //    //Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", folderIndex.ToString());
+            //    //Program_Configuration.UpdateSystem_Config("Folder_load_check", folderIndex.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam2_folder", count_2.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam3_folder", count_3.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam4_folder", count_4.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam5_folder", count_5.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam6_folder", count_6.ToString());
+            //    Program_Configuration.UpdateSystem_Config("Location_cam7_folder", count_7.ToString());
+            //    Program_Configuration.UpdateSystem_Config("new_Day", dt.Day.ToString());
+            //    Program_Configuration.UpdateSystem_Config("new_Month", dt.Month.ToString());
+            //    Program_Configuration.UpdateSystem_Config("new_Year", dt.Year.ToString());
+            //    _OKnum = 0;
+            //    _NGnum = 0;
+            //    _sum = 0;
+            //    using (StreamWriter sw =new StreamWriter("Output.txt")) 
+            //    {
+            //        sw.WriteLine("" + _OKnum.ToString() + "");
+            //        sw.WriteLine("" + _NGnum.ToString() + "");
+            //    }
+            //}
+            if (File.Exists("Output.txt")) 
             {
                 using (StreamReader sr = new StreamReader("Output.txt"))
                 {
@@ -186,7 +189,7 @@ namespace Camera_Check_Component
                     
                 }
             }
-            else if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder || load1 != system_config.Folder_index_tranfer || load2 != system_config.Folder_load_check || folderIndex != system_config.same_folder_1) 
+            if (count_1 != system_config.Location_cam1_folder || count_2 != system_config.Location_cam2_folder || count_3 != system_config.Location_cam3_folder || count_4 != system_config.Location_cam4_folder || count_5 != system_config.Location_cam5_folder || count_6 != system_config.Location_cam6_folder || count_7 != system_config.Location_cam7_folder || load1 != system_config.Folder_index_tranfer || load2 != system_config.Folder_load_check || folderIndex != system_config.same_folder_1)
             {
                 folderIndex = system_config.same_folder_1;
                 load1 = system_config.Folder_index_tranfer;
@@ -198,7 +201,7 @@ namespace Camera_Check_Component
                 count_5 = system_config.Location_cam5_folder;
                 count_6 = system_config.Location_cam6_folder;
                 count_7 = system_config.Location_cam7_folder;
-            }      
+            }
             Start_btn.Enabled = true;
             Stop_btn.Enabled = false;
           
@@ -260,8 +263,7 @@ namespace Camera_Check_Component
             pinf222.Visible = false;
 
            
-            //serialPort_communicate.ReceivedBytesThreshold = 2;
-            //serialPort_communicate.WriteBufferSize = 4096;
+          
             PB_active1.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active1.Hide();
             PB_active2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -274,7 +276,8 @@ namespace Camera_Check_Component
             PB_active5.Hide();
             PB_active6.SizeMode = PictureBoxSizeMode.StretchImage;
             PB_active6.Hide();
-
+            pic_loading1.Hide();
+            pic_loading2.Hide();
             picload_in.Visible = false;
             #region ///////////////////////////////////////////////////////////// khai báo background worker
             backgroundWorker_1.DoWork += backgroundWorker_1_DoWork;
@@ -308,6 +311,13 @@ namespace Camera_Check_Component
             ledinf.DoWork += Ledinf_DoWork;
             ledinf.RunWorkerCompleted += Ledinf_RunWorkerCompleted;
             ledinf.WorkerSupportsCancellation = true;
+            shot_pic.DoWork += Shot_pic_DoWork;
+            shot_pic.RunWorkerCompleted += Shot_pic_RunWorkerCompleted;
+            shot_pic.WorkerSupportsCancellation = true;
+
+            wdata.DoWork += Wdata_DoWork;
+            wdata.RunWorkerCompleted += Wdata_RunWorkerCompleted;
+            wdata.WorkerSupportsCancellation = true;
             #endregion
             Program_Configuration.UpdateSystem_Config("Location_cam1_folder", count_1.ToString());
             system_config.Location_cam1_folder = Convert.ToInt32(Program_Configuration.GetSystem_Config_Value("Location_cam1_folder"));
@@ -328,15 +338,68 @@ namespace Camera_Check_Component
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Enabled = true;
+            call_back_cam.Enabled = false;
+           // cam_call_back.Interval = 1000;
+           // cam_call_back.Tick += Cam_call_back_Tick;
+            //cam_call_back.Enabled = true;
             timer.Start();
-            TB_idworker.Enabled = false;
-            TB_wker2.Enabled = false;
-            textBox_stt.Enabled = false;
-            listView1.Enabled = false;
+            //TB_idworker.Enabled = false;
+            //TB_wker2.Enabled = false;
+            //textBox_stt.Enabled = false;           
+            //listView1.Enabled = false;
+            listView1.Scrollable = true;
             OKnum.Text = _OKnum.ToString();
             NGnum.Text = _NGnum.ToString();
             totalPN.Text = _sum.ToString();
             
+        }
+
+        private void Wdata_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (!wdata.IsBusy) wdata.RunWorkerAsync();
+        }
+
+        private void Wdata_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (w1) 
+            {
+                string Addr = "DB5.DBX26.0";
+                PLCS7_1200.Write(Addr, true);
+                w1 = false;
+            }
+            if (w2)
+            {
+                string Addr = "DB5.DBX26.1";
+                PLCS7_1200.Write(Addr, true);
+                w2 = false;
+            }
+            if (w3)
+            {
+                string Addr = "DB5.DBX26.2";
+                PLCS7_1200.Write(Addr, true);
+                w3 = false;
+            }
+            if (w4)
+            {
+                string Addr = "DB5.DBX26.3";
+                PLCS7_1200.Write(Addr, true);
+                w4 = false;
+                Thread.Sleep(5);
+            }
+            if (w5)
+            {
+                string Addr = "DB5.DBX26.4";
+                PLCS7_1200.Write(Addr, true);
+                w5 = false;
+            }
+            if (w6)
+            {
+
+                string Addr = "DB5.DBX26.5";
+                PLCS7_1200.Write(Addr, true);
+                w6 = false;
+            }
+
         }
 
         private void Ledinf_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -394,10 +457,21 @@ namespace Camera_Check_Component
                 TimeSpan time = TimeSpan.FromSeconds(startPR_Count);
                 LB_TIMER.Text = time.ToString(@"hh\:mm\:ss");
                 timer_star++;
+              //  if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
+                if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
+                if (General_tab.SelectedIndex == 2 && run_out1 && folderIndex < count_6) 
+                {
+                    upload_image();
+                    run_out1 = false;
+                }
+                if (General_tab.SelectedIndex == 2 && run_out2 && folderIndex < count_6)
+                {
+                    update_image2();
+                    run_out2 = false;
+                }            
             }
             else
             {
-
                 ratio = (timer_star / timer_sum) * 100;
             }
 
@@ -439,15 +513,11 @@ namespace Camera_Check_Component
         #region ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CHỤP ẢNH
         private void BackgroundWorker_7_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!backgroundWorker_7.IsBusy && system_config.add_cam == "true")
-            {
-                set_up();
-            }
+            shot7 = "";
             status(" [SYSTEM]" + " CAM 7 Save image" + " " + count_7.ToString());
-            n7 = count_7 / 6;
+            n7 = (int)(count_7 / 6);
             count_7++;
 
-            //serialPort_communicate.Write("something");
         }
         private void BackgroundWorker_7_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -520,18 +590,23 @@ namespace Camera_Check_Component
         }
         void backgroundWorker_6_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!backgroundWorker_6.IsBusy)
-            {
-                set_up();
-            }
-            update_system();
+            w6 = true;
+            shot6 = "";
+            taked6 = false;
             panel6.BackColor = Color.Black;
             n6 = count_6 / 6;
             count_6++;
-            string Addr = "DB5.DBX26.5";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            //MethodInvoker inv = delegate
+            //{
+            Cam6VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 6 Save image" + " " + count_6.ToString());
-            //serialPort_communicate.Write("something");
+               
+            MethodInvoker inv = delegate
+            {
+                string Addr = "M295.2";
+                PLCS7_1200.Write(Addr, true);
+            }; this.Invoke(inv);
+         
         }
         void backgroundWorker_6_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -585,14 +660,14 @@ namespace Camera_Check_Component
                 {
                     using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        //RotateImage(Live_Cam_6, 45).Save(memory, ImageFormat.Jpeg);
-                        Live_Cam_6.Save(memory, ImageFormat.Jpeg);
+                        RotateImage(Live_Cam_6, 45).Save(memory, ImageFormat.Jpeg);
+                        //Live_Cam_6.Save(memory, ImageFormat.Jpeg);
                         byte[] bytes = memory.ToArray();
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Dispose();
                     }
                 }
-                //RotateImage(Live_Cam_6, 45).Dispose();
+                
                 Live_Cam_6.Dispose();
 
                 order_6 = false;
@@ -603,17 +678,23 @@ namespace Camera_Check_Component
 
         void backgroundWorker_5_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!backgroundWorker_5.IsBusy)
-            {
-                set_up();
-            }
-           
+            w5 = true;
+            taked5 = false;
+            shot5 = "";
             panel5.BackColor = Color.Black;
             n5 = count_5 / 6;
             count_5++;
-            string Addr = "DB5.DBX26.4";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            Cam5VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 5 Save image" + " " + count_5.ToString());
+            MethodInvoker inv = delegate
+            {
+                string Addr = "M295.1";
+                PLCS7_1200.Write(Addr, true);
+            }; this.Invoke(inv);
+  
+            //}; this.Invoke(inv);
+
+
         }
 
         void backgroundWorker_5_DoWork(object sender, DoWorkEventArgs e)
@@ -684,18 +765,21 @@ namespace Camera_Check_Component
         }
         void backgroundWorker_4_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!backgroundWorker_4.IsBusy)
-            {
-                set_up();
-            }
-          
+            w4 = true;
+            taked4 = false;
+            shot4 = "";
             panel4.BackColor = Color.Black;
             n4 = count_4 / 6;
             count_4++;
-            string Addr = "DB5.DBX26.3";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
-            //serialPort_communicate.Write("something");
+            Cam4VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 4 Save image" + " " + count_4.ToString());
+            MethodInvoker inv = delegate
+            {
+                string Addr = "M295.6";
+                PLCS7_1200.Write(Addr, true);
+            }; this.Invoke(inv);
+          
+            
         }
 
         void backgroundWorker_4_DoWork(object sender, DoWorkEventArgs e)
@@ -766,17 +850,19 @@ namespace Camera_Check_Component
 
         void backgroundWorker_3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!backgroundWorker_3.IsBusy)
-            {
-                set_up();
-            }
-           
+            w3 = true;
+            taked3 = false;
+            shot3 = "";
             panel3.BackColor = Color.Black;
             n3 = count_3 / 6;
             count_3++;
-            string Addr = "DB5.DBX26.2";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            Cam3VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 3 Save image" + " " + count_3.ToString());
+            MethodInvoker inv = delegate
+            {
+                string Addr = "M295.5";
+                PLCS7_1200.Write(Addr, true);
+            }; this.Invoke(inv);
         }
         void backgroundWorker_3_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -845,14 +931,21 @@ namespace Camera_Check_Component
 
         void backgroundWorker_2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-           
+            w2 = true;
+            taked2 = false;
+            shot2 = "";
             panel2.BackColor = Color.Black;
             n2 = count_2 / 6;
             count_2++;
-            //serialPort_communicate.Write("something");
-            string Addr = "DB5.DBX26.1";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            Cam2VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 2 Save image" + " " + count_2.ToString());
+            MethodInvoker inv = delegate 
+            {
+                string Addr = "M295.4";
+                PLCS7_1200.Write(Addr, true);
+            };this.Invoke(inv);
+           
+
         }
         void backgroundWorker_2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -920,29 +1013,37 @@ namespace Camera_Check_Component
             }; this.Invoke(inv);
         }
         int cc = 0;
+        bool w1 = false;
+        bool w2 = false;
+        bool w3 = false;
+        bool w4 = false;
+        bool w5 = false;
+        bool w6 = false;
         void backgroundWorker_1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            w1 = true;
+            taked1 = false;
             cc++;
-            int n = count_1 / 6;
+            Int64 n = count_1 / 6;
             count_1++;
             panel1.BackColor = Color.Black;
-            //serialPort_communicate.Write("something");
-            string Addr = "DB5.DBX26.0";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
+            shot1 = "";
+            Cam1VIDEO_Device.SignalToStop();
             status(" [SYSTEM]" + " CAM 1 Save image" + " " + count_1.ToString());
-            //MethodInvoker inv = delegate
-            //{
-            //    label22.Text = cc.ToString();
-            //}; this.Invoke(inv);
+            MethodInvoker inv = delegate
+            {
+                string Addr = "M295.3";
+                PLCS7_1200.Write(Addr, true);
+            };this.Invoke(inv);
             
         }
-        int n1 = 0;
-        int n2 = 0;
-        int n3 = 0;
-        int n4 = 0;
-        int n5 = 0;
-        int n6 = 0;
-        int n7 = 0;
+        Int64 n1 = 0;
+        Int64 n2 = 0;
+        Int64 n3 = 0;
+        Int64 n4 = 0;
+        Int64 n5 = 0;
+        Int64 n6 = 0;
+        Int64 n7 = 0;
         void backgroundWorker_1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (backgroundWorker_1.CancellationPending)
@@ -1025,35 +1126,58 @@ namespace Camera_Check_Component
             {
                 Live_Cam_7.Dispose();
             }
-            Cam7VIDEO_Device.SignalToStop();
+            //Cam7VIDEO_Device.SignalToStop();
         }
         void Cam6VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             if (order_6)
             {
-                Live_Cam_6 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_6.IsBusy) backgroundWorker_6.RunWorkerAsync();
+                if (!taked6)
+                {
+                    Live_Cam_6 = (Bitmap)eventArgs.Frame.Clone();
+                    taked6 = true;
+                    if (!backgroundWorker_6.IsBusy) backgroundWorker_6.RunWorkerAsync();
+                }
+                
 
             }
             else if (Live_Cam_6 != null)
             {
+                w6 = false;
+                taked6 = false;
                 Live_Cam_6.Dispose();
+             
             }
             Cam6VIDEO_Device.SignalToStop();
+
         }
+        bool taked1 = false;
+        bool taked2 = false;
+        bool taked3 = false;
+        bool taked4 = false;
+        bool taked5 = false;
+        bool taked6 = false;
 
         void Cam5VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
 
             if (order_5)
             {
-                Live_Cam_5 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_5.IsBusy) backgroundWorker_5.RunWorkerAsync();
+                if (!taked5) 
+                {
+                    Live_Cam_5 = (Bitmap)eventArgs.Frame.Clone();
+                    taked5 = true;
+                    if (!backgroundWorker_5.IsBusy) backgroundWorker_5.RunWorkerAsync();
+                }
+                
 
             }
             else if (Live_Cam_5 != null)
             {
+                w5 = false;
+                taked5 = false;
                 Live_Cam_5.Dispose();
+               
             }
             Cam5VIDEO_Device.SignalToStop();
         }
@@ -1062,13 +1186,21 @@ namespace Camera_Check_Component
         {
             if (order_4)
             {
-                Live_Cam_4 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_4.IsBusy) backgroundWorker_4.RunWorkerAsync();
+                if (!taked4) 
+                {
+                    Live_Cam_4 = (Bitmap)eventArgs.Frame.Clone();
+                    taked4 = true;
+                    if (!backgroundWorker_4.IsBusy) backgroundWorker_4.RunWorkerAsync();
+                }
+               
 
             }
             else if (Live_Cam_4 != null)
             {
+                w4 = false;
+                taked4 = false;
                 Live_Cam_4.Dispose();
+               
             }
             Cam4VIDEO_Device.SignalToStop();
         }
@@ -1078,31 +1210,43 @@ namespace Camera_Check_Component
 
             if (order_3)
             {
-                Live_Cam_3 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_3.IsBusy) backgroundWorker_3.RunWorkerAsync();
-
+                if (!taked3) 
+                {
+                    taked3 = true;
+                    Live_Cam_3 = (Bitmap)eventArgs.Frame.Clone();
+                    if (!backgroundWorker_3.IsBusy) backgroundWorker_3.RunWorkerAsync();
+                }
+               
             }
             else if (Live_Cam_3 != null)
             {
+                w3 = false;
+                taked3 = false;
                 Live_Cam_3.Dispose();
+                
             }
             Cam3VIDEO_Device.SignalToStop();
         }
 
         void Cam2VIDEO_Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-
             if (order_2)
             {
-                Live_Cam_2 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_2.CancellationPending)
+                if (!taked2) 
                 {
+                    taked2 = true;
+                    Live_Cam_2 = (Bitmap)eventArgs.Frame.Clone();
                     if (!backgroundWorker_2.IsBusy) backgroundWorker_2.RunWorkerAsync();
                 }
+               
+               
             }
             else if (Live_Cam_2 != null)
             {
+                w2 = false;
+                taked2 = false;
                 Live_Cam_2.Dispose();
+     
             }
             Cam2VIDEO_Device.SignalToStop();
         }
@@ -1111,18 +1255,23 @@ namespace Camera_Check_Component
 
             if (order_1)
             {
-                Live_Cam_1 = (Bitmap)eventArgs.Frame.Clone();
-                if (!backgroundWorker_1.CancellationPending)
+                if (!taked1) 
                 {
+                    taked1 = true;
+                    Live_Cam_1 = (Bitmap)eventArgs.Frame.Clone();
                     if (!backgroundWorker_1.IsBusy) backgroundWorker_1.RunWorkerAsync();
                 }
+                
+
             }
-            else if (Live_Cam_1 != null)
+            else if (Live_Cam_1 != null ) 
             {
+                taked1 = false;
                 Live_Cam_1.Dispose();
+                w1 = false;
+                
             }
             Cam1VIDEO_Device.SignalToStop();
-
         }
         #endregion
 
@@ -1132,7 +1281,35 @@ namespace Camera_Check_Component
            // btnConnect.PerformClick();
             system_config = Program_Configuration.GetSystem_Config();
             Start_program();
-           
+            if (File.Exists("Output.txt"))
+            {
+                using (StreamReader sr = new StreamReader("Output.txt"))
+                {
+                    int a = 0;
+                    string[] read = new string[2];
+                    string line = "";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+
+                        read[a] = line;
+                        a++;
+
+                    }
+                    if (a > 1)
+                    {
+                        _OKnum = Convert.ToInt16(read[0]);
+                        _NGnum = Convert.ToInt16(read[1]);
+                        _sum = (short)(_NGnum + _OKnum);
+                    }
+                    else
+                    {
+                        _OKnum = 0;
+                        _NGnum = 0;
+                        _sum = (short)(_NGnum + _OKnum);
+                    }
+
+                }
+            }
         }
 
         string ID_Operator1 = "";
@@ -1140,6 +1317,11 @@ namespace Camera_Check_Component
         string PN_Selector = "";
         private void Start_program()
         {
+            if (!PLC_con) 
+            {
+                MessageBox.Show("PLC is not connect, Please Connect PLC first");
+                return;
+            }
             ID_Operator1 = TB_idworker.Text;
             ID_Operator2 = TB_wker2.Text;
             PN_Selector = tb_PN.Text;
@@ -1221,7 +1403,7 @@ namespace Camera_Check_Component
                 if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
                 serialPort_communicate.PortName = system_config.DefaultComport;
                 serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
-                // serialPort_communicate.DataReceived += serialPort_communicate_DataReceived;
+                
                 serialPort_communicate.Open();
                 status("[COMPORT] Comport " + serialPort_communicate.PortName + " Connected");
 
@@ -1233,35 +1415,13 @@ namespace Camera_Check_Component
                 RESET();
                 return;
             }
-            PLCS7_1200 = new Plc(CpuType.S71200, "192.168.0.7", 0, 0);
-            if (PLCS7_1200.IsAvailable)
-            {
-                PLCS7_1200.Open();
-                if (PLCS7_1200.IsConnected == true)
-                {
-                    MessageBox.Show("Connect to PLC Successful", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnAutoHome.Enabled = true;
-                    PLC_con = true;
-                }
-                else
-                {
-                    MessageBox.Show("Connect to PLC Fail");
-                    PLC_con = false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Connect to PLC Fail");
-                PLC_con = false;
-            }
-
+           
             if (Cam1VIDEO_Device == null || !Cam1VIDEO_Device.IsRunning)
             {
                 Cam1VIDEO_Device = new VideoCaptureDevice(Cam1_Device.MonikerString);
                 Cam1VIDEO_Device.VideoResolution = Cam1VIDEO_Device.VideoCapabilities[system_config.pixel_cam1];
                 Cam1VIDEO_Device.NewFrame += Cam1VIDEO_Device_NewFrame;
                 Cam1VIDEO_Device.Start();
-
                 PB_active1.Show();
             }
 
@@ -1320,13 +1480,13 @@ namespace Camera_Check_Component
                     Cam7VIDEO_Device.Start();
                 }
             }
-            //ledinf.RunWorkerAsync();
+           
             timer.Start();
             Start_btn.Enabled = false;
-            Stop_btn.Enabled = true;
-            //Manual_btn.Enabled = true;
+            Stop_btn.Enabled = true;     
             start_check = true;
             started = true;
+           
             status("[START]" + "Program has been started");
 
 
@@ -1336,29 +1496,20 @@ namespace Camera_Check_Component
         string loi_tam1 = "";
         string loi_tam2 = "";
         bool nhapid = false;
+        string shot1 = "";
+        string shot2 = "";
+        string shot3 = "";
+        string shot4 = "";
+        string shot5 = "";
+        string shot6 = "";
+        string shot7 = "";
         private void serialPort_communicate_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string shot1 = "";
-            string shot2 = "";
-            string shot3 = "";
-            string shot4 = "";
-            string shot5 = "";
-            string shot6 = "";
-            string shot7 = "";
             string[] shot = new string[7];
             string[] NG_code = new string[3];
-            //Thread.Sleep(20);
+            Thread.Sleep(10);
             string cap_order = serialPort_communicate.ReadExisting();
-            status("[RS232] " + cap_order + "");           
-            if(cap_order== "F") 
-            {
-                MethodInvoker inv = delegate
-                {
-                    TB_idworker.Text = "";
-                    TB_wker2.Text = "";
-                };this.Invoke(inv);
-            }
-            if (nhapid) 
+            if (nhapid)
             {
                 if (cap_order.Contains("-"))
                 {
@@ -1368,82 +1519,180 @@ namespace Camera_Check_Component
                         id = cap_order.Split('-');
                         if (id[0] == "ID1")
                         {
-                            if (tb_PN.Text != "" && TB_idworker.Text != "" && TB_wker2.Text != "")
-                            {
-                                if (serialPort_communicate.IsOpen)
-                                {
-                                    //serialPort_communicate.PortName = system_config.DefaultComport;
-                                    //serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
-                                    serialPort_communicate.Close();
-                                }
-                                nhapid = false;
-                              
-                            }
-                            TB_idworker.Text = id[1];
                            
+                            TB_idworker.Text = id[1];
+
                         }
-                        if (id[0] == "ID2") 
-                        { 
+                        if (id[0] == "ID2")
+                        {
                             TB_wker2.Text = id[1];
-                            if (tb_PN.Text != "" && TB_idworker.Text != "" && TB_wker2.Text != "")
-                            {
-                                if (serialPort_communicate.IsOpen)
-                                {
-                                    //serialPort_communicate.PortName = system_config.DefaultComport;
-                                    //serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
-                                    serialPort_communicate.Close();
-                                }
-                                nhapid = false;
-                            }
+                          
                         }
 
 
                     }; this.Invoke(inv);
-
+                    if (TB_idworker.Text != "" && TB_wker2.Text != "")
+                    {
+                        if (serialPort_communicate.IsOpen)
+                        {
+                            //serialPort_communicate.PortName = system_config.DefaultComport;
+                            //serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
+                            serialPort_communicate.Close();
+                        }
+                        nhapid = false;
+                    }
                 }
-              
             }
+            
+            status("[RS232] " + cap_order + "");
+            //if (cap_order == "B2") 
+            //{
+            //    MethodInvoker inv = delegate
+            //    {
+            //        pic_loading1.Hide();
+            //        pic_loading2.Show();
+            //    };this.Invoke(inv);
+            //}
+            //if (cap_order == "B1")
+            //{
+            //    MethodInvoker inv = delegate
+            //    {
+            //        pic_loading2.Hide();
+            //        pic_loading1.Show();
+            //    }; this.Invoke(inv);
+            //}
+            if (!started) return;                       
             x = cap_order;
             if (x != null)
             {
                 t = x;
+                m = x;
                 doAction();
                 
             }
-            if (cap_order.Contains("."))
-            {
-                shot = cap_order.Split('.');
-                shot1 = shot[0];
-                shot2 = shot[1];
-                shot3 = shot[2];
-                shot4 = shot[3];
-                shot5 = shot[4];
-                shot6 = shot[5];
-                shot7 = shot[6];
-                if (shot1 == "1") Take_Photo("1");
-                if (shot2 == "1") Take_Photo("2");
-                if (shot3 == "1") Take_Photo("3");
-                if (shot4 == "1") Take_Photo("4");
-                if (shot5 == "1") Take_Photo("5");
-                if (shot6 == "1") Take_Photo("6");
-                if (shot7 == "1") Take_Photo("7");
-            }
-            if (cap_order == "OK1"  && allow_check)
-            {
-                if (on1 != 1)
+                if (cap_order.Contains("."))
                 {
-                    OK1_check();
+                if (cap_order.Length == 13)
+                {
+                    //shot_pic.RunWorkerAsync();
+                    shot = cap_order.Split('.');
+                    shot1 = shot[0];
+                    shot2 = shot[1];
+                    shot3 = shot[2];
+                    shot4 = shot[3];
+                    shot5 = shot[4];
+                    shot6 = shot[5];
+                    shot7 = shot[6];
+                    if (shot6 == "1")
+                    {
+                        order_6 = true;
+                        Take_Photo();
+                    }
+                    if (shot5 == "1")
+                    {
+                        order_5 = true;
+                        Take_Photo();
+                    }
+                    if (shot4 == "1")
+                    {
+                        order_4 = true;
+                        Take_Photo();
+                    }
+                    if (shot1 == "1")
+                    {
+                        order_1 = true;
+                        Take_Photo();
+                    }
+                    if (shot2 == "1")
+                    {
+                        order_2 = true;
+                        Take_Photo();
+                    }
+                    if (shot3 == "1")
+                    {
+                        order_3 = true;
+                        Take_Photo();
+                    }
+                    if (shot7 == "1")
+                    {
+                        order_7 = true;
+                        Take_Photo();
+                    }
+                    MethodInvoker inv = delegate
+                    {
+                        if (!call_back_cam.Enabled)
+                        {
+                            call_back_cam.Enabled = true;
+                        }
+                    }; this.Invoke(inv);
+                                
+                }
+                else
+                {
+                    PLCS7_1200.Write("M156.0", true);
+                }
+            }
+            if (cap_order == "OK1"  && allow_check && !run_out1)
+            {
+                if (on1 != 1)                                                                  
+                {
+                    if (En_chek1.Checked)
+                    {
+                       
+                            string Addr = "DB33.DBX0.0";
+                            PLCS7_1200.Write(Addr, int.Parse("1"));
+                        
+                        OK1_check();
+                        MethodInvoker inv = delegate
+                        {
+                            pic_loading2.Hide();
+                            pic_loading1.Show();
+                        }; this.Invoke(inv);
+                    }
+                    //else 
+                    //{
+                    //    //if (!last1)
+                    //    //{
+                    //        last1 = true;
+                    //        Tranfer("OK");
+                    //        DateTime dt = DateTime.Now;
+                    //        Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                    //        inf_process();
+                    //    //}
+                    //}
                 }
                 else
                 {
                     MessageBox.Show("The Zoom processing is running, please turn off first");
                 }
             }
-            if (cap_order == "OK2" && allow_check)
+            if (cap_order == "OK2" && allow_check && !run_out2) 
             {
                 if (on2 != 1)
                 {
-                    OK2_check();
+                    if (En_chek2.Checked) 
+                    {                       
+                            string Addr = "DB33.DBX0.1";
+                            PLCS7_1200.Write(Addr, int.Parse("1"));                 
+                        OK2_check();
+                        MethodInvoker inv = delegate
+                        {
+                            pic_loading1.Hide();
+                            pic_loading2.Show();
+                        }; this.Invoke(inv);
+                    }
+                    //else 
+                    //{
+                    //    if (!last2) 
+                    //    {
+                    //        last2 = true;
+                    //        Tranfer1("OK");
+                    //        DateTime dt = DateTime.Now;
+                    //        Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                    //        inf_process();
+                    //    }
+                    //}
+                   
                 }
                 else
                 {
@@ -1453,28 +1702,70 @@ namespace Camera_Check_Component
             if (cap_order.Contains("#")) 
             {
                 NG_code = cap_order.Split('#');
-                if (NG_code[0] == "NG1" && allow_check ) 
+                if (NG_code[0] == "NG1" && allow_check && !run_out1) 
                 {
                     if (on1 != 1) 
                     {
-                        //error_Type(NG_code[1]);
-                        loi_tam1 = NG_code[1];
-                        vitri_Erpic(NG_code[2]);
-                        NG1_check();
+                        if (En_chek1.Checked) 
+                        {
+                            string Addr = "DB33.DBX0.0";
+                            PLCS7_1200.Write(Addr, int.Parse("1"));
+                            
+                            loi_tam1 = NG_code[1];
+                            vitri_Erpic(NG_code[2]);
+                            err_pic1 = (NG_code[2]);
+                            NG1_check();
+                            MethodInvoker inv = delegate
+                            {
+                                pic_loading2.Hide();
+                                pic_loading1.Show();
+                            }; this.Invoke(inv);
+                        }
+                        //else 
+                        //{
+                        //    if (!last1)
+                        //    {
+                        //        last1 = true;
+                        //        Tranfer1("ERROR");
+                        //        DateTime dt = DateTime.Now;
+                        //        Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                        //        inf_process();
+                        //    }
+                        //}
                     }
                     else
                     {
                         MessageBox.Show(" Zoom processing is running, please turn off first");
                     }
                 }
-                if (NG_code[0] == "NG2" && allow_check) 
+                if (NG_code[0] == "NG2" && allow_check && !run_out2)  
                 {
                     if (on2!=1) 
                     {
-                        //error_Type(NG_code[1]);
-                        loi_tam2 = NG_code[1];
-                        vitri_Erpic(NG_code[2]);
-                        NG2_check();
+                        if (En_chek2.Checked) 
+                        {
+                            string Addr = "DB33.DBX0.1";
+                            PLCS7_1200.Write(Addr, int.Parse("1"));
+                            m = "";
+                            loi_tam2 = NG_code[1];
+                            vitri_Erpic(NG_code[2]);
+                            err_pic2 = (NG_code[2]);
+                            NG2_check();
+                            MethodInvoker inv = delegate
+                            {
+                                pic_loading1.Hide();
+                                pic_loading2.Show();
+                            }; this.Invoke(inv);
+                        }
+                        //if (!last2)
+                        //{
+                        //    last2 = true;
+                        //    Tranfer1("ERROR");
+                        //    DateTime dt = DateTime.Now;
+                        //    Program_Configuration.UpdateSystem_Config("inf_process", dt.ToString());
+                        //    inf_process();
+                        //}
+
                     }
                     else
                     {
@@ -1533,59 +1824,115 @@ namespace Camera_Check_Component
                     zoom2(6);
                 }
             }
+            if (cap_order == "F")
+            {
+                MethodInvoker inv = delegate
+                {
+                    TB_idworker.Text = "";
+                    TB_wker2.Text = "";
+                }; this.Invoke(inv);
+            }
            
         }
-
-        private void Take_Photo(string order)
+        bool last1 = false;
+        bool last2 = false;
+        private void Shot_pic_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            MethodInvoker inv = delegate
-            {
-                if (order == "1") order_1 = true;
-                if (order == "2") order_2 = true;
-                if (order == "3") order_3 = true;
-                if (order == "4") order_4 = true;
-                if (order == "5") order_5 = true;
-                if (order == "6") order_6 = true;
-                if (order == "7") order_7 = true;
+          //  if (!shot_pic.IsBusy) shot_pic.RunWorkerAsync();
+        }
 
+        private void Shot_pic_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if(shot_pic.CancellationPending ) 
+            {
+                e.Cancel = true;
+            }
+            //Take_Photo();
+        }
+        
+        double time_to_reset_cam = 0;
+
+        private void call_back_cam_Tick(object sender, EventArgs e)
+        {
+            time_to_reset_cam++;
+            if (time_to_reset_cam == 2)
+            {
                 if (order_1)
                 {
                     Cam1VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
-                }              
+                    Thread.Sleep(5);
+                }
                 if (order_2)
                 {
                     Cam2VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    Thread.Sleep(5);
                 }
                 if (order_3)
                 {
                     Cam3VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    Thread.Sleep(5);
                 }
                 if (order_4)
                 {
                     Cam4VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    Thread.Sleep(5);
                 }
                 if (order_5)
                 {
                     Cam5VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    Thread.Sleep(5);
                 }
                 if (order_6)
                 {
                     Cam6VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    Thread.Sleep(5);
                 }
-                if(order_7 && system_config.add_cam == "true")
+                time_to_reset_cam = 0;
+                call_back_cam.Enabled = false;
+            }
+        }
+        private void Take_Photo()
+        {
+            MethodInvoker inv = delegate
+            {              
+                if (order_1)
+                {
+                    Cam1VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_2)
+                {
+                    Cam2VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_3)
+                {
+                    Cam3VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_4)
+                {
+                    Cam4VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_5)
+                {
+                    Cam5VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_6)
+                {
+                    Cam6VIDEO_Device.Start();
+                System.Threading.Thread.Sleep(20);
+            }
+                if (order_7 && system_config.add_cam == "true")
                 {
                     Cam7VIDEO_Device.Start();
-                    System.Threading.Thread.Sleep(20);
+                    //System.Threading.Thread.Sleep(20);
                 }
-            };
+        };
             this.Invoke(inv);
-        }
+    }
       
         private void status(string text)
         {
@@ -1658,9 +2005,13 @@ namespace Camera_Check_Component
             string mesage = "Do you want to exit the program";
             string cap = "Close the program";
             var result = MessageBox.Show(mesage, cap, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes) Environment.Exit(0);
-            update_system();
-            RESET();
+            if (result == DialogResult.Yes) 
+            {
+                update_system();
+                RESET();
+                Environment.Exit(0);
+            } 
+           
         }
         private void RESET()
         {
@@ -1671,7 +2022,8 @@ namespace Camera_Check_Component
             if (backgroundWorker_5.IsBusy) backgroundWorker_5.CancelAsync();
             if (backgroundWorker_6.IsBusy) backgroundWorker_6.CancelAsync();
             if (backgroundWorker_7.IsBusy) backgroundWorker_7.CancelAsync();
-            if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
+            if (shot_pic.IsBusy) shot_pic.CancelAsync();
+           
             PB_active1.Hide();
             if (Cam1VIDEO_Device != null && Cam1VIDEO_Device.IsRunning)
             {
@@ -1688,7 +2040,6 @@ namespace Camera_Check_Component
             if (Cam3VIDEO_Device != null && Cam3VIDEO_Device.IsRunning)
             {
                 Cam3VIDEO_Device.Stop();
-               
             }
             if (Cam4VIDEO_Device != null && Cam4VIDEO_Device.IsRunning)
             {
@@ -1729,25 +2080,48 @@ namespace Camera_Check_Component
             Program_Configuration.UpdateSystem_Config("Location_cam7_folder", count_7.ToString());
             using (StreamWriter sw = new StreamWriter("Output.txt"))
             {
-                File.WriteAllText("Output", "");
+                sw.Write("");            
                 sw.WriteLine("" + _OKnum.ToString() + "");
                 sw.WriteLine("" + _NGnum.ToString() + "");
                 
             }
+           
         }
         private void Camera_Check_component_FormClosing(object sender, FormClosingEventArgs e)
         {
             update_system();
             RESET();
             timer.Stop();
-            string Addr = "M170.0";
-            PLCS7_1200.Write(Addr, int.Parse("1"));
-            string Addr1 = "M170.2";
-            PLCS7_1200.Write(Addr1, int.Parse("1"));
-            loadform = false;
+            if (serialPort_communicate.IsOpen) serialPort_communicate.Close();
+            if (PLC_con) 
+            {
+                string Addr = "M170.0";
+                PLCS7_1200.Write(Addr, int.Parse("1"));
+                string Addr1 = "M170.2";
+                PLCS7_1200.Write(Addr1, int.Parse("1"));
+                loadform = false;
+                PLC_con = false;
+                PLCS7_1200.Close();
+            }
+            else 
+            {
+                PLCS7_1200 = new Plc(CpuType.S71200, "192.168.0.7", 0, 0);
+                if (PLCS7_1200.IsAvailable)
+                {
+                    PLCS7_1200.Open();
+                    if (PLCS7_1200.IsConnected == true)
+                    {
+                        string Addr = "M170.0";
+                        PLCS7_1200.Write(Addr, int.Parse("1"));
+                        string Addr1 = "M170.2";
+                        PLCS7_1200.Write(Addr1, int.Parse("1"));
+                        loadform = false;
+                        PLC_con = false;
+                    }
+                    PLCS7_1200.Close();
+                }
+            }        
             if (ledinf.IsBusy) ledinf.CancelAsync();
-           
-
         }
 
         private void Stop_btn_Click(object sender, EventArgs e)
@@ -1759,13 +2133,17 @@ namespace Camera_Check_Component
                 LB_TIMER.Text = "00:00:00";
                 start_check = false;
                 started = false;
-
+                //TB_idworker.Text = "";
+                //TB_wker2.Text = "";
                 tb_PN.Enabled = true;
                 TB_idworker.Enabled = true;
                 TB_wker2.Enabled = true;
-
+                _OKnum = 0;
+                _NGnum = 0;
+                _sum = 0;
                 RESET();
-
+                pic_loading1.Hide();
+                pic_loading2.Hide();
                 Start_btn.Enabled = true;
                 Stop_btn.Enabled = false;
                 //ledinf.RunWorkerAsync();
@@ -1844,21 +2222,21 @@ namespace Camera_Check_Component
             foreach (string file in getpath)
             {
 
-                if (file == null && !a1 && !a2 && !a3 && !a4 && !a5 && !a6) 
+                if (file == null) 
                 {
-                    path_1_1 = "";
-                    path_1_2 = "";
-                    path_1_3 = "";
-                    path_1_4 = "";
-                    path_1_5 = "";
-                    path_1_6 = "";
-                    path_1_7 = "";
+                    if (!a1) path_1_1 = "";
+                    if (!a2) path_1_2 = "";
+                    if (!a3) path_1_3 = "";
+                    if (!a4) path_1_4 = "";
+                    if (!a5) path_1_5 = "";
+                    if (!a6) path_1_6 = "";
+                    
                     break;
                 }
-                if(file == null && a1 && a2 && a3 && a4 && a5 && a6) 
-                {
-                    break;
-                }
+                //if (file == null && a1 && a2 && a3 && a4 && a5 && a6)
+                //{
+                //    break;
+                //}
                 into_pic = file.Split('-');
 
                 if (into_pic[5] == "1")
@@ -1926,7 +2304,7 @@ namespace Camera_Check_Component
                 }
 
             }
-            if (path_1_1 == "" && path_1_2 == "" && path_1_3 == "" && path_1_4 == "" && path_1_5 == "" && path_1_6 == "")
+            if (path_1_1 == "" || path_1_2 == "" || path_1_3 == "" || path_1_4 == "" || path_1_5 == "" || path_1_6 == "")
             {
                 pictureBox1.Image = null;
                 pictureBox2.Image = null;
@@ -1940,7 +2318,7 @@ namespace Camera_Check_Component
                 Hname4.Text = "";
                 Hname5.Text = "";
                 Hname6.Text = "";
-                MessageBox.Show("Out of picture at screen 1 ");
+                
                 run_out1 = true;
                 return;
             }
@@ -2071,21 +2449,21 @@ namespace Camera_Check_Component
             foreach (string file in getpath)
             {
 
-                if (file == null && !a1 && !a2 && !a3 && !a4 && !a5 && !a6)
+                if (file == null )
                 {
-                    path_2_1 = "";
-                    path_2_2 = "";
-                    path_2_3 = "";
-                    path_2_4 = "";
-                    path_2_5 = "";
-                    path_2_6 = "";
-                    path_2_7 = "";
+                    if (!a1) path_2_1 = "";
+                    if (!a2) path_2_2 = "";
+                    if (!a3) path_2_3 = "";
+                    if (!a4) path_2_4 = "";
+                    if (!a5) path_2_5 = "";
+                    if (!a6) path_2_6 = "";
+                   
                     break;
                 }
-                if (file == null && a1 && a2 && a3 && a4 && a5 && a6)
-                {
-                    break;
-                }
+                //if (file == null && a1 && a2 && a3 && a4 && a5 && a6)
+                //{
+                //    break;
+                //}
                 into_pic = file.Split('-');
 
                 if (into_pic[5] == "1")
@@ -2153,7 +2531,7 @@ namespace Camera_Check_Component
                 }
       
             }
-            if (path_2_1 == "" && path_2_2 == "" && path_2_3 == "" && path_2_4 == "" && path_2_5 == "" && path_2_6 == "") 
+            if (path_2_1 == "" || path_2_2 == "" || path_2_3 == "" || path_2_4 == "" || path_2_5 == "" || path_2_6 == "") 
             {
                 pictureBox15.Image = null;
                 pictureBox16.Image = null;
@@ -2167,7 +2545,7 @@ namespace Camera_Check_Component
                 Hname_10.Text = "";
                 Hname_11.Text = "";
                 Hname_12.Text = "";
-                MessageBox.Show("Out of picture at screen 2 ");
+             
                 run_out2 = true;
                 return;
             }
@@ -2266,6 +2644,99 @@ namespace Camera_Check_Component
         string path_2_5 = "";
         string path_2_6 = "";
         string path_2_7 = "";
+        private void En_chek1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (En_chek1.Checked) 
+            {
+                OK1_check_pause();
+                last1 = false;
+            }
+        }
+
+        private void En_chek2_CheckedChanged(object sender, EventArgs e)
+        {
+            MethodInvoker inv = delegate
+            {
+                if (En_chek2.Checked) 
+            {
+                OK2_check_pause();
+                last2 = false;
+            }
+            }; this.Invoke(inv);
+        }
+        private void OK1_check_pause() 
+        {
+            MethodInvoker inv = delegate 
+            {
+                load1 = folderIndex;
+                update_image2();
+            };this.Invoke(inv);
+            
+        }
+        private void OK2_check_pause()
+        {
+            MethodInvoker inv =delegate
+            {
+                load2 = folderIndex;
+                upload_image();
+            };           
+            this.Invoke(inv);
+          
+        }
+        private void null_pic1() 
+        {     
+            MethodInvoker inv = delegate
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox2.Image.Dispose();
+                pictureBox3.Image.Dispose();
+                pictureBox4.Image.Dispose();
+                pictureBox5.Image.Dispose();
+                pictureBox6.Image.Dispose();
+                if (pic_full1.Image != null) { pic_full1.Image.Dispose(); }
+
+
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_1);
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_2);
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_3);
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_4);
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_5);
+                File.Delete(system_config.Map_Path_File + @"/" + path_1_6);
+                upload_image();
+                folderIndex++;
+                if (En_chek1.Checked)
+                {
+                    load1 = folderIndex;
+                }
+            }; this.Invoke(inv);
+        }
+        private void null_pic2()
+        {
+            MethodInvoker inv = delegate
+            {
+                pictureBox15.Image.Dispose();
+                pictureBox16.Image.Dispose();
+                pictureBox17.Image.Dispose();
+                pictureBox18.Image.Dispose();
+                pictureBox19.Image.Dispose();
+                pictureBox20.Image.Dispose();
+                if (picfull_2.Image != null) { picfull_2.Image.Dispose(); }
+
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_1);
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_2);
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_3);
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_4);
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_5);
+                File.Delete(system_config.Map_Path_File + @"/" + path_2_6);
+                update_image2();
+                folderIndex++;
+                if (En_chek1.Checked)
+                {
+                    load1 = folderIndex;
+                }
+            }; this.Invoke(inv);         
+        
+        }
         private void Tranfer(string OPTION)
         {
             if (OPTION == "OK" && allow_check)
@@ -2307,7 +2778,7 @@ namespace Camera_Check_Component
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','OK','OK','OK','OK','OK','OK','OK')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { "3DC "+folderIndex.ToString()+"", "OK", "" });
+                var item = new ListViewItem(new[] { ""+PN_Selector +"-"+folderIndex.ToString()+"", "OK", "" });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" +load1.ToString() + "]");
@@ -2348,15 +2819,19 @@ namespace Camera_Check_Component
                 string[] tach = new string[2];
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,NG_Type) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam1) + "')");
-                Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic + "')");
+                Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic1 + "')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY (Time) DESC");
-                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "NG", error_Type(loi_tam1) });
+                var item = new ListViewItem(new[] { ""+PN_Selector+"-" + folderIndex.ToString() + "", "NG", error_Type(loi_tam1) });
                 listView1.Items.Add(item);
-
+                err_pic1 = "";
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + load1.ToString() + "]");
             }
             folderIndex++;
-            load1 = folderIndex;
+            if (En_chek1.Checked) 
+            {
+                load1 = folderIndex;
+            }
+           
         }
 
         string h1 = "OK";
@@ -2366,7 +2841,8 @@ namespace Camera_Check_Component
         string h5 = "OK";
         string h6 = "OK";
 
-        string err_pic = "";
+        string err_pic1 = "";
+        string err_pic2 = "";
         Int16 _OKnum = 0;
         Int16 _NGnum = 0;
         Int16 _sum = 0;
@@ -2375,66 +2851,67 @@ namespace Camera_Check_Component
             if (so == "1")
             {
                 h1 = "NG";
-                err_pic = "1";
+              
             }
             else
 
             {
                 h1 = "OK";
-                err_pic = "";
+               
             }
             if (so == "2")
             {
                 h2 = "NG";
-                err_pic = "2";
+             
             }
             else
             {
                 h2 = "OK";
-                err_pic = "";
+               
             }
             if (so == "3")
             {
                 h3 = "NG";
-                err_pic = "3";
+               
             }
             else
             {
                 h3 = "OK";
-                err_pic = "";
+               
             }
             if (so == "4")
             {
                 h4 = "NG";
-                err_pic = "4";
+              
             }
             else
             {
                 h4 = "OK";
-                err_pic = "";
+               
             }
             if (so == "5")
             {
                 h5 = "NG";
-                err_pic = "5";
+               
             }
             else
             {
                 h5 = "OK";
-                err_pic = "";
+               
             }
             if (so == "6")
             {
                 h6 = "NG";
-                err_pic = "6";
+              
             }
             else
             {
                 h6 = "OK";
-                err_pic = "";
+              
             }
             return err_pic;
         }
+        string err_pic;
         private string error_Type(string get_error)
         {
             string error_type = "";
@@ -2506,7 +2983,7 @@ namespace Camera_Check_Component
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator2 + "','OK','OK','OK','OK','OK','OK','OK')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "OK", "" });
+                var item = new ListViewItem(new[] { "" + PN_Selector + "-" + folderIndex.ToString() + "", "OK", "" });
                 listView1.Items.Add(item);
 
                 status(" [SYSTEM] " + " [OK]" + " SAVED IMAGE[" + load2.ToString() + "]");
@@ -2548,22 +3025,28 @@ namespace Camera_Check_Component
                 string[] tach = new string[2];
                 tach = getpath[6].Split('.');
                 Boolean check = sql_action.excute_data("INSERT INTO component_status (PN_Selector,Date,Time,Trace,ID,Status,Picture1,Picture2,Picture3,Picture4,Picture5,Picture6,NG_Type) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "','" + ID_Operator1 + "','NG','" + h1 + "','" + h2 + "','" + h3 + "','" + h4 + "','" + h5 + "','" + h6 + "','" + error_Type(loi_tam2) + "')");
-                Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic + "')");
+                Boolean insert = sql_action.excute_data("INSERT INTO NG_detail ([PN_Selector],[Date],[Time],[Trace]) VALUES (N'" + PN_Selector + "','" + getpath[1] + "','" + getpath[2] + "-" + getpath[3] + "-" + getpath[4] + "','" + tach[0] + "_" + err_pic2 + "')");
                 Boolean orderby = sql_action.excute_data("SELECT Time FROM component_status ORDER BY Time DESC");
-                var item = new ListViewItem(new[] { "3DC " + folderIndex.ToString() + "", "NG", error_Type(loi_tam2) });
+                var item = new ListViewItem(new[] { "" + PN_Selector + "-" + folderIndex.ToString() + "", "NG", error_Type(loi_tam2) });
                 listView1.Items.Add(item);
-
+                err_pic2 = "";
                 status(" [SYSTEM]" + " [ERROR]" + " SAVED IMAGE[" + system_config.Folder_index_tranfer.ToString() + "]");
             }
             folderIndex++;
-            load2 = folderIndex;
+            if (En_chek2.Checked) 
+            {
+                load2 = folderIndex;
+            }
+           
         }
-
+        Int16 num1 = 0;
+        Int16 num2 = 0;
         private void OK1_check()
         {
 
             MethodInvoker inv = delegate
             {
+                num1++;
                 Tranfer("OK");
                 upload_image();
                 Program_Configuration.UpdateSystem_Config("inf_process", DateTime.Now.ToString());
@@ -2572,7 +3055,8 @@ namespace Camera_Check_Component
                 _sum = (short)(_NGnum + _OKnum);
                 OKnum.Text = _OKnum.ToString();
                 totalPN.Text = _sum.ToString();
-
+                ck_num1.Text = num1.ToString();
+                dung_may();
             };
             this.Invoke(inv);
         }
@@ -2580,6 +3064,7 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                num1++;
                 DateTime dt = DateTime.Now;
                 Tranfer("ERROR");
                 upload_image();
@@ -2589,6 +3074,8 @@ namespace Camera_Check_Component
                 _sum = (short)(_NGnum + _OKnum);
                 NGnum.Text = _NGnum.ToString();
                 totalPN.Text = _sum.ToString();
+                ck_num1.Text = num1.ToString();
+                dung_may();
             };
             this.Invoke(inv);
         }
@@ -2596,6 +3083,7 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                num2++;
                 DateTime dt = DateTime.Now;
                 Tranfer1("OK");
                 update_image2();
@@ -2605,6 +3093,8 @@ namespace Camera_Check_Component
                 _sum = (short)(_NGnum + _OKnum);
                 OKnum.Text = _OKnum.ToString();
                 totalPN.Text = _sum.ToString();
+                ck_num2.Text = num2.ToString();
+                dung_may();
             };
             this.Invoke(inv);
         }
@@ -2612,6 +3102,7 @@ namespace Camera_Check_Component
         {
             MethodInvoker inv = delegate
             {
+                num2++;
                 DateTime dt = DateTime.Now;
                 Tranfer1("ERROR");
                 update_image2();
@@ -2621,6 +3112,8 @@ namespace Camera_Check_Component
                 _sum = (short)(_NGnum + _OKnum);
                 NGnum.Text = _NGnum.ToString();
                 totalPN.Text = _sum.ToString();
+                ck_num2.Text = num2.ToString();
+                dung_may();
             };
             this.Invoke(inv);
         }
@@ -2982,55 +3475,63 @@ namespace Camera_Check_Component
                     if (run_out2 && folderIndex < count_6)
                     {
                         update_image2();
-                        run_out2 = true;
+                        run_out2 = false;
                     }
                 }
             }
             else allow_check = false;
             string per = sql_action.getID_per_group(UserID);
-            if (General_tab.SelectedIndex == 3 && (per == "3" || per == "1")) 
+            if (General_tab.SelectedIndex == 3) 
             {
-                if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
-                groupBox13.Enabled = false;
-                //groupBox16.Enabled = false;
-                groupBox12.Enabled = false;
-                groupBox15.Enabled = false;
-                groupBox14.Enabled = false;
-                groupBox2.Enabled = false;
-                groupBox6.Enabled = false;
-                groupBox7.Enabled = false;
-                groupBox8.Enabled = false;
-                groupBox9.Enabled = false;
-                groupBox10.Enabled = false;
-                groupBox11.Enabled = false;
-                txtIPAddress.Enabled = false;
-                btnAutoHome.Enabled = false;
+                //if (!serialPort_communicate.IsOpen) serialPort_communicate.Open();
+                if ((per == "3" || per == "1")) 
+                {
+                    groupBox13.Enabled = false;
+                  
+                    groupBox12.Enabled = false;
+                    groupBox15.Enabled = false;
+                    groupBox14.Enabled = false;
+                    groupBox2.Enabled = false;
+                    groupBox6.Enabled = false;
+                    groupBox7.Enabled = false;
+                    groupBox8.Enabled = false;
+                    groupBox9.Enabled = false;
+                    groupBox10.Enabled = false;
+                    groupBox11.Enabled = false;
+                    txtIPAddress.Enabled = false;
+                    btnAutoHome.Enabled = false;
+                }                
             }
-            if(General_tab.SelectedIndex == 1 && !started) 
+            if (General_tab.SelectedIndex == 1 && !started)
             {
                 system_config = Program_Configuration.GetSystem_Config();
-               
-             
-                if (!serialPort_communicate.IsOpen) 
+
+                if (!serialPort_communicate.IsOpen)
                 {
                     serialPort_communicate.PortName = system_config.DefaultComport;
                     serialPort_communicate.BaudRate = Convert.ToInt32(system_config.DefaultCOMBaudrate);
                     serialPort_communicate.Open();
                     nhapid = true;
                 }
-                if ( TB_idworker.Text != "" && TB_wker2.Text != "") 
+                if (TB_idworker.Text != "" && TB_wker2.Text != "")
                 {
                     if (serialPort_communicate.IsOpen) { serialPort_communicate.Close(); nhapid = false; }
                 }
-                if ( TB_idworker.Text == "" && TB_wker2.Text == "") 
+                if (TB_idworker.Text == "" || TB_wker2.Text == "")
                 {
                     nhapid = true;
                 }
             }
+            else nhapid = false;
         }
         
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            if (started)
+            {
+                MessageBox.Show("Please stop program first!");
+                return;
+            }
             var result = MessageBox.Show("Do you want to reset Program to default setting", "RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -3044,7 +3545,9 @@ namespace Camera_Check_Component
                 folderIndex = 0;
                 load1 = 0;
                 load2 = 1;
-
+                _OKnum = 0;
+                _NGnum = 0;
+                _sum = 0;
                 Program_Configuration.UpdateSystem_Config("Folder_index_tranfer", load1.ToString());
                 Program_Configuration.UpdateSystem_Config("same_folder_1", folderIndex.ToString());
                 Program_Configuration.UpdateSystem_Config("Folder_load_check", load2.ToString());
@@ -3055,6 +3558,13 @@ namespace Camera_Check_Component
                 Program_Configuration.UpdateSystem_Config("Location_cam5_folder", "0");
                 Program_Configuration.UpdateSystem_Config("Location_cam6_folder", "0");
                 Program_Configuration.UpdateSystem_Config("Location_cam7_folder", "0");
+                
+                using (StreamWriter sw = new StreamWriter("Output.txt"))
+                {
+                    sw.Write("");
+                    sw.WriteLine("" + _OKnum.ToString() + "");
+                    sw.WriteLine("" + _NGnum.ToString() + "");
+                }
 
             }
         }
@@ -3085,10 +3595,9 @@ namespace Camera_Check_Component
                     picload_in.Visible = false;
                 };             
               
-           
-           
+         
         }
-        private void permiss_1() // admin
+        private void permiss_1() // master
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -3109,7 +3618,7 @@ namespace Camera_Check_Component
                 ctrl.Enabled = true;
             }
         }
-        private void permiss_2() //operation
+        private void permiss_2() //operator
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -3122,21 +3631,25 @@ namespace Camera_Check_Component
                         {
                             ctl.Enabled = true;
                         }
-                        if (ctl.Name == "TB_idworker")
+                        else if (ctl.Name == "TB_idworker")
                         {
                             ctl.Enabled = true;
                         }
-                        if (ctl.Name == "TB_wker2")
+                        else if (ctl.Name == "TB_wker2")
                         {
                             ctl.Enabled = true;
                         }
-                        if (ctl.Name == "label8")
+                        else if (ctl.Name == "label8")
                         {
                             ctl.Enabled = true;
                         }
-                        if (ctl.Name == "label13")
+                        else if (ctl.Name == "label13")
                         {
                             ctl.Enabled = true;
+                        }
+                        else if (ctl.Name == "view_btn")
+                        {
+                            ctl.Enabled = false;
                         }
                         else
                         {
@@ -3144,11 +3657,15 @@ namespace Camera_Check_Component
                         }
                     }
                 }
-                else if (ctrl.Name == "tabPage4")
+                if (ctrl.Name == "tabPage4")
                 {
                     foreach (Control ctl in tabPage4.Controls)
                     {
                         if (ctl.Name == "btnConnect")
+                        {
+                            ctl.Enabled = true;
+                        }
+                        else if (ctl.Name == "btnAutoHome")
                         {
                             ctl.Enabled = true;
                         }
@@ -3164,7 +3681,7 @@ namespace Camera_Check_Component
                 }
             }
         }
-        private void permiss_3() // modify
+        private void permiss_3() // machanic
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -3188,6 +3705,10 @@ namespace Camera_Check_Component
                         {
                             ctl.Enabled = false;
                         }
+                        else if (ctl.Name == "sign_up")
+                        {
+                            ctl.Enabled = false;
+                        }
                         else
                         {
                             ctl.Enabled = true;
@@ -3201,7 +3722,7 @@ namespace Camera_Check_Component
                 }
             }
         }
-        private void permiss_4() //manager
+        private void permiss_4() //production engineer
         {
             foreach (Control ctrl in General_tab.Controls)
             {
@@ -3213,43 +3734,13 @@ namespace Camera_Check_Component
                         {
                             ctl.Enabled = false;
                         }
-                        if (ctl.Name == "Logout_btn")
-                        {
-                            ctl.Enabled = true;
-                        }
-                        if (ctl.Name == "view_btn")
-                        {
-                            ctl.Enabled = true;
-                        }
-                        if (ctl.Name == "delete_btn")
-                        {
-                            ctl.Enabled = true;
-                        }
-                        if (ctl.Name == "comboBox1")
-                        {
-                            ctl.Enabled = true;
-                        }
-                    }
-                }
-                if (ctrl.Name == "tabPage4")
-                {
-                    foreach(Control ctl in tabPage4.Controls) 
-                    {
-                        if(ctl.Name == "btnConnect") 
-                        {
-                            ctl.Enabled = true;
-                        }
                         else
                         {
-                            ctl.Enabled = false;
+                            ctl.Enabled = true;
                         }
                     }
-                   
                 }
-                else
-                {
-                    ctrl.Enabled = true;
-                }
+                ctrl.Enabled = true;
             }
         }
         private void login(string id)
@@ -3366,12 +3857,14 @@ namespace Camera_Check_Component
                     MessageBox.Show("Connect to PLC Successful", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAutoHome.Enabled = true;
                     PLC_con = true;
+                    btnReadAll.PerformClick();
                 }
                 else
                 {
                     MessageBox.Show("Error");
                     PLC_con = false;
                 }
+
             }
             else 
             {
@@ -3381,16 +3874,7 @@ namespace Camera_Check_Component
 
         }
         string t = "";
-        //private void serialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
-        //{
-        //    Thread.Sleep(10);
-        //    x = serialPort1.ReadExisting();
-        //    t = x;
-        //    if (x != null)
-        //    {
-        //        doAction();
-        //    }
-        //}
+       
 
         public void doAction()
         {
@@ -3514,21 +3998,30 @@ namespace Camera_Check_Component
                 string[] arr = t.Split('#');
                 if (arr[0] == "NG1")
                 {
-                    string Addr = "DB33.DBX0.0";
-                    PLCS7_1200.Write(Addr, int.Parse("1"));
+                    if (!run_out1) 
+                    {
+                        string Addr = "DB33.DBX0.0";
+                        PLCS7_1200.Write(Addr, int.Parse("1"));
+                        m = "";
+                    }                   
                 }
                 if (arr[0] == "NG2")
                 {
-                    string Addr = "DB33.DBX0.1";
-                    PLCS7_1200.Write(Addr, int.Parse("1"));
+                    if (!run_out2) 
+                    {
+                        string Addr = "DB33.DBX0.1";
+                        PLCS7_1200.Write(Addr, int.Parse("1"));
+                        m = "";
+                    }                   
                 }
             }
         }
         string x = "";
+        string m = "";
         private void ShowData(object sender, EventArgs e)
         {
             string[] arr = x.Split('#');
-            if (arr[0] == "NG1")
+            if (arr[0] == "NG1"||m=="OK1")
             {
                 string Addr = "DB33.DBX0.0";
                 PLCS7_1200.Write(Addr, int.Parse("1"));
@@ -3539,24 +4032,7 @@ namespace Camera_Check_Component
                 PLCS7_1200.Write(Addr, int.Parse("1"));
             }
         }
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialDataReceivedEventHandler);
-        //    serialPort1.Open();
-        //    //groupBox1.Enabled = false;
-        //    //groupBox2.Enabled = false;
-        //    //groupBox3.Enabled = false;
-        //    //groupBox4.Enabled = false;
-        //    //groupBox5.Enabled = false;
-        //    //groupBox6.Enabled = false;
-        //    //groupBox7.Enabled = false;
-        //    //groupBox8.Enabled = false;
-        //    //groupBox9.Enabled = false;
-        //    //groupBox10.Enabled = false;
-        //    //groupBox11.Enabled = false;
-        //    //txtIPAddress.Enabled = false;
-        //    //btnAutoHome.Enabled = false;
-        //}
+      
         private void btnJogForInput_MouseDown(object sender, MouseEventArgs e)
         {
             string Addr = "DB1.DBX16.2";
@@ -3876,34 +4352,7 @@ namespace Camera_Check_Component
             ShowPosition();
 
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //groupBox1.Enabled = false;
-            //groupBox2.Enabled = false;
-            //groupBox3.Enabled = false;
-            //groupBox4.Enabled = false;
-            //groupBox5.Enabled = false;
-            //groupBox6.Enabled = false;
-            //groupBox7.Enabled = false;
-            //groupBox8.Enabled = false;
-            //groupBox9.Enabled = false;
-            //groupBox10.Enabled = false;
-            //groupBox16.Enabled = false;
-            groupBox13.Enabled = false;
-            groupBox12.Enabled = false;
-            groupBox15.Enabled = false;
-            groupBox14.Enabled = false;
-            groupBox2.Enabled = false;
-            groupBox6.Enabled = false;
-            groupBox7.Enabled = false;
-            groupBox8.Enabled = false;
-            groupBox9.Enabled = false;
-            groupBox10.Enabled = false;
-            groupBox11.Enabled = false;
-            //txtIPAddress.Enabled = false;
-            //btnAutoHome.Enabled = false;
-        }
-
+       
         private void lblSetSpeedJogSV1_Click(object sender, EventArgs e)
         {
             DataType dt = DataType.DataBlock;
@@ -4891,7 +5340,28 @@ namespace Camera_Check_Component
 
 
         #endregion
-     
+        private void dung_may() 
+        {
+            MethodInvoker inv = delegate
+            {
+                if (_sum % 5 == 0)
+                {
+                    PLCS7_1200.Write("M232.3", true);
+                }
+            };
+            this.Invoke(inv);
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            null_pic1();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            null_pic2();
+        }
     }
     
 }

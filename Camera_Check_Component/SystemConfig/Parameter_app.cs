@@ -9,6 +9,7 @@ namespace Camera_Check_Component
 {
     public class Parameter_app
     {
+       
         public static string App_Folder = Application.StartupPath;
         
         public static string System_Config_File_Name = "SystemConfig.xml";
@@ -29,6 +30,7 @@ namespace Camera_Check_Component
         {
             OK_IMAGE_TEMP_NAME = "OK_IMG_" + date + "_" + increase + "";
             OK_IMAGE_FOLDER_PATH = App_Folder + "/" + OK_IMAGE_FOLDER_NAME + "/" + OK_IMAGE_TEMP_NAME;
+            
         }
         public static void ERROR_TEMP(string date ,string increase)
         {

@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Camera_Check_Component.exe.manifest" size="11704">
+    <dependentAssembly dependencyType="install" codebase="Camera_Check_Component.exe.manifest" size="12254">
       <assemblyIdentity name="Camera_Check_Component.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RmfzxCyjZyhKKiph1V1P7JMM6tXH2wgiQxhXIqXQsHY=</dsig:DigestValue>
+        <dsig:DigestValue>PTGzDygCjuF4fn9la4JcvY22lKSfRxkulfzYnO+jqn4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

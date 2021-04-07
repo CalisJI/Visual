@@ -725,8 +725,6 @@ namespace Camera_Check_Component
             {
                
                 Cambox2.Items.Add(filterInfo.Name);
-               
-
             }
         }
 
@@ -741,8 +739,6 @@ namespace Camera_Check_Component
             {
                 
                 Cambox3.Items.Add(filterInfo.Name);
-                
-
             }
         }
 

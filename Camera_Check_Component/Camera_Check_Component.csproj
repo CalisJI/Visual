@@ -61,6 +61,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Tuziibanez-Profesional-Red-Pictures-folder.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
       <HintPath>..\..\..\LIB VS\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.dll</HintPath>
@@ -246,6 +249,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\up-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tuziibanez-Profesional-Red-Pictures-folder.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
